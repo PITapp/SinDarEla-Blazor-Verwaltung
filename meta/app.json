@@ -1,0 +1,62 @@
+{
+  "cssFiles": [],
+  "dataSources": [
+    "dbSinDarEla"
+  ],
+  "generator": "@radzen/blazor-server",
+  "https": true,
+  "ignore": [
+    ""
+  ],
+  "javaScriptFiles": [],
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "SinDarElaVerwaltung",
+  "namespaces": [],
+  "navigation": [
+    "Base"
+  ],
+  "pages": [
+    "Login",
+    "Application Roles",
+    "Application Users",
+    "Register Application User",
+    "Add Application Role",
+    "Add Application User",
+    "Edit Application User",
+    "Unauthorized",
+    "Profile",
+    "Base",
+    "Add Base",
+    "Edit Base"
+  ],
+  "port": 8000,
+  "pwa": true,
+  "security": {
+    "autoGeneratePages": true,
+    "dataSource": "dbSinDarEla",
+    "duration": 5,
+    "emailConfirmation": false,
+    "layout": "Main",
+    "loginLayout": "Login",
+    "loginPage": "Login",
+    "provider": "default",
+    "sessionRefresh": false,
+    "smtpFrom": "",
+    "smtpPassword": "",
+    "smtpSSL": false,
+    "smtpServer": "",
+    "smtpUser": ""
+  },
+  "serverLang": "cs",
+  "serverPort": 5000,
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": "Base",
+  "theme": "standard",
+  "title": "SinDarElaVerwaltung",
+  "wasm": true
+}
