@@ -18,24 +18,28 @@
           <div class="col-6 d-flex align-items-center">
             <RadzenSidebarToggle Click="@SidebarToggle0Click">
             </RadzenSidebarToggle>
-            <RadzenLabel Text="SinDarElaVerwaltung">
+            <RadzenImage Path="assets/images/LogoMitSchriftzug4.png" style="float: left; height: 30px">
+            </RadzenImage>
+            <RadzenLabel style="color: #E8E8E8; float: none; font-size: 12px; padding-left: 10px; padding-right: 10px" Text="|">
+            </RadzenLabel>
+            <RadzenLabel style="color: #E8E8E8; float: none; font-size: 14px; font-weight: normal" Text="SinDarEla">
             </RadzenLabel>
           </div>
-          <div class="col-6 text-right">
-            <RadzenProfileMenu Visible="@(Security.IsAuthenticated())" Click="@Profilemenu0Click">
+          <div class="col-6 text-right justify-content-end d-flex">
+            <RadzenProfileMenu style="display: block" Visible="@(Security.IsAuthenticated())" Click="@Profilemenu1Click">
               <ChildContent>
-                <RadzenProfileMenuItem Path="profile" Icon="settings" Text="Profile" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
+                <RadzenProfileMenuItem Icon="account_circle" Path="benutzer-profil" Text="Benutzerprofil">
                 </RadzenProfileMenuItem>
-                <RadzenProfileMenuItem Path="application-users" Icon="person" Text="Users" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
-                </RadzenProfileMenuItem>
-                <RadzenProfileMenuItem Path="application-roles" Icon="security" Text="Roles" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
-                </RadzenProfileMenuItem>
-                <RadzenProfileMenuItem Text="Logout" Value="Logout" Icon="power_settings_new">
+                <RadzenProfileMenuItem Icon="power_settings_new" Text="Logout">
                 </RadzenProfileMenuItem>
               </ChildContent>
               <Template>
-                <RadzenGravatar Email="@(Security.User?.Name)">
-                </RadzenGravatar>
+                <div class="col-md-12  d-flex justify-content-end">
+                  <RadzenLabel style="color: #f5f5f5; display: inline-block; font-size: 12px; margin-right: 20px; vertical-align: bottom" Text="@($"{(Security.User.UserName)}")">
+                  </RadzenLabel>
+                  <RadzenImage style="border-radius: 50%; display: block; float: none; height: 32px; width: 32px">
+                  </RadzenImage>
+                </div>
               </Template>
             </RadzenProfileMenu>
           </div>
@@ -49,21 +53,61 @@
         </RadzenContentContainer>
       </ChildContent>
     </RadzenBody>
+    <RadzenFooter style="height: 50px; padding-top: 12px">
+      <ChildContent>
+        <RadzenLabel style="color: #6d787d; float: none; margin-top: -6px" Text="© 2022 Soziale-Dienste-Ennstal">
+        </RadzenLabel>
+        <RadzenLabel style="color: #e5ecef; float: none; margin-top: -6px; padding-left: 10px; padding-right: 10px" Text="|">
+        </RadzenLabel>
+        <RadzenLabel style="color: #6d787d; float: none; margin-top: -6px" Text="Irdning · Hauptplatz 20">
+        </RadzenLabel>
+        <RadzenLink Path="versionen" style="float: right; margin-top: -2px" Text="Version 3.024">
+        </RadzenLink>
+        <RadzenLabel style="color: #e5ecef; float: right; margin-top: -6px; padding-left: 10px; padding-right: 10px" Text="|">
+        </RadzenLabel>
+        <RadzenLink Path="kontakt" style="float: right; margin-top: -2px" Text="Kontakt">
+        </RadzenLink>
+        <RadzenLabel style="color: #e5ecef; float: right; margin-top: -6px; padding-left: 10px; padding-right: 10px" Text="|">
+        </RadzenLabel>
+        <RadzenLink Path="handbuch" style="float: right; margin-top: -2px" Text="Handbuch">
+        </RadzenLink>
+        <RadzenLabel style="color: #e5ecef; float: right; margin-top: -6px; padding-left: 10px; padding-right: 10px" Text="|">
+        </RadzenLabel>
+        <RadzenLink Path="feedback" style="float: right; margin-top: -2px" Text="Feedback">
+        </RadzenLink>
+      </ChildContent>
+    </RadzenFooter>
     <RadzenSidebar @ref="sidebar0">
       <ChildContent>
         <RadzenPanelMenu style="height: 100%">
           <ChildContent>
-            <RadzenPanelMenuItem Text="Base" Path="base" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
+            <RadzenPanelMenuItem Icon="dashboard" Path="dashboard" Text="Dashboard" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="assignment_turned_in" Path="management" Text="Management">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="assignment" Path="dienstplan" Text="Dienstplan">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="assignment_ind" Path="mitarbeiter" Text="Mitarbeiter">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="face" Path="kunden" Text="Kunden">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="contact_phone" Path="kontakte" Text="Kontakte">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="create_new_folder" Path="dokumente" Text="Dokumente">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="assessment" Path="auswertungen" Text="Auswertungen">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="euro_symbol" Path="abrechnung" Text="Abrechnung">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="supervisor_account" Path="benutzer" Text="Benutzer">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="face" Path="benutzer-profil" Text="Benutzerprofil">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Icon="settings" Path="einstellungen" Text="Einstellungen">
             </RadzenPanelMenuItem>
           </ChildContent>
         </RadzenPanelMenu>
       </ChildContent>
     </RadzenSidebar>
-    <RadzenFooter>
-      <ChildContent>
-        <RadzenLabel Text="SinDarElaVerwaltung, Copyright Ⓒ 2022">
-        </RadzenLabel>
-      </ChildContent>
-    </RadzenFooter>
   </ChildContent>
 </RadzenLayout>

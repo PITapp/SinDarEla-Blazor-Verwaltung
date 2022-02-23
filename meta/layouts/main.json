@@ -1,7 +1,6 @@
 {
   "components": [
     {
-      "type": "layout",
       "components": [
         {
           "components": [
@@ -12,8 +11,6 @@
                   "class": "col-6 d-flex align-items-center",
                   "components": [
                     {
-                      "name": "sidebar-toggle0",
-                      "type": "sidebar-toggle",
                       "events": {
                         "click": [
                           {
@@ -25,34 +22,110 @@
                             "type": "execute"
                           }
                         ]
-                      }
+                      },
+                      "name": "sidebar-toggle0",
+                      "type": "sidebar-toggle"
                     },
                     {
-                      "name": "label0",
-                      "text": "SinDarElaVerwaltung",
-                      "type": "label"
+                      "events": {
+                        "click": []
+                      },
+                      "name": "image0",
+                      "path": "/assets/images/LogoMitSchriftzug4.png",
+                      "style": {
+                        "float": "left",
+                        "height": "30px"
+                      },
+                      "type": "image"
+                    },
+                    {
+                      "name": "label5",
+                      "style": {
+                        "color": "#E8E8E8",
+                        "float": "none",
+                        "fontSize": "12px",
+                        "paddingLeft": "10px",
+                        "paddingRight": "10px"
+                      },
+                      "text": "|",
+                      "type": "label",
+                      "visible": true
+                    },
+                    {
+                      "name": "label7",
+                      "style": {
+                        "color": "#E8E8E8",
+                        "float": "none",
+                        "fontSize": "14px",
+                        "fontWeight": "normal"
+                      },
+                      "text": "SinDarEla",
+                      "type": "label",
+                      "visible": true
                     }
                   ],
                   "name": "leftCol",
                   "type": "col"
                 },
                 {
-                  "class": "col-6 text-right",
-                  "name": "rightCol",
-                  "type": "col",
+                  "class": "col-6 text-right justify-content-end d-flex",
                   "components": [
                     {
-                      "type": "profilemenu",
-                      "name": "profilemenu0",
-                      "visible": "${Security.IsAuthenticated()}",
+                      "items": [
+                        {
+                          "icon": "account_circle",
+                          "path": "benutzer-profil",
+                          "text": "Benutzerprofil"
+                        },
+                        {
+                          "icon": "power_settings_new",
+                          "path": "",
+                          "text": "Logout"
+                        }
+                      ],
+                      "name": "profilemenu1",
+                      "style": {
+                        "display": "block"
+                      },
                       "template": [
                         {
-                          "email": "${Security.User?.Name}",
-                          "type": "gravatar"
+                          "class": "col-md-12  d-flex justify-content-end",
+                          "components": [
+                            {
+                              "name": "label7",
+                              "style": {
+                                "color": "#f5f5f5",
+                                "display": "inline-block",
+                                "fontSize": "12px",
+                                "marginRight": "20px",
+                                "verticalAlign": "bottom"
+                              },
+                              "text": "${Security.User.UserName}",
+                              "type": "label"
+                            },
+                            {
+                              "name": "image1",
+                              "path": "",
+                              "style": {
+                                "borderRadius": "50%",
+                                "display": "block",
+                                "float": "none",
+                                "height": "32px",
+                                "width": "32px"
+                              },
+                              "type": "image"
+                            }
+                          ],
+                          "name": "col1",
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "type": "profilemenu",
+                      "visible": "${Security.IsAuthenticated()}"
                     }
-                  ]
+                  ],
+                  "name": "rightCol",
+                  "type": "col"
                 }
               ],
               "name": "headerRow",
@@ -75,6 +148,190 @@
         {
           "components": [
             {
+              "name": "footerTextLeft",
+              "style": {
+                "color": "#6d787d",
+                "float": "none",
+                "marginTop": "-6px"
+              },
+              "text": "© 2022 Soziale-Dienste-Ennstal",
+              "type": "label"
+            },
+            {
+              "name": "label1",
+              "style": {
+                "color": "#e5ecef",
+                "float": "none",
+                "marginTop": "-6px",
+                "paddingLeft": "10px",
+                "paddingRight": "10px"
+              },
+              "text": "|",
+              "type": "label"
+            },
+            {
+              "name": "label4",
+              "style": {
+                "color": "#6d787d",
+                "float": "none",
+                "marginTop": "-6px"
+              },
+              "text": "Irdning · Hauptplatz 20",
+              "type": "label"
+            },
+            {
+              "icon": "",
+              "name": "linkVersion",
+              "path": "versionen",
+              "style": {
+                "float": "right",
+                "marginTop": "-2px"
+              },
+              "text": "Version 3.024",
+              "type": "link"
+            },
+            {
+              "name": "label2",
+              "style": {
+                "color": "#e5ecef",
+                "float": "right",
+                "marginTop": "-6px",
+                "paddingLeft": "10px",
+                "paddingRight": "10px"
+              },
+              "text": "|",
+              "type": "label"
+            },
+            {
+              "icon": "",
+              "name": "linkKontakt",
+              "path": "kontakt",
+              "style": {
+                "float": "right",
+                "marginTop": "-2px"
+              },
+              "text": "Kontakt",
+              "type": "link"
+            },
+            {
+              "name": "label6",
+              "style": {
+                "color": "#e5ecef",
+                "float": "right",
+                "marginTop": "-6px",
+                "paddingLeft": "10px",
+                "paddingRight": "10px"
+              },
+              "text": "|",
+              "type": "label"
+            },
+            {
+              "icon": "",
+              "name": "linkHandbuch",
+              "path": "handbuch",
+              "style": {
+                "float": "right",
+                "marginTop": "-2px"
+              },
+              "text": "Handbuch",
+              "type": "link"
+            },
+            {
+              "name": "label3",
+              "style": {
+                "color": "#e5ecef",
+                "float": "right",
+                "marginTop": "-6px",
+                "paddingLeft": "10px",
+                "paddingRight": "10px"
+              },
+              "text": "|",
+              "type": "label"
+            },
+            {
+              "icon": "",
+              "name": "linkFeedback",
+              "path": "feedback",
+              "style": {
+                "float": "right",
+                "marginTop": "-2px"
+              },
+              "text": "Feedback",
+              "type": "link"
+            }
+          ],
+          "name": "footer1",
+          "style": {
+            "height": "50px",
+            "paddingTop": "12px"
+          },
+          "type": "footer"
+        },
+        {
+          "components": [
+            {
+              "items": [
+                {
+                  "icon": "dashboard",
+                  "path": "dashboard",
+                  "text": "Dashboard"
+                },
+                {
+                  "icon": "assignment_turned_in",
+                  "path": "management",
+                  "text": "Management"
+                },
+                {
+                  "icon": "assignment",
+                  "path": "dienstplan",
+                  "text": "Dienstplan"
+                },
+                {
+                  "icon": "assignment_ind",
+                  "path": "mitarbeiter",
+                  "text": "Mitarbeiter"
+                },
+                {
+                  "icon": "face",
+                  "path": "kunden",
+                  "text": "Kunden"
+                },
+                {
+                  "icon": "contact_phone",
+                  "path": "kontakte",
+                  "text": "Kontakte"
+                },
+                {
+                  "icon": "create_new_folder",
+                  "path": "dokumente",
+                  "text": "Dokumente"
+                },
+                {
+                  "icon": "assessment",
+                  "path": "auswertungen",
+                  "text": "Auswertungen"
+                },
+                {
+                  "icon": "euro_symbol",
+                  "path": "abrechnung",
+                  "text": "Abrechnung"
+                },
+                {
+                  "icon": "supervisor_account",
+                  "path": "benutzer",
+                  "text": "Benutzer"
+                },
+                {
+                  "icon": "face",
+                  "path": "benutzer-profil",
+                  "text": "Benutzerprofil"
+                },
+                {
+                  "icon": "settings",
+                  "path": "einstellungen",
+                  "text": "Einstellungen"
+                }
+              ],
               "name": "panelmenu0",
               "style": {
                 "height": "100%"
@@ -84,19 +341,9 @@
           ],
           "name": "sidebar0",
           "type": "sidebar"
-        },
-        {
-          "components": [
-            {
-              "name": "footerText",
-              "text": "SinDarElaVerwaltung, Copyright Ⓒ 2022",
-              "type": "label"
-            }
-          ],
-          "name": "footer0",
-          "type": "footer"
         }
-      ]
+      ],
+      "type": "layout"
     }
   ],
   "name": "Main"

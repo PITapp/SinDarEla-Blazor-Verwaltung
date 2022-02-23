@@ -1,0 +1,37 @@
+﻿@page "/meldung-ok/{strMeldung}"
+@layout MainLayout
+@inherits SinDarElaVerwaltung.Pages.MeldungOkComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SinDarElaVerwaltung.Models.DbSinDarEla
+@using Microsoft.AspNetCore.Identity;
+@using SinDarElaVerwaltung.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm TItem="dynamic">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-12" style="padding-left: 0; padding-right: 0">
+                <RadzenLabel style="color: rgb(33, 37, 41); display: block; font-size: 18px; font-weight: normal" Text="@($"{(strMeldung)}")">
+                </RadzenLabel>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3 justify-content-end d-flex" style="padding-right: 0">
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="OK" Click="@Button1Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

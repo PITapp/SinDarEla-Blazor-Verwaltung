@@ -65,7 +65,7 @@ namespace SinDarElaVerwaltung.Layouts
             await InvokeAsync(() => { body0.Toggle(); });
         }
 
-        protected async System.Threading.Tasks.Task Profilemenu0Click(dynamic args)
+        protected async System.Threading.Tasks.Task Profilemenu1Click(dynamic args)
         {
             if (args.Value == "Logout")
             {

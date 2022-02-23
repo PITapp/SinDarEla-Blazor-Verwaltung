@@ -1,0 +1,27 @@
+﻿@page "/zz-automatisch-erzeugen"
+@layout MainLayout
+@inherits SinDarElaVerwaltung.Pages.ZzAutomatischErzeugenComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SinDarElaVerwaltung.Models.DbSinDarEla
+@using Microsoft.AspNetCore.Identity;
+@using SinDarElaVerwaltung.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="zzAutomatischErzeugen">
+    </RadzenHeading>
+    <RadzenButton Text="MeldungFortschritt öffnen" Click="@Button0Click">
+    </RadzenButton>
+    <RadzenButton Text="MeldungJaNein öffnen" Click="@Button1Click">
+    </RadzenButton>
+    <RadzenButton Text="MeldungLoeschen öffnen" Click="@Button3Click">
+    </RadzenButton>
+    <RadzenButton Text="MeldungOK öffnen" Click="@Button2Click">
+    </RadzenButton>
+  </ChildContent>
+</RadzenContent>

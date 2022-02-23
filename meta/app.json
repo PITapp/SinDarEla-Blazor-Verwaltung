@@ -17,7 +17,8 @@
   "name": "SinDarElaVerwaltung",
   "namespaces": [],
   "navigation": [
-    "Base"
+    "Base",
+    "Dashboard"
   ],
   "pages": [
     "Login",
@@ -31,7 +32,13 @@
     "Profile",
     "Base",
     "Add Base",
-    "Edit Base"
+    "Edit Base",
+    "Dashboard",
+    "MeldungLoeschen",
+    "MeldungJaNein",
+    "MeldungOK",
+    "MeldungFortschritt",
+    "zzAutomatischErzeugen"
   ],
   "port": 8000,
   "pwa": true,
@@ -55,7 +62,7 @@
   "serverPort": 5000,
   "serverProject": true,
   "serverVersion": "6",
-  "startPage": "Base",
+  "startPage": "Dashboard",
   "theme": "standard",
   "title": "SinDarElaVerwaltung",
   "wasm": true
