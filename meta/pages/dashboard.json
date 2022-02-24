@@ -41,7 +41,8 @@
                     "color": "#6A80AA",
                     "display": "inline",
                     "fontSize": "21px",
-                    "fontWeight": "normal"
+                    "fontWeight": "normal",
+                    "paddingTop": "4px"
                   },
                   "text": "${Security.User.UserName}",
                   "type": "heading"
@@ -59,7 +60,7 @@
               "components": [
                 {
                   "buttonStyle": "info",
-                  "buttonType": "submit",
+                  "buttonType": "button",
                   "events": {
                     "click": [
                       {
@@ -80,7 +81,7 @@
                   },
                   "icon": "print",
                   "name": "button0",
-                  "size": "md",
+                  "size": "sm",
                   "style": {
                     "backgroundColor": "rgb(230, 236, 239)",
                     "borderBottom": "2px solid #d86e13",
@@ -152,11 +153,13 @@
                                         "click": []
                                       },
                                       "icon": "create",
+                                      "isBusy": false,
                                       "name": "buttonBearbeitenInfotext",
                                       "size": "sm",
                                       "style": {
                                         "color": "#6A80AA",
                                         "display": "block",
+                                        "fontWeight": "400",
                                         "marginLeft": "10px",
                                         "paddingLeft": ""
                                       },
@@ -178,8 +181,7 @@
                                         "display": "block",
                                         "fontStyle": "normal",
                                         "fontWeight": "normal",
-                                        "marginLeft": "10px",
-                                        "marginRight": "-9px"
+                                        "marginLeft": "10px"
                                       },
                                       "text": "",
                                       "tooltip": "Löschen Infotext",
@@ -250,7 +252,6 @@
                                         "color": "#6A80AA",
                                         "display": "block",
                                         "marginLeft": "10px",
-                                        "marginRight": "-9px",
                                         "marginTop": "1px"
                                       },
                                       "text": "Bearbeiten",

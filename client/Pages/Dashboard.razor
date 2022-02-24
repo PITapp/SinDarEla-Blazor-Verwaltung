@@ -1,5 +1,4 @@
-﻿@page "/"
-@page "/dashboard"
+﻿@page "/dashboard"
 @layout MainLayout
 @inherits SinDarElaVerwaltung.Pages.DashboardComponent
 
@@ -20,11 +19,11 @@
         </RadzenHeading>
         <RadzenHeading Size="H3" style="color: #e5ecef; display: inline-block; margin-top: 7px; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenHeading>
-        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal" Text="@(Security.User.UserName)" >
+        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" Text="@(Security.User.UserName)" >
         </RadzenHeading>
       </div>
       <div class="col-md-4  d-flex justify-content-end align-items-end" style="padding-right: 20px">
-        <RadzenButton ButtonStyle="ButtonStyle.Info" ButtonType="ButtonType.Submit" Icon="print" Size="ButtonSize.Medium" style="background-color: rgb(230, 236, 239); border-bottom: 2px solid #d86e13; color: #6A80AA; display: block; font-weight: normal; width: 150px" Text="Drucken" Click="@Button0Click">
+        <RadzenButton ButtonStyle="ButtonStyle.Info" ButtonType="ButtonType.Button" Icon="print" Size="ButtonSize.Small" style="background-color: rgb(230, 236, 239); border-bottom: 2px solid #d86e13; color: #6A80AA; display: block; font-weight: normal; width: 150px" Text="Drucken" Click="@Button0Click">
         </RadzenButton>
       </div>
     </div>
@@ -40,9 +39,9 @@
                       <div class="col-md-12 align-items-start d-flex">
                         <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neu">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px; padding-left: " Tooltip="Bearbeiten Infotext">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Tooltip="Bearbeiten Infotext">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Disabled="false" Icon="cancel" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-style: normal; font-weight: normal; margin-left: 10px; margin-right: -9px" Tooltip="Löschen Infotext">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Disabled="false" Icon="cancel" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-style: normal; font-weight: normal; margin-left: 10px" Tooltip="Löschen Infotext">
                         </RadzenButton>
                       </div>
                     </div>
@@ -56,7 +55,7 @@
                       <div class="col-md-12 align-items-start d-flex">
                         <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Kopieren">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px; margin-right: -9px; margin-top: 1px" Text="Bearbeiten">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px; margin-top: 1px" Text="Bearbeiten">
                         </RadzenButton>
                       </div>
                     </div>

@@ -685,7 +685,6 @@ C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\build-gz\0ty1+n3W.gz
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\build-gz\QulQAFxh.gz
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\build-gz\P5IVFUVp.gz
-C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\build-gz\w7pK0CX7.gz
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\build-gz\44Nv8D1K.gz
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\build-gz\NjTtXx49.gz
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\build-gz\vGk7cjzj.gz
@@ -874,3 +873,4 @@ C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\SinDarElaVerwaltung.Client.dll
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\ref\SinDarElaVerwaltung.Client.dll
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\SinDarElaVerwaltung.Client.pdb
+C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Debug\net6.0\build-gz\VxJAU711.gz

@@ -1,0 +1,47 @@
+${this.gridKontakte.onSelect(null)}
+
+${this.gridKontakte.onSelect(result.value[0])}
+
+this.grid0.editRow(${getProductsResult.find(p => p.ProductID == 1)})
+
+${this.gridKontakte.onSelect(rstBase.find(p => p.BaseID == letzteBaseID))}
+
+${this.gridKontakte.onSelect(this.rstBase.find(p => p.BaseID == this.letzteBaseID))}
+${result} != null
+
+letzteBaseID
+${dsoBase.BaseID}
+
+
+this.gridKontakte.load();
+${result} != null
+
+
+
+if (this.rstAutoren.find(p => p.AutorNr == this.letzteAutorNr) != null) {
+    // letzteAutorNr wurde in rstAutoren gefunden
+    this.gridAutoren.onSelect(this.rstAutoren.find(p => p.AutorNr == this.letzteAutorNr))
+} else {
+    // letzteAutorNr wurde in rstAutoren NICHT gefunden
+    this.letzteAutorNr = null;
+    this.gridAutoren.onSelect(this.rstAutoren[0]);
+}
+
+
+// Datum verkehrt setzen
+this.strUploadDateiName = this.uploadBildBase.fileUpload.files[0].name;
+this.strUploadDateiEndung = this.strUploadDateiName.substring(this.strUploadDateiName.indexOf("."));
+
+var date = new Date();
+
+this.strUploadDateiNameZiel = this.dsoBase.BaseID + 
+                              '-' + 
+                              date.getFullYear() + 
+                              ("00" + date.getMonth()).slice(-2) + 
+                              ("00" + date.getDate()).slice(-2) + 
+                              ("00" + date.getHours()).slice(-2) + 
+                              ("00" + date.getMinutes()).slice(-2) + 
+                              ("00" + date.getSeconds()).slice(-2) +
+                              this.strUploadDateiEndung;
+
+this.dsoBase.BildURL = 'https://medien.sindarela.app/upload/bilder/base/' + this.strUploadDateiNameZiel;
