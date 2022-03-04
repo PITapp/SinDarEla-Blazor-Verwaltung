@@ -35,7 +35,8 @@
     "MeldungJaNein",
     "MeldungOK",
     "MeldungFortschritt",
-    "zzAutomatischErzeugen"
+    "zzAutomatischErzeugen",
+    "Management"
   ],
   "port": 8000,
   "pwa": true,
@@ -59,7 +60,7 @@
   "serverPort": 5000,
   "serverProject": true,
   "serverVersion": "6",
-  "startPage": null,
+  "startPage": "Dashboard",
   "theme": "standard",
   "themeSettings": {
     "$accordion-border-radius": "4px",

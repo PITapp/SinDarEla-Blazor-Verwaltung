@@ -106,7 +106,7 @@
                             },
                             {
                               "name": "image1",
-                              "path": "/assets/images/KeinBildPerson.png",
+                              "path": "${strBildURL}",
                               "style": {
                                 "borderRadius": "50%",
                                 "display": "block",
@@ -279,52 +279,52 @@
                 },
                 {
                   "icon": "assignment",
-                  "path": "dienstplan",
+                  "path": "base",
                   "text": "Dienstplan"
                 },
                 {
                   "icon": "assignment_ind",
-                  "path": "mitarbeiter",
+                  "path": "",
                   "text": "Mitarbeiter"
                 },
                 {
                   "icon": "face",
-                  "path": "kunden",
+                  "path": "",
                   "text": "Kunden"
                 },
                 {
                   "icon": "contact_phone",
-                  "path": "kontakte",
+                  "path": "",
                   "text": "Kontakte"
                 },
                 {
                   "icon": "create_new_folder",
-                  "path": "dokumente",
+                  "path": "",
                   "text": "Dokumente"
                 },
                 {
                   "icon": "assessment",
-                  "path": "auswertungen",
+                  "path": "",
                   "text": "Auswertungen"
                 },
                 {
                   "icon": "euro_symbol",
-                  "path": "abrechnung",
+                  "path": "",
                   "text": "Abrechnung"
                 },
                 {
                   "icon": "supervisor_account",
-                  "path": "benutzer",
+                  "path": "",
                   "text": "Benutzer"
                 },
                 {
                   "icon": "face",
-                  "path": "benutzer-profil",
+                  "path": "",
                   "text": "Benutzerprofil"
                 },
                 {
                   "icon": "settings",
-                  "path": "einstellungen",
+                  "path": "",
                   "text": "Einstellungen"
                 }
               ],
@@ -346,5 +346,40 @@
       "type": "layout"
     }
   ],
+  "events": {
+    "load": [
+      {
+        "error": [
+          {
+            "detail": "Benutzer wurde nicht gefunden!",
+            "severity": "error",
+            "type": "notify"
+          }
+        ],
+        "name": "dbSinDarEla.getVwBenutzerBases",
+        "parameters": [
+          {
+            "name": "$filter",
+            "value": "Benutzername eq '${Security.User.UserName}'"
+          }
+        ],
+        "then": [
+          {
+            "name": "rstBenutzer",
+            "type": "set",
+            "value": "${result.Value.AsODataEnumerable()}",
+            "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>"
+          },
+          {
+            "name": "strBildURL",
+            "type": "set",
+            "value": "${rstBenutzer.FirstOrDefault().BildURL}",
+            "valueType": "string"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
   "name": "Main"
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "v1fE74X4iYqgQghsVYObg140TLEf2It8ncWFFP2z1NuCG8owhLxhT+/Ix3yL7V5X+dHtiDmqyvMjwf3hOjmmLA==",
+  "dgSpecHash": "jabtaNxt2sMJtUvFXF2/H+I1mnJETQwA6S9DAM6cUQ4oFfhzl/UD2GoD0zTaCNX0UobPI580ey2n+Y6DVDG6Dg==",
   "success": true,
   "projectFilePath": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\SinDarElaVerwaltung.Client.csproj",
   "expectedPackageFiles": [
@@ -44,7 +44,7 @@
     "C:\\Users\\gpain\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\microsoft.jsinterop\\6.0.0\\microsoft.jsinterop.6.0.0.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.0\\microsoft.jsinterop.webassembly.6.0.0.nupkg.sha512",
-    "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\3.16.0\\radzen.blazor.3.16.0.nupkg.sha512",
+    "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\3.16.2\\radzen.blazor.3.16.2.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\system.io.pipelines\\6.0.0\\system.io.pipelines.6.0.0.nupkg.sha512",

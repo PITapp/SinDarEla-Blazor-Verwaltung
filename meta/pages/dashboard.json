@@ -124,7 +124,112 @@
                       "class": "col-md-7",
                       "components": [
                         {
-                          "components": [],
+                          "components": [
+                            {
+                              "allowFiltering": true,
+                              "allowPaging": true,
+                              "allowSorting": true,
+                              "columns": [
+                                {
+                                  "property": "BaseID",
+                                  "title": "Base ID"
+                                },
+                                {
+                                  "property": "Name1",
+                                  "title": "Name 1"
+                                },
+                                {
+                                  "property": "Name2",
+                                  "title": "Name 2"
+                                },
+                                {
+                                  "property": "BildURL",
+                                  "title": "Bild URL"
+                                }
+                              ],
+                              "count": "${getBasesCount}",
+                              "data": "${getBasesResult}",
+                              "events": {
+                                "loadData": [
+                                  {
+                                    "error": [
+                                      {
+                                        "detail": "Unable to load Bases",
+                                        "severity": "error",
+                                        "summary": "Error",
+                                        "type": "notify"
+                                      }
+                                    ],
+                                    "name": "dbSinDarEla.getBases",
+                                    "parameters": [
+                                      {
+                                        "name": "$top",
+                                        "value": "event.top"
+                                      },
+                                      {
+                                        "name": "$skip",
+                                        "value": "event.skip"
+                                      },
+                                      {
+                                        "name": "$count",
+                                        "value": "event.top != null && event.skip != null"
+                                      },
+                                      {
+                                        "name": "$filter",
+                                        "value": "${event.filter}"
+                                      },
+                                      {
+                                        "name": "$orderby",
+                                        "value": "${event.orderby}"
+                                      }
+                                    ],
+                                    "then": [
+                                      {
+                                        "name": "getBasesResult",
+                                        "type": "set",
+                                        "value": "${result.Value.AsODataEnumerable()}",
+                                        "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base>"
+                                      },
+                                      {
+                                        "name": "getBasesCount",
+                                        "type": "set",
+                                        "value": "${result.Count}",
+                                        "valueType": "int"
+                                      }
+                                    ],
+                                    "type": "invoke"
+                                  }
+                                ],
+                                "rowSelect": [
+                                  {
+                                    "parameters": [
+                                      {
+                                        "name": "BaseID",
+                                        "value": "${event.BaseID}"
+                                      }
+                                    ],
+                                    "path": "edit-base",
+                                    "then": [
+                                      {
+                                        "code": "await grid0.Reload();",
+                                        "type": "execute"
+                                      },
+                                      {
+                                        "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                                        "type": "execute"
+                                      }
+                                    ],
+                                    "type": "popup"
+                                  }
+                                ]
+                              },
+                              "filterMode": "advanced",
+                              "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.Base",
+                              "name": "grid0",
+                              "title": "",
+                              "type": "datagrid"
+                            }
+                          ],
                           "headerTemplate": [
                             {
                               "components": [

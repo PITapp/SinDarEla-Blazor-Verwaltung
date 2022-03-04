@@ -9,6 +9,5 @@ namespace SinDarElaVerwaltung.Pages
 {
     public partial class BaseComponent
     {
-
     }
 }

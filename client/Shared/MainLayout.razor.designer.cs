@@ -43,6 +43,40 @@ namespace SinDarElaVerwaltung.Layouts
         protected RadzenBody body0;
         protected RadzenSidebar sidebar0;
 
+        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase> _rstBenutzer;
+        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase> rstBenutzer
+        {
+            get
+            {
+                return _rstBenutzer;
+            }
+            set
+            {
+                if(!object.Equals(_rstBenutzer, value))
+                {
+                    _rstBenutzer = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
+        string _strBildURL;
+        protected string strBildURL
+        {
+            get
+            {
+                return _strBildURL;
+            }
+            set
+            {
+                if(!object.Equals(_strBildURL, value))
+                {
+                    _strBildURL = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
         private void Authenticated()
         {
              StateHasChanged();
@@ -56,6 +90,21 @@ namespace SinDarElaVerwaltung.Layouts
 
                   await Security.InitializeAsync(AuthenticationStateProvider);
              }
+             await Load();
+        }
+        protected async System.Threading.Tasks.Task Load()
+        {
+            try
+            {
+                var dbSinDarElaGetVwBenutzerBasesResult = await DbSinDarEla.GetVwBenutzerBases(filter:$"Benutzername eq '{Security.User.UserName}'");
+                rstBenutzer = dbSinDarElaGetVwBenutzerBasesResult.Value.AsODataEnumerable();
+
+                strBildURL = rstBenutzer.FirstOrDefault().BildURL;
+            }
+            catch (System.Exception dbSinDarElaGetVwBenutzerBasesException)
+            {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Benutzer wurde nicht gefunden!" });
+            }
         }
 
         protected async System.Threading.Tasks.Task SidebarToggle0Click(dynamic args)

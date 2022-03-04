@@ -37,7 +37,7 @@
                 <div class="col-md-12  d-flex justify-content-end align-items-center">
                   <RadzenLabel style="color: #E8E8E8; display: inline-block; font-family: verdana,geneva,sans-serif; font-size: 12px; margin-right: 20px" Text="@($"{(Security.User.UserName)}")">
                   </RadzenLabel>
-                  <RadzenImage Path="assets/images/KeinBildPerson.png" style="border-radius: 50%; display: block; float: none; height: 32px; width: 32px">
+                  <RadzenImage Path="@strBildURL" style="border-radius: 50%; display: block; float: none; height: 32px; width: 32px">
                   </RadzenImage>
                 </div>
               </Template>
@@ -83,27 +83,27 @@
           <ChildContent>
             <RadzenPanelMenuItem Icon="dashboard" Path="dashboard" Text="Dashboard" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="assignment_turned_in" Path="management" Text="Management">
+            <RadzenPanelMenuItem Icon="assignment_turned_in" Path="management" Text="Management" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="assignment" Path="dienstplan" Text="Dienstplan">
+            <RadzenPanelMenuItem Icon="assignment" Path="base" Text="Dienstplan" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="assignment_ind" Path="mitarbeiter" Text="Mitarbeiter">
+            <RadzenPanelMenuItem Icon="assignment_ind" Text="Mitarbeiter">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="face" Path="kunden" Text="Kunden">
+            <RadzenPanelMenuItem Icon="face" Text="Kunden">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="contact_phone" Path="kontakte" Text="Kontakte">
+            <RadzenPanelMenuItem Icon="contact_phone" Text="Kontakte">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="create_new_folder" Path="dokumente" Text="Dokumente">
+            <RadzenPanelMenuItem Icon="create_new_folder" Text="Dokumente">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="assessment" Path="auswertungen" Text="Auswertungen">
+            <RadzenPanelMenuItem Icon="assessment" Text="Auswertungen">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="euro_symbol" Path="abrechnung" Text="Abrechnung">
+            <RadzenPanelMenuItem Icon="euro_symbol" Text="Abrechnung">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="supervisor_account" Path="benutzer" Text="Benutzer">
+            <RadzenPanelMenuItem Icon="supervisor_account" Text="Benutzer">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="face" Path="benutzer-profil" Text="Benutzerprofil">
+            <RadzenPanelMenuItem Icon="face" Text="Benutzerprofil">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="settings" Path="einstellungen" Text="Einstellungen">
+            <RadzenPanelMenuItem Icon="settings" Text="Einstellungen">
             </RadzenPanelMenuItem>
           </ChildContent>
         </RadzenPanelMenu>

@@ -142,29 +142,5 @@ namespace SinDarElaVerwaltung.Pages
 
             await InvokeAsync(() => { StateHasChanged(); });
         }
-
-        protected async System.Threading.Tasks.Task GridDeleteButtonClick(MouseEventArgs args, dynamic data)
-        {
-            try
-            {
-                if (await DialogService.Confirm("Are you sure you want to delete this record?") == true)
-                {
-                    var dbSinDarElaDeleteBaseResult = await DbSinDarEla.DeleteBase(baseId:data.BaseID);
-                    if (dbSinDarElaDeleteBaseResult != null && dbSinDarElaDeleteBaseResult.StatusCode == System.Net.HttpStatusCode.NoContent)
-                    {
-                        await grid0.Reload();
-                    }
-
-                    if (dbSinDarElaDeleteBaseResult != null && dbSinDarElaDeleteBaseResult.StatusCode != System.Net.HttpStatusCode.NoContent)
-                    {
-                        NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to delete Base" });
-                    }
-                }
-            }
-            catch (System.Exception dbSinDarElaDeleteBaseException)
-            {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to delete Base" });
-            }
-        }
     }
 }

@@ -1,35 +1,24 @@
 {
+  "access": "Authenticated",
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
           "name": "pageTitle",
           "size": "H1",
-          "text": "Base"
+          "text": "Base",
+          "type": "heading"
         },
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "icon": "add_circle_outline",
-                  "name": "button0",
-                  "style": {
-                    "marginBottom": "10px"
-                  },
-                  "text": "Add",
-                  "type": "button",
                   "events": {
                     "click": [
                       {
                         "path": "add-base",
-                        "type": "popup",
                         "then": [
                           {
                             "code": "await grid0.Reload();",
@@ -39,21 +28,50 @@
                             "code": "await InvokeAsync(() => { StateHasChanged(); });",
                             "type": "execute"
                           }
-                        ]
+                        ],
+                        "type": "popup"
                       }
                     ]
-                  }
+                  },
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button"
                 },
                 {
-                  "name": "grid0",
                   "allowFiltering": true,
-                  "filterMode": "advanced",
                   "allowPaging": true,
                   "allowSorting": true,
+                  "columns": [
+                    {
+                      "property": "BaseID",
+                      "title": "Base ID"
+                    },
+                    {
+                      "property": "Name1",
+                      "title": "Name 1"
+                    },
+                    {
+                      "property": "Name2",
+                      "title": "Name 2"
+                    }
+                  ],
+                  "count": "${getBasesCount}",
                   "data": "${getBasesResult}",
                   "events": {
                     "loadData": [
                       {
+                        "error": [
+                          {
+                            "detail": "Unable to load Bases",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
                         "name": "dbSinDarEla.getBases",
                         "parameters": [
                           {
@@ -91,15 +109,7 @@
                             "valueType": "int"
                           }
                         ],
-                        "type": "invoke",
-                        "error": [
-                          {
-                            "detail": "Unable to load Bases",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          }
-                        ]
+                        "type": "invoke"
                       }
                     ],
                     "rowSelect": [
@@ -111,7 +121,6 @@
                           }
                         ],
                         "path": "edit-base",
-                        "type": "popup",
                         "then": [
                           {
                             "code": "await grid0.Reload();",
@@ -121,184 +130,31 @@
                             "code": "await InvokeAsync(() => { StateHasChanged(); });",
                             "type": "execute"
                           }
-                        ]
+                        ],
+                        "type": "popup"
                       }
                     ]
                   },
+                  "filterMode": "advanced",
+                  "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.Base",
+                  "name": "grid0",
                   "title": "",
-                  "columns": [
-                    {
-                      "property": "BaseID",
-                      "title": "Base ID"
-                    },
-                    {
-                      "property": "AnredeID",
-                      "sortProperty": "BaseAnreden.Anrede",
-                      "groupProperty": "BaseAnreden.Anrede",
-                      "filterProperty": "BaseAnreden.Anrede",
-                      "template": "${data.BaseAnreden?.Anrede}",
-                      "title": "Base Anreden"
-                    },
-                    {
-                      "property": "Name1",
-                      "title": "Name 1"
-                    },
-                    {
-                      "property": "Name2",
-                      "title": "Name 2"
-                    },
-                    {
-                      "property": "NameKuerzel",
-                      "title": "Name Kuerzel"
-                    },
-                    {
-                      "property": "TitelVorne",
-                      "title": "Titel Vorne"
-                    },
-                    {
-                      "property": "TitelHinten",
-                      "title": "Titel Hinten"
-                    },
-                    {
-                      "property": "Strasse",
-                      "title": "Strasse"
-                    },
-                    {
-                      "property": "PLZ",
-                      "title": "PLZ"
-                    },
-                    {
-                      "property": "Ort",
-                      "title": "Ort"
-                    },
-                    {
-                      "property": "Geburtsdatum",
-                      "formatString": "{0:d}",
-                      "title": "Geburtsdatum"
-                    },
-                    {
-                      "property": "Versicherungsnummer",
-                      "title": "Versicherungsnummer"
-                    },
-                    {
-                      "property": "Staatsangehoerigkeit",
-                      "title": "Staatsangehoerigkeit"
-                    },
-                    {
-                      "property": "Telefon1",
-                      "title": "Telefon 1"
-                    },
-                    {
-                      "property": "Telefon2",
-                      "title": "Telefon 2"
-                    },
-                    {
-                      "property": "EMail1",
-                      "title": "E Mail 1"
-                    },
-                    {
-                      "property": "EMail2",
-                      "title": "E Mail 2"
-                    },
-                    {
-                      "property": "Webseite",
-                      "title": "Webseite"
-                    },
-                    {
-                      "property": "BildURL",
-                      "title": "Bild URL"
-                    },
-                    {
-                      "property": "Notiz",
-                      "title": "Notiz"
-                    },
-                    {
-                      "property": "KontoName",
-                      "title": "Konto Name"
-                    },
-                    {
-                      "property": "KontoNummer",
-                      "title": "Konto Nummer"
-                    },
-                    {
-                      "property": "KontoInfo",
-                      "title": "Konto Info"
-                    },
-                    {
-                      "filterable": false,
-                      "sortable": false,
-                      "width": "70px",
-                      "textAlign": "center",
-                      "template": [
-                        {
-                          "attributes": [
-                            {
-                              "name": "@onclick:stopPropagation",
-                              "value": true
-                            }
-                          ],
-                          "buttonStyle": "danger",
-                          "icon": "close",
-                          "name": "gridDeleteButton",
-                          "text": "",
-                          "size": "sm",
-                          "type": "button",
-                          "events": {
-                            "click": [
-                              {
-                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
-                                "error": [
-                                  {
-                                    "detail": "Unable to delete Base",
-                                    "severity": "error",
-                                    "summary": "Error",
-                                    "type": "notify"
-                                  }
-                                ],
-                                "name": "dbSinDarEla.deleteBase",
-                                "parameters": [
-                                  {
-                                    "name": "BaseID",
-                                    "value": "${data.BaseID}"
-                                  }
-                                ],
-                                "then": [
-                                  {
-                                    "code": "await grid0.Reload();",
-                                    "condition": "result != null && result.StatusCode == System.Net.HttpStatusCode.NoContent",
-                                    "type": "execute"
-                                  },
-                                  {
-                                    "condition": "result != null && result.StatusCode != System.Net.HttpStatusCode.NoContent",
-                                    "detail": "Unable to delete Base",
-                                    "severity": "error",
-                                    "summary": "Error",
-                                    "type": "notify"
-                                  }
-                                ],
-                                "type": "invoke"
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  ],
-                  "type": "datagrid",
-                  "count": "${getBasesCount}",
-                  "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.Base"
+                  "type": "datagrid"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
     "load": []
   },
-  "name": "Base",
-  "access": "Authenticated",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Base"
 }
