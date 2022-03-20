@@ -53,7 +53,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     [HttpGet("{Betreuungsart}")]
     public SingleResult<VwKundenBetreuer> GetVwKundenBetreuer(string key)
     {
-        var items = this.context.VwKundenBetreuers.AsNoTracking().Where(i=>i.Betreuungsart == key);
+        var items = this.context.VwKundenBetreuers.AsNoTracking().Where(i=>i.Betreuungsart == Uri.UnescapeDataString(key));
         var result = SingleResult.Create(items);
 
         OnVwKundenBetreuerGet(ref result);

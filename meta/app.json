@@ -36,7 +36,10 @@
     "MeldungOK",
     "MeldungFortschritt",
     "zzAutomatischErzeugen",
-    "Management"
+    "Management",
+    "Einstellungen",
+    "EinstellungenInfotexteEditor",
+    "Copy of EinstellungenInfotexteEditor"
   ],
   "port": 8000,
   "pwa": true,

@@ -53,7 +53,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     [HttpGet("{Key}")]
     public SingleResult<PersistedGrant> GetPersistedGrant(string key)
     {
-        var items = this.context.PersistedGrants.Where(i=>i.Key == key);
+        var items = this.context.PersistedGrants.Where(i=>i.Key == Uri.UnescapeDataString(key));
         var result = SingleResult.Create(items);
 
         OnPersistedGrantGet(ref result);
@@ -75,7 +75,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
 
             var item = this.context.PersistedGrants
-                .Where(i => i.Key == key)
+                .Where(i => i.Key == Uri.UnescapeDataString(key))
                 .FirstOrDefault();
 
             if (item == null)
@@ -111,7 +111,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.Key != key))
+            if (newItem == null || (newItem.Key != Uri.UnescapeDataString(key)))
             {
                 return BadRequest();
             }
@@ -120,7 +120,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.PersistedGrants.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.PersistedGrants.Where(i => i.Key == key);
+            var itemToReturn = this.context.PersistedGrants.Where(i => i.Key == Uri.UnescapeDataString(key));
             this.OnAfterPersistedGrantUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
@@ -142,7 +142,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var item = this.context.PersistedGrants.Where(i => i.Key == key).FirstOrDefault();
+            var item = this.context.PersistedGrants.Where(i => i.Key == Uri.UnescapeDataString(key)).FirstOrDefault();
 
             if (item == null)
             {
@@ -155,7 +155,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.PersistedGrants.Update(item);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.PersistedGrants.Where(i => i.Key == key);
+            var itemToReturn = this.context.PersistedGrants.Where(i => i.Key == Uri.UnescapeDataString(key));
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)

@@ -1,0 +1,38 @@
+﻿@page "/einstellungen-infotexte-editor/{InfotextID}"
+@layout MainLayout
+@inherits SinDarElaVerwaltung.Pages.EinstellungenInfotexteEditorComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SinDarElaVerwaltung.Models.DbSinDarEla
+@using Microsoft.AspNetCore.Identity;
+@using SinDarElaVerwaltung.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+<PageTitle>EinstellungenInfotexteEditor</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="@(dsoInfotexteHTML.Titel)">
+          <HeaderTemplate>
+            <div class="row">
+              <div class="col-md-12 align-items-start d-flex">
+                <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Kopieren">
+                </RadzenButton>
+              </div>
+            </div>
+          </HeaderTemplate>
+        </RadzenPanel>
+      </div>
+    </div>
+    <div style="padding-top: 15px" class="row">
+      <div class="col offset-sm-3 justify-content-end d-flex" >
+        <RadzenButton ButtonStyle="ButtonStyle.Success" ButtonType="ButtonType.Button" Icon="done" Text="Speichern" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Abbruch" Click="@Button1Click">
+        </RadzenButton>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

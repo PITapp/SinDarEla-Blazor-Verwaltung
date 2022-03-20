@@ -46,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmFzZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/CopyOfEinstellungenInfotexteEditor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29weU9mRWluc3RlbGx1bmdlbkluZm90ZXh0ZUVkaXRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Dashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -56,6 +60,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/EditBase.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEJhc2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Einstellungen.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWluc3RlbGx1bmdlbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/EinstellungenInfotexteEditor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWluc3RlbGx1bmdlbkluZm90ZXh0ZUVkaXRvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Login.razor]

@@ -35,18 +35,20 @@
               <div class="col-md-7">
                 <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Beispiel">
                   <ChildContent>
-                    <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getBasesCount" Data="@getBasesResult" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" LoadData="@Grid0LoadData" RowSelect="@Grid0RowSelect">
-                      <Columns>
-                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="BaseID" Title="Base ID">
-                        </RadzenDataGridColumn>
-                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name1" Title="Name 1">
-                        </RadzenDataGridColumn>
-                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name2" Title="Name 2">
-                        </RadzenDataGridColumn>
-                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="BildURL" Title="Bild URL">
-                        </RadzenDataGridColumn>
-                      </Columns>
-                    </RadzenDataGrid>
+                    <div class="col-md-12">
+                      <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getBasesCount" Data="@getBasesResult" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" LoadData="@Grid0LoadData" RowSelect="@Grid0RowSelect">
+                        <Columns>
+                          <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="BaseID" Title="Base ID">
+                          </RadzenDataGridColumn>
+                          <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name1" Title="Name 1">
+                          </RadzenDataGridColumn>
+                          <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name2" Title="Name 2">
+                          </RadzenDataGridColumn>
+                          <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="BildURL" Title="Bild URL">
+                          </RadzenDataGridColumn>
+                        </Columns>
+                      </RadzenDataGrid>
+                    </div>
                   </ChildContent>
                   <HeaderTemplate>
                     <div class="row">

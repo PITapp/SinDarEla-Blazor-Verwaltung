@@ -53,7 +53,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     [HttpGet("{StatusCode}")]
     public SingleResult<EreignisseTeilnehmerStatus> GetEreignisseTeilnehmerStatus(string key)
     {
-        var items = this.context.EreignisseTeilnehmerStatuses.Where(i=>i.StatusCode == key);
+        var items = this.context.EreignisseTeilnehmerStatuses.Where(i=>i.StatusCode == Uri.UnescapeDataString(key));
         var result = SingleResult.Create(items);
 
         OnEreignisseTeilnehmerStatusGet(ref result);
@@ -75,7 +75,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
 
             var item = this.context.EreignisseTeilnehmerStatuses
-                .Where(i => i.StatusCode == key)
+                .Where(i => i.StatusCode == Uri.UnescapeDataString(key))
                 .Include(i => i.EreignisseTeilnehmers)
                 .FirstOrDefault();
 
@@ -112,7 +112,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.StatusCode != key))
+            if (newItem == null || (newItem.StatusCode != Uri.UnescapeDataString(key)))
             {
                 return BadRequest();
             }
@@ -121,7 +121,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.EreignisseTeilnehmerStatuses.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.EreignisseTeilnehmerStatuses.Where(i => i.StatusCode == key);
+            var itemToReturn = this.context.EreignisseTeilnehmerStatuses.Where(i => i.StatusCode == Uri.UnescapeDataString(key));
             this.OnAfterEreignisseTeilnehmerStatusUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
@@ -143,7 +143,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var item = this.context.EreignisseTeilnehmerStatuses.Where(i => i.StatusCode == key).FirstOrDefault();
+            var item = this.context.EreignisseTeilnehmerStatuses.Where(i => i.StatusCode == Uri.UnescapeDataString(key)).FirstOrDefault();
 
             if (item == null)
             {
@@ -156,7 +156,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.EreignisseTeilnehmerStatuses.Update(item);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.EreignisseTeilnehmerStatuses.Where(i => i.StatusCode == key);
+            var itemToReturn = this.context.EreignisseTeilnehmerStatuses.Where(i => i.StatusCode == Uri.UnescapeDataString(key));
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)

@@ -11818,6 +11818,8 @@ body {
   background: #f4f5f9 #f4f5f7;
 }
 
+/* --- Einstellungen für SinDarEla --- */
+/*=====================================*/
 
 /* --- Kopfzeile: verlaufend dunkel --- */
 .header {
@@ -11826,6 +11828,9 @@ body {
 
 body {
   background: #f4f5f7;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .footer {
@@ -11859,6 +11864,7 @@ ul.rz-profile-menu .rz-navigation-menu {
 .rz-panel-menu {
   color: #212529;
   background-color: #FFFFFF;
+  font-size: 1rem;
 }
 
 .rz-panel-menu .rz-navigation-item {
@@ -11892,4 +11898,30 @@ ul.rz-profile-menu .rz-navigation-menu {
 .rz-panel-menu .rz-navigation-item-wrapper-active:before {
   width: 7px;
   background-color: #D86E13;
+}
+
+/* --- Panel: Farbe des Titels und Abstand --- */
+.rz-panel-titlebar {
+  color: #6A80AA;
+  font-weight: bold;
+  padding-left: 10px;
+  align-items: center;
+}
+
+/* --- Panel: Überlauf unsichtbar machen --- */
+.rz-panel {
+  overflow: hidden !important;
+  padding: 10px;
+}
+
+/* --- Tabview: Text einstellen --- */
+.rz-tabview-nav .rz-tabview-selected a {
+  color: #5d717b;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* --- Höhe der Zeilen in DataGrid --- */
+.rz-grid-table td {
+    padding: 4px 8px 4px 8px;
 }

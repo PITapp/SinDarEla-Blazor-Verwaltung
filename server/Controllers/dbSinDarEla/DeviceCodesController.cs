@@ -53,7 +53,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     [HttpGet("{UserCode}")]
     public SingleResult<DeviceCode> GetDeviceCode(string key)
     {
-        var items = this.context.DeviceCodes.Where(i=>i.UserCode == key);
+        var items = this.context.DeviceCodes.Where(i=>i.UserCode == Uri.UnescapeDataString(key));
         var result = SingleResult.Create(items);
 
         OnDeviceCodeGet(ref result);
@@ -75,7 +75,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
 
             var item = this.context.DeviceCodes
-                .Where(i => i.UserCode == key)
+                .Where(i => i.UserCode == Uri.UnescapeDataString(key))
                 .FirstOrDefault();
 
             if (item == null)
@@ -111,7 +111,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.UserCode != key))
+            if (newItem == null || (newItem.UserCode != Uri.UnescapeDataString(key)))
             {
                 return BadRequest();
             }
@@ -120,7 +120,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.DeviceCodes.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.DeviceCodes.Where(i => i.UserCode == key);
+            var itemToReturn = this.context.DeviceCodes.Where(i => i.UserCode == Uri.UnescapeDataString(key));
             this.OnAfterDeviceCodeUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
@@ -142,7 +142,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var item = this.context.DeviceCodes.Where(i => i.UserCode == key).FirstOrDefault();
+            var item = this.context.DeviceCodes.Where(i => i.UserCode == Uri.UnescapeDataString(key)).FirstOrDefault();
 
             if (item == null)
             {
@@ -155,7 +155,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.DeviceCodes.Update(item);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.DeviceCodes.Where(i => i.UserCode == key);
+            var itemToReturn = this.context.DeviceCodes.Where(i => i.UserCode == Uri.UnescapeDataString(key));
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)

@@ -15,10 +15,10 @@
     <RadzenHeader>
       <ChildContent>
         <div class="row justify-content-start align-items-center">
-          <div class="col-6 d-flex align-items-center">
+          <div class="col-6 d-flex align-items-center" style="padding-left: 25px">
             <RadzenSidebarToggle Click="@SidebarToggle0Click">
             </RadzenSidebarToggle>
-            <RadzenImage Path="assets/images/LogoMitSchriftzug4.png" style="float: left; height: 34px">
+            <RadzenImage Path="assets/images/LogoMitSchriftzug4.png" style="float: left; height: 30px">
             </RadzenImage>
             <RadzenLabel style="color: #E8E8E8; float: none; font-size: 12px; padding-left: 10px; padding-right: 10px" Text="|">
             </RadzenLabel>
@@ -53,33 +53,33 @@
         </RadzenContentContainer>
       </ChildContent>
     </RadzenBody>
-    <RadzenFooter style="height: 50px">
+    <RadzenFooter style="height: 50px; padding-top: 10px">
       <ChildContent>
-        <RadzenLabel style="color: #6d787d; float: none; margin-top: -6px" Text="© 2022 Soziale-Dienste-Ennstal">
+        <RadzenLabel style="color: #6d787d; float: none; padding-top: 2px" Text="© 2022 Soziale-Dienste-Ennstal">
         </RadzenLabel>
         <RadzenLabel style="color: #e5ecef; float: none; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenLabel>
-        <RadzenLabel style="color: #6d787d; float: none; margin-top: -6px" Text="Irdning · Hauptplatz 20">
+        <RadzenLabel style="color: #6d787d; float: none; padding-top: 2px" Text="Irdning · Hauptplatz 20">
         </RadzenLabel>
-        <RadzenLink Path="versionen" style="float: right; margin-top: -2px" Text="Version 3.024">
+        <RadzenLink Path="versionen" style="float: right" Text="Version 3.024">
         </RadzenLink>
         <RadzenLabel style="color: #e5ecef; float: right; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenLabel>
-        <RadzenLink Path="kontakt" style="float: right; margin-top: -2px" Text="Kontakt">
+        <RadzenLink Path="kontakt" style="float: right" Text="Kontakt">
         </RadzenLink>
         <RadzenLabel style="color: #e5ecef; float: right; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenLabel>
-        <RadzenLink Path="handbuch" style="float: right; margin-top: -2px" Text="Handbuch">
+        <RadzenLink Path="handbuch" style="float: right" Text="Handbuch">
         </RadzenLink>
         <RadzenLabel style="color: #e5ecef; float: right; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenLabel>
-        <RadzenLink Path="feedback" style="float: right; margin-top: -2px" Text="Feedback">
+        <RadzenLink Path="feedback" style="float: right" Text="Feedback">
         </RadzenLink>
       </ChildContent>
     </RadzenFooter>
-    <RadzenSidebar @ref="sidebar0" style="width: 181px">
+    <RadzenSidebar @ref="sidebar0" style="width: 191px">
       <ChildContent>
-        <RadzenPanelMenu style="height: 100%; width: 180px">
+        <RadzenPanelMenu style="height: 100%; width: 190px">
           <ChildContent>
             <RadzenPanelMenuItem Icon="dashboard" Path="dashboard" Text="Dashboard" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
@@ -103,7 +103,7 @@
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Icon="face" Text="Benutzerprofil">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="settings" Text="Einstellungen">
+            <RadzenPanelMenuItem Icon="settings" Path="einstellungen" Text="Einstellungen" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
           </ChildContent>
         </RadzenPanelMenu>

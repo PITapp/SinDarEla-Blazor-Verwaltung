@@ -53,7 +53,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     [HttpGet("{Ort}")]
     public SingleResult<VwBaseOrte> GetVwBaseOrte(string key)
     {
-        var items = this.context.VwBaseOrtes.AsNoTracking().Where(i=>i.Ort == key);
+        var items = this.context.VwBaseOrtes.AsNoTracking().Where(i=>i.Ort == Uri.UnescapeDataString(key));
         var result = SingleResult.Create(items);
 
         OnVwBaseOrteGet(ref result);

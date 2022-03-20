@@ -3136,7 +3136,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteDeviceCode(string userCode = default(string))
         {
-            var uri = new Uri(baseUri, $"DeviceCodes('{HttpUtility.UrlEncode(userCode.Trim())}')");
+            var uri = new Uri(baseUri, $"DeviceCodes('{HttpUtility.UrlEncode(userCode.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
 
@@ -3149,7 +3149,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.DeviceCode> GetDeviceCodeByUserCode(string expand = default(string), string userCode = default(string))
         {
-            var uri = new Uri(baseUri, $"DeviceCodes('{HttpUtility.UrlEncode(userCode.Trim())}')");
+            var uri = new Uri(baseUri, $"DeviceCodes('{HttpUtility.UrlEncode(userCode.Trim().Replace("'", "''"))}')");
             uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
@@ -3165,7 +3165,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateDeviceCode(string userCode = default(string), SinDarElaVerwaltung.Models.DbSinDarEla.DeviceCode deviceCode = default(SinDarElaVerwaltung.Models.DbSinDarEla.DeviceCode))
         {
-            var uri = new Uri(baseUri, $"DeviceCodes('{HttpUtility.UrlEncode(userCode.Trim())}')");
+            var uri = new Uri(baseUri, $"DeviceCodes('{HttpUtility.UrlEncode(userCode.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
 
@@ -3316,7 +3316,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteEreignisseArten(string ereignisArtCode = default(string))
         {
-            var uri = new Uri(baseUri, $"EreignisseArtens('{HttpUtility.UrlEncode(ereignisArtCode.Trim())}')");
+            var uri = new Uri(baseUri, $"EreignisseArtens('{HttpUtility.UrlEncode(ereignisArtCode.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
 
@@ -3329,7 +3329,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.EreignisseArten> GetEreignisseArtenByEreignisArtCode(string expand = default(string), string ereignisArtCode = default(string))
         {
-            var uri = new Uri(baseUri, $"EreignisseArtens('{HttpUtility.UrlEncode(ereignisArtCode.Trim())}')");
+            var uri = new Uri(baseUri, $"EreignisseArtens('{HttpUtility.UrlEncode(ereignisArtCode.Trim().Replace("'", "''"))}')");
             uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
@@ -3345,7 +3345,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateEreignisseArten(string ereignisArtCode = default(string), SinDarElaVerwaltung.Models.DbSinDarEla.EreignisseArten ereignisseArten = default(SinDarElaVerwaltung.Models.DbSinDarEla.EreignisseArten))
         {
-            var uri = new Uri(baseUri, $"EreignisseArtens('{HttpUtility.UrlEncode(ereignisArtCode.Trim())}')");
+            var uri = new Uri(baseUri, $"EreignisseArtens('{HttpUtility.UrlEncode(ereignisArtCode.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
 
@@ -3451,7 +3451,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteEreignisseTeilnehmerStatus(string statusCode = default(string))
         {
-            var uri = new Uri(baseUri, $"EreignisseTeilnehmerStatuses('{HttpUtility.UrlEncode(statusCode.Trim())}')");
+            var uri = new Uri(baseUri, $"EreignisseTeilnehmerStatuses('{HttpUtility.UrlEncode(statusCode.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
 
@@ -3464,7 +3464,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.EreignisseTeilnehmerStatus> GetEreignisseTeilnehmerStatusByStatusCode(string expand = default(string), string statusCode = default(string))
         {
-            var uri = new Uri(baseUri, $"EreignisseTeilnehmerStatuses('{HttpUtility.UrlEncode(statusCode.Trim())}')");
+            var uri = new Uri(baseUri, $"EreignisseTeilnehmerStatuses('{HttpUtility.UrlEncode(statusCode.Trim().Replace("'", "''"))}')");
             uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
@@ -3480,7 +3480,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateEreignisseTeilnehmerStatus(string statusCode = default(string), SinDarElaVerwaltung.Models.DbSinDarEla.EreignisseTeilnehmerStatus ereignisseTeilnehmerStatus = default(SinDarElaVerwaltung.Models.DbSinDarEla.EreignisseTeilnehmerStatus))
         {
-            var uri = new Uri(baseUri, $"EreignisseTeilnehmerStatuses('{HttpUtility.UrlEncode(statusCode.Trim())}')");
+            var uri = new Uri(baseUri, $"EreignisseTeilnehmerStatuses('{HttpUtility.UrlEncode(statusCode.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
 
@@ -3586,7 +3586,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteKey(string id = default(string))
         {
-            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim())}')");
+            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
 
@@ -3599,7 +3599,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.Key> GetKeyById(string expand = default(string), string id = default(string))
         {
-            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim())}')");
+            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim().Replace("'", "''"))}')");
             uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
@@ -3615,7 +3615,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateKey(string id = default(string), SinDarElaVerwaltung.Models.DbSinDarEla.Key key = default(SinDarElaVerwaltung.Models.DbSinDarEla.Key))
         {
-            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim())}')");
+            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
 
@@ -3946,7 +3946,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteKundenLeistungenBescheideStatus(string statusCode = default(string))
         {
-            var uri = new Uri(baseUri, $"KundenLeistungenBescheideStatuses('{HttpUtility.UrlEncode(statusCode.Trim())}')");
+            var uri = new Uri(baseUri, $"KundenLeistungenBescheideStatuses('{HttpUtility.UrlEncode(statusCode.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
 
@@ -3959,7 +3959,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.KundenLeistungenBescheideStatus> GetKundenLeistungenBescheideStatusByStatusCode(string expand = default(string), string statusCode = default(string))
         {
-            var uri = new Uri(baseUri, $"KundenLeistungenBescheideStatuses('{HttpUtility.UrlEncode(statusCode.Trim())}')");
+            var uri = new Uri(baseUri, $"KundenLeistungenBescheideStatuses('{HttpUtility.UrlEncode(statusCode.Trim().Replace("'", "''"))}')");
             uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
@@ -3975,7 +3975,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateKundenLeistungenBescheideStatus(string statusCode = default(string), SinDarElaVerwaltung.Models.DbSinDarEla.KundenLeistungenBescheideStatus kundenLeistungenBescheideStatus = default(SinDarElaVerwaltung.Models.DbSinDarEla.KundenLeistungenBescheideStatus))
         {
-            var uri = new Uri(baseUri, $"KundenLeistungenBescheideStatuses('{HttpUtility.UrlEncode(statusCode.Trim())}')");
+            var uri = new Uri(baseUri, $"KundenLeistungenBescheideStatuses('{HttpUtility.UrlEncode(statusCode.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
 
@@ -5026,7 +5026,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> DeletePersistedGrant(string key = default(string))
         {
-            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim())}')");
+            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
 
@@ -5039,7 +5039,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant> GetPersistedGrantByKey(string expand = default(string), string key = default(string))
         {
-            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim())}')");
+            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim().Replace("'", "''"))}')");
             uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
@@ -5055,7 +5055,7 @@ namespace SinDarElaVerwaltung
 
         public async System.Threading.Tasks.Task<HttpResponseMessage> UpdatePersistedGrant(string key = default(string), SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant persistedGrant = default(SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant))
         {
-            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim())}')");
+            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim().Replace("'", "''"))}')");
 
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
 

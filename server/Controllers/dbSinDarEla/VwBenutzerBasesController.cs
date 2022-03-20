@@ -53,7 +53,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     [HttpGet("{AspNetUsers_Id}")]
     public SingleResult<VwBenutzerBase> GetVwBenutzerBase(string key)
     {
-        var items = this.context.VwBenutzerBases.AsNoTracking().Where(i=>i.AspNetUsers_Id == key);
+        var items = this.context.VwBenutzerBases.AsNoTracking().Where(i=>i.AspNetUsers_Id == Uri.UnescapeDataString(key));
         var result = SingleResult.Create(items);
 
         OnVwBenutzerBaseGet(ref result);

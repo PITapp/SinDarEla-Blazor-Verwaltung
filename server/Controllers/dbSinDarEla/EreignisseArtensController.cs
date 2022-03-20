@@ -53,7 +53,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     [HttpGet("{EreignisArtCode}")]
     public SingleResult<EreignisseArten> GetEreignisseArten(string key)
     {
-        var items = this.context.EreignisseArtens.Where(i=>i.EreignisArtCode == key);
+        var items = this.context.EreignisseArtens.Where(i=>i.EreignisArtCode == Uri.UnescapeDataString(key));
         var result = SingleResult.Create(items);
 
         OnEreignisseArtenGet(ref result);
@@ -75,7 +75,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
 
             var item = this.context.EreignisseArtens
-                .Where(i => i.EreignisArtCode == key)
+                .Where(i => i.EreignisArtCode == Uri.UnescapeDataString(key))
                 .Include(i => i.Ereignisses)
                 .FirstOrDefault();
 
@@ -112,7 +112,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.EreignisArtCode != key))
+            if (newItem == null || (newItem.EreignisArtCode != Uri.UnescapeDataString(key)))
             {
                 return BadRequest();
             }
@@ -121,7 +121,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.EreignisseArtens.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.EreignisseArtens.Where(i => i.EreignisArtCode == key);
+            var itemToReturn = this.context.EreignisseArtens.Where(i => i.EreignisArtCode == Uri.UnescapeDataString(key));
             this.OnAfterEreignisseArtenUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
@@ -143,7 +143,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var item = this.context.EreignisseArtens.Where(i => i.EreignisArtCode == key).FirstOrDefault();
+            var item = this.context.EreignisseArtens.Where(i => i.EreignisArtCode == Uri.UnescapeDataString(key)).FirstOrDefault();
 
             if (item == null)
             {
@@ -156,7 +156,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.EreignisseArtens.Update(item);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.EreignisseArtens.Where(i => i.EreignisArtCode == key);
+            var itemToReturn = this.context.EreignisseArtens.Where(i => i.EreignisArtCode == Uri.UnescapeDataString(key));
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)

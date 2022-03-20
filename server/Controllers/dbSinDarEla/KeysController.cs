@@ -53,7 +53,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     [HttpGet("{Id}")]
     public SingleResult<Key> GetKey(string key)
     {
-        var items = this.context.Keys.Where(i=>i.Id == key);
+        var items = this.context.Keys.Where(i=>i.Id == Uri.UnescapeDataString(key));
         var result = SingleResult.Create(items);
 
         OnKeyGet(ref result);
@@ -75,7 +75,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
 
             var item = this.context.Keys
-                .Where(i => i.Id == key)
+                .Where(i => i.Id == Uri.UnescapeDataString(key))
                 .FirstOrDefault();
 
             if (item == null)
@@ -111,7 +111,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.Id != key))
+            if (newItem == null || (newItem.Id != Uri.UnescapeDataString(key)))
             {
                 return BadRequest();
             }
@@ -120,7 +120,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.Keys.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.Keys.Where(i => i.Id == key);
+            var itemToReturn = this.context.Keys.Where(i => i.Id == Uri.UnescapeDataString(key));
             this.OnAfterKeyUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
@@ -142,7 +142,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var item = this.context.Keys.Where(i => i.Id == key).FirstOrDefault();
+            var item = this.context.Keys.Where(i => i.Id == Uri.UnescapeDataString(key)).FirstOrDefault();
 
             if (item == null)
             {
@@ -155,7 +155,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.Keys.Update(item);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.Keys.Where(i => i.Id == key);
+            var itemToReturn = this.context.Keys.Where(i => i.Id == Uri.UnescapeDataString(key));
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)

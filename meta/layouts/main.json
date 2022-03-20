@@ -34,7 +34,7 @@
                       "path": "/assets/images/LogoMitSchriftzug4.png",
                       "style": {
                         "float": "left",
-                        "height": "34px"
+                        "height": "30px"
                       },
                       "type": "image"
                     },
@@ -66,6 +66,9 @@
                     }
                   ],
                   "name": "leftCol",
+                  "style": {
+                    "paddingLeft": "25px"
+                  },
                   "type": "col"
                 },
                 {
@@ -153,7 +156,7 @@
               "style": {
                 "color": "#6d787d",
                 "float": "none",
-                "marginTop": "-6px"
+                "paddingTop": "2px"
               },
               "text": "© 2022 Soziale-Dienste-Ennstal",
               "type": "label"
@@ -174,7 +177,7 @@
               "style": {
                 "color": "#6d787d",
                 "float": "none",
-                "marginTop": "-6px"
+                "paddingTop": "2px"
               },
               "text": "Irdning · Hauptplatz 20",
               "type": "label"
@@ -184,8 +187,7 @@
               "name": "linkVersion",
               "path": "versionen",
               "style": {
-                "float": "right",
-                "marginTop": "-2px"
+                "float": "right"
               },
               "text": "Version 3.024",
               "type": "link"
@@ -206,8 +208,7 @@
               "name": "linkKontakt",
               "path": "kontakt",
               "style": {
-                "float": "right",
-                "marginTop": "-2px"
+                "float": "right"
               },
               "text": "Kontakt",
               "type": "link"
@@ -228,8 +229,7 @@
               "name": "linkHandbuch",
               "path": "handbuch",
               "style": {
-                "float": "right",
-                "marginTop": "-2px"
+                "float": "right"
               },
               "text": "Handbuch",
               "type": "link"
@@ -250,8 +250,7 @@
               "name": "linkFeedback",
               "path": "feedback",
               "style": {
-                "float": "right",
-                "marginTop": "-2px"
+                "float": "right"
               },
               "text": "Feedback",
               "type": "link"
@@ -259,7 +258,8 @@
           ],
           "name": "footer1",
           "style": {
-            "height": "50px"
+            "height": "50px",
+            "paddingTop": "10px"
           },
           "type": "footer"
         },
@@ -324,21 +324,21 @@
                 },
                 {
                   "icon": "settings",
-                  "path": "",
+                  "path": "einstellungen",
                   "text": "Einstellungen"
                 }
               ],
               "name": "panelmenu0",
               "style": {
                 "height": "100%",
-                "width": "180px"
+                "width": "190px"
               },
               "type": "panelmenu"
             }
           ],
           "name": "sidebar0",
           "style": {
-            "width": "181px"
+            "width": "191px"
           },
           "type": "sidebar"
         }
