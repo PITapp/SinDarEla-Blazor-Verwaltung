@@ -97,6 +97,44 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        string _strTitel;
+        protected string strTitel
+        {
+            get
+            {
+                return _strTitel;
+            }
+            set
+            {
+                if (!object.Equals(_strTitel, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "strTitel", NewValue = value, OldValue = _strTitel };
+                    _strTitel = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        string _strInhalt;
+        protected string strInhalt
+        {
+            get
+            {
+                return _strInhalt;
+            }
+            set
+            {
+                if (!object.Equals(_strInhalt, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "strInhalt", NewValue = value, OldValue = _strInhalt };
+                    _strInhalt = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             await Security.InitializeAsync(AuthenticationStateProvider);
@@ -115,6 +153,15 @@ namespace SinDarElaVerwaltung.Pages
 
             var dbSinDarElaGetInfotexteHtmlByInfotextIdResult = await DbSinDarEla.GetInfotexteHtmlByInfotextId(infotextId:InfotextID);
             dsoInfotexteHTML = dbSinDarElaGetInfotexteHtmlByInfotextIdResult;
+
+            strTitel = dbSinDarElaGetInfotexteHtmlByInfotextIdResult.Titel;
+
+            strInhalt = dbSinDarElaGetInfotexteHtmlByInfotextIdResult.Inhalt;
+        }
+
+        protected async System.Threading.Tasks.Task HtmlEditor0Change(string args)
+        {
+            bolEditorAenderungen = true;
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
@@ -134,16 +181,14 @@ namespace SinDarElaVerwaltung.Pages
 
         protected async System.Threading.Tasks.Task Button1Click(MouseEventArgs args)
         {
-            if (this.bolEditorAenderungen == false) {
-              DialogService.Close();
-              await JSRuntime.InvokeAsync<string>("window.history.back");
+            if (bolEditorAenderungen == false) {
+              DialogService.Close(null);
             }
 
-            if (this.bolEditorAenderungen == true) {
-              var dialogResult = await DialogService.OpenAsync<MeldungJaNein>($"Text geändert", new Dictionary<string, object>() { {"strMeldung", "Der Text wurde geändert! Soll die Bearbeitung wirklich abgebrochen werden?"} }, new DialogOptions(){ Width = $"{720}px" });
+            if (bolEditorAenderungen == true) {
+              var dialogResult = await DialogService.OpenAsync<MeldungJaNein>($"Text geändert", new Dictionary<string, object>() { {"strMeldung", "Der Text wurde geändert! Soll die Bearbeitung wirklich abgebrochen werden?"} }, new DialogOptions(){ Width = $"{720}px",AutoFocusFirstElement = false,CloseDialogOnEsc = false });
                 if (dialogResult == "Ja") {
-                  DialogService.Close();
-                  await JSRuntime.InvokeAsync<string>("window.history.back");
+                  DialogService.Close(null);
                 }
             }
         }

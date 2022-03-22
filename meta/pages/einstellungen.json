@@ -190,6 +190,12 @@
                                 ],
                                 "rowSelect": [
                                   {
+                                    "name": "strTitel",
+                                    "type": "set",
+                                    "value": "${event.Titel}",
+                                    "valueType": "string"
+                                  },
+                                  {
                                     "name": "strTextHTML",
                                     "type": "set",
                                     "value": "${event.Inhalt}",
@@ -296,7 +302,7 @@
                             "border": "1px solid #e6ecef",
                             "height": "740px"
                           },
-                          "text": "Beispiel",
+                          "text": "${rstInfotexteCount.ToString() + \" Infotexte\"}",
                           "type": "panel"
                         }
                       ],
@@ -363,6 +369,7 @@
                                       "events": {
                                         "click": [
                                           {
+                                            "autoFocusFirstElement": false,
                                             "closeDialogOnEsc": false,
                                             "draggable": true,
                                             "parameters": [
@@ -374,7 +381,8 @@
                                             "path": "einstellungen-infotexte-editor",
                                             "resizable": true,
                                             "title": "Bearbeiten",
-                                            "type": "popup"
+                                            "type": "popup",
+                                            "width": 725
                                           }
                                         ]
                                       },
@@ -404,7 +412,7 @@
                             "border": "1px solid #e6ecef",
                             "height": "740px"
                           },
-                          "text": "Beispiel",
+                          "text": "${strTitel + \" \"}",
                           "type": "panel"
                         }
                       ],

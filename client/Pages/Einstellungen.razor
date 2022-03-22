@@ -32,7 +32,7 @@
           <ChildContent>
             <div class="row">
               <div class="col-md-7">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Beispiel">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="@(rstInfotexteCount.ToString() + " Infotexte")">
                   <ChildContent>
                     <RadzenDataGrid @ref="datagridInfotexte" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@rstInfotexteCount" Data="@rstInfotexte" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" IsLoading="false" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" PageSize="10" style="border: 1px solid rgba(0, 0, 0, 0); height: 690px; margin-top: 9px" LoadData="@DatagridInfotexteLoadData" RowSelect="@DatagridInfotexteRowSelect">
                       <Columns>
@@ -58,7 +58,7 @@
                 </RadzenPanel>
               </div>
               <div class="col-md-5" style="padding-left: 5px">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Beispiel">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="@(strTitel + " ")">
                   <ChildContent>
                     <RadzenHtmlEditor Disabled="true" style="border: 1px solid rgba(0, 0, 0, 0); height: 691px; margin-left: -11px; margin-right: -11px; margin-top: 9px" UploadUrl="upload/image" @bind-Value="@strTextHTML" Name="HtmlEditor0">
                       <ChildContent>

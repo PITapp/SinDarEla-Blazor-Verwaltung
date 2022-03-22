@@ -11,12 +11,15 @@
   "javaScriptFiles": [],
   "layouts": [
     "Login",
-    "Main"
+    "Main",
+    "Dialog"
   ],
   "logo": "",
   "name": "SinDarElaVerwaltung",
   "namespaces": [],
-  "navigation": [],
+  "navigation": [
+    "xxBase"
+  ],
   "pages": [
     "Login",
     "Application Roles",
@@ -39,7 +42,11 @@
     "Management",
     "Einstellungen",
     "EinstellungenInfotexteEditor",
-    "Copy of EinstellungenInfotexteEditor"
+    "xxBase",
+    "Add Base Kontakte",
+    "Add xxBase",
+    "Edit xxBase",
+    "Edit Base Kontakte"
   ],
   "port": 8000,
   "pwa": true,

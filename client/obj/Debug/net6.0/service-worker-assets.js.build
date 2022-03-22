@@ -5,7 +5,7 @@
       "url": "assets\/css\/default.css"
     },
     {
-      "hash": "sha256-mJ9BteWM9bEHccOcgUAnkFCtjE73cdXYl0BBiG8tOJY=",
+      "hash": "sha256-A0J4FlGMOUm1qfRBBdxj7oMBboHtZLlu1\/1OfEX6BZY=",
       "url": "assets\/css\/standard.css"
     },
     {
@@ -261,7 +261,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-8wu+E2XiCsAqHfXVtoMwW1KHxv9zsElKfa33zgNCYmI=",
+      "hash": "sha256-yHjdN5QDfb1+Lp\/dPi+mVRJPZS5zlNoE4aRsTIvI8rY=",
       "url": "_framework\/Radzen.Blazor.dll"
     },
     {
@@ -965,11 +965,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-7rPXnTvacWE6UCioLwlEwoq971tJ1HGMLnQseDS3ksA=",
+      "hash": "sha256-Vf\/cfbEut9Tkkg5k8TFTCzlLPjMyBJW+IHuA73l59xY=",
       "url": "_framework\/SinDarElaVerwaltung.Client.dll"
     },
     {
-      "hash": "sha256-KZWmlIKeHj4wLRtm+0QwdOV0U4qoNyA+bp3yAHQxaGE=",
+      "hash": "sha256-yVpzGCqYw+Ll9Jo0gVSgKANuSVQ3h2i6\/s9HwbiYeG8=",
       "url": "_framework\/SinDarElaVerwaltung.Client.pdb"
     },
     {
@@ -977,7 +977,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-ilw9qEewn8FvjzBlye7rrk4dBuOypHUYVgV+qqxDH1w=",
+      "hash": "sha256-S20hwalDhb1NK+1dlepNcuHJ0Yn2zLxSVtnnU4D6i+k=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1093,5 +1093,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "cJLnEkT7"
+  "version": "EkDj8r\/4"
 };

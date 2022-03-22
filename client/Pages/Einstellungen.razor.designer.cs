@@ -95,6 +95,25 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        string _strTitel;
+        protected string strTitel
+        {
+            get
+            {
+                return _strTitel;
+            }
+            set
+            {
+                if (!object.Equals(_strTitel, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "strTitel", NewValue = value, OldValue = _strTitel };
+                    _strTitel = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         string _strTextHTML;
         protected string strTextHTML
         {
@@ -159,6 +178,8 @@ namespace SinDarElaVerwaltung.Pages
 
         protected async System.Threading.Tasks.Task DatagridInfotexteRowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml args)
         {
+            strTitel = args.Titel;
+
             strTextHTML = args.Inhalt;
 
             intInfotextID = args.InfotextID;
@@ -166,7 +187,7 @@ namespace SinDarElaVerwaltung.Pages
 
         protected async System.Threading.Tasks.Task ButtonBearbeitenInfotextEditorClick(MouseEventArgs args)
         {
-            await DialogService.OpenAsync<EinstellungenInfotexteEditor>($"Bearbeiten", new Dictionary<string, object>() { {"InfotextID", intInfotextID} }, new DialogOptions(){ CloseDialogOnEsc = false,Resizable = true,Draggable = true });
+            await DialogService.OpenAsync<EinstellungenInfotexteEditor>($"Bearbeiten", new Dictionary<string, object>() { {"InfotextID", intInfotextID} }, new DialogOptions(){ Width = $"{725}px",AutoFocusFirstElement = false,CloseDialogOnEsc = false,Resizable = true,Draggable = true });
         }
     }
 }

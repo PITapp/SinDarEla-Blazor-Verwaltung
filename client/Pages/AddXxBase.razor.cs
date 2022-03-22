@@ -7,7 +7,7 @@ using Radzen.Blazor;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class CopyOfEinstellungenInfotexteEditorComponent
+    public partial class AddXxBaseComponent
     {
 
     }

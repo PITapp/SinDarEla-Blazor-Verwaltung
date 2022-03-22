@@ -1,0 +1,19 @@
+﻿@inherits SinDarElaVerwaltung.Layouts.DialogLayoutComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SinDarElaVerwaltung.Models.DbSinDarEla
+@using Microsoft.AspNetCore.Identity;
+@using SinDarElaVerwaltung.Models
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+<RadzenContextMenu />
+
+<RadzenBody @ref="body0">
+  <ChildContent>
+    <RadzenContentContainer Name="main">
+    @Body
+    </RadzenContentContainer>
+  </ChildContent>
+</RadzenBody>

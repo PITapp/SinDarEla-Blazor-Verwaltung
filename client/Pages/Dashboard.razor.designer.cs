@@ -57,6 +57,25 @@ namespace SinDarElaVerwaltung.Pages
         protected DbSinDarElaService DbSinDarEla { get; set; }
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.Base> grid0;
 
+        string _strTest;
+        protected string strTest
+        {
+            get
+            {
+                return _strTest;
+            }
+            set
+            {
+                if (!object.Equals(_strTest, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "strTest", NewValue = value, OldValue = _strTest };
+                    _strTest = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> _getBasesResult;
         protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> getBasesResult
         {
@@ -102,6 +121,14 @@ namespace SinDarElaVerwaltung.Pages
             {
                 UriHelper.NavigateTo("Login", true);
             }
+            else
+            {
+                await Load();
+            }
+        }
+        protected async System.Threading.Tasks.Task Load()
+        {
+            strTest = "haha";
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)

@@ -35,10 +35,7 @@
                             }
                           ],
                           "name": "col0",
-                          "style": {
-                            "paddingLeft": "0",
-                            "paddingRight": "0"
-                          },
+                          "style": {},
                           "type": "col"
                         }
                       ],
@@ -73,9 +70,7 @@
                             }
                           ],
                           "name": "col4",
-                          "style": {
-                            "paddingRight": "0"
-                          },
+                          "style": {},
                           "type": "col"
                         }
                       ],

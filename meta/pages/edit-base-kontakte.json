@@ -1,0 +1,334 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Edit Base Kontakte"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Name Kontakt",
+                              "component": "NameKontakt",
+                              "name": "NameKontaktLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 100,
+                              "type": "textbox",
+                              "name": "NameKontakt",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${basekontakte.NameKontakt}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "NameKontaktRequiredValidator",
+                              "component": "NameKontakt",
+                              "text": "NameKontakt is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Handy",
+                              "component": "Handy",
+                              "name": "HandyLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 45,
+                              "type": "textbox",
+                              "name": "Handy",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${basekontakte.Handy}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Telefon",
+                              "component": "Telefon",
+                              "name": "TelefonLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 45,
+                              "type": "textbox",
+                              "name": "Telefon",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${basekontakte.Telefon}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "E Mail",
+                              "component": "EMail",
+                              "name": "EMailLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 45,
+                              "type": "textbox",
+                              "name": "EMail",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${basekontakte.EMail}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Info",
+                              "component": "Info",
+                              "name": "InfoLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 16777215,
+                              "type": "textbox",
+                              "name": "Info",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${basekontakte.Info}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "path": "base-kontaktes",
+                                    "type": "navigate"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update BaseKontakte",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "dbSinDarEla.updateBaseKontakte",
+                        "parameters": [
+                          {
+                            "name": "KontaktID",
+                            "value": "Convert.ChangeType(${parameters.KontaktID}, Type.GetTypeCode(typeof(int)))"
+                          },
+                          {
+                            "name": "BaseKontakte",
+                            "value": "${basekontakte}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "path": "base-kontaktes",
+                            "type": "navigate",
+                            "condition": ""
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte",
+                  "data": "${basekontakte}",
+                  "visible": "${basekontakte != null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "dbSinDarEla.getBaseKontakteByKontaktID",
+        "parameters": [
+          {
+            "name": "KontaktID",
+            "value": "Convert.ChangeType(${parameters.KontaktID}, Type.GetTypeCode(typeof(int)))"
+          }
+        ],
+        "then": [
+          {
+            "name": "basekontakte",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Base Kontakte",
+  "access": "Authenticated",
+  "layout": "Main"
+}

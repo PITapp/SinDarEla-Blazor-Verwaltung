@@ -1,0 +1,115 @@
+﻿@page "/"
+@page "/xx-base"
+@layout MainLayout
+@inherits SinDarElaVerwaltung.Pages.XxBaseComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SinDarElaVerwaltung.Models.DbSinDarEla
+@using Microsoft.AspNetCore.Identity;
+@using SinDarElaVerwaltung.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+<PageTitle>xxBase</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="xxBase">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getBasesResult" Count="@getBasesCount" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" LoadData="@Grid0LoadData" Render="@Grid0Render" RowDoubleClick="@Grid0RowDoubleClick" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="BaseID" Title="Base ID">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="AnredeID" SortProperty="BaseAnreden.Anrede" GroupProperty="BaseAnreden.Anrede" FilterProperty="BaseAnreden.Anrede" Title="Base Anreden">
+              <Template Context="data">
+              @(data.BaseAnreden?.Anrede)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name1" Title="Name 1">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name2" Title="Name 2">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="NameKuerzel" Title="Name Kuerzel">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="TitelVorne" Title="Titel Vorne">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="TitelHinten" Title="Titel Hinten">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Strasse" Title="Strasse">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="PLZ" Title="PLZ">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Ort" Title="Ort">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Geburtsdatum" FormatString="{0:d}" Title="Geburtsdatum">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Versicherungsnummer" Title="Versicherungsnummer">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Staatsangehoerigkeit" Title="Staatsangehoerigkeit">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Telefon1" Title="Telefon 1">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Telefon2" Title="Telefon 2">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="EMail1" Title="E Mail 1">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="EMail2" Title="E Mail 2">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Webseite" Title="Webseite">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="BildURL" Title="Bild URL">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Notiz" Title="Notiz">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="KontoName" Title="Konto Name">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="KontoNummer" Title="Konto Nummer">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="KontoInfo" Title="Konto Info">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="sinDarElaVerwaltungModelsDbSinDarElaBase">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, sinDarElaVerwaltungModelsDbSinDarElaBase))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+        <RadzenHeading Size="H1" Text="BaseKontaktes">
+        </RadzenHeading>
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Disabled="@(this.master == null)" Click="@BaseKontakteAddButtonClick">
+        </RadzenButton>
+        <RadzenDataGrid @ref="grid1" Data="@BaseKontaktes" AllowFiltering="true" AllowPaging="true" AllowSorting="true" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" FilterMode="Radzen.FilterMode.Advanced" RowSelect="@Grid1RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" Property="KontaktID" Title="Kontakt ID">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" Property="BaseID" SortProperty="Base.Name1" GroupProperty="Base.Name1" FilterProperty="Base.Name1" Title="Base">
+              <Template Context="data">
+              @(data.Base?.Name1)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" Property="NameKontakt" Title="Name Kontakt">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" Property="Handy" Title="Handy">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" Property="Telefon" Title="Telefon">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" Property="EMail" Title="E Mail">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" Property="Info" Title="Info">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="sinDarElaVerwaltungModelsDbSinDarElaBaseKontakte">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>BaseKontakteDeleteButtonClick(args, sinDarElaVerwaltungModelsDbSinDarElaBaseKontakte))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

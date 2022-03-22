@@ -11925,3 +11925,26 @@ ul.rz-profile-menu .rz-navigation-menu {
 .rz-grid-table td {
     padding: 4px 8px 4px 8px;
 }
+
+/* --- HTML Editor: Innerer Rand --- */
+.rz-html-editor-content {
+  padding: 15px;
+}
+
+/* --- Kopfzeile in Dialogen --- */
+.rz-dialog-titlebar {
+  background-color: #E8ECEF;
+  color: #5d717b;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.rz-dialog-title {
+  letter-spacing: 0;
+  color: #5d717b;
+}
+
+/* --- HTML Editor - Toolbox: bei der Farbauswahl mit dem Mauszeiger hat einen Rahmen erzeugt, dieser hat die Anzeige um 2 Punkte vergrößert; hier wird das ausgeschalten --- */
+.rz-colorpicker:not(:disabled):not(.rz-state-disabled):focus, .rz-colorpicker:not(:disabled):not(.rz-state-disabled):hover {
+  border: none;
+}

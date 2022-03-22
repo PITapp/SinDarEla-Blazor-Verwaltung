@@ -417,6 +417,16 @@
       "type": "content"
     }
   ],
+  "events": {
+    "load": [
+      {
+        "name": "strTest",
+        "type": "set",
+        "value": "\"haha\"",
+        "valueType": "string"
+      }
+    ]
+  },
   "layout": "Main",
   "name": "Dashboard"
 }

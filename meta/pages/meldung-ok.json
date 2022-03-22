@@ -30,10 +30,7 @@
                             }
                           ],
                           "name": "col0",
-                          "style": {
-                            "paddingLeft": "0",
-                            "paddingRight": "0"
-                          },
+                          "style": {},
                           "type": "col"
                         }
                       ],
@@ -59,18 +56,14 @@
                                 ]
                               },
                               "name": "button1",
-                              "style": {
-                                "marginLeft": "1rem"
-                              },
+                              "style": {},
                               "text": "OK",
                               "tooltip": "",
                               "type": "button"
                             }
                           ],
                           "name": "col4",
-                          "style": {
-                            "paddingRight": "0"
-                          },
+                          "style": {},
                           "type": "col"
                         }
                       ],
