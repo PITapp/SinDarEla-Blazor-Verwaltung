@@ -75,10 +75,19 @@
                   "class": "col-6 text-right justify-content-end d-flex",
                   "components": [
                     {
+                      "events": {
+                        "click": [
+                          {
+                            "code": "${Security.Logout()}",
+                            "condition": "${event.Text == \"Logout\"}",
+                            "type": "execute"
+                          }
+                        ]
+                      },
                       "items": [
                         {
                           "icon": "account_circle",
-                          "path": "benutzer-profil",
+                          "path": "",
                           "text": "Benutzerprofil"
                         },
                         {
@@ -274,12 +283,12 @@
                 },
                 {
                   "icon": "assignment_turned_in",
-                  "path": "management",
+                  "path": "",
                   "text": "Management"
                 },
                 {
                   "icon": "assignment",
-                  "path": "base",
+                  "path": "",
                   "text": "Dienstplan"
                 },
                 {
@@ -349,6 +358,7 @@
   "events": {
     "load": [
       {
+        "condition": "${Security.IsAuthenticated()}",
         "error": [
           {
             "detail": "Benutzer wurde nicht gefunden!",

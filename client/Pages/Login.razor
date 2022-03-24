@@ -11,13 +11,11 @@
 <PageTitle>Login</PageTitle>
 <RadzenContent Container="main">
   <ChildContent>
-    <RadzenHeading Size="H1" Text="Login">
-    </RadzenHeading>
     <div class="row">
       <div class="col-md-12">
         <RadzenTemplateForm Action="@($"account/login?redirectUrl={redirectUrl}")" Data="@("login")" Method="post">
           <ChildContent>
-            <RadzenLogin AllowResetPassword="false" Register="@Login0Register">
+            <RadzenLogin AllowRegister="false" AllowResetPassword="false" AutoComplete="false" LoginText="Anmelden" PasswordRequired="Passwort erforderlich" PasswordText="Passwort" UserRequired="Benutzername erforderlich" UserText="Benutzername">
             </RadzenLogin>
           </ChildContent>
         </RadzenTemplateForm>

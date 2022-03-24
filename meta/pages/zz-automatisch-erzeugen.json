@@ -44,6 +44,9 @@
             ]
           },
           "name": "button1",
+          "style": {
+            "marginLeft": "10px"
+          },
           "text": "MeldungJaNein öffnen",
           "type": "button"
         },
@@ -63,6 +66,9 @@
             ]
           },
           "name": "button3",
+          "style": {
+            "marginLeft": "10px"
+          },
           "text": "MeldungLoeschen öffnen",
           "type": "button"
         },
@@ -82,6 +88,9 @@
             ]
           },
           "name": "button2",
+          "style": {
+            "marginLeft": "10px"
+          },
           "text": "MeldungOK öffnen",
           "type": "button"
         }

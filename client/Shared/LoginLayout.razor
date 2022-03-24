@@ -13,12 +13,22 @@
 <RadzenBody @ref="body0" style="margin-left: 0px" Expanded="true">
   <ChildContent>
     <div class="row justify-content-center">
-      <div class="justify-content-center col-xl-5 col-md-7">
-        <RadzenCard style="margin-top: 8rem">
+      <div class="justify-content-center  col-md-7 col-xl-4">
+        <RadzenCard style="margin-top: 8rem; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0">
           <ChildContent>
-            <RadzenContentContainer Name="main">
-            @Body
-            </RadzenContentContainer>
+            <div  style="background-color: rgba(0, 0, 0, 0); height: 52px; padding-left: 24px; padding-right: ; padding-top: 12px" class="kopfzeileVerlaufend">
+              <RadzenImage Path="assets/images/LogoMitSchriftzug4.png" style="float: left; height: 30px">
+              </RadzenImage>
+              <RadzenLabel style="color: #E8E8E8; float: none; font-size: 12px; padding-left: 10px; padding-right: 10px" Text="|">
+              </RadzenLabel>
+              <RadzenLabel style="color: #E8E8E8; float: none; font-family: verdana,geneva,sans-serif; font-size: 12px; font-weight: normal" Text="SinDarEla">
+              </RadzenLabel>
+            </div>
+            <div class="col-md-12" style="padding-bottom: 1px; padding-left: 25px; padding-right: 25px; padding-top: 25px">
+              <RadzenContentContainer Name="main">
+              @Body
+              </RadzenContentContainer>
+            </div>
           </ChildContent>
         </RadzenCard>
       </div>

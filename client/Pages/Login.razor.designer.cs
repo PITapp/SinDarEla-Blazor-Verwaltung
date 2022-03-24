@@ -90,10 +90,5 @@ namespace SinDarElaVerwaltung.Pages
                 NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"{error}" });
             }
         }
-
-        protected async System.Threading.Tasks.Task Login0Register()
-        {
-            await DialogService.OpenAsync<RegisterApplicationUser>("Register Application User", null);
-        }
     }
 }

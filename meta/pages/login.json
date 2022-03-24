@@ -2,38 +2,34 @@
   "access": "Everybody",
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "name": "pageTitle",
-          "size": "H1",
-          "text": "Login"
-        },
-        {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
                   "action": "@($\"account/login?redirectUrl={redirectUrl}\")",
                   "components": [
                     {
+                      "allowRegister": false,
+                      "allowResetPassword": false,
+                      "attributes": [],
+                      "autoComplete": false,
                       "events": {
                         "login": [],
-                        "register": [
-                          {
-                            "path": "register-application-user",
-                            "type": "popup"
-                          }
-                        ]
+                        "register": []
                       },
-                      "allowResetPassword": false,
+                      "loginText": "Anmelden",
                       "name": "login0",
-                      "type": "login"
+                      "passwordRequired": "Passwort erforderlich",
+                      "passwordText": "Passwort",
+                      "registerMessageText": "",
+                      "registerText": "",
+                      "resetPasswordText": "",
+                      "type": "login",
+                      "userRequired": "Benutzername erforderlich",
+                      "userText": "Benutzername"
                     }
                   ],
                   "data": "${\"login\"}",
@@ -41,37 +37,41 @@
                   "name": "templateForm0",
                   "type": "template-form"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
     "load": [
       {
-        "type": "execute",
-        "code": "var query = System.Web.HttpUtility.ParseQueryString(new Uri(UriHelper.ToAbsoluteUri(UriHelper.Uri).ToString()).Query);"
+        "code": "var query = System.Web.HttpUtility.ParseQueryString(new Uri(UriHelper.ToAbsoluteUri(UriHelper.Uri).ToString()).Query);",
+        "type": "execute"
       },
       {
-        "type": "execute",
-        "code": "var error = query.Get(\"error\");"
+        "code": "var error = query.Get(\"error\");",
+        "type": "execute"
       },
       {
-        "type": "set",
         "name": "redirectUrl",
+        "type": "set",
         "value": "query.Get(\"redirectUrl\");"
       },
       {
+        "condition": "!string.IsNullOrEmpty(error)",
         "detail": "${error}",
         "severity": "error",
         "summary": "Error",
-        "condition": "!string.IsNullOrEmpty(error)",
         "type": "notify"
       }
     ]
   },
-  "name": "Login",
-  "layout": "Login"
+  "layout": "Login",
+  "name": "Login"
 }

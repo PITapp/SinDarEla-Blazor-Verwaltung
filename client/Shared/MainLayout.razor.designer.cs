@@ -96,10 +96,13 @@ namespace SinDarElaVerwaltung.Layouts
         {
             try
             {
-                var dbSinDarElaGetVwBenutzerBasesResult = await DbSinDarEla.GetVwBenutzerBases(filter:$"Benutzername eq '{Security.User.UserName}'");
-                rstBenutzer = dbSinDarElaGetVwBenutzerBasesResult.Value.AsODataEnumerable();
+                if (Security.IsAuthenticated())
+                {
+                    var dbSinDarElaGetVwBenutzerBasesResult = await DbSinDarEla.GetVwBenutzerBases(filter:$"Benutzername eq '{Security.User.UserName}'");
+                    rstBenutzer = dbSinDarElaGetVwBenutzerBasesResult.Value.AsODataEnumerable();
 
-                strBildURL = rstBenutzer.FirstOrDefault().BildURL;
+                    strBildURL = rstBenutzer.FirstOrDefault().BildURL;
+                }
             }
             catch (System.Exception dbSinDarElaGetVwBenutzerBasesException)
             {
@@ -116,9 +119,9 @@ namespace SinDarElaVerwaltung.Layouts
 
         protected async System.Threading.Tasks.Task Profilemenu1Click(dynamic args)
         {
-            if (args.Value == "Logout")
+            if (args.Text == "Logout")
             {
-                await Security.Logout();
+                Security.Logout();
             }
         }
     }

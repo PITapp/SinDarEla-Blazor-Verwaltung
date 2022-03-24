@@ -8,446 +8,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -1984396868,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddApplicationRoleComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddApplicationRoleComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddApplicationRoleComponent"
-        }
-      },
-      {
-        "HashCode": -349960432,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddApplicationRoleComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.AddApplicationRoleComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddApplicationRoleComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 458723687,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddApplicationUserComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddApplicationUserComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddApplicationUserComponent"
-        }
-      },
-      {
-        "HashCode": -91662323,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddApplicationUserComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.AddApplicationUserComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddApplicationUserComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 175683289,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddBaseComponent"
-        }
-      },
-      {
-        "HashCode": 812254439,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.AddBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddBaseComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 2046436168,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddBaseKontakteComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddBaseKontakteComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddBaseKontakteComponent"
-        }
-      },
-      {
-        "HashCode": 2112954441,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddBaseKontakteComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.AddBaseKontakteComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddBaseKontakteComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 16562627,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddXxBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddXxBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddXxBaseComponent"
-        }
-      },
-      {
-        "HashCode": -1082223728,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.AddXxBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.AddXxBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.AddXxBaseComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1923918004,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.ApplicationRolesComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ApplicationRolesComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.ApplicationRolesComponent"
-        }
-      },
-      {
-        "HashCode": 2014141438,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.ApplicationRolesComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.ApplicationRolesComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.ApplicationRolesComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1204236008,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.ApplicationUsersComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ApplicationUsersComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.ApplicationUsersComponent"
-        }
-      },
-      {
-        "HashCode": 844633392,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.ApplicationUsersComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.ApplicationUsersComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.ApplicationUsersComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 916297221,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.BaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "BaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.BaseComponent"
-        }
-      },
-      {
-        "HashCode": 423041687,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.BaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.BaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.BaseComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -746259390,
         "Kind": "Components.Component",
         "Name": "SinDarElaVerwaltung.Pages.DashboardComponent",
@@ -497,282 +57,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "SinDarElaVerwaltung.Pages.DashboardComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -223668577,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.EditApplicationUserComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditApplicationUserComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "Id"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.EditApplicationUserComponent"
-        }
-      },
-      {
-        "HashCode": -1487036916,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.EditApplicationUserComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.EditApplicationUserComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "Id"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.EditApplicationUserComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -2073004467,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.EditBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.EditBaseComponent"
-        }
-      },
-      {
-        "HashCode": -963045475,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.EditBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.EditBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.EditBaseComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -9368924,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.EditBaseKontakteComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditBaseKontakteComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "KontaktID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "KontaktID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.EditBaseKontakteComponent"
-        }
-      },
-      {
-        "HashCode": -613761468,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.EditBaseKontakteComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.EditBaseKontakteComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "KontaktID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "KontaktID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.EditBaseKontakteComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -2021130293,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.EditXxBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditXxBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.EditXxBaseComponent"
-        }
-      },
-      {
-        "HashCode": 387478570,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.EditXxBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.EditXxBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.EditXxBaseComponent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -948,59 +232,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "SinDarElaVerwaltung.Pages.LoginComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -69661777,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.ManagementComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ManagementComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.ManagementComponent"
-        }
-      },
-      {
-        "HashCode": 70271251,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.ManagementComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.ManagementComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.ManagementComponent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -1281,112 +512,6 @@
         }
       },
       {
-        "HashCode": -1419320867,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.ProfileComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ProfileComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.ProfileComponent"
-        }
-      },
-      {
-        "HashCode": 1319967776,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.ProfileComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.ProfileComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.ProfileComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 39638674,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.RegisterApplicationUserComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "RegisterApplicationUserComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.RegisterApplicationUserComponent"
-        }
-      },
-      {
-        "HashCode": 718186586,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.RegisterApplicationUserComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.RegisterApplicationUserComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.RegisterApplicationUserComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -678106206,
         "Kind": "Components.Component",
         "Name": "SinDarElaVerwaltung.Pages.UnauthorizedComponent",
@@ -1436,59 +561,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "SinDarElaVerwaltung.Pages.UnauthorizedComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 835296483,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.XxBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "XxBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.XxBaseComponent"
-        }
-      },
-      {
-        "HashCode": -1802123164,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Pages.XxBaseComponent",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Pages.XxBaseComponent"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Pages.XxBaseComponent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -1829,1918 +901,6 @@
         "Metadata": {
           "Runtime.Name": "Components.None",
           "Common.TypeName": "SinDarElaVerwaltung.Layouts.MainLayoutComponent.Body",
-          "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1482056957,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Einstellungen",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Einstellungen"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Einstellungen"
-        }
-      },
-      {
-        "HashCode": -1985756831,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Einstellungen",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.Einstellungen"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Einstellungen",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1470131433,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.MeldungJaNein",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MeldungJaNein"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "strMeldung",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "strMeldung"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungJaNein"
-        }
-      },
-      {
-        "HashCode": -802360935,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.MeldungJaNein",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.MeldungJaNein"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "strMeldung",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "strMeldung"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungJaNein",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -770868158,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddBase"
-        }
-      },
-      {
-        "HashCode": 868036969,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.AddBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddBase",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 375492013,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.ZzAutomatischErzeugen",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ZzAutomatischErzeugen"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.ZzAutomatischErzeugen"
-        }
-      },
-      {
-        "HashCode": -264328463,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.ZzAutomatischErzeugen",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.ZzAutomatischErzeugen"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.ZzAutomatischErzeugen",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1860506069,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Profile",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Profile"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Profile"
-        }
-      },
-      {
-        "HashCode": -1270153542,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Profile",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.Profile"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Profile",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -565890431,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Dashboard",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Dashboard"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Dashboard"
-        }
-      },
-      {
-        "HashCode": -995100829,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Dashboard",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.Dashboard"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Dashboard",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 848436721,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EditXxBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditXxBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EditXxBase"
-        }
-      },
-      {
-        "HashCode": 2146857192,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EditXxBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.EditXxBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EditXxBase",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -877556791,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddApplicationRole",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddApplicationRole"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddApplicationRole"
-        }
-      },
-      {
-        "HashCode": -1263902266,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddApplicationRole",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.AddApplicationRole"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddApplicationRole",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 2112419207,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.ApplicationRoles",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ApplicationRoles"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.ApplicationRoles"
-        }
-      },
-      {
-        "HashCode": -2037833586,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.ApplicationRoles",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.ApplicationRoles"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.ApplicationRoles",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1849520374,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EditBaseKontakte",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditBaseKontakte"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "KontaktID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "KontaktID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EditBaseKontakte"
-        }
-      },
-      {
-        "HashCode": -903052822,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EditBaseKontakte",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.EditBaseKontakte"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "KontaktID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "KontaktID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EditBaseKontakte",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1453746836,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EditBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EditBase"
-        }
-      },
-      {
-        "HashCode": -1028485975,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EditBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.EditBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EditBase",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1964815529,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.MeldungOk",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MeldungOk"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "strMeldung",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "strMeldung"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungOk"
-        }
-      },
-      {
-        "HashCode": -1270368860,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.MeldungOk",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.MeldungOk"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "strMeldung",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "strMeldung"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungOk",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1191410785,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Unauthorized",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Unauthorized"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Unauthorized"
-        }
-      },
-      {
-        "HashCode": 197391667,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Unauthorized",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.Unauthorized"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Unauthorized",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 385066460,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Management",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Management"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Management"
-        }
-      },
-      {
-        "HashCode": -915785286,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Management",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.Management"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Management",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1957803356,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddApplicationUser",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddApplicationUser"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddApplicationUser"
-        }
-      },
-      {
-        "HashCode": -238282530,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddApplicationUser",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.AddApplicationUser"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddApplicationUser",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -2118570500,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EditApplicationUser",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditApplicationUser"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "Id"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EditApplicationUser"
-        }
-      },
-      {
-        "HashCode": -1139833769,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EditApplicationUser",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.EditApplicationUser"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "Id"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EditApplicationUser",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 399572269,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Base",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Base"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Base"
-        }
-      },
-      {
-        "HashCode": 1635642262,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Base",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.Base"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Base",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -781875277,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddBaseKontakte",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddBaseKontakte"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddBaseKontakte"
-        }
-      },
-      {
-        "HashCode": -103589776,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddBaseKontakte",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.AddBaseKontakte"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "BaseID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "BaseID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddBaseKontakte",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1520893067,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EinstellungenInfotexteEditor",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EinstellungenInfotexteEditor"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "InfotextID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "InfotextID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EinstellungenInfotexteEditor"
-        }
-      },
-      {
-        "HashCode": -402437586,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.EinstellungenInfotexteEditor",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.EinstellungenInfotexteEditor"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "InfotextID",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "InfotextID"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.EinstellungenInfotexteEditor",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 733045435,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.RegisterApplicationUser",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "RegisterApplicationUser"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.RegisterApplicationUser"
-        }
-      },
-      {
-        "HashCode": -711802307,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.RegisterApplicationUser",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.RegisterApplicationUser"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.RegisterApplicationUser",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -664508647,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.XxBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "XxBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.XxBase"
-        }
-      },
-      {
-        "HashCode": -1081030972,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.XxBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.XxBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.XxBase",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -242392517,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.MeldungFortschritt",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MeldungFortschritt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "strMeldung",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "strMeldung"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungFortschritt"
-        }
-      },
-      {
-        "HashCode": 33791640,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.MeldungFortschritt",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.MeldungFortschritt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "strMeldung",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "strMeldung"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungFortschritt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -901043418,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.ApplicationUsers",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ApplicationUsers"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.ApplicationUsers"
-        }
-      },
-      {
-        "HashCode": 21592787,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.ApplicationUsers",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.ApplicationUsers"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.ApplicationUsers",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 845319014,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Login",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Login"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Login"
-        }
-      },
-      {
-        "HashCode": 373281110,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Login",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.Login"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Login",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -643238449,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.MeldungLoeschen",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MeldungLoeschen"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "strMeldung",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "strMeldung"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungLoeschen"
-        }
-      },
-      {
-        "HashCode": -750535638,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.MeldungLoeschen",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.MeldungLoeschen"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "strMeldung",
-            "TypeName": "dynamic",
-            "Metadata": {
-              "Common.PropertyName": "strMeldung"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungLoeschen",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1441933569,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddXxBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "AddXxBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddXxBase"
-        }
-      },
-      {
-        "HashCode": 730587740,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.AddXxBase",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.AddXxBase"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.AddXxBase",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -901530616,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.App",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.App"
-        }
-      },
-      {
-        "HashCode": 1925246885,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.App",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 644224555,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Shared.RedirectToLogin",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "RedirectToLogin"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "IsAuthenticated",
-            "TypeName": "System.Boolean",
-            "Metadata": {
-              "Common.PropertyName": "IsAuthenticated"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.RedirectToLogin"
-        }
-      },
-      {
-        "HashCode": 2038531427,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Shared.RedirectToLogin",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Shared.RedirectToLogin"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "IsAuthenticated",
-            "TypeName": "System.Boolean",
-            "Metadata": {
-              "Common.PropertyName": "IsAuthenticated"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.RedirectToLogin",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 468243349,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Shared.DialogLayout",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DialogLayout"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Body",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-            "Metadata": {
-              "Common.PropertyName": "Body",
-              "Components.ChildContent": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.DialogLayout"
-        }
-      },
-      {
-        "HashCode": -644125971,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Shared.DialogLayout",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Shared.DialogLayout"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Body",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-            "Metadata": {
-              "Common.PropertyName": "Body",
-              "Components.ChildContent": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.DialogLayout",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1049345080,
-        "Kind": "Components.ChildContent",
-        "Name": "SinDarElaVerwaltung.Client.Shared.DialogLayout.Body",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Body",
-            "ParentTag": "DialogLayout"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.DialogLayout.Body",
-          "Components.IsSpecialKind": "Components.ChildContent"
-        }
-      },
-      {
-        "HashCode": 1184052746,
-        "Kind": "Components.ChildContent",
-        "Name": "SinDarElaVerwaltung.Client.Shared.DialogLayout.Body",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Body",
-            "ParentTag": "SinDarElaVerwaltung.Client.Shared.DialogLayout"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.DialogLayout.Body",
-          "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1222694742,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Shared.MainLayout",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MainLayout"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Body",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-            "Metadata": {
-              "Common.PropertyName": "Body",
-              "Components.ChildContent": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.MainLayout"
-        }
-      },
-      {
-        "HashCode": 605651476,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Shared.MainLayout",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Shared.MainLayout"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Body",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-            "Metadata": {
-              "Common.PropertyName": "Body",
-              "Components.ChildContent": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.MainLayout",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 394479477,
-        "Kind": "Components.ChildContent",
-        "Name": "SinDarElaVerwaltung.Client.Shared.MainLayout.Body",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Body",
-            "ParentTag": "MainLayout"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.MainLayout.Body",
-          "Components.IsSpecialKind": "Components.ChildContent"
-        }
-      },
-      {
-        "HashCode": 1410499474,
-        "Kind": "Components.ChildContent",
-        "Name": "SinDarElaVerwaltung.Client.Shared.MainLayout.Body",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Body",
-            "ParentTag": "SinDarElaVerwaltung.Client.Shared.MainLayout"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.MainLayout.Body",
-          "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -189632567,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Shared.LoginLayout",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "LoginLayout"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Body",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-            "Metadata": {
-              "Common.PropertyName": "Body",
-              "Components.ChildContent": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.LoginLayout"
-        }
-      },
-      {
-        "HashCode": -424126629,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Shared.LoginLayout",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Shared.LoginLayout"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Body",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-            "Metadata": {
-              "Common.PropertyName": "Body",
-              "Components.ChildContent": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.LoginLayout",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1461823591,
-        "Kind": "Components.ChildContent",
-        "Name": "SinDarElaVerwaltung.Client.Shared.LoginLayout.Body",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Body",
-            "ParentTag": "LoginLayout"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.LoginLayout.Body",
-          "Components.IsSpecialKind": "Components.ChildContent"
-        }
-      },
-      {
-        "HashCode": 1947149914,
-        "Kind": "Components.ChildContent",
-        "Name": "SinDarElaVerwaltung.Client.Shared.LoginLayout.Body",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Body",
-            "ParentTag": "SinDarElaVerwaltung.Client.Shared.LoginLayout"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Shared.LoginLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
@@ -11539,7 +8699,7 @@
         }
       },
       {
-        "HashCode": 157653890,
+        "HashCode": -79614927,
         "Kind": "Components.Component",
         "Name": "Radzen.PagedDataBoundComponent<T>",
         "AssemblyName": "Radzen.Blazor",
@@ -11696,6 +8856,16 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "Page",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.PagerEventArgs>",
+            "Documentation": "\n            <summary>\n            Gets or sets the page callback.\n            </summary>\n            <value>The page callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Page",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "Attributes",
             "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, System.Object>",
             "Documentation": "\n            <summary>\n            Specifies additional custom attributes that will be rendered by the component.\n            </summary>\n            <value>The attributes.</value>\n        ",
@@ -11778,7 +8948,7 @@
         }
       },
       {
-        "HashCode": 1316762086,
+        "HashCode": -480192375,
         "Kind": "Components.Component",
         "Name": "Radzen.PagedDataBoundComponent<T>",
         "AssemblyName": "Radzen.Blazor",
@@ -11930,6 +9100,16 @@
             "Documentation": "\n            <summary>\n            Gets or sets the load data.\n            </summary>\n            <value>The load data.</value>\n        ",
             "Metadata": {
               "Common.PropertyName": "LoadData",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Page",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.PagerEventArgs>",
+            "Documentation": "\n            <summary>\n            Gets or sets the page callback.\n            </summary>\n            <value>The page callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Page",
               "Components.EventCallback": "True"
             }
           },
@@ -19707,7 +16887,7 @@
         }
       },
       {
-        "HashCode": -1899626326,
+        "HashCode": -1483271544,
         "Kind": "Components.Component",
         "Name": "Radzen.Blazor.RadzenDataGrid<TItem>",
         "AssemblyName": "Radzen.Blazor",
@@ -19750,12 +16930,45 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "Group",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.DataGridColumnGroupEventArgs<TItem>>",
+            "Documentation": "\n            <summary>\n            Gets or sets the column group callback.\n            </summary>\n            <value>The column group callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Group",
+              "Components.EventCallback": "True",
+              "Components.GenericTyped": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "Columns",
             "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
             "Documentation": "\n            <summary>\n            Gets or sets the columns.\n            </summary>\n            <value>The columns.</value>\n        ",
             "Metadata": {
               "Common.PropertyName": "Columns",
               "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Sort",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.DataGridColumnSortEventArgs<TItem>>",
+            "Documentation": "\n            <summary>\n            Gets or sets the column sort callback.\n            </summary>\n            <value>The column sort callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Sort",
+              "Components.EventCallback": "True",
+              "Components.GenericTyped": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Filter",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.DataGridColumnFilterEventArgs<TItem>>",
+            "Documentation": "\n            <summary>\n            Gets or sets the column filter callback.\n            </summary>\n            <value>The column filter callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Filter",
+              "Components.EventCallback": "True",
+              "Components.GenericTyped": "True"
             }
           },
           {
@@ -20054,6 +17267,15 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "ShowMultiColumnSortingIndex",
+            "TypeName": "System.Boolean",
+            "Documentation": "\n            <summary>\n            Gets or sets a value indicating whether multi column sorting index is shown.\n            </summary>\n            <value><c>true</c> if multi column sorting index is shown; otherwise, <c>false</c>.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "ShowMultiColumnSortingIndex"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "AllowFiltering",
             "TypeName": "System.Boolean",
             "Documentation": "\n            <summary>\n            Gets or sets a value indicating whether filtering is allowed.\n            </summary>\n            <value><c>true</c> if filtering is allowed; otherwise, <c>false</c>.</value>\n        ",
@@ -20099,11 +17321,38 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "AllColumnsText",
+            "TypeName": "System.String",
+            "Documentation": "\n            <summary>\n            Gets or sets the column picker all columns text.\n            </summary>\n            <value>The column picker all columns text.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "AllColumnsText"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "ColumnsText",
+            "TypeName": "System.String",
+            "Documentation": "\n            <summary>\n            Gets or sets the column picker columns text.\n            </summary>\n            <value>The column picker columns text.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "ColumnsText"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "AllowGrouping",
             "TypeName": "System.Boolean",
             "Documentation": "\n            <summary>\n            Gets or sets a value indicating whether grouping is allowed.\n            </summary>\n            <value><c>true</c> if grouping is allowed; otherwise, <c>false</c>.</value>\n        ",
             "Metadata": {
               "Common.PropertyName": "AllowGrouping"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "HideGroupedColumn",
+            "TypeName": "System.Boolean",
+            "Documentation": "\n            <summary>\n            Gets or sets a value indicating whether grouped column should be hidden.\n            </summary>\n            <value><c>true</c> if grouped columns should be hidden; otherwise, <c>false</c>.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "HideGroupedColumn"
             }
           },
           {
@@ -20520,6 +17769,16 @@
             "Documentation": "\n            <summary>\n            Gets or sets the load data.\n            </summary>\n            <value>The load data.</value>\n        ",
             "Metadata": {
               "Common.PropertyName": "LoadData",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Page",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.PagerEventArgs>",
+            "Documentation": "\n            <summary>\n            Gets or sets the page callback.\n            </summary>\n            <value>The page callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Page",
               "Components.EventCallback": "True"
             }
           },
@@ -20607,7 +17866,7 @@
         }
       },
       {
-        "HashCode": -869628946,
+        "HashCode": -126000893,
         "Kind": "Components.Component",
         "Name": "Radzen.Blazor.RadzenDataGrid<TItem>",
         "AssemblyName": "Radzen.Blazor",
@@ -20650,12 +17909,45 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "Group",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.DataGridColumnGroupEventArgs<TItem>>",
+            "Documentation": "\n            <summary>\n            Gets or sets the column group callback.\n            </summary>\n            <value>The column group callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Group",
+              "Components.EventCallback": "True",
+              "Components.GenericTyped": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "Columns",
             "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
             "Documentation": "\n            <summary>\n            Gets or sets the columns.\n            </summary>\n            <value>The columns.</value>\n        ",
             "Metadata": {
               "Common.PropertyName": "Columns",
               "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Sort",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.DataGridColumnSortEventArgs<TItem>>",
+            "Documentation": "\n            <summary>\n            Gets or sets the column sort callback.\n            </summary>\n            <value>The column sort callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Sort",
+              "Components.EventCallback": "True",
+              "Components.GenericTyped": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Filter",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.DataGridColumnFilterEventArgs<TItem>>",
+            "Documentation": "\n            <summary>\n            Gets or sets the column filter callback.\n            </summary>\n            <value>The column filter callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Filter",
+              "Components.EventCallback": "True",
+              "Components.GenericTyped": "True"
             }
           },
           {
@@ -20954,6 +18246,15 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "ShowMultiColumnSortingIndex",
+            "TypeName": "System.Boolean",
+            "Documentation": "\n            <summary>\n            Gets or sets a value indicating whether multi column sorting index is shown.\n            </summary>\n            <value><c>true</c> if multi column sorting index is shown; otherwise, <c>false</c>.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "ShowMultiColumnSortingIndex"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "AllowFiltering",
             "TypeName": "System.Boolean",
             "Documentation": "\n            <summary>\n            Gets or sets a value indicating whether filtering is allowed.\n            </summary>\n            <value><c>true</c> if filtering is allowed; otherwise, <c>false</c>.</value>\n        ",
@@ -20999,11 +18300,38 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "AllColumnsText",
+            "TypeName": "System.String",
+            "Documentation": "\n            <summary>\n            Gets or sets the column picker all columns text.\n            </summary>\n            <value>The column picker all columns text.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "AllColumnsText"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "ColumnsText",
+            "TypeName": "System.String",
+            "Documentation": "\n            <summary>\n            Gets or sets the column picker columns text.\n            </summary>\n            <value>The column picker columns text.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "ColumnsText"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "AllowGrouping",
             "TypeName": "System.Boolean",
             "Documentation": "\n            <summary>\n            Gets or sets a value indicating whether grouping is allowed.\n            </summary>\n            <value><c>true</c> if grouping is allowed; otherwise, <c>false</c>.</value>\n        ",
             "Metadata": {
               "Common.PropertyName": "AllowGrouping"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "HideGroupedColumn",
+            "TypeName": "System.Boolean",
+            "Documentation": "\n            <summary>\n            Gets or sets a value indicating whether grouped column should be hidden.\n            </summary>\n            <value><c>true</c> if grouped columns should be hidden; otherwise, <c>false</c>.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "HideGroupedColumn"
             }
           },
           {
@@ -21420,6 +18748,16 @@
             "Documentation": "\n            <summary>\n            Gets or sets the load data.\n            </summary>\n            <value>The load data.</value>\n        ",
             "Metadata": {
               "Common.PropertyName": "LoadData",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Page",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.PagerEventArgs>",
+            "Documentation": "\n            <summary>\n            Gets or sets the page callback.\n            </summary>\n            <value>The page callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Page",
               "Components.EventCallback": "True"
             }
           },
@@ -22840,7 +20178,7 @@
         }
       },
       {
-        "HashCode": 51905562,
+        "HashCode": -976845025,
         "Kind": "Components.Component",
         "Name": "Radzen.Blazor.RadzenDataList<TItem>",
         "AssemblyName": "Radzen.Blazor",
@@ -23006,6 +20344,16 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "Page",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.PagerEventArgs>",
+            "Documentation": "\n            <summary>\n            Gets or sets the page callback.\n            </summary>\n            <value>The page callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Page",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "Attributes",
             "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, System.Object>",
             "Documentation": "\n            <summary>\n            Specifies additional custom attributes that will be rendered by the component.\n            </summary>\n            <value>The attributes.</value>\n        ",
@@ -23088,7 +20436,7 @@
         }
       },
       {
-        "HashCode": 979967360,
+        "HashCode": 119445213,
         "Kind": "Components.Component",
         "Name": "Radzen.Blazor.RadzenDataList<TItem>",
         "AssemblyName": "Radzen.Blazor",
@@ -23254,6 +20602,16 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "Page",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.PagerEventArgs>",
+            "Documentation": "\n            <summary>\n            Gets or sets the page callback.\n            </summary>\n            <value>The page callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Page",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "Attributes",
             "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, System.Object>",
             "Documentation": "\n            <summary>\n            Specifies additional custom attributes that will be rendered by the component.\n            </summary>\n            <value>The attributes.</value>\n        ",
@@ -23400,7 +20758,7 @@
         }
       },
       {
-        "HashCode": -1833903207,
+        "HashCode": 422502087,
         "Kind": "Components.Component",
         "Name": "Radzen.Blazor.RadzenDatePicker<TValue>",
         "AssemblyName": "Radzen.Blazor",
@@ -23656,6 +21014,16 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "FooterTemplate",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets or sets the footer template.\n            </summary>\n            <value>The footer template.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "FooterTemplate",
+              "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "ValueExpression",
             "TypeName": "System.Linq.Expressions.Expression<System.Func<TValue>>",
             "Documentation": "\n            <summary>\n            Gets or sets the value expression.\n            </summary>\n            <value>The value expression.</value>\n        ",
@@ -23738,7 +21106,7 @@
         }
       },
       {
-        "HashCode": 1420386331,
+        "HashCode": -1232054343,
         "Kind": "Components.Component",
         "Name": "Radzen.Blazor.RadzenDatePicker<TValue>",
         "AssemblyName": "Radzen.Blazor",
@@ -23994,6 +21362,16 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "FooterTemplate",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets or sets the footer template.\n            </summary>\n            <value>The footer template.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "FooterTemplate",
+              "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "ValueExpression",
             "TypeName": "System.Linq.Expressions.Expression<System.Func<TValue>>",
             "Documentation": "\n            <summary>\n            Gets or sets the value expression.\n            </summary>\n            <value>The value expression.</value>\n        ",
@@ -24073,6 +21451,45 @@
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Radzen.Blazor.RadzenDatePicker<TValue>",
           "Components.GenericTyped": "True",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -209092125,
+        "Kind": "Components.ChildContent",
+        "Name": "Radzen.Blazor.RadzenDatePicker<TValue>.FooterTemplate",
+        "AssemblyName": "Radzen.Blazor",
+        "Documentation": "\n            <summary>\n            Gets or sets the footer template.\n            </summary>\n            <value>The footer template.</value>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "FooterTemplate",
+            "ParentTag": "RadzenDatePicker"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Radzen.Blazor.RadzenDatePicker<TValue>.FooterTemplate",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": 1671027508,
+        "Kind": "Components.ChildContent",
+        "Name": "Radzen.Blazor.RadzenDatePicker<TValue>.FooterTemplate",
+        "AssemblyName": "Radzen.Blazor",
+        "Documentation": "\n            <summary>\n            Gets or sets the footer template.\n            </summary>\n            <value>The footer template.</value>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "FooterTemplate",
+            "ParentTag": "Radzen.Blazor.RadzenDatePicker"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Radzen.Blazor.RadzenDatePicker<TValue>.FooterTemplate",
+          "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -55083,7 +52500,7 @@
         }
       },
       {
-        "HashCode": -1638431026,
+        "HashCode": 1082519988,
         "Kind": "Components.Component",
         "Name": "Radzen.Blazor.RadzenGrid<TItem>",
         "AssemblyName": "Radzen.Blazor",
@@ -55634,6 +53051,16 @@
           },
           {
             "Kind": "Components.Component",
+            "Name": "Page",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.PagerEventArgs>",
+            "Documentation": "\n            <summary>\n            Gets or sets the page callback.\n            </summary>\n            <value>The page callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Page",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "Attributes",
             "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, System.Object>",
             "Documentation": "\n            <summary>\n            Specifies additional custom attributes that will be rendered by the component.\n            </summary>\n            <value>The attributes.</value>\n        ",
@@ -55716,7 +53143,7 @@
         }
       },
       {
-        "HashCode": 1150381949,
+        "HashCode": -1978859842,
         "Kind": "Components.Component",
         "Name": "Radzen.Blazor.RadzenGrid<TItem>",
         "AssemblyName": "Radzen.Blazor",
@@ -56262,6 +53689,16 @@
             "Documentation": "\n            <summary>\n            Gets or sets the load data.\n            </summary>\n            <value>The load data.</value>\n        ",
             "Metadata": {
               "Common.PropertyName": "LoadData",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Page",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Radzen.PagerEventArgs>",
+            "Documentation": "\n            <summary>\n            Gets or sets the page callback.\n            </summary>\n            <value>The page callback.</value>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Page",
               "Components.EventCallback": "True"
             }
           },
@@ -76555,18 +73992,8 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\AddBase.razor",
-      "TargetPath": "Pages\\AddBase.razor",
-      "FileKind": "component"
-    },
-    {
       "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\ZzAutomatischErzeugen.razor",
       "TargetPath": "Pages\\ZzAutomatischErzeugen.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\Profile.razor",
-      "TargetPath": "Pages\\Profile.razor",
       "FileKind": "component"
     },
     {
@@ -76580,31 +74007,6 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\EditXxBase.razor",
-      "TargetPath": "Pages\\EditXxBase.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\AddApplicationRole.razor",
-      "TargetPath": "Pages\\AddApplicationRole.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\ApplicationRoles.razor",
-      "TargetPath": "Pages\\ApplicationRoles.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\EditBaseKontakte.razor",
-      "TargetPath": "Pages\\EditBaseKontakte.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\EditBase.razor",
-      "TargetPath": "Pages\\EditBase.razor",
-      "FileKind": "component"
-    },
-    {
       "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\MeldungOk.razor",
       "TargetPath": "Pages\\MeldungOk.razor",
       "FileKind": "component"
@@ -76615,33 +74017,8 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\Management.razor",
-      "TargetPath": "Pages\\Management.razor",
-      "FileKind": "component"
-    },
-    {
       "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Shared\\DialogLayout.razor",
       "TargetPath": "Shared\\DialogLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\AddApplicationUser.razor",
-      "TargetPath": "Pages\\AddApplicationUser.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\EditApplicationUser.razor",
-      "TargetPath": "Pages\\EditApplicationUser.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\Base.razor",
-      "TargetPath": "Pages\\Base.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\AddBaseKontakte.razor",
-      "TargetPath": "Pages\\AddBaseKontakte.razor",
       "FileKind": "component"
     },
     {
@@ -76655,19 +74032,9 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\RegisterApplicationUser.razor",
-      "TargetPath": "Pages\\RegisterApplicationUser.razor",
-      "FileKind": "component"
-    },
-    {
       "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\XxBase.razor",
-      "TargetPath": "Pages\\XxBase.razor",
-      "FileKind": "component"
     },
     {
       "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\MeldungFortschritt.razor",
@@ -76685,11 +74052,6 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\ApplicationUsers.razor",
-      "TargetPath": "Pages\\ApplicationUsers.razor",
-      "FileKind": "component"
-    },
-    {
       "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\Login.razor",
       "TargetPath": "Pages\\Login.razor",
       "FileKind": "component"
@@ -76697,11 +74059,6 @@
     {
       "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\MeldungLoeschen.razor",
       "TargetPath": "Pages\\MeldungLoeschen.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\Pages\\AddXxBase.razor",
-      "TargetPath": "Pages\\AddXxBase.razor",
       "FileKind": "component"
     }
   ],

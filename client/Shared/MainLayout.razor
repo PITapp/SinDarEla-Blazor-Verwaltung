@@ -28,7 +28,7 @@
           <div class="col-6 text-right justify-content-end d-flex">
             <RadzenProfileMenu style="display: block" Visible="@(Security.IsAuthenticated())" Click="@Profilemenu1Click">
               <ChildContent>
-                <RadzenProfileMenuItem Icon="account_circle" Path="benutzer-profil" Text="Benutzerprofil">
+                <RadzenProfileMenuItem Icon="account_circle" Text="Benutzerprofil">
                 </RadzenProfileMenuItem>
                 <RadzenProfileMenuItem Icon="power_settings_new" Text="Logout">
                 </RadzenProfileMenuItem>
@@ -83,9 +83,9 @@
           <ChildContent>
             <RadzenPanelMenuItem Icon="dashboard" Path="dashboard" Text="Dashboard" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="assignment_turned_in" Path="management" Text="Management" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
+            <RadzenPanelMenuItem Icon="assignment_turned_in" Text="Management">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="assignment" Path="base" Text="Dienstplan" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
+            <RadzenPanelMenuItem Icon="assignment" Text="Dienstplan">
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Icon="assignment_ind" Text="Mitarbeiter">
             </RadzenPanelMenuItem>

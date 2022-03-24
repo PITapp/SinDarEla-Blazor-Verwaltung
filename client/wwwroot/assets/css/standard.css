@@ -11826,6 +11826,10 @@ body {
   background-image: linear-gradient(#F1903C, #d66808);
 }
 
+.kopfzeileVerlaufend {
+  background-image: linear-gradient(#F1903C, #d66808);
+}
+
 body {
   background: #f4f5f7;
   font-size: 1rem;
@@ -11934,6 +11938,8 @@ ul.rz-profile-menu .rz-navigation-menu {
 /* --- Kopfzeile in Dialogen --- */
 .rz-dialog-titlebar {
   background-color: #E8ECEF;
+  background-color: #F7F8FB;
+  background-color: #f4f5f9;
   color: #5d717b;
   font-size: 1rem;
   padding: 1rem;
@@ -11947,4 +11953,9 @@ ul.rz-profile-menu .rz-navigation-menu {
 /* --- HTML Editor - Toolbox: bei der Farbauswahl mit dem Mauszeiger hat einen Rahmen erzeugt, dieser hat die Anzeige um 2 Punkte vergrößert; hier wird das ausgeschalten --- */
 .rz-colorpicker:not(:disabled):not(.rz-state-disabled):focus, .rz-colorpicker:not(:disabled):not(.rz-state-disabled):hover {
   border: none;
+}
+
+/* --- Login Button auf die rechte Seite --- */
+.login .login-buttons {
+  justify-content: flex-end !important;
 }
