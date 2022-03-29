@@ -17,7 +17,9 @@
   "logo": "",
   "name": "SinDarElaVerwaltung",
   "namespaces": [],
-  "navigation": [],
+  "navigation": [
+    "Dashboard"
+  ],
   "pages": [
     "Login",
     "Unauthorized",

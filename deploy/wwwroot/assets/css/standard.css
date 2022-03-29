@@ -11818,14 +11818,23 @@ body {
   background: #f4f5f9 #f4f5f7;
 }
 
+/* --- Einstellungen für SinDarEla --- */
+/*=====================================*/
 
 /* --- Kopfzeile: verlaufend dunkel --- */
 .header {
   background-image: linear-gradient(#F1903C, #d66808);
 }
 
+.kopfzeileVerlaufend {
+  background-image: linear-gradient(#F1903C, #d66808);
+}
+
 body {
   background: #f4f5f7;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .footer {
@@ -11859,6 +11868,7 @@ ul.rz-profile-menu .rz-navigation-menu {
 .rz-panel-menu {
   color: #212529;
   background-color: #FFFFFF;
+  font-size: 1rem;
 }
 
 .rz-panel-menu .rz-navigation-item {
@@ -11892,4 +11902,60 @@ ul.rz-profile-menu .rz-navigation-menu {
 .rz-panel-menu .rz-navigation-item-wrapper-active:before {
   width: 7px;
   background-color: #D86E13;
+}
+
+/* --- Panel: Farbe des Titels und Abstand --- */
+.rz-panel-titlebar {
+  color: #6A80AA;
+  font-weight: bold;
+  padding-left: 10px;
+  align-items: center;
+}
+
+/* --- Panel: Überlauf unsichtbar machen --- */
+.rz-panel {
+  overflow: hidden !important;
+  padding: 10px;
+}
+
+/* --- Tabview: Text einstellen --- */
+.rz-tabview-nav .rz-tabview-selected a {
+  color: #5d717b;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* --- Höhe der Zeilen in DataGrid --- */
+.rz-grid-table td {
+    padding: 4px 8px 4px 8px;
+}
+
+/* --- HTML Editor: Innerer Rand --- */
+.rz-html-editor-content {
+  padding: 15px;
+}
+
+/* --- Kopfzeile in Dialogen --- */
+.rz-dialog-titlebar {
+  background-color: #E8ECEF;
+  background-color: #F7F8FB;
+  background-color: #f4f5f9;
+  color: #5d717b;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.rz-dialog-title {
+  letter-spacing: 0;
+  color: #5d717b;
+}
+
+/* --- HTML Editor - Toolbox: bei der Farbauswahl mit dem Mauszeiger hat einen Rahmen erzeugt, dieser hat die Anzeige um 2 Punkte vergrößert; hier wird das ausgeschalten --- */
+.rz-colorpicker:not(:disabled):not(.rz-state-disabled):focus, .rz-colorpicker:not(:disabled):not(.rz-state-disabled):hover {
+  border: none;
+}
+
+/* --- Login Button auf die rechte Seite --- */
+.login .login-buttons {
+  justify-content: flex-end !important;
 }

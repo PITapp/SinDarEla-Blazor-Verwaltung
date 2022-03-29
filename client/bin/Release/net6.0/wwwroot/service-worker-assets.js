@@ -1,7 +1,11 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-xLGRsFfZbj6Q3PZC9Q5j1y8zElS30e\/9Yj9EPrEENPk=",
+      "hash": "sha256-JKt9WruIQuSrWP8I09QBIg9\/l7i\/647T8Buik8wlxr0=",
+      "url": "assets\/css\/default.css"
+    },
+    {
+      "hash": "sha256-7zxhVbChnx338UdkeBxpxGqwB4u9sf4FoW7kopqDAPc=",
       "url": "assets\/css\/standard.css"
     },
     {
@@ -257,7 +261,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-2H42u\/X0bqUdW2KQUXvW2KdjJaK9iLMV00tOquCE8cw=",
+      "hash": "sha256-zG0xoxp3knyGe84+hJlPbBN3Z4VZ8RFy23\/qZv1ultU=",
       "url": "_framework\/Radzen.Blazor.dll"
     },
     {
@@ -961,11 +965,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-doVCWuTkTLOjIT7F8+XQ6ewFlWv7rWsubAkj\/RrVTCU=",
+      "hash": "sha256-ozHxkMprgp6MEELb2nmVaATJf9saqGktOo6NfE11zMo=",
       "url": "_framework\/SinDarElaVerwaltung.Client.dll"
     },
     {
-      "hash": "sha256-TZAR7TDCh45NJC7NCH4wp1jL1s8fwXsPD1KxvNsiY3w=",
+      "hash": "sha256-gj6QRRozXNrTOuaqQkQSVTuL8WHij\/I86cZlXh9h2pQ=",
       "url": "_framework\/SinDarElaVerwaltung.Client.pdb"
     },
     {
@@ -973,47 +977,47 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-egrYg6yJqPP54rBWDysB46eGQBOO8AUiNqo93cAenb0=",
+      "hash": "sha256-gPLYdwxuL6uRuAh4cgiUbqytHet+YVjC67Cy4roQPjE=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-oRVqtzibwign\/74S\/nQCFcGSdJnuITzG8Wk8WDPIjWw=",
+      "hash": "sha256-q5YELTFf1BHGJn6z1DV0dU7Sx2oCJdPppEZZyi1ZHI8=",
       "url": "_content\/Radzen.Blazor\/css\/dark-base.css"
     },
     {
-      "hash": "sha256-w\/rBtATBtrsaARfQouPsarbdFJv+s6GcHGFDxy+livE=",
+      "hash": "sha256-Rn0fy8QpGSP3DQEbD2v1gDmMPsNPA9X3bw1jsTkhl3U=",
       "url": "_content\/Radzen.Blazor\/css\/dark.css"
     },
     {
-      "hash": "sha256-nI6kJYtHmVHVCX4\/T8WRl796F2DYhwCLXTY36rsuBBo=",
+      "hash": "sha256-bRFJtLJjySZCUwQ2Z4qjhzEGvEx9Hxm1O2e3YvMaGKs=",
       "url": "_content\/Radzen.Blazor\/css\/default-base.css"
     },
     {
-      "hash": "sha256-WXiWg9BMGK39nVwHsxN1DCFIkqcZFtOVTkHvEYQKbdA=",
+      "hash": "sha256-5PnqHC3Rxpj7vjUuQ9XYVG1hIV6znGKWT3am7klhFfQ=",
       "url": "_content\/Radzen.Blazor\/css\/default.css"
     },
     {
-      "hash": "sha256-N876B22GXApeeu\/cmZ46nosGVOJvRBbG\/59zNmzkT6s=",
+      "hash": "sha256-lTHlVf0zZ2RYh0aNMkGbWvLkY\/oRcTcdpUpL+3EplL8=",
       "url": "_content\/Radzen.Blazor\/css\/humanistic-base.css"
     },
     {
-      "hash": "sha256-Qnj9NIK2Cks5qX4+FaWCNeTdemiMdIBK2me\/zfhSRHw=",
+      "hash": "sha256-pirRBunH05Dze+vRbvQ741HvGTs8EmV1GvXd2DpLX1Q=",
       "url": "_content\/Radzen.Blazor\/css\/humanistic.css"
     },
     {
-      "hash": "sha256-OmgWpBcxdl8VW0UqfCAAZqz95UL7TZ3l7E55\/B\/2Jos=",
+      "hash": "sha256-dAdv7HuYrfRo02J9sR3DzuFiFOCLeMylOeq6hutjx2c=",
       "url": "_content\/Radzen.Blazor\/css\/software-base.css"
     },
     {
-      "hash": "sha256-wH2ZWITf2BukxQFu6vzPPx+fiLBkVetZVqDDKzG4FlI=",
+      "hash": "sha256-5G6M8NxF6D4AP2E9\/UCXFRyThcWD+ujbh+nraPHPkXc=",
       "url": "_content\/Radzen.Blazor\/css\/software.css"
     },
     {
-      "hash": "sha256-8aHJ\/eGYpd+ajNvYLpdsFkGX5kmAr7BkdYVs3h+GuLs=",
+      "hash": "sha256-g6+FI2vsxM80MnaNtS6OMEAA4UrnJrR\/8mrLsNvN2aY=",
       "url": "_content\/Radzen.Blazor\/css\/standard-base.css"
     },
     {
-      "hash": "sha256-a8aTMqwIzHXmmhLB9w\/vE8SJ6vvtRYyjZtL2ArIuJH0=",
+      "hash": "sha256-Y\/2G8NORmC4zEfuGr\/KeGV7jrnYkjRZxkoRtWdvEMLY=",
       "url": "_content\/Radzen.Blazor\/css\/standard.css"
     },
     {
@@ -1081,7 +1085,7 @@
       "url": "_content\/Radzen.Blazor\/fonts\/SourceSansPro-SemiboldIt.woff"
     },
     {
-      "hash": "sha256-kis91GtqnggggIFybg6syCyr1Nmzlo2MSbT6c3X7x94=",
+      "hash": "sha256-pEpwGhg3HLyP4AxJpD1KoR8aBb4wU5f2xwNn2dzWhd4=",
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     },
     {
@@ -1089,5 +1093,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "zj67yXP8"
+  "version": "galHuu6Y"
 };
