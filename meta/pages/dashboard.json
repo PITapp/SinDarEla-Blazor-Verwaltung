@@ -124,7 +124,13 @@
                       "class": "col-md-7",
                       "components": [
                         {
-                          "components": [],
+                          "components": [
+                            {
+                              "name": "label0",
+                              "text": "Test",
+                              "type": "label"
+                            }
+                          ],
                           "headerTemplate": [
                             {
                               "components": [
@@ -217,7 +223,13 @@
                       "components": [
                         {
                           "attributes": [],
-                          "components": [],
+                          "components": [
+                            {
+                              "name": "label1",
+                              "text": "Test",
+                              "type": "label"
+                            }
+                          ],
                           "footerTemplate": "",
                           "headerTemplate": [
                             {

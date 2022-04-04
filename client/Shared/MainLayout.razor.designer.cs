@@ -121,7 +121,7 @@ namespace SinDarElaVerwaltung.Layouts
         {
             if (args.Text == "Logout")
             {
-                Security.Logout();
+                await Security.Logout();
             }
         }
     }

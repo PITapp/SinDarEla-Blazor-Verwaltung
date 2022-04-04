@@ -18,7 +18,8 @@
   "name": "SinDarElaVerwaltung",
   "namespaces": [],
   "navigation": [
-    "Dashboard"
+    "Dashboard",
+    "Einstellungen"
   ],
   "pages": [
     "Login",
@@ -30,7 +31,8 @@
     "zzAutomatischErzeugen",
     "Einstellungen",
     "EinstellungenInfotexteEditor",
-    "Dashboard"
+    "Dashboard",
+    "Benutzerprofil"
   ],
   "port": 8000,
   "pwa": true,

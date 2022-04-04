@@ -78,7 +78,7 @@
                       "events": {
                         "click": [
                           {
-                            "code": "${Security.Logout()}",
+                            "code": "await ${Security.Logout()}",
                             "condition": "${event.Text == \"Logout\"}",
                             "type": "execute"
                           }
@@ -328,7 +328,7 @@
                 },
                 {
                   "icon": "face",
-                  "path": "",
+                  "path": "benutzerprofil",
                   "text": "Benutzerprofil"
                 },
                 {

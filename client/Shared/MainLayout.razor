@@ -101,7 +101,7 @@
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Icon="supervisor_account" Text="Benutzer">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="face" Text="Benutzerprofil">
+            <RadzenPanelMenuItem Icon="face" Path="benutzerprofil" Text="Benutzerprofil" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Icon="settings" Path="einstellungen" Text="Einstellungen" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
