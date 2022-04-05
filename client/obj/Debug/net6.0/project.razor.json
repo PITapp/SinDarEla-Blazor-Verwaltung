@@ -1256,59 +1256,6 @@
         }
       },
       {
-        "HashCode": -2082319423,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Benutzerprofil"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil"
-        }
-      },
-      {
-        "HashCode": 1774491376,
-        "Kind": "Components.Component",
-        "Name": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil",
-        "AssemblyName": "SinDarElaVerwaltung.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Attributes",
-            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
-            "Metadata": {
-              "Common.PropertyName": "Attributes"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1520893067,
         "Kind": "Components.Component",
         "Name": "SinDarElaVerwaltung.Client.Pages.EinstellungenInfotexteEditor",
@@ -1618,6 +1565,59 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.MeldungLoeschen",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -2082319423,
+        "Kind": "Components.Component",
+        "Name": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil",
+        "AssemblyName": "SinDarElaVerwaltung.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Benutzerprofil"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Attributes",
+            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
+            "Metadata": {
+              "Common.PropertyName": "Attributes"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil"
+        }
+      },
+      {
+        "HashCode": 1774491376,
+        "Kind": "Components.Component",
+        "Name": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil",
+        "AssemblyName": "SinDarElaVerwaltung.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Attributes",
+            "TypeName": "System.Collections.Generic.IReadOnlyDictionary<System.String, dynamic>",
+            "Metadata": {
+              "Common.PropertyName": "Attributes"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "SinDarElaVerwaltung.Client.Pages.Benutzerprofil",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

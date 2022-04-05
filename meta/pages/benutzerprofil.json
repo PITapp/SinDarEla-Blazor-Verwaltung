@@ -337,7 +337,7 @@
                                           "name": "listbox0",
                                           "readOnly": true,
                                           "style": {
-                                            "height": "300px",
+                                            "height": "250px",
                                             "width": "100%"
                                           },
                                           "textProperty": "Titel",
