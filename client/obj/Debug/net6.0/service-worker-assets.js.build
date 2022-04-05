@@ -965,11 +965,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-9qAhnBAlKdA2QAop39YIT6fLcAHfmgvCHfa1U+MlYT8=",
+      "hash": "sha256-RXHQ4FRY9bysPa\/StyytWdRGmzgTRLFNGdPV1yW4L94=",
       "url": "_framework\/SinDarElaVerwaltung.Client.dll"
     },
     {
-      "hash": "sha256-7z9BmtrNxNj\/S5pOosF0e6mPMAXDA6K9dydNOMkkuSQ=",
+      "hash": "sha256-4zsygJsp95u8jqLyucwrTM3480B8srCe\/HLfq7wNtcc=",
       "url": "_framework\/SinDarElaVerwaltung.Client.pdb"
     },
     {
@@ -977,7 +977,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-WBTFNCfIxXcqUYFO\/yt+pgl4PyzDOr6A5\/7XyOujFKM=",
+      "hash": "sha256-L7DvTuJ4E6svYMGCJFcUZB7+jIX2QR1Ys3QBqSungZo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1093,5 +1093,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "RZT3NBBU"
+  "version": "RMzBvXjP"
 };

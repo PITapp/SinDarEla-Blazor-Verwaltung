@@ -78,7 +78,7 @@
                             </RadzenRequiredValidator>
                           </div>
                           <div class="col-md-9" >
-                            <RadzenListBox Data="@rstRollen" Multiple="true" style="height: 300px; width: 100%" TextProperty="Titel" @bind-Value="@(dsoUser.RoleNames)" ValueProperty="Titel" Name="Listbox0">
+                            <RadzenListBox Data="@rstRollen" Multiple="false" ReadOnly="true" style="height: 300px; width: 100%" TextProperty="Titel" @bind-Value="@(dsoUser.RoleNames)" ValueProperty="Titel" Name="Listbox0">
                             </RadzenListBox>
                           </div>
                         </div>

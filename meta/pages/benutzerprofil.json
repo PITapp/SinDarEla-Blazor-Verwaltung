@@ -333,8 +333,9 @@
                                       "components": [
                                         {
                                           "data": "${rstRollen}",
-                                          "multiple": true,
+                                          "multiple": false,
                                           "name": "listbox0",
+                                          "readOnly": true,
                                           "style": {
                                             "height": "300px",
                                             "width": "100%"
