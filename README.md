@@ -6,6 +6,9 @@ git remote add origin https://github.com/PITapp/SinDarEla_WebApp.git
 git branch -M main
 git push -u origin main
 
+# Projekt aus GIT klonen
+git clone https://github.com/PITapp/SinDarEla-Blazor-Verwaltung
+
 # Berichte erzeugen:
 https://forum.radzen.com/t/creating-reports/5844
 https://github.com/FastReports/FastReport
