@@ -91,6 +91,6 @@
   "events": {
     "load": []
   },
-  "layout": "Main",
+  "layout": "Dialog",
   "name": "MeldungOK"
 }

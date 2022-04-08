@@ -11,77 +11,97 @@ build_property.EnableTrimAnalyzer = true
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = SinDarElaVerwaltung.Client
 build_property.RootNamespace = SinDarElaVerwaltung.Client
-build_property.ProjectDir = C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\
+build_property.ProjectDir = c:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client
+build_property.MSBuildProjectDirectory = c:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/App.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Benutzerprofil.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/AddInfotexteHtml.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkSW5mb3RleHRlSHRtbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Benutzerprofil.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmVudXR6ZXJwcm9maWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Dashboard.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Dashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Einstellungen.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/EditInfotexteHtml.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEluZm90ZXh0ZUh0bWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Einstellungen.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWluc3RlbGx1bmdlbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/EinstellungenInfotexteEditor.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/EinstellungenInfotexteBearbeiten.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWluc3RlbGx1bmdlbkluZm90ZXh0ZUJlYXJiZWl0ZW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/EinstellungenInfotexteEditor.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWluc3RlbGx1bmdlbkluZm90ZXh0ZUVkaXRvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Login.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/EinstellungenInfotexteNeu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWluc3RlbGx1bmdlbkluZm90ZXh0ZU5ldS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/InfotexteHtml.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5mb3RleHRlSHRtbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/MeldungFortschritt.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/MeldungFortschritt.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVsZHVuZ0ZvcnRzY2hyaXR0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/MeldungJaNein.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/MeldungJaNein.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVsZHVuZ0phTmVpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/MeldungLoeschen.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/MeldungLoeschen.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVsZHVuZ0xvZXNjaGVuLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/MeldungOk.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/MeldungOk.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVsZHVuZ09rLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Unauthorized.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Unauthorized.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVW5hdXRob3JpemVkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/ZzAutomatischErzeugen.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/ZzAutomatischErzeugen.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcWnpBdXRvbWF0aXNjaEVyemV1Z2VuLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/DialogLayout.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/DialogLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXERpYWxvZ0xheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/LoginLayout.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/LoginLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/MainLayout.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/RedirectToLogin.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/RedirectToLogin.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/_Imports.razor]
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

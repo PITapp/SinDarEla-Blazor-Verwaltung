@@ -11846,15 +11846,7 @@ body {
 }
 
 /* --- Umschalter für Seitenmenü links --- */
-.sidebar-toggle .rzi, .sidebar-toggle .rz-column-drag, .sidebar-toggle .rz-datatable-loading-content .rzi-circle-o-notch, .rz-datatable-loading-content .sidebar-toggle .rzi-circle-o-notch, .sidebar-toggle .rz-datatable-header .rzi-plus, .rz-datatable-header .sidebar-toggle .rzi-plus, .sidebar-toggle .rz-sortable-column .rzi-grid-sort, .rz-sortable-column .sidebar-toggle .rzi-grid-sort, .sidebar-toggle .rz-datatable .rzi-chevron-circle-down, .rz-datatable .sidebar-toggle .rzi-chevron-circle-down, .sidebar-toggle .rz-datatable .rzi-chevron-circle-right, .rz-datatable .sidebar-toggle .rzi-chevron-circle-right, .sidebar-toggle .rz-fileupload-row .rz-button .rzi-close, .sidebar-toggle .rz-fileupload-row .rz-paginator-element .rzi-close, .rz-fileupload-row .rz-button .sidebar-toggle .rzi-close, .rz-fileupload-row .rz-paginator-element .sidebar-toggle .rzi-close,
-.sidebar-toggle .rz-fileupload-row .rz-button .rzi-times,
-.sidebar-toggle .rz-fileupload-row .rz-paginator-element .rzi-times,
-.rz-fileupload-row .rz-button .sidebar-toggle .rzi-times,
-.rz-fileupload-row .rz-paginator-element .sidebar-toggle .rzi-times,
-.sidebar-toggle .rz-fileupload-row .rz-button .rz-icon-trash,
-.sidebar-toggle .rz-fileupload-row .rz-paginator-element .rz-icon-trash,
-.rz-fileupload-row .rz-button .sidebar-toggle .rz-icon-trash,
-.rz-fileupload-row .rz-paginator-element .sidebar-toggle .rz-icon-trash, .sidebar-toggle .rz-menuitem .rz-menuitem-icon, .rz-menuitem .sidebar-toggle .rz-menuitem-icon {
+.sidebar-toggle .rzi {
   font-size: 1.5rem;
 }
 
@@ -11937,17 +11929,21 @@ ul.rz-profile-menu .rz-navigation-menu {
 
 /* --- Kopfzeile in Dialogen --- */
 .rz-dialog-titlebar {
-  background-color: #E8ECEF;
-  background-color: #F7F8FB;
-  background-color: #f4f5f9;
+  background-color: #e8ecef;
   color: #5d717b;
-  font-size: 1rem;
-  padding: 1rem;
+  padding: 0.6875rem 1.25rem;
+  line-height: 1.875rem;
+  font-size: 1.25rem;
 }
 
 .rz-dialog-title {
-  letter-spacing: 0;
   color: #5d717b;
+  font-size: 1.25rem;
+  font-weight:normal; 
+}
+
+.rz-dialog-titlebar-close .rzi-times {
+  vertical-align: middle;
 }
 
 /* --- HTML Editor - Toolbox: bei der Farbauswahl mit dem Mauszeiger hat einen Rahmen erzeugt, dieser hat die Anzeige um 2 Punkte vergrößert; hier wird das ausgeschalten --- */
@@ -11958,4 +11954,23 @@ ul.rz-profile-menu .rz-navigation-menu {
 /* --- Login Button auf die rechte Seite --- */
 .login .login-buttons {
   justify-content: flex-end !important;
+}
+
+/* --- Button: Schriftgröße und Abstand --- */
+.rz-button-md {
+  padding: 0.5rem 2rem;
+  font-weight:normal; 
+  font-size: 17px;
+}
+
+/* --- Schriftgröße für Eingabefelder --- */
+.rz-inputtext, .rz-textarea, .rz-textbox {
+  font-size: 1rem;
+}
+
+/* --- Notification Position einstellen --- */
+.rz-growl {
+  position: fixed !important;
+  top: 52px !important;
+  right: 16px !important;
 }

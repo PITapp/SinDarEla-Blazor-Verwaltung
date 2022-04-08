@@ -33,7 +33,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-ilEmHnP1VFFMSMYZeS2zxGMQoCEa4LfX5KobCJsSb\/U=",
+      "hash": "sha256-2f1072xuxsceIeJXIVyGYqQZ0vUXRn85uBm93tkZtGc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -165,11 +165,11 @@
       "url": "_framework\/Microsoft.Win32.Primitives.dll"
     },
     {
-      "hash": "sha256-eNAh4x+6GibGtc3Qt2nDxQ4Q2sdxoRh3Z1isHtJBiMQ=",
+      "hash": "sha256-apaHVpN55x2PxKJ9NbO8k3jeOZz6bkNT0FD4BCxh1WE=",
       "url": "_framework\/Radzen.Blazor.dll"
     },
     {
-      "hash": "sha256-KGAQ1iAc7VZGl4f0yt3XLeQefXWpnIguQHUE+oArluc=",
+      "hash": "sha256-EDoD2bSbeI0GtBQPmyqobraPK2e8T+fYkQel+aTboh0=",
       "url": "_framework\/SinDarElaVerwaltung.Client.dll"
     },
     {
@@ -369,7 +369,7 @@
       "url": "assets\/css\/default.css"
     },
     {
-      "hash": "sha256-7zxhVbChnx338UdkeBxpxGqwB4u9sf4FoW7kopqDAPc=",
+      "hash": "sha256-zkFboR4fzWx0Rz7psxg1oy2RDwmnyy9MNqm6k12spjc=",
       "url": "assets\/css\/standard.css"
     },
     {
@@ -593,9 +593,9 @@
       "url": "_content\/Radzen.Blazor\/fonts\/SourceSansPro-SemiboldIt.woff"
     },
     {
-      "hash": "sha256-pEpwGhg3HLyP4AxJpD1KoR8aBb4wU5f2xwNn2dzWhd4=",
+      "hash": "sha256-CcczwAJDp+mzGjnCUPP7N\/3S1v9fbags1\/Swc4nNChs=",
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "qDpfclla"
+  "version": "C7JxtsIb"
 };

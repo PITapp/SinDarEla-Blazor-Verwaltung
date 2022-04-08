@@ -109,6 +109,6 @@
   "events": {
     "load": []
   },
-  "layout": "Main",
+  "layout": "Dialog",
   "name": "MeldungJaNein"
 }

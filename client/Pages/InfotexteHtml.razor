@@ -1,0 +1,44 @@
+﻿@page "/infotexte-html"
+@layout MainLayout
+@inherits SinDarElaVerwaltung.Pages.InfotexteHtmlComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SinDarElaVerwaltung.Models.DbSinDarEla
+@using Microsoft.AspNetCore.Identity;
+@using SinDarElaVerwaltung.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+<PageTitle>InfotexteHtml</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="InfotexteHtml">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getInfotexteHtmlsResult" Count="@getInfotexteHtmlsCount" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" LoadData="@Grid0LoadData" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" Property="InfotextID" Title="Infotext ID">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" Property="Code" Title="Code">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" Property="Titel" Title="Titel">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" Property="Inhalt" Title="Inhalt">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" Property="Sortierung" Title="Sortierung">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="sinDarElaVerwaltungModelsDbSinDarElaInfotexteHtml">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, sinDarElaVerwaltungModelsDbSinDarElaInfotexteHtml))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

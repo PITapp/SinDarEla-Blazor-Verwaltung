@@ -19,7 +19,8 @@
   "namespaces": [],
   "navigation": [
     "Dashboard",
-    "Einstellungen"
+    "Einstellungen",
+    "InfotexteHtml"
   ],
   "pages": [
     "Login",
@@ -31,8 +32,13 @@
     "zzAutomatischErzeugen",
     "Einstellungen",
     "EinstellungenInfotexteEditor",
+    "EinstellungenInfotexteNeu",
+    "EinstellungenInfotexteBearbeiten",
     "Dashboard",
-    "Benutzerprofil"
+    "Benutzerprofil",
+    "InfotexteHtml",
+    "Add InfotexteHtml",
+    "Edit InfotexteHtml"
   ],
   "port": 8000,
   "pwa": true,

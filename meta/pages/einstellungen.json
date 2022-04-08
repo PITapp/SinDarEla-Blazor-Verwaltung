@@ -160,11 +160,15 @@
                                       },
                                       {
                                         "name": "$filter",
-                                        "value": "${event.filter}"
+                                        "value": [
+                                          {
+                                            "value": "${event.filter}"
+                                          }
+                                        ]
                                       },
                                       {
                                         "name": "$orderby",
-                                        "value": "${event.orderby}"
+                                        "value": "Titel"
                                       }
                                     ],
                                     "then": [
@@ -181,11 +185,63 @@
                                         "valueType": "int"
                                       },
                                       {
-                                        "code": "await datagridInfotexte.SelectRow(rstInfotexte.FirstOrDefault());",
+                                        "name": "findInfotext",
+                                        "type": "set",
+                                        "value": "rstInfotexte.FirstOrDefault(x => x.InfotextID == ${intLetzteInfotextID})",
+                                        "valueType": "dynamic"
+                                      },
+                                      {
+                                        "condition": "findInfotext == null",
+                                        "name": "findInfotext",
+                                        "type": "set",
+                                        "value": "rstInfotexte.FirstOrDefault()",
+                                        "valueType": "dynamic"
+                                      },
+                                      {
+                                        "code": "await datagridInfotexte.SelectRow(findInfotext);",
+                                        "condition": "",
                                         "type": "execute"
                                       }
                                     ],
                                     "type": "invoke"
+                                  },
+                                  {
+                                    "name": "xy",
+                                    "type": "set",
+                                    "value": "${event}",
+                                    "valueType": "Radzen.LoadDataArgs"
+                                  }
+                                ],
+                                "rowDoubleClick": [
+                                  {
+                                    "parameters": [
+                                      {
+                                        "name": "InfotextID",
+                                        "value": "${intInfotextID}"
+                                      }
+                                    ],
+                                    "path": "einstellungen-infotexte-bearbeiten",
+                                    "then": [
+                                      {
+                                        "condition": "${result != null}",
+                                        "name": "intLetzteInfotextID",
+                                        "type": "set",
+                                        "value": "${result.InfotextID}",
+                                        "valueType": "int"
+                                      },
+                                      {
+                                        "code": "await datagridInfotexte.Reload();",
+                                        "condition": "${result != null}",
+                                        "type": "execute"
+                                      },
+                                      {
+                                        "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                                        "condition": "${result != null}",
+                                        "type": "execute"
+                                      }
+                                    ],
+                                    "title": "Bearbeiten Infotext",
+                                    "type": "popup"
                                   }
                                 ],
                                 "rowSelect": [
@@ -213,7 +269,8 @@
                               "isLoading": false,
                               "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml",
                               "name": "datagridInfotexte",
-                              "pageSize": 10,
+                              "pageSize": 99,
+                              "pageSizeText": "",
                               "style": {
                                 "border": "1px solid rgba(0, 0, 0, 0)",
                                 "height": "690px",
@@ -231,7 +288,32 @@
                                     {
                                       "buttonStyle": "light",
                                       "events": {
-                                        "click": []
+                                        "click": [
+                                          {
+                                            "path": "einstellungen-infotexte-neu",
+                                            "then": [
+                                              {
+                                                "condition": "${result != null}",
+                                                "name": "intLetzteInfotextID",
+                                                "type": "set",
+                                                "value": "${result.InfotextID}",
+                                                "valueType": "int"
+                                              },
+                                              {
+                                                "code": "await datagridInfotexte.Reload();",
+                                                "condition": "${result != null}",
+                                                "type": "execute"
+                                              },
+                                              {
+                                                "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                                                "condition": "${result != null}",
+                                                "type": "execute"
+                                              }
+                                            ],
+                                            "title": "Neuer Infotext",
+                                            "type": "popup"
+                                          }
+                                        ]
                                       },
                                       "icon": "add",
                                       "name": "buttonNeuerInfotext",
@@ -248,7 +330,38 @@
                                     {
                                       "buttonStyle": "light",
                                       "events": {
-                                        "click": []
+                                        "click": [
+                                          {
+                                            "parameters": [
+                                              {
+                                                "name": "InfotextID",
+                                                "value": "${intInfotextID}"
+                                              }
+                                            ],
+                                            "path": "einstellungen-infotexte-bearbeiten",
+                                            "then": [
+                                              {
+                                                "condition": "${result != null}",
+                                                "name": "intLetzteInfotextID",
+                                                "type": "set",
+                                                "value": "${result.InfotextID}",
+                                                "valueType": "int"
+                                              },
+                                              {
+                                                "code": "await datagridInfotexte.Reload();",
+                                                "condition": "${result != null}",
+                                                "type": "execute"
+                                              },
+                                              {
+                                                "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                                                "condition": "${result != null}",
+                                                "type": "execute"
+                                              }
+                                            ],
+                                            "title": "Bearbeiten Infotext",
+                                            "type": "popup"
+                                          }
+                                        ]
                                       },
                                       "icon": "create",
                                       "isBusy": false,
@@ -270,7 +383,48 @@
                                       "buttonStyle": "light",
                                       "disabled": false,
                                       "events": {
-                                        "click": []
+                                        "click": [
+                                          {
+                                            "parameters": [
+                                              {
+                                                "name": "strMeldung",
+                                                "value": "\"Soll der Infotext '\" + ${strTitel} + \"' gelöscht werden?\""
+                                              }
+                                            ],
+                                            "path": "meldung-loeschen",
+                                            "then": [
+                                              {
+                                                "condition": "${result} == \"Löschen\"",
+                                                "error": [
+                                                  {
+                                                    "detail": "Infotext konnte nicht gelöscht werden!",
+                                                    "severity": "error",
+                                                    "summary": "",
+                                                    "type": "notify"
+                                                  }
+                                                ],
+                                                "name": "dbSinDarEla.deleteInfotexteHtml",
+                                                "parameters": [
+                                                  {
+                                                    "name": "InfotextID",
+                                                    "value": "${intInfotextID}"
+                                                  }
+                                                ],
+                                                "then": [
+                                                  {
+                                                    "detail": "Infotext gelöscht",
+                                                    "severity": "success",
+                                                    "summary": "",
+                                                    "type": "notify"
+                                                  }
+                                                ],
+                                                "type": "invoke"
+                                              }
+                                            ],
+                                            "title": "Löschen Infotext",
+                                            "type": "popup"
+                                          }
+                                        ]
                                       },
                                       "icon": "cancel",
                                       "name": "buttonLoeschenInfotext",
@@ -349,7 +503,15 @@
                                     {
                                       "buttonStyle": "light",
                                       "events": {
-                                        "click": []
+                                        "click": [
+                                          {
+                                            "cssStyle": "",
+                                            "detail": "Funktioniert noch nicht!",
+                                            "duration": 100000,
+                                            "severity": "info",
+                                            "type": "notify"
+                                          }
+                                        ]
                                       },
                                       "icon": "content_copy",
                                       "name": "buttonKopieren",
@@ -445,6 +607,16 @@
       "type": "content"
     }
   ],
+  "events": {
+    "load": [
+      {
+        "name": "intLetzteInfotextID",
+        "type": "set",
+        "value": "0",
+        "valueType": "int"
+      }
+    ]
+  },
   "layout": "Main",
   "name": "Einstellungen"
 }

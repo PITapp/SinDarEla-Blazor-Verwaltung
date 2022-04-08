@@ -34,7 +34,7 @@
               <div class="col-md-7">
                 <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="@(rstInfotexteCount.ToString() + " Infotexte")">
                   <ChildContent>
-                    <RadzenDataGrid @ref="datagridInfotexte" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@rstInfotexteCount" Data="@rstInfotexte" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" IsLoading="false" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" PageSize="10" style="border: 1px solid rgba(0, 0, 0, 0); height: 690px; margin-top: 9px" LoadData="@DatagridInfotexteLoadData" RowSelect="@DatagridInfotexteRowSelect">
+                    <RadzenDataGrid @ref="datagridInfotexte" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@rstInfotexteCount" Data="@rstInfotexte" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" IsLoading="false" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" PageSize="99" style="border: 1px solid rgba(0, 0, 0, 0); height: 690px; margin-top: 9px" LoadData="@DatagridInfotexteLoadData" RowDoubleClick="@DatagridInfotexteRowDoubleClick" RowSelect="@DatagridInfotexteRowSelect">
                       <Columns>
                         <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" Property="Titel" Title="Titel">
                         </RadzenDataGridColumn>
@@ -46,11 +46,11 @@
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neuer Infotext">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neuer Infotext" Click="@ButtonNeuerInfotextClick">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext" Click="@ButtonBearbeitenInfotextClick">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Disabled="false" Icon="cancel" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-style: normal; font-weight: normal; margin-left: 10px" Text="Löschen" Tooltip="Löschen Infotext">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Disabled="false" Icon="cancel" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-style: normal; font-weight: normal; margin-left: 10px" Text="Löschen" Tooltip="Löschen Infotext" Click="@ButtonLoeschenInfotextClick">
                         </RadzenButton>
                       </div>
                     </div>
@@ -70,7 +70,7 @@
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Kopieren">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Kopieren" Click="@ButtonKopierenClick">
                         </RadzenButton>
                         <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px" Text="Bearbeiten" Click="@ButtonBearbeitenInfotextEditorClick">
                         </RadzenButton>

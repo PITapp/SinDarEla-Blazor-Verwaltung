@@ -16,7 +16,7 @@
       <ChildContent>
         <div class="row justify-content-start align-items-center">
           <div class="col-6 d-flex align-items-center" style="padding-left: 25px">
-            <RadzenSidebarToggle Click="@SidebarToggle0Click">
+            <RadzenSidebarToggle Click="@SidebarToggle0Click" style="font-size: 1.5rem;">
             </RadzenSidebarToggle>
             <RadzenImage Path="assets/images/LogoMitSchriftzug4.png" style="float: left; height: 30px">
             </RadzenImage>
@@ -99,7 +99,7 @@
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Icon="euro_symbol" Text="Abrechnung">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="supervisor_account" Text="Benutzer">
+            <RadzenPanelMenuItem Icon="supervisor_account" Path="infotexte-html" Text="Benutzer" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Icon="face" Path="benutzerprofil" Text="Benutzerprofil" Visible="@Security.IsInRole(new string[]{"Authenticated"})">
             </RadzenPanelMenuItem>

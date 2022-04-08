@@ -57,6 +57,25 @@ namespace SinDarElaVerwaltung.Pages
         protected DbSinDarElaService DbSinDarEla { get; set; }
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml> datagridInfotexte;
 
+        int _intLetzteInfotextID;
+        protected int intLetzteInfotextID
+        {
+            get
+            {
+                return _intLetzteInfotextID;
+            }
+            set
+            {
+                if (!object.Equals(_intLetzteInfotextID, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "intLetzteInfotextID", NewValue = value, OldValue = _intLetzteInfotextID };
+                    _intLetzteInfotextID = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml> _rstInfotexte;
         protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml> rstInfotexte
         {
@@ -89,6 +108,44 @@ namespace SinDarElaVerwaltung.Pages
                 {
                     var args = new PropertyChangedEventArgs(){ Name = "rstInfotexteCount", NewValue = value, OldValue = _rstInfotexteCount };
                     _rstInfotexteCount = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        dynamic _findInfotext;
+        protected dynamic findInfotext
+        {
+            get
+            {
+                return _findInfotext;
+            }
+            set
+            {
+                if (!object.Equals(_findInfotext, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "findInfotext", NewValue = value, OldValue = _findInfotext };
+                    _findInfotext = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        Radzen.LoadDataArgs _xy;
+        protected Radzen.LoadDataArgs xy
+        {
+            get
+            {
+                return _xy;
+            }
+            set
+            {
+                if (!object.Equals(_xy, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "xy", NewValue = value, OldValue = _xy };
+                    _xy = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
@@ -159,6 +216,14 @@ namespace SinDarElaVerwaltung.Pages
             {
                 UriHelper.NavigateTo("Login", true);
             }
+            else
+            {
+                await Load();
+            }
+        }
+        protected async System.Threading.Tasks.Task Load()
+        {
+            intLetzteInfotextID = 0;
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
@@ -168,12 +233,38 @@ namespace SinDarElaVerwaltung.Pages
 
         protected async System.Threading.Tasks.Task DatagridInfotexteLoadData(LoadDataArgs args)
         {
-            var dbSinDarElaGetInfotexteHtmlsResult = await DbSinDarEla.GetInfotexteHtmls(filter:$"{args.Filter}", orderby:$"{args.OrderBy}", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
+            var dbSinDarElaGetInfotexteHtmlsResult = await DbSinDarEla.GetInfotexteHtmls(filter:$@"{args.Filter}", orderby:$"Titel", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
             rstInfotexte = dbSinDarElaGetInfotexteHtmlsResult.Value.AsODataEnumerable();
 
             rstInfotexteCount = dbSinDarElaGetInfotexteHtmlsResult.Count;
 
-            await datagridInfotexte.SelectRow(rstInfotexte.FirstOrDefault());
+            findInfotext = rstInfotexte.FirstOrDefault(x => x.InfotextID == intLetzteInfotextID);
+
+            if (findInfotext == null) {
+                findInfotext = rstInfotexte.FirstOrDefault();
+            }
+
+            await datagridInfotexte.SelectRow(findInfotext);
+
+            xy = args;
+        }
+
+        protected async System.Threading.Tasks.Task DatagridInfotexteRowDoubleClick(DataGridRowMouseEventArgs<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml> args)
+        {
+            var dialogResult = await DialogService.OpenAsync<EinstellungenInfotexteBearbeiten>($"Bearbeiten Infotext", new Dictionary<string, object>() { {"InfotextID", intInfotextID} });
+            if (dialogResult != null) {
+                intLetzteInfotextID = dialogResult.InfotextID;
+            }
+
+            if (dialogResult != null)
+            {
+                await datagridInfotexte.Reload();
+            }
+
+            if (dialogResult != null)
+            {
+                await InvokeAsync(() => { StateHasChanged(); });
+            }
         }
 
         protected async System.Threading.Tasks.Task DatagridInfotexteRowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml args)
@@ -183,6 +274,64 @@ namespace SinDarElaVerwaltung.Pages
             strTextHTML = args.Inhalt;
 
             intInfotextID = args.InfotextID;
+        }
+
+        protected async System.Threading.Tasks.Task ButtonNeuerInfotextClick(MouseEventArgs args)
+        {
+            var dialogResult = await DialogService.OpenAsync<EinstellungenInfotexteNeu>($"Neuer Infotext", null);
+            if (dialogResult != null) {
+                intLetzteInfotextID = dialogResult.InfotextID;
+            }
+
+            if (dialogResult != null)
+            {
+                await datagridInfotexte.Reload();
+            }
+
+            if (dialogResult != null)
+            {
+                await InvokeAsync(() => { StateHasChanged(); });
+            }
+        }
+
+        protected async System.Threading.Tasks.Task ButtonBearbeitenInfotextClick(MouseEventArgs args)
+        {
+            var dialogResult = await DialogService.OpenAsync<EinstellungenInfotexteBearbeiten>($"Bearbeiten Infotext", new Dictionary<string, object>() { {"InfotextID", intInfotextID} });
+            if (dialogResult != null) {
+                intLetzteInfotextID = dialogResult.InfotextID;
+            }
+
+            if (dialogResult != null)
+            {
+                await datagridInfotexte.Reload();
+            }
+
+            if (dialogResult != null)
+            {
+                await InvokeAsync(() => { StateHasChanged(); });
+            }
+        }
+
+        protected async System.Threading.Tasks.Task ButtonLoeschenInfotextClick(MouseEventArgs args)
+        {
+            var dialogResult = await DialogService.OpenAsync<MeldungLoeschen>($"Löschen Infotext", new Dictionary<string, object>() { {"strMeldung", "Soll der Infotext '" + strTitel + "' gelöscht werden?"} });
+            try
+            {
+                if (dialogResult == "Löschen")
+                {
+                    var dbSinDarElaDeleteInfotexteHtmlResult = await DbSinDarEla.DeleteInfotexteHtml(infotextId:intInfotextID);
+                        NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Success,Detail = $"Infotext gelöscht" });
+                }
+            }
+            catch (System.Exception dbSinDarElaDeleteInfotexteHtmlException)
+            {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Infotext konnte nicht gelöscht werden!" });
+            }
+        }
+
+        protected async System.Threading.Tasks.Task ButtonKopierenClick(MouseEventArgs args)
+        {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Info,Detail = $"Funktioniert noch nicht!",Duration = 100000 });
         }
 
         protected async System.Threading.Tasks.Task ButtonBearbeitenInfotextEditorClick(MouseEventArgs args)

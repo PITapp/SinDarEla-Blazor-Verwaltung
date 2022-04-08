@@ -211,13 +211,13 @@
       "mscorlib.dll": "sha256-+5VU+MYaTQMTlRe9QKobEjWZWv6I9teAGdNndWSBqWE=",
       "netstandard.dll": "sha256-E5RFhGIaDH5QM6BEbFUuHU8U9wP6N6jbo5MCttzLOCM=",
       "System.Private.CoreLib.dll": "sha256-9NtEbYixyog7vUmeYXyyqzfBXUYl8wxoVQ26Ji7sNRg=",
-      "SinDarElaVerwaltung.Client.dll": "sha256-RXHQ4FRY9bysPa\/StyytWdRGmzgTRLFNGdPV1yW4L94="
+      "SinDarElaVerwaltung.Client.dll": "sha256-R2UGgbNvuAYYkFSe9\/UwnvWrN\/GhjsB7mmeZaAg34mg="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "SinDarElaVerwaltung.Client.pdb": "sha256-4zsygJsp95u8jqLyucwrTM3480B8srCe\/HLfq7wNtcc="
+      "SinDarElaVerwaltung.Client.pdb": "sha256-9Ym7BM7KC90u3yVSNODvOOWMK\/3bGl6QhWRKCgW1EFs="
     },
     "runtime": {
       "dotnet.6.0.1.rkep29j5ej.js": "sha256-awQsJ\/WxYhouHPuE+i3eJqjA4XClQlr2rD6nKvW80ww=",

@@ -11,6 +11,12 @@
                   "class": "col-6 d-flex align-items-center",
                   "components": [
                     {
+                      "attributes": [
+                        {
+                          "name": "style",
+                          "value": "font-size: 1.5rem;"
+                        }
+                      ],
                       "events": {
                         "click": [
                           {
@@ -23,6 +29,7 @@
                           }
                         ]
                       },
+                      "icon": "",
                       "name": "sidebar-toggle0",
                       "type": "sidebar-toggle"
                     },
@@ -323,7 +330,7 @@
                 },
                 {
                   "icon": "supervisor_account",
-                  "path": "",
+                  "path": "infotexte-html",
                   "text": "Benutzer"
                 },
                 {
