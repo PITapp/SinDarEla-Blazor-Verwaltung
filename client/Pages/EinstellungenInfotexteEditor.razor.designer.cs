@@ -164,6 +164,11 @@ namespace SinDarElaVerwaltung.Pages
             bolEditorAenderungen = true;
         }
 
+        protected async System.Threading.Tasks.Task ButtonKopierenClick(MouseEventArgs args)
+        {
+            await CopyTextToClipboard(strInhalt);
+        }
+
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
         {
             try

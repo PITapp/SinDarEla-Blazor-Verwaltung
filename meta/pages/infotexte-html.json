@@ -1,35 +1,24 @@
 {
+  "access": "Authenticated",
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
           "name": "pageTitle",
           "size": "H1",
-          "text": "InfotexteHtml"
+          "text": "InfotexteHtml",
+          "type": "heading"
         },
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "icon": "add_circle_outline",
-                  "name": "button0",
-                  "style": {
-                    "marginBottom": "10px"
-                  },
-                  "text": "Add",
-                  "type": "button",
                   "events": {
                     "click": [
                       {
                         "path": "add-infotexte-html",
-                        "type": "popup",
                         "then": [
                           {
                             "code": "await grid0.Reload();",
@@ -39,21 +28,117 @@
                             "code": "await InvokeAsync(() => { StateHasChanged(); });",
                             "type": "execute"
                           }
-                        ]
+                        ],
+                        "type": "popup"
                       }
                     ]
-                  }
+                  },
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button"
                 },
                 {
-                  "name": "grid0",
                   "allowFiltering": true,
-                  "filterMode": "advanced",
                   "allowPaging": true,
                   "allowSorting": true,
+                  "columns": [
+                    {
+                      "property": "InfotextID",
+                      "title": "Infotext ID"
+                    },
+                    {
+                      "property": "Code",
+                      "title": "Code"
+                    },
+                    {
+                      "property": "Titel",
+                      "title": "Titel"
+                    },
+                    {
+                      "property": "Inhalt",
+                      "title": "Inhalt"
+                    },
+                    {
+                      "property": "Sortierung",
+                      "title": "Sortierung"
+                    },
+                    {
+                      "filterable": false,
+                      "sortable": false,
+                      "template": [
+                        {
+                          "attributes": [
+                            {
+                              "name": "@onclick:stopPropagation",
+                              "value": true
+                            }
+                          ],
+                          "buttonStyle": "danger",
+                          "events": {
+                            "click": [
+                              {
+                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete InfotexteHtml",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "dbSinDarEla.deleteInfotexteHtml",
+                                "parameters": [
+                                  {
+                                    "name": "InfotextID",
+                                    "value": "${data.InfotextID}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "code": "await grid0.Reload();",
+                                    "condition": "result != null && result.StatusCode == System.Net.HttpStatusCode.NoContent",
+                                    "type": "execute"
+                                  },
+                                  {
+                                    "condition": "result != null && result.StatusCode != System.Net.HttpStatusCode.NoContent",
+                                    "detail": "Unable to delete InfotexteHtml",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "type": "invoke"
+                              }
+                            ]
+                          },
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "size": "sm",
+                          "text": "",
+                          "type": "button"
+                        }
+                      ],
+                      "textAlign": "center",
+                      "width": "70px"
+                    }
+                  ],
+                  "count": "${getInfotexteHtmlsCount}",
                   "data": "${getInfotexteHtmlsResult}",
                   "events": {
                     "loadData": [
                       {
+                        "error": [
+                          {
+                            "detail": "Unable to load InfotexteHtmls",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
                         "name": "dbSinDarEla.getInfotexteHtmls",
                         "parameters": [
                           {
@@ -91,15 +176,7 @@
                             "valueType": "int"
                           }
                         ],
-                        "type": "invoke",
-                        "error": [
-                          {
-                            "detail": "Unable to load InfotexteHtmls",
-                            "severity": "error",
-                            "summary": "Error",
-                            "type": "notify"
-                          }
-                        ]
+                        "type": "invoke"
                       }
                     ],
                     "rowSelect": [
@@ -111,7 +188,6 @@
                           }
                         ],
                         "path": "edit-infotexte-html",
-                        "type": "popup",
                         "then": [
                           {
                             "code": "await grid0.Reload();",
@@ -121,107 +197,31 @@
                             "code": "await InvokeAsync(() => { StateHasChanged(); });",
                             "type": "execute"
                           }
-                        ]
+                        ],
+                        "type": "popup"
                       }
                     ]
                   },
+                  "filterMode": "advanced",
+                  "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml",
+                  "name": "grid0",
                   "title": "",
-                  "columns": [
-                    {
-                      "property": "InfotextID",
-                      "title": "Infotext ID"
-                    },
-                    {
-                      "property": "Code",
-                      "title": "Code"
-                    },
-                    {
-                      "property": "Titel",
-                      "title": "Titel"
-                    },
-                    {
-                      "property": "Inhalt",
-                      "title": "Inhalt"
-                    },
-                    {
-                      "property": "Sortierung",
-                      "title": "Sortierung"
-                    },
-                    {
-                      "filterable": false,
-                      "sortable": false,
-                      "width": "70px",
-                      "textAlign": "center",
-                      "template": [
-                        {
-                          "attributes": [
-                            {
-                              "name": "@onclick:stopPropagation",
-                              "value": true
-                            }
-                          ],
-                          "buttonStyle": "danger",
-                          "icon": "close",
-                          "name": "gridDeleteButton",
-                          "text": "",
-                          "size": "sm",
-                          "type": "button",
-                          "events": {
-                            "click": [
-                              {
-                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
-                                "error": [
-                                  {
-                                    "detail": "Unable to delete InfotexteHtml",
-                                    "severity": "error",
-                                    "summary": "Error",
-                                    "type": "notify"
-                                  }
-                                ],
-                                "name": "dbSinDarEla.deleteInfotexteHtml",
-                                "parameters": [
-                                  {
-                                    "name": "InfotextID",
-                                    "value": "${data.InfotextID}"
-                                  }
-                                ],
-                                "then": [
-                                  {
-                                    "code": "await grid0.Reload();",
-                                    "condition": "result != null && result.StatusCode == System.Net.HttpStatusCode.NoContent",
-                                    "type": "execute"
-                                  },
-                                  {
-                                    "condition": "result != null && result.StatusCode != System.Net.HttpStatusCode.NoContent",
-                                    "detail": "Unable to delete InfotexteHtml",
-                                    "severity": "error",
-                                    "summary": "Error",
-                                    "type": "notify"
-                                  }
-                                ],
-                                "type": "invoke"
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  ],
-                  "type": "datagrid",
-                  "count": "${getInfotexteHtmlsCount}",
-                  "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml"
+                  "type": "datagrid"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
     "load": []
   },
-  "name": "InfotexteHtml",
-  "access": "Authenticated",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "InfotexteHtml"
 }

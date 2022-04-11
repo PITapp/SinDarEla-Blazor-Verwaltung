@@ -269,7 +269,7 @@
                               "isLoading": false,
                               "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml",
                               "name": "datagridInfotexte",
-                              "pageSize": 99,
+                              "pageSize": 20,
                               "pageSizeText": "",
                               "style": {
                                 "border": "1px solid rgba(0, 0, 0, 0)",
@@ -412,6 +412,23 @@
                                                 ],
                                                 "then": [
                                                   {
+                                                    "condition": "",
+                                                    "name": "intLetzteInfotextID",
+                                                    "type": "set",
+                                                    "value": "0",
+                                                    "valueType": "int"
+                                                  },
+                                                  {
+                                                    "code": "await datagridInfotexte.Reload();",
+                                                    "condition": "",
+                                                    "type": "execute"
+                                                  },
+                                                  {
+                                                    "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                                                    "condition": "",
+                                                    "type": "execute"
+                                                  },
+                                                  {
                                                     "detail": "Infotext gelöscht",
                                                     "severity": "success",
                                                     "summary": "",
@@ -470,6 +487,7 @@
                           "attributes": [],
                           "components": [
                             {
+                              "attributes": [],
                               "disabled": true,
                               "name": "htmlEditor0",
                               "style": {
@@ -505,11 +523,9 @@
                                       "events": {
                                         "click": [
                                           {
-                                            "cssStyle": "",
-                                            "detail": "Funktioniert noch nicht!",
-                                            "duration": 100000,
-                                            "severity": "info",
-                                            "type": "notify"
+                                            "code": "await CopyTextToClipboard(${strTextHTML})",
+                                            "then": [],
+                                            "type": "execute"
                                           }
                                         ]
                                       },

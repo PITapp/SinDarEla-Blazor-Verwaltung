@@ -11974,3 +11974,12 @@ ul.rz-profile-menu .rz-navigation-menu {
   top: 52px !important;
   right: 16px !important;
 }
+
+/* --- Knöpfe für Pagination mit weniger Rand, damit sie kleiner sind --- */
+.rz-paginator-element {
+  padding: 0.3rem;
+}
+
+.rz-paginator-page.rz-state-active {
+  padding: 0.3rem;
+}

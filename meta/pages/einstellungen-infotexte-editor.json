@@ -314,7 +314,12 @@
                             {
                               "buttonStyle": "light",
                               "events": {
-                                "click": []
+                                "click": [
+                                  {
+                                    "code": "await CopyTextToClipboard(${strInhalt})",
+                                    "type": "execute"
+                                  }
+                                ]
                               },
                               "icon": "content_copy",
                               "name": "buttonKopieren",

@@ -6,7 +6,8 @@
   "generator": "@radzen/blazor-server",
   "https": true,
   "ignore": [
-    "client\\wwwroot\\assets\\css\\standard.css"
+    "client\\wwwroot\\assets\\css\\standard.css",
+    "client\\wwwroot\\index.html"
   ],
   "javaScriptFiles": [],
   "layouts": [
@@ -38,7 +39,14 @@
     "Benutzerprofil",
     "InfotexteHtml",
     "Add InfotexteHtml",
-    "Edit InfotexteHtml"
+    "Edit InfotexteHtml",
+    "Application Users",
+    "Add Application Role",
+    "Application Roles",
+    "Register Application User",
+    "Edit Application User",
+    "Add Application User",
+    "Profile"
   ],
   "port": 8000,
   "pwa": true,

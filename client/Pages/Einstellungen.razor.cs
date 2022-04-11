@@ -10,6 +10,9 @@ namespace SinDarElaVerwaltung.Pages
 {
     public partial class EinstellungenComponent
     {
-
+        private async Task CopyTextToClipboard(string text)
+        {
+            await JSRuntime.InvokeVoidAsync("copyTextToClipboard", text);
+        }
     }
 }

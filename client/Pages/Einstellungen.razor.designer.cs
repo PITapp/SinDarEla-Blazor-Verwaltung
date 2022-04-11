@@ -320,6 +320,12 @@ namespace SinDarElaVerwaltung.Pages
                 if (dialogResult == "Löschen")
                 {
                     var dbSinDarElaDeleteInfotexteHtmlResult = await DbSinDarEla.DeleteInfotexteHtml(infotextId:intInfotextID);
+                    intLetzteInfotextID = 0;
+
+                    await datagridInfotexte.Reload();
+
+                    await InvokeAsync(() => { StateHasChanged(); });
+
                         NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Success,Detail = $"Infotext gelöscht" });
                 }
             }
@@ -331,7 +337,7 @@ namespace SinDarElaVerwaltung.Pages
 
         protected async System.Threading.Tasks.Task ButtonKopierenClick(MouseEventArgs args)
         {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Info,Detail = $"Funktioniert noch nicht!",Duration = 100000 });
+            await CopyTextToClipboard(strTextHTML);
         }
 
         protected async System.Threading.Tasks.Task ButtonBearbeitenInfotextEditorClick(MouseEventArgs args)
