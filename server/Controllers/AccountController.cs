@@ -43,20 +43,6 @@ namespace SinDarElaVerwaltung
         [HttpPost]
         public async Task<IActionResult> Login(string userName, string password, string redirectUrl)
         {
-            if (env.EnvironmentName == "Development" && userName == "admin" && password == "admin")
-            {
-                var claims = new List<Claim>()
-                {
-                        new Claim(ClaimTypes.Name, "admin"),
-                        new Claim(ClaimTypes.Email, "admin")
-                };
-
-                roleManager.Roles.ToList().ForEach(r => claims.Add(new Claim(ClaimTypes.Role, r.Name)));
-                await signInManager.SignInWithClaimsAsync(new ApplicationUser { UserName = userName, Email = userName }, isPersistent: false, claims);
-
-                return Redirect($"~/{redirectUrl}");
-            }
-
             if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password))
             {
 
