@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseTeilnehmerStatusGet(ref SingleResult<Models.DbSinDarEla.EreignisseTeilnehmerStatus> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{StatusCode}")]
+    [HttpGet("/odata/dbSinDarEla/EreignisseTeilnehmerStatuses(StatusCode={StatusCode})")]
     public SingleResult<EreignisseTeilnehmerStatus> GetEreignisseTeilnehmerStatus(string key)
     {
         var items = this.context.EreignisseTeilnehmerStatuses.Where(i=>i.StatusCode == Uri.UnescapeDataString(key));
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseTeilnehmerStatusDeleted(Models.DbSinDarEla.EreignisseTeilnehmerStatus item);
     partial void OnAfterEreignisseTeilnehmerStatusDeleted(Models.DbSinDarEla.EreignisseTeilnehmerStatus item);
 
-    [HttpDelete("{StatusCode}")]
+    [HttpDelete("/odata/dbSinDarEla/EreignisseTeilnehmerStatuses(StatusCode={StatusCode})")]
     public IActionResult DeleteEreignisseTeilnehmerStatus(string key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseTeilnehmerStatusUpdated(Models.DbSinDarEla.EreignisseTeilnehmerStatus item);
     partial void OnAfterEreignisseTeilnehmerStatusUpdated(Models.DbSinDarEla.EreignisseTeilnehmerStatus item);
 
-    [HttpPut("{StatusCode}")]
+    [HttpPut("/odata/dbSinDarEla/EreignisseTeilnehmerStatuses(StatusCode={StatusCode})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutEreignisseTeilnehmerStatus(string key, [FromBody]Models.DbSinDarEla.EreignisseTeilnehmerStatus newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{StatusCode}")]
+    [HttpPatch("/odata/dbSinDarEla/EreignisseTeilnehmerStatuses(StatusCode={StatusCode})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchEreignisseTeilnehmerStatus(string key, [FromBody]Delta<Models.DbSinDarEla.EreignisseTeilnehmerStatus> patch)
     {

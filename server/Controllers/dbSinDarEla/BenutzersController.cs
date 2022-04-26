@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBenutzerGet(ref SingleResult<Models.DbSinDarEla.Benutzer> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{BenutzerID}")]
+    [HttpGet("/odata/dbSinDarEla/Benutzers(BenutzerID={BenutzerID})")]
     public SingleResult<Benutzer> GetBenutzer(int key)
     {
         var items = this.context.Benutzers.Where(i=>i.BenutzerID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBenutzerDeleted(Models.DbSinDarEla.Benutzer item);
     partial void OnAfterBenutzerDeleted(Models.DbSinDarEla.Benutzer item);
 
-    [HttpDelete("{BenutzerID}")]
+    [HttpDelete("/odata/dbSinDarEla/Benutzers(BenutzerID={BenutzerID})")]
     public IActionResult DeleteBenutzer(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBenutzerUpdated(Models.DbSinDarEla.Benutzer item);
     partial void OnAfterBenutzerUpdated(Models.DbSinDarEla.Benutzer item);
 
-    [HttpPut("{BenutzerID}")]
+    [HttpPut("/odata/dbSinDarEla/Benutzers(BenutzerID={BenutzerID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutBenutzer(int key, [FromBody]Models.DbSinDarEla.Benutzer newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{BenutzerID}")]
+    [HttpPatch("/odata/dbSinDarEla/Benutzers(BenutzerID={BenutzerID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchBenutzer(int key, [FromBody]Delta<Models.DbSinDarEla.Benutzer> patch)
     {

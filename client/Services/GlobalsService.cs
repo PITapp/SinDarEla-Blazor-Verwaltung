@@ -11,7 +11,26 @@ namespace SinDarElaVerwaltung
 {
     public partial class GlobalsService
     {
+        public event Action<PropertyChangedEventArgs> PropertyChanged;
 
+
+        string _globalBenutzerName;
+        public string globalBenutzerName
+        {
+            get
+            {
+                return _globalBenutzerName;
+            }
+            set
+            {
+                if(!object.Equals(_globalBenutzerName, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "globalBenutzerName", NewValue = value, OldValue = _globalBenutzerName, IsGlobal = true };
+                    _globalBenutzerName = value;
+                    PropertyChanged?.Invoke(args);
+                }
+            }
+        }
     }
 
     public class PropertyChangedEventArgs

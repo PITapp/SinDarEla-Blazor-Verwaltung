@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDebuggGet(ref SingleResult<Models.DbSinDarEla.Debugg> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{DebuggID}")]
+    [HttpGet("/odata/dbSinDarEla/Debuggs(DebuggID={DebuggID})")]
     public SingleResult<Debugg> GetDebugg(int key)
     {
         var items = this.context.Debuggs.Where(i=>i.DebuggID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDebuggDeleted(Models.DbSinDarEla.Debugg item);
     partial void OnAfterDebuggDeleted(Models.DbSinDarEla.Debugg item);
 
-    [HttpDelete("{DebuggID}")]
+    [HttpDelete("/odata/dbSinDarEla/Debuggs(DebuggID={DebuggID})")]
     public IActionResult DeleteDebugg(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDebuggUpdated(Models.DbSinDarEla.Debugg item);
     partial void OnAfterDebuggUpdated(Models.DbSinDarEla.Debugg item);
 
-    [HttpPut("{DebuggID}")]
+    [HttpPut("/odata/dbSinDarEla/Debuggs(DebuggID={DebuggID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutDebugg(int key, [FromBody]Models.DbSinDarEla.Debugg newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{DebuggID}")]
+    [HttpPatch("/odata/dbSinDarEla/Debuggs(DebuggID={DebuggID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchDebugg(int key, [FromBody]Delta<Models.DbSinDarEla.Debugg> patch)
     {

@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterTaetigkeitenGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterTaetigkeiten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterTaetigkeitenID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterTaetigkeitens(MitarbeiterTaetigkeitenID={MitarbeiterTaetigkeitenID})")]
     public SingleResult<MitarbeiterTaetigkeiten> GetMitarbeiterTaetigkeiten(int key)
     {
         var items = this.context.MitarbeiterTaetigkeitens.Where(i=>i.MitarbeiterTaetigkeitenID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterTaetigkeitenDeleted(Models.DbSinDarEla.MitarbeiterTaetigkeiten item);
     partial void OnAfterMitarbeiterTaetigkeitenDeleted(Models.DbSinDarEla.MitarbeiterTaetigkeiten item);
 
-    [HttpDelete("{MitarbeiterTaetigkeitenID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterTaetigkeitens(MitarbeiterTaetigkeitenID={MitarbeiterTaetigkeitenID})")]
     public IActionResult DeleteMitarbeiterTaetigkeiten(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterTaetigkeitenUpdated(Models.DbSinDarEla.MitarbeiterTaetigkeiten item);
     partial void OnAfterMitarbeiterTaetigkeitenUpdated(Models.DbSinDarEla.MitarbeiterTaetigkeiten item);
 
-    [HttpPut("{MitarbeiterTaetigkeitenID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterTaetigkeitens(MitarbeiterTaetigkeitenID={MitarbeiterTaetigkeitenID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterTaetigkeiten(int key, [FromBody]Models.DbSinDarEla.MitarbeiterTaetigkeiten newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterTaetigkeitenID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterTaetigkeitens(MitarbeiterTaetigkeitenID={MitarbeiterTaetigkeitenID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterTaetigkeiten(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterTaetigkeiten> patch)
     {

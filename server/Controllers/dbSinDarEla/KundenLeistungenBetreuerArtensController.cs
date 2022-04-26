@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBetreuerArtenGet(ref SingleResult<Models.DbSinDarEla.KundenLeistungenBetreuerArten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{KundenLeistungenBetreuerArtID}")]
+    [HttpGet("/odata/dbSinDarEla/KundenLeistungenBetreuerArtens(KundenLeistungenBetreuerArtID={KundenLeistungenBetreuerArtID})")]
     public SingleResult<KundenLeistungenBetreuerArten> GetKundenLeistungenBetreuerArten(int key)
     {
         var items = this.context.KundenLeistungenBetreuerArtens.Where(i=>i.KundenLeistungenBetreuerArtID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBetreuerArtenDeleted(Models.DbSinDarEla.KundenLeistungenBetreuerArten item);
     partial void OnAfterKundenLeistungenBetreuerArtenDeleted(Models.DbSinDarEla.KundenLeistungenBetreuerArten item);
 
-    [HttpDelete("{KundenLeistungenBetreuerArtID}")]
+    [HttpDelete("/odata/dbSinDarEla/KundenLeistungenBetreuerArtens(KundenLeistungenBetreuerArtID={KundenLeistungenBetreuerArtID})")]
     public IActionResult DeleteKundenLeistungenBetreuerArten(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBetreuerArtenUpdated(Models.DbSinDarEla.KundenLeistungenBetreuerArten item);
     partial void OnAfterKundenLeistungenBetreuerArtenUpdated(Models.DbSinDarEla.KundenLeistungenBetreuerArten item);
 
-    [HttpPut("{KundenLeistungenBetreuerArtID}")]
+    [HttpPut("/odata/dbSinDarEla/KundenLeistungenBetreuerArtens(KundenLeistungenBetreuerArtID={KundenLeistungenBetreuerArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKundenLeistungenBetreuerArten(int key, [FromBody]Models.DbSinDarEla.KundenLeistungenBetreuerArten newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{KundenLeistungenBetreuerArtID}")]
+    [HttpPatch("/odata/dbSinDarEla/KundenLeistungenBetreuerArtens(KundenLeistungenBetreuerArtID={KundenLeistungenBetreuerArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKundenLeistungenBetreuerArten(int key, [FromBody]Delta<Models.DbSinDarEla.KundenLeistungenBetreuerArten> patch)
     {

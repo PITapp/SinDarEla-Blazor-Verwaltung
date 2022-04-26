@@ -1,0 +1,86 @@
+﻿@page "/copy-of-anmeldung"
+@layout LoginLayout
+@inherits SinDarElaVerwaltung.Pages.CopyOfAnmeldungComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SinDarElaVerwaltung.Models.DbSinDarEla
+<PageTitle>Copy of Anmeldung</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div style="height: ; margin-top: -7px; padding-bottom: 0; padding-left: 5px; padding-right: 3px; padding-top: 0; width: " class="row">
+      <div class="justify-content-start       d-flex align-items-center col-md-12" style="height: 52px; padding-bottom: 1px">
+        <RadzenHeading Size="H1" style="color: #5d717b; display: inline-block" Text="Anmeldung">
+        </RadzenHeading>
+        <RadzenHeading Size="H3" style="color: #e5ecef; display: inline-block; margin-top: 7px; padding-left: 10px; padding-right: 10px" Text="|">
+        </RadzenHeading>
+        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" >
+        </RadzenHeading>
+      </div>
+    </div>
+    <RadzenTabs style="float: none">
+      <Tabs>
+        <RadzenTabsItem Selected="true" Text="Daten">
+          <ChildContent>
+            <div class="row">
+              <div class="col-md-7">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Text">
+                  <ChildContent>
+                    <RadzenLabel Text="Test">
+                    </RadzenLabel>
+                    <RadzenPassword AutoComplete="false" Name="Password0">
+                    </RadzenPassword>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <RadzenTextBox @bind-Value="@strHashPasswort" Name="TextboxKennwort">
+                        </RadzenTextBox>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <RadzenButton Text="Umwandeln in Hash" Click="@Button1Click">
+                        </RadzenButton>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <RadzenLabel style="height: 100%; width: 100%" Text="@($"{strHashPasswortErgebnis}")">
+                            </RadzenLabel>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ChildContent>
+                  <HeaderTemplate>
+                    <div class="row">
+                      <div class="col-md-12 align-items-start d-flex">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="input" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Jetzt anmelden" Click="@ButtonAnmeldenClick">
+                        </RadzenButton>
+                      </div>
+                    </div>
+                  </HeaderTemplate>
+                </RadzenPanel>
+              </div>
+              <div class="col-md-5" style="padding-left: 5px">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Text">
+                  <ChildContent>
+                    <RadzenLabel Text="Test">
+                    </RadzenLabel>
+                  </ChildContent>
+                  <HeaderTemplate>
+                    <div class="row">
+                      <div class="col-md-12 align-items-start d-flex">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Kopieren">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px" Text="Bearbeiten">
+                        </RadzenButton>
+                      </div>
+                    </div>
+                  </HeaderTemplate>
+                </RadzenPanel>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTabsItem>
+      </Tabs>
+    </RadzenTabs>
+  </ChildContent>
+</RadzenContent>

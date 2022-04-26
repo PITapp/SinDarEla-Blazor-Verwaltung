@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterKundenbudgetKategorienGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterKundenbudgetKategorien> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{KundenbudgetKategorieID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterKundenbudgetKategoriens(KundenbudgetKategorieID={KundenbudgetKategorieID})")]
     public SingleResult<MitarbeiterKundenbudgetKategorien> GetMitarbeiterKundenbudgetKategorien(int key)
     {
         var items = this.context.MitarbeiterKundenbudgetKategoriens.Where(i=>i.KundenbudgetKategorieID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterKundenbudgetKategorienDeleted(Models.DbSinDarEla.MitarbeiterKundenbudgetKategorien item);
     partial void OnAfterMitarbeiterKundenbudgetKategorienDeleted(Models.DbSinDarEla.MitarbeiterKundenbudgetKategorien item);
 
-    [HttpDelete("{KundenbudgetKategorieID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterKundenbudgetKategoriens(KundenbudgetKategorieID={KundenbudgetKategorieID})")]
     public IActionResult DeleteMitarbeiterKundenbudgetKategorien(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterKundenbudgetKategorienUpdated(Models.DbSinDarEla.MitarbeiterKundenbudgetKategorien item);
     partial void OnAfterMitarbeiterKundenbudgetKategorienUpdated(Models.DbSinDarEla.MitarbeiterKundenbudgetKategorien item);
 
-    [HttpPut("{KundenbudgetKategorieID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterKundenbudgetKategoriens(KundenbudgetKategorieID={KundenbudgetKategorieID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterKundenbudgetKategorien(int key, [FromBody]Models.DbSinDarEla.MitarbeiterKundenbudgetKategorien newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{KundenbudgetKategorieID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterKundenbudgetKategoriens(KundenbudgetKategorieID={KundenbudgetKategorieID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterKundenbudgetKategorien(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterKundenbudgetKategorien> patch)
     {

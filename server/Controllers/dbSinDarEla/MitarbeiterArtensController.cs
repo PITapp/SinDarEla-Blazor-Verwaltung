@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterArtenGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterArten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterArtID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterArtens(MitarbeiterArtID={MitarbeiterArtID})")]
     public SingleResult<MitarbeiterArten> GetMitarbeiterArten(int key)
     {
         var items = this.context.MitarbeiterArtens.Where(i=>i.MitarbeiterArtID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterArtenDeleted(Models.DbSinDarEla.MitarbeiterArten item);
     partial void OnAfterMitarbeiterArtenDeleted(Models.DbSinDarEla.MitarbeiterArten item);
 
-    [HttpDelete("{MitarbeiterArtID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterArtens(MitarbeiterArtID={MitarbeiterArtID})")]
     public IActionResult DeleteMitarbeiterArten(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterArtenUpdated(Models.DbSinDarEla.MitarbeiterArten item);
     partial void OnAfterMitarbeiterArtenUpdated(Models.DbSinDarEla.MitarbeiterArten item);
 
-    [HttpPut("{MitarbeiterArtID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterArtens(MitarbeiterArtID={MitarbeiterArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterArten(int key, [FromBody]Models.DbSinDarEla.MitarbeiterArten newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterArtID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterArtens(MitarbeiterArtID={MitarbeiterArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterArten(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterArten> patch)
     {

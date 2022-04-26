@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDeviceCodeGet(ref SingleResult<Models.DbSinDarEla.DeviceCode> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{UserCode}")]
+    [HttpGet("/odata/dbSinDarEla/DeviceCodes(UserCode={UserCode})")]
     public SingleResult<DeviceCode> GetDeviceCode(string key)
     {
         var items = this.context.DeviceCodes.Where(i=>i.UserCode == Uri.UnescapeDataString(key));
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDeviceCodeDeleted(Models.DbSinDarEla.DeviceCode item);
     partial void OnAfterDeviceCodeDeleted(Models.DbSinDarEla.DeviceCode item);
 
-    [HttpDelete("{UserCode}")]
+    [HttpDelete("/odata/dbSinDarEla/DeviceCodes(UserCode={UserCode})")]
     public IActionResult DeleteDeviceCode(string key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDeviceCodeUpdated(Models.DbSinDarEla.DeviceCode item);
     partial void OnAfterDeviceCodeUpdated(Models.DbSinDarEla.DeviceCode item);
 
-    [HttpPut("{UserCode}")]
+    [HttpPut("/odata/dbSinDarEla/DeviceCodes(UserCode={UserCode})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutDeviceCode(string key, [FromBody]Models.DbSinDarEla.DeviceCode newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{UserCode}")]
+    [HttpPatch("/odata/dbSinDarEla/DeviceCodes(UserCode={UserCode})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchDeviceCode(string key, [FromBody]Delta<Models.DbSinDarEla.DeviceCode> patch)
     {

@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnPersistedGrantGet(ref SingleResult<Models.DbSinDarEla.PersistedGrant> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{Key}")]
+    [HttpGet("/odata/dbSinDarEla/PersistedGrants(Key={Key})")]
     public SingleResult<PersistedGrant> GetPersistedGrant(string key)
     {
         var items = this.context.PersistedGrants.Where(i=>i.Key == Uri.UnescapeDataString(key));
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnPersistedGrantDeleted(Models.DbSinDarEla.PersistedGrant item);
     partial void OnAfterPersistedGrantDeleted(Models.DbSinDarEla.PersistedGrant item);
 
-    [HttpDelete("{Key}")]
+    [HttpDelete("/odata/dbSinDarEla/PersistedGrants(Key={Key})")]
     public IActionResult DeletePersistedGrant(string key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnPersistedGrantUpdated(Models.DbSinDarEla.PersistedGrant item);
     partial void OnAfterPersistedGrantUpdated(Models.DbSinDarEla.PersistedGrant item);
 
-    [HttpPut("{Key}")]
+    [HttpPut("/odata/dbSinDarEla/PersistedGrants(Key={Key})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutPersistedGrant(string key, [FromBody]Models.DbSinDarEla.PersistedGrant newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{Key}")]
+    [HttpPatch("/odata/dbSinDarEla/PersistedGrants(Key={Key})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchPersistedGrant(string key, [FromBody]Delta<Models.DbSinDarEla.PersistedGrant> patch)
     {

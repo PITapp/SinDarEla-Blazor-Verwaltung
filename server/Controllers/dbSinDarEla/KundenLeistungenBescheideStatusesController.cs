@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideStatusGet(ref SingleResult<Models.DbSinDarEla.KundenLeistungenBescheideStatus> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{StatusCode}")]
+    [HttpGet("/odata/dbSinDarEla/KundenLeistungenBescheideStatuses(StatusCode={StatusCode})")]
     public SingleResult<KundenLeistungenBescheideStatus> GetKundenLeistungenBescheideStatus(string key)
     {
         var items = this.context.KundenLeistungenBescheideStatuses.Where(i=>i.StatusCode == Uri.UnescapeDataString(key));
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideStatusDeleted(Models.DbSinDarEla.KundenLeistungenBescheideStatus item);
     partial void OnAfterKundenLeistungenBescheideStatusDeleted(Models.DbSinDarEla.KundenLeistungenBescheideStatus item);
 
-    [HttpDelete("{StatusCode}")]
+    [HttpDelete("/odata/dbSinDarEla/KundenLeistungenBescheideStatuses(StatusCode={StatusCode})")]
     public IActionResult DeleteKundenLeistungenBescheideStatus(string key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideStatusUpdated(Models.DbSinDarEla.KundenLeistungenBescheideStatus item);
     partial void OnAfterKundenLeistungenBescheideStatusUpdated(Models.DbSinDarEla.KundenLeistungenBescheideStatus item);
 
-    [HttpPut("{StatusCode}")]
+    [HttpPut("/odata/dbSinDarEla/KundenLeistungenBescheideStatuses(StatusCode={StatusCode})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKundenLeistungenBescheideStatus(string key, [FromBody]Models.DbSinDarEla.KundenLeistungenBescheideStatus newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{StatusCode}")]
+    [HttpPatch("/odata/dbSinDarEla/KundenLeistungenBescheideStatuses(StatusCode={StatusCode})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKundenLeistungenBescheideStatus(string key, [FromBody]Delta<Models.DbSinDarEla.KundenLeistungenBescheideStatus> patch)
     {

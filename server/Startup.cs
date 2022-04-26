@@ -18,11 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using SinDarElaVerwaltung.Data;
-using SinDarElaVerwaltung.Models;
-using SinDarElaVerwaltung.Authentication;
 
 using Microsoft.OData.ModelBuilder;
 using Microsoft.AspNetCore.OData;
@@ -128,43 +124,19 @@ namespace SinDarElaVerwaltung
 
             this.OnConfigureOData(oDataBuilder);
 
-            oDataBuilder.EntitySet<ApplicationUser>("ApplicationUsers");
-            var usersType = oDataBuilder.StructuralTypes.First(x => x.ClrType == typeof(ApplicationUser));
-            usersType.AddCollectionProperty(typeof(ApplicationUser).GetProperty("RoleNames"));
-            oDataBuilder.EntitySet<IdentityRole>("ApplicationRoles");
 
             var model = oDataBuilder.GetEdmModel();
             services.AddControllers().AddOData(opt => { 
               opt.AddRouteComponents("odata/dbSinDarEla", model).Count().Filter().OrderBy().Expand().Select().SetMaxTop(null).TimeZone = TimeZoneInfo.Utc;
-              opt.AddRouteComponents("auth", model).Count().Filter().OrderBy().Expand().Select().SetMaxTop(null).TimeZone = TimeZoneInfo.Utc;
             });
 
             
-
-            services.AddDbContext<ApplicationIdentityDbContext>(options =>
-            {
-                  options.UseMySql(Configuration.GetConnectionString("dbSinDarElaConnection"), ServerVersion.AutoDetect(Configuration.GetConnectionString("dbSinDarElaConnection")));
-            });
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddRoles<IdentityRole>()
-                .AddRoleStore<RoleStore<IdentityRole, ApplicationIdentityDbContext, string>>()
-                .AddRoleManager<RoleManager<IdentityRole>>()
-                .AddEntityFrameworkStores<ApplicationIdentityDbContext>();
-
-            services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationIdentityDbContext>();
-            services.AddTransient<Duende.IdentityServer.Services.IProfileService, ProfileService>();
-            services.AddAuthentication()
-                .AddIdentityServerJwt();
-
 
             services.AddDbContext<SinDarElaVerwaltung.Data.DbSinDarElaContext>(options =>
             {
               options.UseMySql(Configuration.GetConnectionString("dbSinDarElaConnection"), ServerVersion.AutoDetect(Configuration.GetConnectionString("dbSinDarElaConnection")));
             });
 
-            services.AddControllersWithViews();
             services.AddRazorPages();
 
             OnConfigureServices(services);
@@ -174,7 +146,7 @@ namespace SinDarElaVerwaltung
         partial void OnConfigureOData(ODataConventionModelBuilder builder);
         partial void OnConfiguring(IApplicationBuilder app, IWebHostEnvironment env);
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationIdentityDbContext identityDbContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             OnConfiguring(app, env);
             if (env.IsDevelopment())
@@ -196,9 +168,6 @@ namespace SinDarElaVerwaltung
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseIdentityServer();
-            app.UseAuthentication();
-            app.UseAuthorization();
             IServiceProvider provider = app.ApplicationServices.GetRequiredService<IServiceProvider>();
             app.UseCors("AllowAny");
             app.UseEndpoints(endpoints =>
@@ -212,40 +181,9 @@ namespace SinDarElaVerwaltung
                 endpoints.MapFallbackToFile("index.html");
             });
 
-            identityDbContext.Database.Migrate();
-
             OnConfigure(app, env);
         }
     }
 
 
-     public class ProfileService : Duende.IdentityServer.Services.IProfileService
-    {
-        private readonly IWebHostEnvironment env;
-        private readonly UserManager<ApplicationUser> userManager;
-        private readonly RoleManager<IdentityRole> roleManager;
-
-        public ProfileService(IWebHostEnvironment env, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
-        {
-            this.env = env;
-            this.userManager = userManager;
-            this.roleManager = roleManager;
-        }
-
-        public async Task GetProfileDataAsync(Duende.IdentityServer.Models.ProfileDataRequestContext context)
-        {
-            var user = await userManager.GetUserAsync(context.Subject);
-
-            var roles = user != null ? await userManager.GetRolesAsync(user) :
-                env.IsDevelopment() && context.Subject.Identity.Name == "admin" ?
-                    roleManager.Roles.Select(r => r.Name) : Enumerable.Empty<string>();
-
-            context.IssuedClaims.AddRange(roles.Select(r => new System.Security.Claims.Claim(IdentityModel.JwtClaimTypes.Role, r)));
-        }
-
-        public Task IsActiveAsync(Duende.IdentityServer.Models.IsActiveContext context)
-        {
-            return Task.CompletedTask;
-        }
-    }
 }

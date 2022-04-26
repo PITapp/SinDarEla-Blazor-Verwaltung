@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnProtokollGet(ref SingleResult<Models.DbSinDarEla.Protokoll> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{ProtokollID}")]
+    [HttpGet("/odata/dbSinDarEla/Protokolls(ProtokollID={ProtokollID})")]
     public SingleResult<Protokoll> GetProtokoll(int key)
     {
         var items = this.context.Protokolls.Where(i=>i.ProtokollID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnProtokollDeleted(Models.DbSinDarEla.Protokoll item);
     partial void OnAfterProtokollDeleted(Models.DbSinDarEla.Protokoll item);
 
-    [HttpDelete("{ProtokollID}")]
+    [HttpDelete("/odata/dbSinDarEla/Protokolls(ProtokollID={ProtokollID})")]
     public IActionResult DeleteProtokoll(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnProtokollUpdated(Models.DbSinDarEla.Protokoll item);
     partial void OnAfterProtokollUpdated(Models.DbSinDarEla.Protokoll item);
 
-    [HttpPut("{ProtokollID}")]
+    [HttpPut("/odata/dbSinDarEla/Protokolls(ProtokollID={ProtokollID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutProtokoll(int key, [FromBody]Models.DbSinDarEla.Protokoll newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{ProtokollID}")]
+    [HttpPatch("/odata/dbSinDarEla/Protokolls(ProtokollID={ProtokollID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchProtokoll(int key, [FromBody]Delta<Models.DbSinDarEla.Protokoll> patch)
     {

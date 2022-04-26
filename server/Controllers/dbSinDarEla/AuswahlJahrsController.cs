@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAuswahlJahrGet(ref SingleResult<Models.DbSinDarEla.AuswahlJahr> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{AuswahlJahrID}")]
+    [HttpGet("/odata/dbSinDarEla/AuswahlJahrs(AuswahlJahrID={AuswahlJahrID})")]
     public SingleResult<AuswahlJahr> GetAuswahlJahr(int key)
     {
         var items = this.context.AuswahlJahrs.Where(i=>i.AuswahlJahrID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAuswahlJahrDeleted(Models.DbSinDarEla.AuswahlJahr item);
     partial void OnAfterAuswahlJahrDeleted(Models.DbSinDarEla.AuswahlJahr item);
 
-    [HttpDelete("{AuswahlJahrID}")]
+    [HttpDelete("/odata/dbSinDarEla/AuswahlJahrs(AuswahlJahrID={AuswahlJahrID})")]
     public IActionResult DeleteAuswahlJahr(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAuswahlJahrUpdated(Models.DbSinDarEla.AuswahlJahr item);
     partial void OnAfterAuswahlJahrUpdated(Models.DbSinDarEla.AuswahlJahr item);
 
-    [HttpPut("{AuswahlJahrID}")]
+    [HttpPut("/odata/dbSinDarEla/AuswahlJahrs(AuswahlJahrID={AuswahlJahrID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutAuswahlJahr(int key, [FromBody]Models.DbSinDarEla.AuswahlJahr newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{AuswahlJahrID}")]
+    [HttpPatch("/odata/dbSinDarEla/AuswahlJahrs(AuswahlJahrID={AuswahlJahrID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchAuswahlJahr(int key, [FromBody]Delta<Models.DbSinDarEla.AuswahlJahr> patch)
     {

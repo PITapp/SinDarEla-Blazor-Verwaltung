@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKeyGet(ref SingleResult<Models.DbSinDarEla.Key> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{Id}")]
+    [HttpGet("/odata/dbSinDarEla/Keys(Id={Id})")]
     public SingleResult<Key> GetKey(string key)
     {
         var items = this.context.Keys.Where(i=>i.Id == Uri.UnescapeDataString(key));
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKeyDeleted(Models.DbSinDarEla.Key item);
     partial void OnAfterKeyDeleted(Models.DbSinDarEla.Key item);
 
-    [HttpDelete("{Id}")]
+    [HttpDelete("/odata/dbSinDarEla/Keys(Id={Id})")]
     public IActionResult DeleteKey(string key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKeyUpdated(Models.DbSinDarEla.Key item);
     partial void OnAfterKeyUpdated(Models.DbSinDarEla.Key item);
 
-    [HttpPut("{Id}")]
+    [HttpPut("/odata/dbSinDarEla/Keys(Id={Id})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKey(string key, [FromBody]Models.DbSinDarEla.Key newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{Id}")]
+    [HttpPatch("/odata/dbSinDarEla/Keys(Id={Id})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKey(string key, [FromBody]Delta<Models.DbSinDarEla.Key> patch)
     {

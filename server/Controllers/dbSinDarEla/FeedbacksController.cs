@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnFeedbackGet(ref SingleResult<Models.DbSinDarEla.Feedback> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{FeedbackID}")]
+    [HttpGet("/odata/dbSinDarEla/Feedbacks(FeedbackID={FeedbackID})")]
     public SingleResult<Feedback> GetFeedback(int key)
     {
         var items = this.context.Feedbacks.Where(i=>i.FeedbackID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnFeedbackDeleted(Models.DbSinDarEla.Feedback item);
     partial void OnAfterFeedbackDeleted(Models.DbSinDarEla.Feedback item);
 
-    [HttpDelete("{FeedbackID}")]
+    [HttpDelete("/odata/dbSinDarEla/Feedbacks(FeedbackID={FeedbackID})")]
     public IActionResult DeleteFeedback(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnFeedbackUpdated(Models.DbSinDarEla.Feedback item);
     partial void OnAfterFeedbackUpdated(Models.DbSinDarEla.Feedback item);
 
-    [HttpPut("{FeedbackID}")]
+    [HttpPut("/odata/dbSinDarEla/Feedbacks(FeedbackID={FeedbackID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutFeedback(int key, [FromBody]Models.DbSinDarEla.Feedback newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{FeedbackID}")]
+    [HttpPatch("/odata/dbSinDarEla/Feedbacks(FeedbackID={FeedbackID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchFeedback(int key, [FromBody]Delta<Models.DbSinDarEla.Feedback> patch)
     {

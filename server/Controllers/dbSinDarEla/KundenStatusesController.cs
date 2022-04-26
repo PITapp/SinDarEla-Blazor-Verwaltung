@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenStatusGet(ref SingleResult<Models.DbSinDarEla.KundenStatus> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{KundenStatusID}")]
+    [HttpGet("/odata/dbSinDarEla/KundenStatuses(KundenStatusID={KundenStatusID})")]
     public SingleResult<KundenStatus> GetKundenStatus(int key)
     {
         var items = this.context.KundenStatuses.Where(i=>i.KundenStatusID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenStatusDeleted(Models.DbSinDarEla.KundenStatus item);
     partial void OnAfterKundenStatusDeleted(Models.DbSinDarEla.KundenStatus item);
 
-    [HttpDelete("{KundenStatusID}")]
+    [HttpDelete("/odata/dbSinDarEla/KundenStatuses(KundenStatusID={KundenStatusID})")]
     public IActionResult DeleteKundenStatus(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenStatusUpdated(Models.DbSinDarEla.KundenStatus item);
     partial void OnAfterKundenStatusUpdated(Models.DbSinDarEla.KundenStatus item);
 
-    [HttpPut("{KundenStatusID}")]
+    [HttpPut("/odata/dbSinDarEla/KundenStatuses(KundenStatusID={KundenStatusID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKundenStatus(int key, [FromBody]Models.DbSinDarEla.KundenStatus newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{KundenStatusID}")]
+    [HttpPatch("/odata/dbSinDarEla/KundenStatuses(KundenStatusID={KundenStatusID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKundenStatus(int key, [FromBody]Delta<Models.DbSinDarEla.KundenStatus> patch)
     {

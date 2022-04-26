@@ -1,5 +1,4 @@
 {
-  "access": "Authenticated",
   "components": [
     {
       "components": [
@@ -44,7 +43,7 @@
                     "fontWeight": "normal",
                     "paddingTop": "4px"
                   },
-                  "text": "${Security.User.UserName}",
+                  "text": "",
                   "type": "heading"
                 }
               ],
@@ -342,7 +341,7 @@
                                           },
                                           "textProperty": "Titel",
                                           "type": "listbox",
-                                          "value": "${dsoUser.RoleNames}",
+                                          "value": "",
                                           "valueProperty": "Titel"
                                         }
                                       ],
@@ -388,7 +387,7 @@
                                             "width": "100%"
                                           },
                                           "type": "password",
-                                          "value": "${dsoUser.Password}"
+                                          "value": ""
                                         }
                                       ],
                                       "name": "col21",
@@ -433,7 +432,7 @@
                                             "width": "100%"
                                           },
                                           "type": "password",
-                                          "value": "${dsoUser.ConfirmPassword}"
+                                          "value": ""
                                         }
                                       ],
                                       "name": "col23",
@@ -494,70 +493,7 @@
                                 }
                               ],
                               "events": {
-                                "submit": [
-                                  {
-                                    "code": "${dsoUser.UserName} = ${dsoBenutzer.BenutzerEMail} ",
-                                    "type": "execute"
-                                  },
-                                  {
-                                    "condition": "",
-                                    "error": [
-                                      {
-                                        "detail": "Benutzer (Schritt 1) konnte nicht aktualisiert werden!",
-                                        "severity": "error",
-                                        "summary": "",
-                                        "type": "notify"
-                                      }
-                                    ],
-                                    "name": "Security.updateUser",
-                                    "parameters": [
-                                      {
-                                        "name": "User",
-                                        "value": "${dsoUser}"
-                                      },
-                                      {
-                                        "name": "Id",
-                                        "value": "${dsoBenutzer.AspNetUsers_Id}"
-                                      }
-                                    ],
-                                    "then": [
-                                      {
-                                        "error": [
-                                          {
-                                            "detail": "Benutzer (Schritt 2) konnte nicht aktualisiert werden!",
-                                            "severity": "error",
-                                            "then": [],
-                                            "type": "notify"
-                                          }
-                                        ],
-                                        "name": "dbSinDarEla.updateBenutzer",
-                                        "parameters": [
-                                          {
-                                            "name": "Benutzer",
-                                            "value": "${dsoBenutzer}"
-                                          },
-                                          {
-                                            "name": "BenutzerID",
-                                            "value": "${dsoBenutzer.BenutzerID}"
-                                          }
-                                        ],
-                                        "then": [
-                                          {
-                                            "detail": "Benutzer aktualisiert",
-                                            "severity": "success",
-                                            "type": "notify"
-                                          },
-                                          {
-                                            "result": "${result}",
-                                            "type": "close-popup"
-                                          }
-                                        ],
-                                        "type": "invoke"
-                                      }
-                                    ],
-                                    "type": "invoke"
-                                  }
-                                ]
+                                "submit": []
                               },
                               "name": "form0",
                               "style": {
@@ -577,66 +513,7 @@
                                       "buttonStyle": "light",
                                       "buttonType": "submit",
                                       "events": {
-                                        "click": [
-                                          {
-                                            "code": "${dsoUser.UserName} = ${dsoBenutzer.BenutzerID.ToString()} ",
-                                            "type": "execute"
-                                          },
-                                          {
-                                            "condition": "",
-                                            "error": [
-                                              {
-                                                "detail": "Benutzer (Schritt 1) konnte nicht aktualisiert werden!",
-                                                "severity": "error",
-                                                "summary": "",
-                                                "type": "notify"
-                                              }
-                                            ],
-                                            "name": "Security.updateUser",
-                                            "parameters": [
-                                              {
-                                                "name": "User",
-                                                "value": "${dsoUser}"
-                                              },
-                                              {
-                                                "name": "Id",
-                                                "value": "${dsoBenutzer.AspNetUsers_Id}"
-                                              }
-                                            ],
-                                            "then": [
-                                              {
-                                                "error": [
-                                                  {
-                                                    "detail": "Benutzer (Schritt 2) konnte nicht aktualisiert werden!",
-                                                    "severity": "error",
-                                                    "then": [],
-                                                    "type": "notify"
-                                                  }
-                                                ],
-                                                "name": "dbSinDarEla.updateBenutzer",
-                                                "parameters": [
-                                                  {
-                                                    "name": "Benutzer",
-                                                    "value": "${dsoBenutzer}"
-                                                  },
-                                                  {
-                                                    "name": "BenutzerID",
-                                                    "value": "${dsoBenutzer.BenutzerID}"
-                                                  }
-                                                ],
-                                                "then": [
-                                                  {
-                                                    "detail": "Benutzer aktualisiert",
-                                                    "severity": "success",
-                                                    "type": "notify"
-                                                  }
-                                                ],
-                                                "type": "invoke"
-                                              }
-                                            ],
-                                            "type": "invoke"
-                                          }
-                                        ]
+                                        "click": []
                                       },
                                       "icon": "done",
                                       "name": "button4",
@@ -904,7 +781,7 @@
         "parameters": [
           {
             "name": "$filter",
-            "value": "BenutzerName eq '${Security.User.UserName}'"
+            "value": "BenutzerName eq 'xxx'"
           },
           {
             "name": "$expand",
@@ -929,24 +806,6 @@
             "type": "set",
             "value": "${dsoBenutzer.Base.Name1} + \" \" + ${dsoBenutzer.Base.Name2}",
             "valueType": "string"
-          },
-          {
-            "name": "Security.getUserById",
-            "parameters": [
-              {
-                "name": "Id",
-                "value": "${dsoBenutzer.AspNetUsers_Id}"
-              }
-            ],
-            "then": [
-              {
-                "name": "dsoUser",
-                "type": "set",
-                "value": "${result}",
-                "valueType": "ApplicationUser"
-              }
-            ],
-            "type": "invoke"
           }
         ],
         "type": "invoke"

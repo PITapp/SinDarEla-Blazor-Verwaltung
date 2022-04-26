@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnInfotexteHtmlGet(ref SingleResult<Models.DbSinDarEla.InfotexteHtml> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{InfotextID}")]
+    [HttpGet("/odata/dbSinDarEla/InfotexteHtmls(InfotextID={InfotextID})")]
     public SingleResult<InfotexteHtml> GetInfotexteHtml(int key)
     {
         var items = this.context.InfotexteHtmls.Where(i=>i.InfotextID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnInfotexteHtmlDeleted(Models.DbSinDarEla.InfotexteHtml item);
     partial void OnAfterInfotexteHtmlDeleted(Models.DbSinDarEla.InfotexteHtml item);
 
-    [HttpDelete("{InfotextID}")]
+    [HttpDelete("/odata/dbSinDarEla/InfotexteHtmls(InfotextID={InfotextID})")]
     public IActionResult DeleteInfotexteHtml(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnInfotexteHtmlUpdated(Models.DbSinDarEla.InfotexteHtml item);
     partial void OnAfterInfotexteHtmlUpdated(Models.DbSinDarEla.InfotexteHtml item);
 
-    [HttpPut("{InfotextID}")]
+    [HttpPut("/odata/dbSinDarEla/InfotexteHtmls(InfotextID={InfotextID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutInfotexteHtml(int key, [FromBody]Models.DbSinDarEla.InfotexteHtml newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{InfotextID}")]
+    [HttpPatch("/odata/dbSinDarEla/InfotexteHtmls(InfotextID={InfotextID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchInfotexteHtml(int key, [FromBody]Delta<Models.DbSinDarEla.InfotexteHtml> patch)
     {

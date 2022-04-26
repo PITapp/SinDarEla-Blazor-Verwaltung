@@ -873,4 +873,4 @@ C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Release\net6
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Release\net6.0\SinDarElaVerwaltung.Client.dll
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Release\net6.0\ref\SinDarElaVerwaltung.Client.dll
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Release\net6.0\SinDarElaVerwaltung.Client.pdb
-C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Release\net6.0\build-gz\fHI1wmpC.gz
+C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\client\obj\Release\net6.0\build-gz\YEVyRF7m.gz

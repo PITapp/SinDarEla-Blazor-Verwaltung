@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDokumenteKategorienGet(ref SingleResult<Models.DbSinDarEla.DokumenteKategorien> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{DokumenteKategorieID}")]
+    [HttpGet("/odata/dbSinDarEla/DokumenteKategoriens(DokumenteKategorieID={DokumenteKategorieID})")]
     public SingleResult<DokumenteKategorien> GetDokumenteKategorien(int key)
     {
         var items = this.context.DokumenteKategoriens.Where(i=>i.DokumenteKategorieID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDokumenteKategorienDeleted(Models.DbSinDarEla.DokumenteKategorien item);
     partial void OnAfterDokumenteKategorienDeleted(Models.DbSinDarEla.DokumenteKategorien item);
 
-    [HttpDelete("{DokumenteKategorieID}")]
+    [HttpDelete("/odata/dbSinDarEla/DokumenteKategoriens(DokumenteKategorieID={DokumenteKategorieID})")]
     public IActionResult DeleteDokumenteKategorien(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDokumenteKategorienUpdated(Models.DbSinDarEla.DokumenteKategorien item);
     partial void OnAfterDokumenteKategorienUpdated(Models.DbSinDarEla.DokumenteKategorien item);
 
-    [HttpPut("{DokumenteKategorieID}")]
+    [HttpPut("/odata/dbSinDarEla/DokumenteKategoriens(DokumenteKategorieID={DokumenteKategorieID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutDokumenteKategorien(int key, [FromBody]Models.DbSinDarEla.DokumenteKategorien newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{DokumenteKategorieID}")]
+    [HttpPatch("/odata/dbSinDarEla/DokumenteKategoriens(DokumenteKategorieID={DokumenteKategorieID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchDokumenteKategorien(int key, [FromBody]Delta<Models.DbSinDarEla.DokumenteKategorien> patch)
     {

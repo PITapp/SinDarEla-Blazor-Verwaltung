@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDokumenteGet(ref SingleResult<Models.DbSinDarEla.Dokumente> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{DokumentID}")]
+    [HttpGet("/odata/dbSinDarEla/Dokumentes(DokumentID={DokumentID})")]
     public SingleResult<Dokumente> GetDokumente(int key)
     {
         var items = this.context.Dokumentes.Where(i=>i.DokumentID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDokumenteDeleted(Models.DbSinDarEla.Dokumente item);
     partial void OnAfterDokumenteDeleted(Models.DbSinDarEla.Dokumente item);
 
-    [HttpDelete("{DokumentID}")]
+    [HttpDelete("/odata/dbSinDarEla/Dokumentes(DokumentID={DokumentID})")]
     public IActionResult DeleteDokumente(int key)
     {
         try
@@ -102,7 +102,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnDokumenteUpdated(Models.DbSinDarEla.Dokumente item);
     partial void OnAfterDokumenteUpdated(Models.DbSinDarEla.Dokumente item);
 
-    [HttpPut("{DokumentID}")]
+    [HttpPut("/odata/dbSinDarEla/Dokumentes(DokumentID={DokumentID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutDokumente(int key, [FromBody]Models.DbSinDarEla.Dokumente newItem)
     {
@@ -134,7 +134,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{DokumentID}")]
+    [HttpPatch("/odata/dbSinDarEla/Dokumentes(DokumentID={DokumentID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchDokumente(int key, [FromBody]Delta<Models.DbSinDarEla.Dokumente> patch)
     {

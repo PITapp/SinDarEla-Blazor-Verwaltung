@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnVwBasePlzGet(ref SingleResult<Models.DbSinDarEla.VwBasePlz> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{PLZ}")]
+    [HttpGet("/odata/dbSinDarEla/VwBasePlzs(PLZ={PLZ})")]
     public SingleResult<VwBasePlz> GetVwBasePlz(string key)
     {
         var items = this.context.VwBasePlzs.AsNoTracking().Where(i=>i.PLZ == Uri.UnescapeDataString(key));

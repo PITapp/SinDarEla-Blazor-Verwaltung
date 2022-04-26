@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufNormalarbeitszeitGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterVerlaufNormalarbeitszeitID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterVerlaufNormalarbeitszeits(MitarbeiterVerlaufNormalarbeitszeitID={MitarbeiterVerlaufNormalarbeitszeitID})")]
     public SingleResult<MitarbeiterVerlaufNormalarbeitszeit> GetMitarbeiterVerlaufNormalarbeitszeit(int key)
     {
         var items = this.context.MitarbeiterVerlaufNormalarbeitszeits.Where(i=>i.MitarbeiterVerlaufNormalarbeitszeitID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufNormalarbeitszeitDeleted(Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit item);
     partial void OnAfterMitarbeiterVerlaufNormalarbeitszeitDeleted(Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit item);
 
-    [HttpDelete("{MitarbeiterVerlaufNormalarbeitszeitID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterVerlaufNormalarbeitszeits(MitarbeiterVerlaufNormalarbeitszeitID={MitarbeiterVerlaufNormalarbeitszeitID})")]
     public IActionResult DeleteMitarbeiterVerlaufNormalarbeitszeit(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufNormalarbeitszeitUpdated(Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit item);
     partial void OnAfterMitarbeiterVerlaufNormalarbeitszeitUpdated(Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit item);
 
-    [HttpPut("{MitarbeiterVerlaufNormalarbeitszeitID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterVerlaufNormalarbeitszeits(MitarbeiterVerlaufNormalarbeitszeitID={MitarbeiterVerlaufNormalarbeitszeitID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterVerlaufNormalarbeitszeit(int key, [FromBody]Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterVerlaufNormalarbeitszeitID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterVerlaufNormalarbeitszeits(MitarbeiterVerlaufNormalarbeitszeitID={MitarbeiterVerlaufNormalarbeitszeitID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterVerlaufNormalarbeitszeit(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit> patch)
     {

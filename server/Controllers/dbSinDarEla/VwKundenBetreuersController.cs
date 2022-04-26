@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnVwKundenBetreuerGet(ref SingleResult<Models.DbSinDarEla.VwKundenBetreuer> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{Betreuungsart}")]
+    [HttpGet("/odata/dbSinDarEla/VwKundenBetreuers(Betreuungsart={Betreuungsart})")]
     public SingleResult<VwKundenBetreuer> GetVwKundenBetreuer(string key)
     {
         var items = this.context.VwKundenBetreuers.AsNoTracking().Where(i=>i.Betreuungsart == Uri.UnescapeDataString(key));

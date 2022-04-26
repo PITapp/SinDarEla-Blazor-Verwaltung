@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseGet(ref SingleResult<Models.DbSinDarEla.Ereignisse> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{EreignisID}")]
+    [HttpGet("/odata/dbSinDarEla/Ereignisses(EreignisID={EreignisID})")]
     public SingleResult<Ereignisse> GetEreignisse(int key)
     {
         var items = this.context.Ereignisses.Where(i=>i.EreignisID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseDeleted(Models.DbSinDarEla.Ereignisse item);
     partial void OnAfterEreignisseDeleted(Models.DbSinDarEla.Ereignisse item);
 
-    [HttpDelete("{EreignisID}")]
+    [HttpDelete("/odata/dbSinDarEla/Ereignisses(EreignisID={EreignisID})")]
     public IActionResult DeleteEreignisse(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseUpdated(Models.DbSinDarEla.Ereignisse item);
     partial void OnAfterEreignisseUpdated(Models.DbSinDarEla.Ereignisse item);
 
-    [HttpPut("{EreignisID}")]
+    [HttpPut("/odata/dbSinDarEla/Ereignisses(EreignisID={EreignisID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutEreignisse(int key, [FromBody]Models.DbSinDarEla.Ereignisse newItem)
     {
@@ -133,7 +133,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{EreignisID}")]
+    [HttpPatch("/odata/dbSinDarEla/Ereignisses(EreignisID={EreignisID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchEreignisse(int key, [FromBody]Delta<Models.DbSinDarEla.Ereignisse> patch)
     {

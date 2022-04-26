@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnRegelnAbwesenheitenGet(ref SingleResult<Models.DbSinDarEla.RegelnAbwesenheiten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{RegelnAbwesenheitenID}")]
+    [HttpGet("/odata/dbSinDarEla/RegelnAbwesenheitens(RegelnAbwesenheitenID={RegelnAbwesenheitenID})")]
     public SingleResult<RegelnAbwesenheiten> GetRegelnAbwesenheiten(int key)
     {
         var items = this.context.RegelnAbwesenheitens.Where(i=>i.RegelnAbwesenheitenID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnRegelnAbwesenheitenDeleted(Models.DbSinDarEla.RegelnAbwesenheiten item);
     partial void OnAfterRegelnAbwesenheitenDeleted(Models.DbSinDarEla.RegelnAbwesenheiten item);
 
-    [HttpDelete("{RegelnAbwesenheitenID}")]
+    [HttpDelete("/odata/dbSinDarEla/RegelnAbwesenheitens(RegelnAbwesenheitenID={RegelnAbwesenheitenID})")]
     public IActionResult DeleteRegelnAbwesenheiten(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnRegelnAbwesenheitenUpdated(Models.DbSinDarEla.RegelnAbwesenheiten item);
     partial void OnAfterRegelnAbwesenheitenUpdated(Models.DbSinDarEla.RegelnAbwesenheiten item);
 
-    [HttpPut("{RegelnAbwesenheitenID}")]
+    [HttpPut("/odata/dbSinDarEla/RegelnAbwesenheitens(RegelnAbwesenheitenID={RegelnAbwesenheitenID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutRegelnAbwesenheiten(int key, [FromBody]Models.DbSinDarEla.RegelnAbwesenheiten newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{RegelnAbwesenheitenID}")]
+    [HttpPatch("/odata/dbSinDarEla/RegelnAbwesenheitens(RegelnAbwesenheitenID={RegelnAbwesenheitenID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchRegelnAbwesenheiten(int key, [FromBody]Delta<Models.DbSinDarEla.RegelnAbwesenheiten> patch)
     {

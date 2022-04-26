@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAufgabenGet(ref SingleResult<Models.DbSinDarEla.Aufgaben> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{AufgabeID}")]
+    [HttpGet("/odata/dbSinDarEla/Aufgabens(AufgabeID={AufgabeID})")]
     public SingleResult<Aufgaben> GetAufgaben(int key)
     {
         var items = this.context.Aufgabens.Where(i=>i.AufgabeID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAufgabenDeleted(Models.DbSinDarEla.Aufgaben item);
     partial void OnAfterAufgabenDeleted(Models.DbSinDarEla.Aufgaben item);
 
-    [HttpDelete("{AufgabeID}")]
+    [HttpDelete("/odata/dbSinDarEla/Aufgabens(AufgabeID={AufgabeID})")]
     public IActionResult DeleteAufgaben(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAufgabenUpdated(Models.DbSinDarEla.Aufgaben item);
     partial void OnAfterAufgabenUpdated(Models.DbSinDarEla.Aufgaben item);
 
-    [HttpPut("{AufgabeID}")]
+    [HttpPut("/odata/dbSinDarEla/Aufgabens(AufgabeID={AufgabeID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutAufgaben(int key, [FromBody]Models.DbSinDarEla.Aufgaben newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{AufgabeID}")]
+    [HttpPatch("/odata/dbSinDarEla/Aufgabens(AufgabeID={AufgabeID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchAufgaben(int key, [FromBody]Delta<Models.DbSinDarEla.Aufgaben> patch)
     {

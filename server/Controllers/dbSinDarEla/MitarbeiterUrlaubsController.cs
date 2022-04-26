@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterUrlaub> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterUrlaubID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterUrlaubs(MitarbeiterUrlaubID={MitarbeiterUrlaubID})")]
     public SingleResult<MitarbeiterUrlaub> GetMitarbeiterUrlaub(int key)
     {
         var items = this.context.MitarbeiterUrlaubs.Where(i=>i.MitarbeiterUrlaubID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubDeleted(Models.DbSinDarEla.MitarbeiterUrlaub item);
     partial void OnAfterMitarbeiterUrlaubDeleted(Models.DbSinDarEla.MitarbeiterUrlaub item);
 
-    [HttpDelete("{MitarbeiterUrlaubID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterUrlaubs(MitarbeiterUrlaubID={MitarbeiterUrlaubID})")]
     public IActionResult DeleteMitarbeiterUrlaub(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubUpdated(Models.DbSinDarEla.MitarbeiterUrlaub item);
     partial void OnAfterMitarbeiterUrlaubUpdated(Models.DbSinDarEla.MitarbeiterUrlaub item);
 
-    [HttpPut("{MitarbeiterUrlaubID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterUrlaubs(MitarbeiterUrlaubID={MitarbeiterUrlaubID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterUrlaub(int key, [FromBody]Models.DbSinDarEla.MitarbeiterUrlaub newItem)
     {
@@ -133,7 +133,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterUrlaubID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterUrlaubs(MitarbeiterUrlaubID={MitarbeiterUrlaubID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterUrlaub(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterUrlaub> patch)
     {

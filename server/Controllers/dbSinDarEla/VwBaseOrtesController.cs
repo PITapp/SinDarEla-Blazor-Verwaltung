@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnVwBaseOrteGet(ref SingleResult<Models.DbSinDarEla.VwBaseOrte> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{Ort}")]
+    [HttpGet("/odata/dbSinDarEla/VwBaseOrtes(Ort={Ort})")]
     public SingleResult<VwBaseOrte> GetVwBaseOrte(string key)
     {
         var items = this.context.VwBaseOrtes.AsNoTracking().Where(i=>i.Ort == Uri.UnescapeDataString(key));

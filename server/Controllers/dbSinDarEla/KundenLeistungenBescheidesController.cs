@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideGet(ref SingleResult<Models.DbSinDarEla.KundenLeistungenBescheide> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{KundenLeistungenBescheidID}")]
+    [HttpGet("/odata/dbSinDarEla/KundenLeistungenBescheides(KundenLeistungenBescheidID={KundenLeistungenBescheidID})")]
     public SingleResult<KundenLeistungenBescheide> GetKundenLeistungenBescheide(int key)
     {
         var items = this.context.KundenLeistungenBescheides.Where(i=>i.KundenLeistungenBescheidID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideDeleted(Models.DbSinDarEla.KundenLeistungenBescheide item);
     partial void OnAfterKundenLeistungenBescheideDeleted(Models.DbSinDarEla.KundenLeistungenBescheide item);
 
-    [HttpDelete("{KundenLeistungenBescheidID}")]
+    [HttpDelete("/odata/dbSinDarEla/KundenLeistungenBescheides(KundenLeistungenBescheidID={KundenLeistungenBescheidID})")]
     public IActionResult DeleteKundenLeistungenBescheide(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideUpdated(Models.DbSinDarEla.KundenLeistungenBescheide item);
     partial void OnAfterKundenLeistungenBescheideUpdated(Models.DbSinDarEla.KundenLeistungenBescheide item);
 
-    [HttpPut("{KundenLeistungenBescheidID}")]
+    [HttpPut("/odata/dbSinDarEla/KundenLeistungenBescheides(KundenLeistungenBescheidID={KundenLeistungenBescheidID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKundenLeistungenBescheide(int key, [FromBody]Models.DbSinDarEla.KundenLeistungenBescheide newItem)
     {
@@ -133,7 +133,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{KundenLeistungenBescheidID}")]
+    [HttpPatch("/odata/dbSinDarEla/KundenLeistungenBescheides(KundenLeistungenBescheidID={KundenLeistungenBescheidID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKundenLeistungenBescheide(int key, [FromBody]Delta<Models.DbSinDarEla.KundenLeistungenBescheide> patch)
     {

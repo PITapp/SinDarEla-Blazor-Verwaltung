@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseSonderurlaubArtenGet(ref SingleResult<Models.DbSinDarEla.EreignisseSonderurlaubArten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{EreignisSonderurlaubArtID}")]
+    [HttpGet("/odata/dbSinDarEla/EreignisseSonderurlaubArtens(EreignisSonderurlaubArtID={EreignisSonderurlaubArtID})")]
     public SingleResult<EreignisseSonderurlaubArten> GetEreignisseSonderurlaubArten(int key)
     {
         var items = this.context.EreignisseSonderurlaubArtens.Where(i=>i.EreignisSonderurlaubArtID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseSonderurlaubArtenDeleted(Models.DbSinDarEla.EreignisseSonderurlaubArten item);
     partial void OnAfterEreignisseSonderurlaubArtenDeleted(Models.DbSinDarEla.EreignisseSonderurlaubArten item);
 
-    [HttpDelete("{EreignisSonderurlaubArtID}")]
+    [HttpDelete("/odata/dbSinDarEla/EreignisseSonderurlaubArtens(EreignisSonderurlaubArtID={EreignisSonderurlaubArtID})")]
     public IActionResult DeleteEreignisseSonderurlaubArten(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnEreignisseSonderurlaubArtenUpdated(Models.DbSinDarEla.EreignisseSonderurlaubArten item);
     partial void OnAfterEreignisseSonderurlaubArtenUpdated(Models.DbSinDarEla.EreignisseSonderurlaubArten item);
 
-    [HttpPut("{EreignisSonderurlaubArtID}")]
+    [HttpPut("/odata/dbSinDarEla/EreignisseSonderurlaubArtens(EreignisSonderurlaubArtID={EreignisSonderurlaubArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutEreignisseSonderurlaubArten(int key, [FromBody]Models.DbSinDarEla.EreignisseSonderurlaubArten newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{EreignisSonderurlaubArtID}")]
+    [HttpPatch("/odata/dbSinDarEla/EreignisseSonderurlaubArtens(EreignisSonderurlaubArtID={EreignisSonderurlaubArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchEreignisseSonderurlaubArten(int key, [FromBody]Delta<Models.DbSinDarEla.EreignisseSonderurlaubArten> patch)
     {

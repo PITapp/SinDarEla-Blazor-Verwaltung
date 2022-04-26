@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungArtenGet(ref SingleResult<Models.DbSinDarEla.KundenLeistungArten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{KundenLeistungArtID}")]
+    [HttpGet("/odata/dbSinDarEla/KundenLeistungArtens(KundenLeistungArtID={KundenLeistungArtID})")]
     public SingleResult<KundenLeistungArten> GetKundenLeistungArten(int key)
     {
         var items = this.context.KundenLeistungArtens.Where(i=>i.KundenLeistungArtID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungArtenDeleted(Models.DbSinDarEla.KundenLeistungArten item);
     partial void OnAfterKundenLeistungArtenDeleted(Models.DbSinDarEla.KundenLeistungArten item);
 
-    [HttpDelete("{KundenLeistungArtID}")]
+    [HttpDelete("/odata/dbSinDarEla/KundenLeistungArtens(KundenLeistungArtID={KundenLeistungArtID})")]
     public IActionResult DeleteKundenLeistungArten(int key)
     {
         try
@@ -103,7 +103,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungArtenUpdated(Models.DbSinDarEla.KundenLeistungArten item);
     partial void OnAfterKundenLeistungArtenUpdated(Models.DbSinDarEla.KundenLeistungArten item);
 
-    [HttpPut("{KundenLeistungArtID}")]
+    [HttpPut("/odata/dbSinDarEla/KundenLeistungArtens(KundenLeistungArtID={KundenLeistungArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKundenLeistungArten(int key, [FromBody]Models.DbSinDarEla.KundenLeistungArten newItem)
     {
@@ -134,7 +134,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{KundenLeistungArtID}")]
+    [HttpPatch("/odata/dbSinDarEla/KundenLeistungArtens(KundenLeistungArtID={KundenLeistungArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKundenLeistungArten(int key, [FromBody]Delta<Models.DbSinDarEla.KundenLeistungArten> patch)
     {

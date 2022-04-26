@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnVwKundenUndBetreuerAuswahlGet(ref SingleResult<Models.DbSinDarEla.VwKundenUndBetreuerAuswahl> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{BaseID}")]
+    [HttpGet("/odata/dbSinDarEla/VwKundenUndBetreuerAuswahls(BaseID={BaseID})")]
     public SingleResult<VwKundenUndBetreuerAuswahl> GetVwKundenUndBetreuerAuswahl(int key)
     {
         var items = this.context.VwKundenUndBetreuerAuswahls.AsNoTracking().Where(i=>i.BaseID == key);

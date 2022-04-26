@@ -1,5 +1,4 @@
 {
-  "access": "Authenticated",
   "components": [
     {
       "components": [
@@ -44,7 +43,7 @@
                     "fontWeight": "normal",
                     "paddingTop": "4px"
                   },
-                  "text": "Grundeinstellungen für Module",
+                  "text": "Daten zeigen...",
                   "type": "heading"
                 }
               ],
@@ -126,9 +125,16 @@
                         {
                           "components": [
                             {
-                              "name": "label0",
-                              "text": "Test",
-                              "type": "label"
+                              "components": [
+                                {
+                                  "class": "col-md-12",
+                                  "components": [],
+                                  "name": "col6",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row4",
+                              "type": "row"
                             }
                           ],
                           "headerTemplate": [
@@ -143,14 +149,14 @@
                                         "click": []
                                       },
                                       "icon": "add",
-                                      "name": "buttonNeuerInfotext",
+                                      "name": "buttonNeu",
                                       "size": "sm",
                                       "style": {
                                         "color": "#D86E13",
                                         "display": "block"
                                       },
                                       "template": "",
-                                      "text": "Neuer Infotext",
+                                      "text": "Neu",
                                       "tooltip": "",
                                       "type": "button"
                                     },
@@ -211,7 +217,7 @@
                             "border": "1px solid #e6ecef",
                             "height": "740px"
                           },
-                          "text": "Text",
+                          "text": "Daten",
                           "type": "panel"
                         }
                       ],
@@ -223,13 +229,7 @@
                       "components": [
                         {
                           "attributes": [],
-                          "components": [
-                            {
-                              "name": "label1",
-                              "text": "Test",
-                              "type": "label"
-                            }
-                          ],
+                          "components": [],
                           "footerTemplate": "",
                           "headerTemplate": [
                             {
@@ -286,7 +286,7 @@
                             "border": "1px solid #e6ecef",
                             "height": "740px"
                           },
-                          "text": "Text",
+                          "text": "Sonstiges",
                           "type": "panel"
                         }
                       ],
@@ -319,6 +319,16 @@
       "type": "content"
     }
   ],
+  "events": {
+    "load": [
+      {
+        "name": "strLocalStorage",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      }
+    ]
+  },
   "layout": "Main",
   "name": "Dashboard"
 }

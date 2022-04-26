@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAbrechnungKundenReststundenGet(ref SingleResult<Models.DbSinDarEla.AbrechnungKundenReststunden> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{AbrechnungKundenReststundenID}")]
+    [HttpGet("/odata/dbSinDarEla/AbrechnungKundenReststundens(AbrechnungKundenReststundenID={AbrechnungKundenReststundenID})")]
     public SingleResult<AbrechnungKundenReststunden> GetAbrechnungKundenReststunden(int key)
     {
         var items = this.context.AbrechnungKundenReststundens.Where(i=>i.AbrechnungKundenReststundenID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAbrechnungKundenReststundenDeleted(Models.DbSinDarEla.AbrechnungKundenReststunden item);
     partial void OnAfterAbrechnungKundenReststundenDeleted(Models.DbSinDarEla.AbrechnungKundenReststunden item);
 
-    [HttpDelete("{AbrechnungKundenReststundenID}")]
+    [HttpDelete("/odata/dbSinDarEla/AbrechnungKundenReststundens(AbrechnungKundenReststundenID={AbrechnungKundenReststundenID})")]
     public IActionResult DeleteAbrechnungKundenReststunden(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAbrechnungKundenReststundenUpdated(Models.DbSinDarEla.AbrechnungKundenReststunden item);
     partial void OnAfterAbrechnungKundenReststundenUpdated(Models.DbSinDarEla.AbrechnungKundenReststunden item);
 
-    [HttpPut("{AbrechnungKundenReststundenID}")]
+    [HttpPut("/odata/dbSinDarEla/AbrechnungKundenReststundens(AbrechnungKundenReststundenID={AbrechnungKundenReststundenID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutAbrechnungKundenReststunden(int key, [FromBody]Models.DbSinDarEla.AbrechnungKundenReststunden newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{AbrechnungKundenReststundenID}")]
+    [HttpPatch("/odata/dbSinDarEla/AbrechnungKundenReststundens(AbrechnungKundenReststundenID={AbrechnungKundenReststundenID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchAbrechnungKundenReststunden(int key, [FromBody]Delta<Models.DbSinDarEla.AbrechnungKundenReststunden> patch)
     {

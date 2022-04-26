@@ -4,21 +4,26 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using SinDarElaVerwaltung.Models.DbSinDarEla;
-using Microsoft.AspNetCore.Identity;
-using SinDarElaVerwaltung.Models;
 using SinDarElaVerwaltung.Client.Pages;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class EinstellungenInfotexteEditorComponent : ComponentBase
+    public partial class EinstellungenInfotexteEditorComponent : ComponentBase, IDisposable
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected GlobalsService Globals { get; set; }
+
+        public void Dispose()
+        {
+            Globals.PropertyChanged -= OnPropertyChanged;
+        }
 
         public void Reload()
         {
@@ -46,12 +51,6 @@ namespace SinDarElaVerwaltung.Pages
 
         [Inject]
         protected NotificationService NotificationService { get; set; }
-
-        [Inject]
-        protected SecurityService Security { get; set; }
-
-        [Inject]
-        protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
@@ -137,15 +136,8 @@ namespace SinDarElaVerwaltung.Pages
 
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
-            await Security.InitializeAsync(AuthenticationStateProvider);
-            if (!Security.IsAuthenticated())
-            {
-                UriHelper.NavigateTo("Login", true);
-            }
-            else
-            {
-                await Load();
-            }
+            Globals.PropertyChanged += OnPropertyChanged;
+            await Load();
         }
         protected async System.Threading.Tasks.Task Load()
         {

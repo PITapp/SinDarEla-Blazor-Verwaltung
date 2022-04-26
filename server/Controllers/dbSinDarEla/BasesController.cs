@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBaseGet(ref SingleResult<Models.DbSinDarEla.Base> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{BaseID}")]
+    [HttpGet("/odata/dbSinDarEla/Bases(BaseID={BaseID})")]
     public SingleResult<Base> GetBase(int key)
     {
         var items = this.context.Bases.Where(i=>i.BaseID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBaseDeleted(Models.DbSinDarEla.Base item);
     partial void OnAfterBaseDeleted(Models.DbSinDarEla.Base item);
 
-    [HttpDelete("{BaseID}")]
+    [HttpDelete("/odata/dbSinDarEla/Bases(BaseID={BaseID})")]
     public IActionResult DeleteBase(int key)
     {
         try
@@ -113,7 +113,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBaseUpdated(Models.DbSinDarEla.Base item);
     partial void OnAfterBaseUpdated(Models.DbSinDarEla.Base item);
 
-    [HttpPut("{BaseID}")]
+    [HttpPut("/odata/dbSinDarEla/Bases(BaseID={BaseID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutBase(int key, [FromBody]Models.DbSinDarEla.Base newItem)
     {
@@ -145,7 +145,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{BaseID}")]
+    [HttpPatch("/odata/dbSinDarEla/Bases(BaseID={BaseID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchBase(int key, [FromBody]Delta<Models.DbSinDarEla.Base> patch)
     {

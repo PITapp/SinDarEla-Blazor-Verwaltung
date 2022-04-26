@@ -3,19 +3,19 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using SinDarElaVerwaltung.Models.DbSinDarEla;
-using Microsoft.AspNetCore.Identity;
-using SinDarElaVerwaltung.Models;
 using SinDarElaVerwaltung.Pages;
 
 namespace SinDarElaVerwaltung.Layouts
 {
     public partial class MainLayoutComponent : LayoutComponentBase
     {
+        [Inject]
+        protected GlobalsService Globals { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -30,13 +30,6 @@ namespace SinDarElaVerwaltung.Layouts
 
         [Inject]
         protected NotificationService NotificationService { get; set; }
-
-        [Inject]
-        protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
-
-        [Inject]
-        protected SecurityService Security { get; set; }
-
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
@@ -77,32 +70,20 @@ namespace SinDarElaVerwaltung.Layouts
             }
         }
 
-        private void Authenticated()
-        {
-             StateHasChanged();
-        }
-
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
-             if (Security != null)
-             {
-                  Security.Authenticated += Authenticated;
-
-                  await Security.InitializeAsync(AuthenticationStateProvider);
-             }
              await Load();
         }
         protected async System.Threading.Tasks.Task Load()
         {
+            // await WriteLocalStorage("storageBenutzerName","Günther Painsi");
+
             try
             {
-                if (Security.IsAuthenticated())
-                {
-                    var dbSinDarElaGetVwBenutzerBasesResult = await DbSinDarEla.GetVwBenutzerBases(filter:$"Benutzername eq '{Security.User.UserName}'");
-                    rstBenutzer = dbSinDarElaGetVwBenutzerBasesResult.Value.AsODataEnumerable();
+                var dbSinDarElaGetVwBenutzerBasesResult = await DbSinDarEla.GetVwBenutzerBases(filter:$"Benutzername eq 'xxx'");
+                rstBenutzer = dbSinDarElaGetVwBenutzerBasesResult.Value.AsODataEnumerable();
 
-                    strBildURL = rstBenutzer.FirstOrDefault().BildURL;
-                }
+                strBildURL = rstBenutzer.FirstOrDefault().BildURL;
             }
             catch (System.Exception dbSinDarElaGetVwBenutzerBasesException)
             {
@@ -115,14 +96,6 @@ namespace SinDarElaVerwaltung.Layouts
             await InvokeAsync(() => { sidebar0.Toggle(); });
 
             await InvokeAsync(() => { body0.Toggle(); });
-        }
-
-        protected async System.Threading.Tasks.Task Profilemenu1Click(dynamic args)
-        {
-            if (args.Text == "Logout")
-            {
-                await Security.Logout();
-            }
         }
     }
 }

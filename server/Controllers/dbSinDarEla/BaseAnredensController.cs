@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBaseAnredenGet(ref SingleResult<Models.DbSinDarEla.BaseAnreden> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{AnredeID}")]
+    [HttpGet("/odata/dbSinDarEla/BaseAnredens(AnredeID={AnredeID})")]
     public SingleResult<BaseAnreden> GetBaseAnreden(int key)
     {
         var items = this.context.BaseAnredens.Where(i=>i.AnredeID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBaseAnredenDeleted(Models.DbSinDarEla.BaseAnreden item);
     partial void OnAfterBaseAnredenDeleted(Models.DbSinDarEla.BaseAnreden item);
 
-    [HttpDelete("{AnredeID}")]
+    [HttpDelete("/odata/dbSinDarEla/BaseAnredens(AnredeID={AnredeID})")]
     public IActionResult DeleteBaseAnreden(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnBaseAnredenUpdated(Models.DbSinDarEla.BaseAnreden item);
     partial void OnAfterBaseAnredenUpdated(Models.DbSinDarEla.BaseAnreden item);
 
-    [HttpPut("{AnredeID}")]
+    [HttpPut("/odata/dbSinDarEla/BaseAnredens(AnredeID={AnredeID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutBaseAnreden(int key, [FromBody]Models.DbSinDarEla.BaseAnreden newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{AnredeID}")]
+    [HttpPatch("/odata/dbSinDarEla/BaseAnredens(AnredeID={AnredeID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchBaseAnreden(int key, [FromBody]Delta<Models.DbSinDarEla.BaseAnreden> patch)
     {

@@ -4,21 +4,26 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using SinDarElaVerwaltung.Models.DbSinDarEla;
-using Microsoft.AspNetCore.Identity;
-using SinDarElaVerwaltung.Models;
 using SinDarElaVerwaltung.Client.Pages;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class AddApplicationRoleComponent : ComponentBase
+    public partial class AnmeldungComponent : ComponentBase, IDisposable
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected GlobalsService Globals { get; set; }
+
+        public void Dispose()
+        {
+            Globals.PropertyChanged -= OnPropertyChanged;
+        }
 
         public void Reload()
         {
@@ -48,27 +53,21 @@ namespace SinDarElaVerwaltung.Pages
         protected NotificationService NotificationService { get; set; }
 
         [Inject]
-        protected SecurityService Security { get; set; }
-
-        [Inject]
-        protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
-
-        [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
-        IdentityRole _role;
-        protected IdentityRole role
+        bool _bolBenutzerAngemeldet;
+        protected bool bolBenutzerAngemeldet
         {
             get
             {
-                return _role;
+                return _bolBenutzerAngemeldet;
             }
             set
             {
-                if (!object.Equals(_role, value))
+                if (!object.Equals(_bolBenutzerAngemeldet, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "role", NewValue = value, OldValue = _role };
-                    _role = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "bolBenutzerAngemeldet", NewValue = value, OldValue = _bolBenutzerAngemeldet };
+                    _bolBenutzerAngemeldet = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
@@ -77,37 +76,25 @@ namespace SinDarElaVerwaltung.Pages
 
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
-            await Security.InitializeAsync(AuthenticationStateProvider);
-            if (!Security.IsAuthenticated())
-            {
-                UriHelper.NavigateTo("Login", true);
-            }
-            else
-            {
-                await Load();
-            }
+            Globals.PropertyChanged += OnPropertyChanged;
+            await Load();
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            role = new IdentityRole();
-        }
+            Globals.globalBenutzerName = "";
 
-        protected async System.Threading.Tasks.Task Form0Submit(IdentityRole args)
-        {
-            try
-            {
-                var securityCreateRoleResult = await Security.CreateRole(args);
-                UriHelper.NavigateTo("application-roles");
-            }
-            catch (System.Exception securityCreateRoleException)
-            {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Cannot create role",Detail = $"{securityCreateRoleException.Message}" });
+            bolBenutzerAngemeldet = false;
+
+            if (bolBenutzerAngemeldet == true) {
+            UriHelper.NavigateTo("dashboard");
             }
         }
 
-        protected async System.Threading.Tasks.Task Button2Click(MouseEventArgs args)
+        protected async System.Threading.Tasks.Task Login0Login(dynamic args)
         {
-            DialogService.Close(null);
+            UriHelper.NavigateTo("dashboard");
+
+            Globals.globalBenutzerName = await ReadLocalStorage("storageBenutzerName");
         }
     }
 }

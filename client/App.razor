@@ -2,14 +2,9 @@
     The Router component displays whichever component has a @page
     directive matching the current URI.
 *@
-<CascadingAuthenticationState>
 <Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
-                <NotAuthorized>
-                    <RedirectToLogin IsAuthenticated="@context.User.Identity.IsAuthenticated" />
-                </NotAuthorized>
-            </AuthorizeRouteView>
+            <RouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)" />
     </Found>
     <NotFound>
         <LayoutView Layout="typeof(MainLayout)">
@@ -18,4 +13,3 @@
         </LayoutView>
     </NotFound>
 </Router>
-</CascadingAuthenticationState>

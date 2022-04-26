@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterGet(ref SingleResult<Models.DbSinDarEla.Mitarbeiter> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterID}")]
+    [HttpGet("/odata/dbSinDarEla/Mitarbeiters(MitarbeiterID={MitarbeiterID})")]
     public SingleResult<Mitarbeiter> GetMitarbeiter(int key)
     {
         var items = this.context.Mitarbeiters.Where(i=>i.MitarbeiterID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterDeleted(Models.DbSinDarEla.Mitarbeiter item);
     partial void OnAfterMitarbeiterDeleted(Models.DbSinDarEla.Mitarbeiter item);
 
-    [HttpDelete("{MitarbeiterID}")]
+    [HttpDelete("/odata/dbSinDarEla/Mitarbeiters(MitarbeiterID={MitarbeiterID})")]
     public IActionResult DeleteMitarbeiter(int key)
     {
         try
@@ -109,7 +109,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUpdated(Models.DbSinDarEla.Mitarbeiter item);
     partial void OnAfterMitarbeiterUpdated(Models.DbSinDarEla.Mitarbeiter item);
 
-    [HttpPut("{MitarbeiterID}")]
+    [HttpPut("/odata/dbSinDarEla/Mitarbeiters(MitarbeiterID={MitarbeiterID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiter(int key, [FromBody]Models.DbSinDarEla.Mitarbeiter newItem)
     {
@@ -141,7 +141,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterID}")]
+    [HttpPatch("/odata/dbSinDarEla/Mitarbeiters(MitarbeiterID={MitarbeiterID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiter(int key, [FromBody]Delta<Models.DbSinDarEla.Mitarbeiter> patch)
     {

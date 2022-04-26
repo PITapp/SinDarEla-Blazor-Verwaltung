@@ -7,7 +7,7 @@ using Radzen.Blazor;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class AddApplicationUserComponent
+    public partial class CopyOfAnmeldungComponent
     {
 
     }

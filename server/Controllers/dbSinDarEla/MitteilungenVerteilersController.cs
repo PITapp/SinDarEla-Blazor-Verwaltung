@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitteilungenVerteilerGet(ref SingleResult<Models.DbSinDarEla.MitteilungenVerteiler> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitteilungVerteilerID}")]
+    [HttpGet("/odata/dbSinDarEla/MitteilungenVerteilers(MitteilungVerteilerID={MitteilungVerteilerID})")]
     public SingleResult<MitteilungenVerteiler> GetMitteilungenVerteiler(int key)
     {
         var items = this.context.MitteilungenVerteilers.Where(i=>i.MitteilungVerteilerID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitteilungenVerteilerDeleted(Models.DbSinDarEla.MitteilungenVerteiler item);
     partial void OnAfterMitteilungenVerteilerDeleted(Models.DbSinDarEla.MitteilungenVerteiler item);
 
-    [HttpDelete("{MitteilungVerteilerID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitteilungenVerteilers(MitteilungVerteilerID={MitteilungVerteilerID})")]
     public IActionResult DeleteMitteilungenVerteiler(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitteilungenVerteilerUpdated(Models.DbSinDarEla.MitteilungenVerteiler item);
     partial void OnAfterMitteilungenVerteilerUpdated(Models.DbSinDarEla.MitteilungenVerteiler item);
 
-    [HttpPut("{MitteilungVerteilerID}")]
+    [HttpPut("/odata/dbSinDarEla/MitteilungenVerteilers(MitteilungVerteilerID={MitteilungVerteilerID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitteilungenVerteiler(int key, [FromBody]Models.DbSinDarEla.MitteilungenVerteiler newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitteilungVerteilerID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitteilungenVerteilers(MitteilungVerteilerID={MitteilungVerteilerID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitteilungenVerteiler(int key, [FromBody]Delta<Models.DbSinDarEla.MitteilungenVerteiler> patch)
     {

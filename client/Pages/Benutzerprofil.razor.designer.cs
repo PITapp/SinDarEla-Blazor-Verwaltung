@@ -4,21 +4,26 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using SinDarElaVerwaltung.Models.DbSinDarEla;
-using Microsoft.AspNetCore.Identity;
-using SinDarElaVerwaltung.Models;
 using SinDarElaVerwaltung.Client.Pages;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class BenutzerprofilComponent : ComponentBase
+    public partial class BenutzerprofilComponent : ComponentBase, IDisposable
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected GlobalsService Globals { get; set; }
+
+        public void Dispose()
+        {
+            Globals.PropertyChanged -= OnPropertyChanged;
+        }
 
         public void Reload()
         {
@@ -46,12 +51,6 @@ namespace SinDarElaVerwaltung.Pages
 
         [Inject]
         protected NotificationService NotificationService { get; set; }
-
-        [Inject]
-        protected SecurityService Security { get; set; }
-
-        [Inject]
-        protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
@@ -132,106 +131,27 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        ApplicationUser _dsoUser;
-        protected ApplicationUser dsoUser
-        {
-            get
-            {
-                return _dsoUser;
-            }
-            set
-            {
-                if (!object.Equals(_dsoUser, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "dsoUser", NewValue = value, OldValue = _dsoUser };
-                    _dsoUser = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
-            await Security.InitializeAsync(AuthenticationStateProvider);
-            if (!Security.IsAuthenticated())
-            {
-                UriHelper.NavigateTo("Login", true);
-            }
-            else
-            {
-                await Load();
-            }
+            Globals.PropertyChanged += OnPropertyChanged;
+            await Load();
         }
         protected async System.Threading.Tasks.Task Load()
         {
             var dbSinDarElaGetVwRollensResult = await DbSinDarEla.GetVwRollens();
             rstRollen = dbSinDarElaGetVwRollensResult.Value.AsODataEnumerable();
 
-            var dbSinDarElaGetBenutzersResult = await DbSinDarEla.GetBenutzers(filter:$"BenutzerName eq '{Security.User.UserName}'", expand:$"Base");
+            var dbSinDarElaGetBenutzersResult = await DbSinDarEla.GetBenutzers(filter:$"BenutzerName eq 'xxx'", expand:$"Base");
             rstBenutzer = dbSinDarElaGetBenutzersResult.Value.AsODataEnumerable();
 
             dsoBenutzer = rstBenutzer.FirstOrDefault();;
 
             strNameKontakt = dsoBenutzer.Base.Name1 + " " + dsoBenutzer.Base.Name2;
-
-            var securityGetUserByIdResult = await Security.GetUserById($"{dsoBenutzer.AspNetUsers_Id}");
-            dsoUser = securityGetUserByIdResult;
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
         {
             await DialogService.OpenAsync<MeldungOk>($"Info", new Dictionary<string, object>() { {"strMeldung", "Drucken ist für dieses Modul noch nicht aktiviert!"} }, new DialogOptions(){ Width = $"{600}px" });
-        }
-
-        protected async System.Threading.Tasks.Task Form0Submit(dynamic args)
-        {
-            dsoUser.UserName = dsoBenutzer.BenutzerEMail;
-
-            try
-            {
-                var securityUpdateUserResult = await Security.UpdateUser($"{dsoBenutzer.AspNetUsers_Id}", dsoUser);
-                try
-                {
-                    var dbSinDarElaUpdateBenutzerResult = await DbSinDarEla.UpdateBenutzer(benutzerId:dsoBenutzer.BenutzerID, benutzer:dsoBenutzer);
-                        NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Success,Detail = $"Benutzer aktualisiert" });
-
-                    DialogService.Close(dbSinDarElaUpdateBenutzerResult);
-                }
-                catch (System.Exception dbSinDarElaUpdateBenutzerException)
-                {
-                    NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Benutzer (Schritt 2) konnte nicht aktualisiert werden!" });
-
-                }
-            }
-            catch (System.Exception securityUpdateUserException)
-            {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Benutzer (Schritt 1) konnte nicht aktualisiert werden!" });
-            }
-        }
-
-        protected async System.Threading.Tasks.Task Button4Click(MouseEventArgs args)
-        {
-            dsoUser.UserName = dsoBenutzer.BenutzerID.ToString();
-
-            try
-            {
-                var securityUpdateUserResult = await Security.UpdateUser($"{dsoBenutzer.AspNetUsers_Id}", dsoUser);
-                try
-                {
-                    var dbSinDarElaUpdateBenutzerResult = await DbSinDarEla.UpdateBenutzer(benutzerId:dsoBenutzer.BenutzerID, benutzer:dsoBenutzer);
-                        NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Success,Detail = $"Benutzer aktualisiert" });
-                }
-                catch (System.Exception dbSinDarElaUpdateBenutzerException)
-                {
-                    NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Benutzer (Schritt 2) konnte nicht aktualisiert werden!" });
-
-                }
-            }
-            catch (System.Exception securityUpdateUserException)
-            {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Benutzer (Schritt 1) konnte nicht aktualisiert werden!" });
-            }
         }
 
         protected async System.Threading.Tasks.Task Upload0Error(UploadErrorEventArgs args)

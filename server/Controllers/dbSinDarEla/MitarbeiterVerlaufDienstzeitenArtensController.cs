@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufDienstzeitenArtenGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterVerlaufDienstzeitenArten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterVerlaufDienstzeitenArtID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterVerlaufDienstzeitenArtens(MitarbeiterVerlaufDienstzeitenArtID={MitarbeiterVerlaufDienstzeitenArtID})")]
     public SingleResult<MitarbeiterVerlaufDienstzeitenArten> GetMitarbeiterVerlaufDienstzeitenArten(int key)
     {
         var items = this.context.MitarbeiterVerlaufDienstzeitenArtens.Where(i=>i.MitarbeiterVerlaufDienstzeitenArtID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufDienstzeitenArtenDeleted(Models.DbSinDarEla.MitarbeiterVerlaufDienstzeitenArten item);
     partial void OnAfterMitarbeiterVerlaufDienstzeitenArtenDeleted(Models.DbSinDarEla.MitarbeiterVerlaufDienstzeitenArten item);
 
-    [HttpDelete("{MitarbeiterVerlaufDienstzeitenArtID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterVerlaufDienstzeitenArtens(MitarbeiterVerlaufDienstzeitenArtID={MitarbeiterVerlaufDienstzeitenArtID})")]
     public IActionResult DeleteMitarbeiterVerlaufDienstzeitenArten(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufDienstzeitenArtenUpdated(Models.DbSinDarEla.MitarbeiterVerlaufDienstzeitenArten item);
     partial void OnAfterMitarbeiterVerlaufDienstzeitenArtenUpdated(Models.DbSinDarEla.MitarbeiterVerlaufDienstzeitenArten item);
 
-    [HttpPut("{MitarbeiterVerlaufDienstzeitenArtID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterVerlaufDienstzeitenArtens(MitarbeiterVerlaufDienstzeitenArtID={MitarbeiterVerlaufDienstzeitenArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterVerlaufDienstzeitenArten(int key, [FromBody]Models.DbSinDarEla.MitarbeiterVerlaufDienstzeitenArten newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterVerlaufDienstzeitenArtID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterVerlaufDienstzeitenArtens(MitarbeiterVerlaufDienstzeitenArtID={MitarbeiterVerlaufDienstzeitenArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterVerlaufDienstzeitenArten(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterVerlaufDienstzeitenArten> patch)
     {

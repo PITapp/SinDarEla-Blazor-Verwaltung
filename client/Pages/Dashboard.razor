@@ -1,15 +1,10 @@
-﻿@page "/"
-@page "/dashboard"
+﻿@page "/dashboard"
 @layout MainLayout
 @inherits SinDarElaVerwaltung.Pages.DashboardComponent
 
 @using Radzen
 @using Radzen.Blazor
 @using SinDarElaVerwaltung.Models.DbSinDarEla
-@using Microsoft.AspNetCore.Identity;
-@using SinDarElaVerwaltung.Models
-@using Microsoft.AspNetCore.Authorization
-@attribute [Authorize]
 <PageTitle>Dashboard</PageTitle>
 <RadzenContent Container="main">
   <ChildContent>
@@ -19,7 +14,7 @@
         </RadzenHeading>
         <RadzenHeading Size="H3" style="color: #e5ecef; display: inline-block; margin-top: 7px; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenHeading>
-        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" Text="Grundeinstellungen für Module" >
+        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" Text="Daten zeigen..." >
         </RadzenHeading>
       </div>
       <div class="col-md-4  d-flex justify-content-end align-items-end" style="padding-right: 20px">
@@ -33,15 +28,17 @@
           <ChildContent>
             <div class="row">
               <div class="col-md-7">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Text">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Daten">
                   <ChildContent>
-                    <RadzenLabel Text="Test">
-                    </RadzenLabel>
+                    <div class="row">
+                      <div class="col-md-12">
+                      </div>
+                    </div>
                   </ChildContent>
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neuer Infotext">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neu">
                         </RadzenButton>
                         <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext">
                         </RadzenButton>
@@ -53,11 +50,7 @@
                 </RadzenPanel>
               </div>
               <div class="col-md-5" style="padding-left: 5px">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Text">
-                  <ChildContent>
-                    <RadzenLabel Text="Test">
-                    </RadzenLabel>
-                  </ChildContent>
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Sonstiges">
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">

@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufGehaltGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterVerlaufGehalt> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterVerlaufGehaltID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterVerlaufGehalts(MitarbeiterVerlaufGehaltID={MitarbeiterVerlaufGehaltID})")]
     public SingleResult<MitarbeiterVerlaufGehalt> GetMitarbeiterVerlaufGehalt(int key)
     {
         var items = this.context.MitarbeiterVerlaufGehalts.Where(i=>i.MitarbeiterVerlaufGehaltID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufGehaltDeleted(Models.DbSinDarEla.MitarbeiterVerlaufGehalt item);
     partial void OnAfterMitarbeiterVerlaufGehaltDeleted(Models.DbSinDarEla.MitarbeiterVerlaufGehalt item);
 
-    [HttpDelete("{MitarbeiterVerlaufGehaltID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterVerlaufGehalts(MitarbeiterVerlaufGehaltID={MitarbeiterVerlaufGehaltID})")]
     public IActionResult DeleteMitarbeiterVerlaufGehalt(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterVerlaufGehaltUpdated(Models.DbSinDarEla.MitarbeiterVerlaufGehalt item);
     partial void OnAfterMitarbeiterVerlaufGehaltUpdated(Models.DbSinDarEla.MitarbeiterVerlaufGehalt item);
 
-    [HttpPut("{MitarbeiterVerlaufGehaltID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterVerlaufGehalts(MitarbeiterVerlaufGehaltID={MitarbeiterVerlaufGehaltID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterVerlaufGehalt(int key, [FromBody]Models.DbSinDarEla.MitarbeiterVerlaufGehalt newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterVerlaufGehaltID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterVerlaufGehalts(MitarbeiterVerlaufGehaltID={MitarbeiterVerlaufGehaltID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterVerlaufGehalt(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterVerlaufGehalt> patch)
     {

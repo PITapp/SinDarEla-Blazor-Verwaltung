@@ -41,7 +41,7 @@
                       "path": "/assets/images/LogoMitSchriftzug4.png",
                       "style": {
                         "float": "left",
-                        "height": "30px"
+                        "height": "34px"
                       },
                       "type": "image"
                     },
@@ -79,22 +79,13 @@
                   "type": "col"
                 },
                 {
-                  "class": "col-6 text-right justify-content-end d-flex",
+                  "class": "col-6 justify-content-end d-flex",
                   "components": [
                     {
-                      "events": {
-                        "click": [
-                          {
-                            "code": "await ${Security.Logout()}",
-                            "condition": "${event.Text == \"Logout\"}",
-                            "type": "execute"
-                          }
-                        ]
-                      },
                       "items": [
                         {
                           "icon": "account_circle",
-                          "path": "",
+                          "path": "benutzerprofil",
                           "text": "Benutzerprofil"
                         },
                         {
@@ -109,23 +100,26 @@
                       },
                       "template": [
                         {
-                          "class": "col-md-12  d-flex justify-content-end align-items-center",
+                          "class": "col-md-12  d-flex justify-content-end",
                           "components": [
                             {
                               "name": "label7",
                               "style": {
-                                "color": "#E8E8E8",
+                                "color": "#f5f5f5",
                                 "display": "inline-block",
                                 "fontFamily": "verdana,geneva,sans-serif",
                                 "fontSize": "12px",
-                                "marginRight": "20px"
+                                "fontWeight": "normal",
+                                "marginRight": "20px",
+                                "paddingTop": "7px",
+                                "verticalAlign": "bottom"
                               },
-                              "text": "${Security.User.UserName}",
+                              "text": "${Globals.globalBenutzerName}",
                               "type": "label"
                             },
                             {
                               "name": "image1",
-                              "path": "${strBildURL}",
+                              "path": "https://medien.sindarela.app/upload/bilder/base/279.jpg",
                               "style": {
                                 "borderRadius": "50%",
                                 "display": "block",
@@ -137,14 +131,17 @@
                             }
                           ],
                           "name": "col1",
+                          "style": {
+                            "backgroundColor": "rgba(0, 0, 0, 0)"
+                          },
                           "type": "col"
                         }
                       ],
                       "type": "profilemenu",
-                      "visible": "${Security.IsAuthenticated()}"
+                      "visible": ""
                     }
                   ],
-                  "name": "rightCol",
+                  "name": "col0",
                   "type": "col"
                 }
               ],
@@ -286,11 +283,13 @@
                 {
                   "icon": "dashboard",
                   "path": "dashboard",
+                  "selected": false,
                   "text": "Dashboard"
                 },
                 {
                   "icon": "assignment_turned_in",
-                  "path": "",
+                  "path": "zz-test-local-storage",
+                  "selected": false,
                   "text": "Management"
                 },
                 {
@@ -330,7 +329,7 @@
                 },
                 {
                   "icon": "supervisor_account",
-                  "path": "infotexte-html",
+                  "path": "",
                   "text": "Benutzer"
                 },
                 {
@@ -365,7 +364,11 @@
   "events": {
     "load": [
       {
-        "condition": "${Security.IsAuthenticated()}",
+        "code": "// await WriteLocalStorage(\"storageBenutzerName\",\"Günther Painsi\")",
+        "type": "execute"
+      },
+      {
+        "condition": "",
         "error": [
           {
             "detail": "Benutzer wurde nicht gefunden!",
@@ -377,7 +380,7 @@
         "parameters": [
           {
             "name": "$filter",
-            "value": "Benutzername eq '${Security.User.UserName}'"
+            "value": "Benutzername eq 'xxx'"
           }
         ],
         "then": [

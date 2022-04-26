@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterFortbildungenArtenGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterFortbildungenArten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{FortbildungArtID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterFortbildungenArtens(FortbildungArtID={FortbildungArtID})")]
     public SingleResult<MitarbeiterFortbildungenArten> GetMitarbeiterFortbildungenArten(int key)
     {
         var items = this.context.MitarbeiterFortbildungenArtens.Where(i=>i.FortbildungArtID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterFortbildungenArtenDeleted(Models.DbSinDarEla.MitarbeiterFortbildungenArten item);
     partial void OnAfterMitarbeiterFortbildungenArtenDeleted(Models.DbSinDarEla.MitarbeiterFortbildungenArten item);
 
-    [HttpDelete("{FortbildungArtID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterFortbildungenArtens(FortbildungArtID={FortbildungArtID})")]
     public IActionResult DeleteMitarbeiterFortbildungenArten(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterFortbildungenArtenUpdated(Models.DbSinDarEla.MitarbeiterFortbildungenArten item);
     partial void OnAfterMitarbeiterFortbildungenArtenUpdated(Models.DbSinDarEla.MitarbeiterFortbildungenArten item);
 
-    [HttpPut("{FortbildungArtID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterFortbildungenArtens(FortbildungArtID={FortbildungArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterFortbildungenArten(int key, [FromBody]Models.DbSinDarEla.MitarbeiterFortbildungenArten newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{FortbildungArtID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterFortbildungenArtens(FortbildungArtID={FortbildungArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterFortbildungenArten(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterFortbildungenArten> patch)
     {

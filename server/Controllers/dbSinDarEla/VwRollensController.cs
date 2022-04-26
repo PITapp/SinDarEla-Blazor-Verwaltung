@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnVwRollenGet(ref SingleResult<Models.DbSinDarEla.VwRollen> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{Id}")]
+    [HttpGet("/odata/dbSinDarEla/VwRollens(Id={Id})")]
     public SingleResult<VwRollen> GetVwRollen(string key)
     {
         var items = this.context.VwRollens.AsNoTracking().Where(i=>i.Id == Uri.UnescapeDataString(key));

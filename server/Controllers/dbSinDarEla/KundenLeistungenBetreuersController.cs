@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBetreuerGet(ref SingleResult<Models.DbSinDarEla.KundenLeistungenBetreuer> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{KundenLeistungenBetreuerID}")]
+    [HttpGet("/odata/dbSinDarEla/KundenLeistungenBetreuers(KundenLeistungenBetreuerID={KundenLeistungenBetreuerID})")]
     public SingleResult<KundenLeistungenBetreuer> GetKundenLeistungenBetreuer(int key)
     {
         var items = this.context.KundenLeistungenBetreuers.Where(i=>i.KundenLeistungenBetreuerID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBetreuerDeleted(Models.DbSinDarEla.KundenLeistungenBetreuer item);
     partial void OnAfterKundenLeistungenBetreuerDeleted(Models.DbSinDarEla.KundenLeistungenBetreuer item);
 
-    [HttpDelete("{KundenLeistungenBetreuerID}")]
+    [HttpDelete("/odata/dbSinDarEla/KundenLeistungenBetreuers(KundenLeistungenBetreuerID={KundenLeistungenBetreuerID})")]
     public IActionResult DeleteKundenLeistungenBetreuer(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBetreuerUpdated(Models.DbSinDarEla.KundenLeistungenBetreuer item);
     partial void OnAfterKundenLeistungenBetreuerUpdated(Models.DbSinDarEla.KundenLeistungenBetreuer item);
 
-    [HttpPut("{KundenLeistungenBetreuerID}")]
+    [HttpPut("/odata/dbSinDarEla/KundenLeistungenBetreuers(KundenLeistungenBetreuerID={KundenLeistungenBetreuerID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKundenLeistungenBetreuer(int key, [FromBody]Models.DbSinDarEla.KundenLeistungenBetreuer newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{KundenLeistungenBetreuerID}")]
+    [HttpPatch("/odata/dbSinDarEla/KundenLeistungenBetreuers(KundenLeistungenBetreuerID={KundenLeistungenBetreuerID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKundenLeistungenBetreuer(int key, [FromBody]Delta<Models.DbSinDarEla.KundenLeistungenBetreuer> patch)
     {

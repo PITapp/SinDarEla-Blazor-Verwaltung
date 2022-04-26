@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubDetailGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterUrlaubDetail> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterUrlaubDetailsID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterUrlaubDetails(MitarbeiterUrlaubDetailsID={MitarbeiterUrlaubDetailsID})")]
     public SingleResult<MitarbeiterUrlaubDetail> GetMitarbeiterUrlaubDetail(int key)
     {
         var items = this.context.MitarbeiterUrlaubDetails.Where(i=>i.MitarbeiterUrlaubDetailsID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubDetailDeleted(Models.DbSinDarEla.MitarbeiterUrlaubDetail item);
     partial void OnAfterMitarbeiterUrlaubDetailDeleted(Models.DbSinDarEla.MitarbeiterUrlaubDetail item);
 
-    [HttpDelete("{MitarbeiterUrlaubDetailsID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterUrlaubDetails(MitarbeiterUrlaubDetailsID={MitarbeiterUrlaubDetailsID})")]
     public IActionResult DeleteMitarbeiterUrlaubDetail(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubDetailUpdated(Models.DbSinDarEla.MitarbeiterUrlaubDetail item);
     partial void OnAfterMitarbeiterUrlaubDetailUpdated(Models.DbSinDarEla.MitarbeiterUrlaubDetail item);
 
-    [HttpPut("{MitarbeiterUrlaubDetailsID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterUrlaubDetails(MitarbeiterUrlaubDetailsID={MitarbeiterUrlaubDetailsID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterUrlaubDetail(int key, [FromBody]Models.DbSinDarEla.MitarbeiterUrlaubDetail newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterUrlaubDetailsID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterUrlaubDetails(MitarbeiterUrlaubDetailsID={MitarbeiterUrlaubDetailsID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterUrlaubDetail(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterUrlaubDetail> patch)
     {

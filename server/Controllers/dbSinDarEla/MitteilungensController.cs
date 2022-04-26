@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitteilungenGet(ref SingleResult<Models.DbSinDarEla.Mitteilungen> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitteilungID}")]
+    [HttpGet("/odata/dbSinDarEla/Mitteilungens(MitteilungID={MitteilungID})")]
     public SingleResult<Mitteilungen> GetMitteilungen(int key)
     {
         var items = this.context.Mitteilungens.Where(i=>i.MitteilungID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitteilungenDeleted(Models.DbSinDarEla.Mitteilungen item);
     partial void OnAfterMitteilungenDeleted(Models.DbSinDarEla.Mitteilungen item);
 
-    [HttpDelete("{MitteilungID}")]
+    [HttpDelete("/odata/dbSinDarEla/Mitteilungens(MitteilungID={MitteilungID})")]
     public IActionResult DeleteMitteilungen(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitteilungenUpdated(Models.DbSinDarEla.Mitteilungen item);
     partial void OnAfterMitteilungenUpdated(Models.DbSinDarEla.Mitteilungen item);
 
-    [HttpPut("{MitteilungID}")]
+    [HttpPut("/odata/dbSinDarEla/Mitteilungens(MitteilungID={MitteilungID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitteilungen(int key, [FromBody]Models.DbSinDarEla.Mitteilungen newItem)
     {
@@ -133,7 +133,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitteilungID}")]
+    [HttpPatch("/odata/dbSinDarEla/Mitteilungens(MitteilungID={MitteilungID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitteilungen(int key, [FromBody]Delta<Models.DbSinDarEla.Mitteilungen> patch)
     {

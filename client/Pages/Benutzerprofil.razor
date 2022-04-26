@@ -5,10 +5,6 @@
 @using Radzen
 @using Radzen.Blazor
 @using SinDarElaVerwaltung.Models.DbSinDarEla
-@using Microsoft.AspNetCore.Identity;
-@using SinDarElaVerwaltung.Models
-@using Microsoft.AspNetCore.Authorization
-@attribute [Authorize]
 <PageTitle>Benutzerprofil</PageTitle>
 <RadzenContent Container="main">
   <ChildContent>
@@ -18,7 +14,7 @@
         </RadzenHeading>
         <RadzenHeading Size="H3" style="color: #e5ecef; display: inline-block; margin-top: 7px; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenHeading>
-        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" Text="@(Security.User.UserName)" >
+        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" >
         </RadzenHeading>
       </div>
       <div class="col-md-4  d-flex justify-content-end align-items-end" style="padding-right: 20px">
@@ -34,7 +30,7 @@
               <div class="col-md-4">
                 <RadzenPanel AllowCollapse="false" style="border: 1px solid #e6ecef; height: 740px" Text="Benutzerdaten">
                   <ChildContent>
-                    <RadzenTemplateForm style="margin-top: 9px" TItem="dynamic" Submit="@Form0Submit">
+                    <RadzenTemplateForm style="margin-top: 9px" TItem="dynamic">
                       <ChildContent>
                         <div  class="row">
                           <div class="col-md-3" style="text-align: right">
@@ -78,7 +74,7 @@
                             </RadzenRequiredValidator>
                           </div>
                           <div class="col-md-9" >
-                            <RadzenListBox Data="@rstRollen" Multiple="false" ReadOnly="true" style="height: 250px; width: 100%" TextProperty="Titel" @bind-Value="@(dsoUser.RoleNames)" ValueProperty="Titel" Name="Listbox0">
+                            <RadzenListBox Data="@rstRollen" Multiple="false" ReadOnly="true" style="height: 250px; width: 100%" TextProperty="Titel" ValueProperty="Titel" Name="Listbox0" TValue="dynamic">
                             </RadzenListBox>
                           </div>
                         </div>
@@ -88,7 +84,7 @@
                             </RadzenLabel>
                           </div>
                           <div class="col-md-9" >
-                            <RadzenPassword AutoComplete="false" style="display: block; width: 100%" @bind-Value="@(dsoUser.Password)" Name="Password">
+                            <RadzenPassword AutoComplete="false" style="display: block; width: 100%" Name="Password">
                             </RadzenPassword>
                           </div>
                         </div>
@@ -98,7 +94,7 @@
                             </RadzenLabel>
                           </div>
                           <div class="col-md-9" >
-                            <RadzenPassword AutoComplete="false" style="display: block; width: 100%" @bind-Value="@(dsoUser.ConfirmPassword)" Name="ConfirmPassword">
+                            <RadzenPassword AutoComplete="false" style="display: block; width: 100%" Name="ConfirmPassword">
                             </RadzenPassword>
                           </div>
                         </div>
@@ -118,7 +114,7 @@
                   <HeaderTemplate>
                     <div style="color: rgb(33, 37, 41)" class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Submit" Icon="done" Size="ButtonSize.Small" style="color: #D86E13; display: block; font-weight: normal" Text="Speichern" Click="@Button4Click">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Submit" Icon="done" Size="ButtonSize.Small" style="color: #D86E13; display: block; font-weight: normal" Text="Speichern">
                         </RadzenButton>
                       </div>
                     </div>

@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnNotizenGet(ref SingleResult<Models.DbSinDarEla.Notizen> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{NotizID}")]
+    [HttpGet("/odata/dbSinDarEla/Notizens(NotizID={NotizID})")]
     public SingleResult<Notizen> GetNotizen(int key)
     {
         var items = this.context.Notizens.Where(i=>i.NotizID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnNotizenDeleted(Models.DbSinDarEla.Notizen item);
     partial void OnAfterNotizenDeleted(Models.DbSinDarEla.Notizen item);
 
-    [HttpDelete("{NotizID}")]
+    [HttpDelete("/odata/dbSinDarEla/Notizens(NotizID={NotizID})")]
     public IActionResult DeleteNotizen(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnNotizenUpdated(Models.DbSinDarEla.Notizen item);
     partial void OnAfterNotizenUpdated(Models.DbSinDarEla.Notizen item);
 
-    [HttpPut("{NotizID}")]
+    [HttpPut("/odata/dbSinDarEla/Notizens(NotizID={NotizID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutNotizen(int key, [FromBody]Models.DbSinDarEla.Notizen newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{NotizID}")]
+    [HttpPatch("/odata/dbSinDarEla/Notizens(NotizID={NotizID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchNotizen(int key, [FromBody]Delta<Models.DbSinDarEla.Notizen> patch)
     {

@@ -1,0 +1,329 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "justify-content-start       d-flex align-items-center col-md-12",
+              "components": [
+                {
+                  "name": "heading18",
+                  "size": "H1",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "inline-block"
+                  },
+                  "text": "Anmeldung",
+                  "type": "heading"
+                },
+                {
+                  "name": "heading19",
+                  "size": "H3",
+                  "style": {
+                    "color": "#e5ecef",
+                    "display": "inline-block",
+                    "marginTop": "7px",
+                    "paddingLeft": "10px",
+                    "paddingRight": "10px"
+                  },
+                  "text": "|",
+                  "type": "heading"
+                },
+                {
+                  "attributes": [
+                    {}
+                  ],
+                  "name": "heading21",
+                  "size": "H3",
+                  "style": {
+                    "color": "#6A80AA",
+                    "display": "inline",
+                    "fontSize": "21px",
+                    "fontWeight": "normal",
+                    "paddingTop": "4px"
+                  },
+                  "text": "",
+                  "type": "heading"
+                }
+              ],
+              "name": "col46",
+              "style": {
+                "height": "52px",
+                "paddingBottom": "1px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row24",
+          "style": {
+            "height": "",
+            "marginTop": "-7px",
+            "paddingBottom": "0",
+            "paddingLeft": "5px",
+            "paddingRight": "3px",
+            "paddingTop": "0",
+            "width": ""
+          },
+          "type": "row"
+        },
+        {
+          "items": [
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-7",
+                      "components": [
+                        {
+                          "components": [
+                            {
+                              "name": "label0",
+                              "text": "Test",
+                              "type": "label"
+                            },
+                            {
+                              "autoComplete": false,
+                              "name": "password0",
+                              "placeholder": "",
+                              "type": "password",
+                              "value": ""
+                            },
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12",
+                                  "components": [
+                                    {
+                                      "name": "textboxKennwort",
+                                      "type": "textbox",
+                                      "value": "${strHashPasswort}"
+                                    }
+                                  ],
+                                  "name": "col2",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row0",
+                              "type": "row"
+                            },
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12",
+                                  "components": [
+                                    {
+                                      "events": {
+                                        "click": [
+                                          {
+                                            "code": "// strHashPasswortErgebnis = HashPassword(${strHashPasswort})",
+                                            "type": "execute"
+                                          }
+                                        ]
+                                      },
+                                      "name": "button1",
+                                      "text": "Umwandeln in Hash",
+                                      "type": "button"
+                                    },
+                                    {
+                                      "components": [
+                                        {
+                                          "class": "col-md-12",
+                                          "components": [
+                                            {
+                                              "name": "label2",
+                                              "style": {
+                                                "height": "100%",
+                                                "width": "100%"
+                                              },
+                                              "text": "${strHashPasswortErgebnis}",
+                                              "type": "label"
+                                            }
+                                          ],
+                                          "name": "col5",
+                                          "type": "col"
+                                        }
+                                      ],
+                                      "name": "row3",
+                                      "type": "row"
+                                    }
+                                  ],
+                                  "name": "col4",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row2",
+                              "type": "row"
+                            }
+                          ],
+                          "headerTemplate": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12 align-items-start d-flex",
+                                  "components": [
+                                    {
+                                      "buttonStyle": "light",
+                                      "events": {
+                                        "click": [
+                                          {
+                                            "path": "dashboard",
+                                            "type": "navigate"
+                                          }
+                                        ]
+                                      },
+                                      "icon": "input",
+                                      "name": "buttonAnmelden",
+                                      "size": "sm",
+                                      "style": {
+                                        "color": "#D86E13",
+                                        "display": "block"
+                                      },
+                                      "template": "",
+                                      "text": "Jetzt anmelden",
+                                      "tooltip": "",
+                                      "type": "button"
+                                    }
+                                  ],
+                                  "name": "col1",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row0",
+                              "type": "row"
+                            }
+                          ],
+                          "icon": "",
+                          "name": "panel1",
+                          "style": {
+                            "border": "1px solid #e6ecef",
+                            "height": "740px"
+                          },
+                          "text": "Text",
+                          "type": "panel"
+                        }
+                      ],
+                      "name": "col0",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-5",
+                      "components": [
+                        {
+                          "attributes": [],
+                          "components": [
+                            {
+                              "name": "label1",
+                              "text": "Test",
+                              "type": "label"
+                            }
+                          ],
+                          "footerTemplate": "",
+                          "headerTemplate": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12 align-items-start d-flex",
+                                  "components": [
+                                    {
+                                      "buttonStyle": "light",
+                                      "events": {
+                                        "click": []
+                                      },
+                                      "icon": "content_copy",
+                                      "name": "buttonKopieren",
+                                      "size": "sm",
+                                      "style": {
+                                        "color": "#D86E13",
+                                        "display": "block",
+                                        "float": "none"
+                                      },
+                                      "text": "Kopieren",
+                                      "tooltip": "",
+                                      "type": "button"
+                                    },
+                                    {
+                                      "buttonStyle": "light",
+                                      "buttonType": "button",
+                                      "events": {
+                                        "click": []
+                                      },
+                                      "icon": "create",
+                                      "name": "buttonBearbeitenInfotextEditor",
+                                      "size": "sm",
+                                      "style": {
+                                        "color": "#6A80AA",
+                                        "display": "block",
+                                        "marginLeft": "10px"
+                                      },
+                                      "text": "Bearbeiten",
+                                      "tooltip": "",
+                                      "type": "button"
+                                    }
+                                  ],
+                                  "name": "col1",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row0",
+                              "type": "row"
+                            }
+                          ],
+                          "name": "panel0",
+                          "style": {
+                            "border": "1px solid #e6ecef",
+                            "height": "740px"
+                          },
+                          "text": "Text",
+                          "type": "panel"
+                        }
+                      ],
+                      "name": "col3",
+                      "style": {
+                        "paddingLeft": "5px"
+                      },
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row1",
+                  "type": "row"
+                }
+              ],
+              "icon": "",
+              "selected": true,
+              "text": "Daten"
+            }
+          ],
+          "name": "tabs0",
+          "selectedIndex": "",
+          "style": {
+            "float": "none"
+          },
+          "type": "tabs",
+          "visible": true
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "strHashPasswort",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "strHashPasswortErgebnis",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      }
+    ]
+  },
+  "layout": "Login",
+  "name": "Copy of Anmeldung"
+}

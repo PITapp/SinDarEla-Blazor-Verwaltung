@@ -1,0 +1,76 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "allowRegister": false,
+                  "allowResetPassword": false,
+                  "events": {
+                    "login": [
+                      {
+                        "path": "dashboard",
+                        "type": "navigate"
+                      },
+                      {
+                        "code": "Globals.globalBenutzerName = await ReadLocalStorage(\"storageBenutzerName\");",
+                        "type": "execute"
+                      }
+                    ],
+                    "register": []
+                  },
+                  "loginText": "Anmelden",
+                  "name": "login0",
+                  "passwordRequired": "Passwort erfoderlich",
+                  "passwordText": "Passwort",
+                  "registerMessageText": "",
+                  "registerText": "",
+                  "resetPasswordText": "Forgot password",
+                  "type": "login",
+                  "userRequired": "Benutzername erforderlich",
+                  "userText": "Benutzername",
+                  "visible": true
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "global": true,
+        "name": "globalBenutzerName",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "global": false,
+        "name": "bolBenutzerAngemeldet",
+        "type": "set",
+        "value": "false",
+        "valueType": "bool"
+      },
+      {
+        "condition": "bolBenutzerAngemeldet == true",
+        "path": "dashboard",
+        "type": "navigate"
+      }
+    ]
+  },
+  "layout": "Login",
+  "name": "Anmeldung"
+}

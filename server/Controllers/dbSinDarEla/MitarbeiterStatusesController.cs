@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterStatusGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterStatus> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterStatusID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterStatuses(MitarbeiterStatusID={MitarbeiterStatusID})")]
     public SingleResult<MitarbeiterStatus> GetMitarbeiterStatus(int key)
     {
         var items = this.context.MitarbeiterStatuses.Where(i=>i.MitarbeiterStatusID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterStatusDeleted(Models.DbSinDarEla.MitarbeiterStatus item);
     partial void OnAfterMitarbeiterStatusDeleted(Models.DbSinDarEla.MitarbeiterStatus item);
 
-    [HttpDelete("{MitarbeiterStatusID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterStatuses(MitarbeiterStatusID={MitarbeiterStatusID})")]
     public IActionResult DeleteMitarbeiterStatus(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterStatusUpdated(Models.DbSinDarEla.MitarbeiterStatus item);
     partial void OnAfterMitarbeiterStatusUpdated(Models.DbSinDarEla.MitarbeiterStatus item);
 
-    [HttpPut("{MitarbeiterStatusID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterStatuses(MitarbeiterStatusID={MitarbeiterStatusID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterStatus(int key, [FromBody]Models.DbSinDarEla.MitarbeiterStatus newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterStatusID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterStatuses(MitarbeiterStatusID={MitarbeiterStatusID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterStatus(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterStatus> patch)
     {

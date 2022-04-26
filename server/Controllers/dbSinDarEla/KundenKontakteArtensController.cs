@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenKontakteArtenGet(ref SingleResult<Models.DbSinDarEla.KundenKontakteArten> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{KundenKontaktArtID}")]
+    [HttpGet("/odata/dbSinDarEla/KundenKontakteArtens(KundenKontaktArtID={KundenKontaktArtID})")]
     public SingleResult<KundenKontakteArten> GetKundenKontakteArten(int key)
     {
         var items = this.context.KundenKontakteArtens.Where(i=>i.KundenKontaktArtID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenKontakteArtenDeleted(Models.DbSinDarEla.KundenKontakteArten item);
     partial void OnAfterKundenKontakteArtenDeleted(Models.DbSinDarEla.KundenKontakteArten item);
 
-    [HttpDelete("{KundenKontaktArtID}")]
+    [HttpDelete("/odata/dbSinDarEla/KundenKontakteArtens(KundenKontaktArtID={KundenKontaktArtID})")]
     public IActionResult DeleteKundenKontakteArten(int key)
     {
         try
@@ -101,7 +101,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenKontakteArtenUpdated(Models.DbSinDarEla.KundenKontakteArten item);
     partial void OnAfterKundenKontakteArtenUpdated(Models.DbSinDarEla.KundenKontakteArten item);
 
-    [HttpPut("{KundenKontaktArtID}")]
+    [HttpPut("/odata/dbSinDarEla/KundenKontakteArtens(KundenKontaktArtID={KundenKontaktArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKundenKontakteArten(int key, [FromBody]Models.DbSinDarEla.KundenKontakteArten newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{KundenKontaktArtID}")]
+    [HttpPatch("/odata/dbSinDarEla/KundenKontakteArtens(KundenKontaktArtID={KundenKontaktArtID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKundenKontakteArten(int key, [FromBody]Delta<Models.DbSinDarEla.KundenKontakteArten> patch)
     {

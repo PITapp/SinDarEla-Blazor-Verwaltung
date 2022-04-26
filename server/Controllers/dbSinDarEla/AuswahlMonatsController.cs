@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAuswahlMonatGet(ref SingleResult<Models.DbSinDarEla.AuswahlMonat> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{AuswahlMonatID}")]
+    [HttpGet("/odata/dbSinDarEla/AuswahlMonats(AuswahlMonatID={AuswahlMonatID})")]
     public SingleResult<AuswahlMonat> GetAuswahlMonat(int key)
     {
         var items = this.context.AuswahlMonats.Where(i=>i.AuswahlMonatID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAuswahlMonatDeleted(Models.DbSinDarEla.AuswahlMonat item);
     partial void OnAfterAuswahlMonatDeleted(Models.DbSinDarEla.AuswahlMonat item);
 
-    [HttpDelete("{AuswahlMonatID}")]
+    [HttpDelete("/odata/dbSinDarEla/AuswahlMonats(AuswahlMonatID={AuswahlMonatID})")]
     public IActionResult DeleteAuswahlMonat(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAuswahlMonatUpdated(Models.DbSinDarEla.AuswahlMonat item);
     partial void OnAfterAuswahlMonatUpdated(Models.DbSinDarEla.AuswahlMonat item);
 
-    [HttpPut("{AuswahlMonatID}")]
+    [HttpPut("/odata/dbSinDarEla/AuswahlMonats(AuswahlMonatID={AuswahlMonatID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutAuswahlMonat(int key, [FromBody]Models.DbSinDarEla.AuswahlMonat newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{AuswahlMonatID}")]
+    [HttpPatch("/odata/dbSinDarEla/AuswahlMonats(AuswahlMonatID={AuswahlMonatID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchAuswahlMonat(int key, [FromBody]Delta<Models.DbSinDarEla.AuswahlMonat> patch)
     {

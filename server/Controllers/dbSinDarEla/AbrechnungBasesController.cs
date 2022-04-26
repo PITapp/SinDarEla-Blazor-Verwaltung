@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAbrechnungBasisGet(ref SingleResult<Models.DbSinDarEla.AbrechnungBasis> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{AbrechnungBasisID}")]
+    [HttpGet("/odata/dbSinDarEla/AbrechnungBases(AbrechnungBasisID={AbrechnungBasisID})")]
     public SingleResult<AbrechnungBasis> GetAbrechnungBasis(int key)
     {
         var items = this.context.AbrechnungBases.Where(i=>i.AbrechnungBasisID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAbrechnungBasisDeleted(Models.DbSinDarEla.AbrechnungBasis item);
     partial void OnAfterAbrechnungBasisDeleted(Models.DbSinDarEla.AbrechnungBasis item);
 
-    [HttpDelete("{AbrechnungBasisID}")]
+    [HttpDelete("/odata/dbSinDarEla/AbrechnungBases(AbrechnungBasisID={AbrechnungBasisID})")]
     public IActionResult DeleteAbrechnungBasis(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnAbrechnungBasisUpdated(Models.DbSinDarEla.AbrechnungBasis item);
     partial void OnAfterAbrechnungBasisUpdated(Models.DbSinDarEla.AbrechnungBasis item);
 
-    [HttpPut("{AbrechnungBasisID}")]
+    [HttpPut("/odata/dbSinDarEla/AbrechnungBases(AbrechnungBasisID={AbrechnungBasisID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutAbrechnungBasis(int key, [FromBody]Models.DbSinDarEla.AbrechnungBasis newItem)
     {
@@ -131,7 +131,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{AbrechnungBasisID}")]
+    [HttpPatch("/odata/dbSinDarEla/AbrechnungBases(AbrechnungBasisID={AbrechnungBasisID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchAbrechnungBasis(int key, [FromBody]Delta<Models.DbSinDarEla.AbrechnungBasis> patch)
     {

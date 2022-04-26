@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubKumuliertAnspruchGet(ref SingleResult<Models.DbSinDarEla.MitarbeiterUrlaubKumuliertAnspruch> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterUrlaubKumuliertAnspruchID}")]
+    [HttpGet("/odata/dbSinDarEla/MitarbeiterUrlaubKumuliertAnspruches(MitarbeiterUrlaubKumuliertAnspruchID={MitarbeiterUrlaubKumuliertAnspruchID})")]
     public SingleResult<MitarbeiterUrlaubKumuliertAnspruch> GetMitarbeiterUrlaubKumuliertAnspruch(int key)
     {
         var items = this.context.MitarbeiterUrlaubKumuliertAnspruches.Where(i=>i.MitarbeiterUrlaubKumuliertAnspruchID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubKumuliertAnspruchDeleted(Models.DbSinDarEla.MitarbeiterUrlaubKumuliertAnspruch item);
     partial void OnAfterMitarbeiterUrlaubKumuliertAnspruchDeleted(Models.DbSinDarEla.MitarbeiterUrlaubKumuliertAnspruch item);
 
-    [HttpDelete("{MitarbeiterUrlaubKumuliertAnspruchID}")]
+    [HttpDelete("/odata/dbSinDarEla/MitarbeiterUrlaubKumuliertAnspruches(MitarbeiterUrlaubKumuliertAnspruchID={MitarbeiterUrlaubKumuliertAnspruchID})")]
     public IActionResult DeleteMitarbeiterUrlaubKumuliertAnspruch(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnMitarbeiterUrlaubKumuliertAnspruchUpdated(Models.DbSinDarEla.MitarbeiterUrlaubKumuliertAnspruch item);
     partial void OnAfterMitarbeiterUrlaubKumuliertAnspruchUpdated(Models.DbSinDarEla.MitarbeiterUrlaubKumuliertAnspruch item);
 
-    [HttpPut("{MitarbeiterUrlaubKumuliertAnspruchID}")]
+    [HttpPut("/odata/dbSinDarEla/MitarbeiterUrlaubKumuliertAnspruches(MitarbeiterUrlaubKumuliertAnspruchID={MitarbeiterUrlaubKumuliertAnspruchID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutMitarbeiterUrlaubKumuliertAnspruch(int key, [FromBody]Models.DbSinDarEla.MitarbeiterUrlaubKumuliertAnspruch newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterUrlaubKumuliertAnspruchID}")]
+    [HttpPatch("/odata/dbSinDarEla/MitarbeiterUrlaubKumuliertAnspruches(MitarbeiterUrlaubKumuliertAnspruchID={MitarbeiterUrlaubKumuliertAnspruchID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchMitarbeiterUrlaubKumuliertAnspruch(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterUrlaubKumuliertAnspruch> patch)
     {

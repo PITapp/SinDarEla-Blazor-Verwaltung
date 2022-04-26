@@ -50,7 +50,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideKontingenteGet(ref SingleResult<Models.DbSinDarEla.KundenLeistungenBescheideKontingente> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{KundenLeistungenBescheideKontingentID}")]
+    [HttpGet("/odata/dbSinDarEla/KundenLeistungenBescheideKontingentes(KundenLeistungenBescheideKontingentID={KundenLeistungenBescheideKontingentID})")]
     public SingleResult<KundenLeistungenBescheideKontingente> GetKundenLeistungenBescheideKontingente(int key)
     {
         var items = this.context.KundenLeistungenBescheideKontingentes.Where(i=>i.KundenLeistungenBescheideKontingentID == key);
@@ -63,7 +63,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideKontingenteDeleted(Models.DbSinDarEla.KundenLeistungenBescheideKontingente item);
     partial void OnAfterKundenLeistungenBescheideKontingenteDeleted(Models.DbSinDarEla.KundenLeistungenBescheideKontingente item);
 
-    [HttpDelete("{KundenLeistungenBescheideKontingentID}")]
+    [HttpDelete("/odata/dbSinDarEla/KundenLeistungenBescheideKontingentes(KundenLeistungenBescheideKontingentID={KundenLeistungenBescheideKontingentID})")]
     public IActionResult DeleteKundenLeistungenBescheideKontingente(int key)
     {
         try
@@ -100,7 +100,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnKundenLeistungenBescheideKontingenteUpdated(Models.DbSinDarEla.KundenLeistungenBescheideKontingente item);
     partial void OnAfterKundenLeistungenBescheideKontingenteUpdated(Models.DbSinDarEla.KundenLeistungenBescheideKontingente item);
 
-    [HttpPut("{KundenLeistungenBescheideKontingentID}")]
+    [HttpPut("/odata/dbSinDarEla/KundenLeistungenBescheideKontingentes(KundenLeistungenBescheideKontingentID={KundenLeistungenBescheideKontingentID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PutKundenLeistungenBescheideKontingente(int key, [FromBody]Models.DbSinDarEla.KundenLeistungenBescheideKontingente newItem)
     {
@@ -132,7 +132,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{KundenLeistungenBescheideKontingentID}")]
+    [HttpPatch("/odata/dbSinDarEla/KundenLeistungenBescheideKontingentes(KundenLeistungenBescheideKontingentID={KundenLeistungenBescheideKontingentID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     public IActionResult PatchKundenLeistungenBescheideKontingente(int key, [FromBody]Delta<Models.DbSinDarEla.KundenLeistungenBescheideKontingente> patch)
     {
