@@ -25,46 +25,46 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   using Data;
   using Models.DbSinDarEla;
 
-  [Route("odata/dbSinDarEla/Keys")]
-  public partial class KeysController : ODataController
+  [Route("odata/dbSinDarEla/Modules")]
+  public partial class ModulesController : ODataController
   {
     private Data.DbSinDarElaContext context;
 
-    public KeysController(Data.DbSinDarElaContext context)
+    public ModulesController(Data.DbSinDarElaContext context)
     {
       this.context = context;
     }
-    // GET /odata/DbSinDarEla/Keys
+    // GET /odata/DbSinDarEla/Modules
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     [HttpGet]
-    public IEnumerable<Models.DbSinDarEla.Key> GetKeys()
+    public IEnumerable<Models.DbSinDarEla.Module> GetModules()
     {
-      var items = this.context.Keys.AsQueryable<Models.DbSinDarEla.Key>();
-      this.OnKeysRead(ref items);
+      var items = this.context.Modules.AsQueryable<Models.DbSinDarEla.Module>();
+      this.OnModulesRead(ref items);
 
       return items;
     }
 
-    partial void OnKeysRead(ref IQueryable<Models.DbSinDarEla.Key> items);
+    partial void OnModulesRead(ref IQueryable<Models.DbSinDarEla.Module> items);
 
-    partial void OnKeyGet(ref SingleResult<Models.DbSinDarEla.Key> item);
+    partial void OnModuleGet(ref SingleResult<Models.DbSinDarEla.Module> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("/odata/dbSinDarEla/Keys(Id={Id})")]
-    public SingleResult<Key> GetKey(string key)
+    [HttpGet("/odata/dbSinDarEla/Modules(ModulID={ModulID})")]
+    public SingleResult<Module> GetModule(int key)
     {
-        var items = this.context.Keys.Where(i=>i.Id == Uri.UnescapeDataString(key));
+        var items = this.context.Modules.Where(i=>i.ModulID == key);
         var result = SingleResult.Create(items);
 
-        OnKeyGet(ref result);
+        OnModuleGet(ref result);
 
         return result;
     }
-    partial void OnKeyDeleted(Models.DbSinDarEla.Key item);
-    partial void OnAfterKeyDeleted(Models.DbSinDarEla.Key item);
+    partial void OnModuleDeleted(Models.DbSinDarEla.Module item);
+    partial void OnAfterModuleDeleted(Models.DbSinDarEla.Module item);
 
-    [HttpDelete("/odata/dbSinDarEla/Keys(Id={Id})")]
-    public IActionResult DeleteKey(string key)
+    [HttpDelete("/odata/dbSinDarEla/Modules(ModulID={ModulID})")]
+    public IActionResult DeleteModule(int key)
     {
         try
         {
@@ -74,8 +74,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             }
 
 
-            var item = this.context.Keys
-                .Where(i => i.Id == Uri.UnescapeDataString(key))
+            var item = this.context.Modules
+                .Where(i => i.ModulID == key)
+                .Include(i => i.BenutzerModules)
                 .FirstOrDefault();
 
             if (item == null)
@@ -83,10 +84,10 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest();
             }
 
-            this.OnKeyDeleted(item);
-            this.context.Keys.Remove(item);
+            this.OnModuleDeleted(item);
+            this.context.Modules.Remove(item);
             this.context.SaveChanges();
-            this.OnAfterKeyDeleted(item);
+            this.OnAfterModuleDeleted(item);
 
             return new NoContentResult();
         }
@@ -97,12 +98,12 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    partial void OnKeyUpdated(Models.DbSinDarEla.Key item);
-    partial void OnAfterKeyUpdated(Models.DbSinDarEla.Key item);
+    partial void OnModuleUpdated(Models.DbSinDarEla.Module item);
+    partial void OnAfterModuleUpdated(Models.DbSinDarEla.Module item);
 
-    [HttpPut("/odata/dbSinDarEla/Keys(Id={Id})")]
+    [HttpPut("/odata/dbSinDarEla/Modules(ModulID={ModulID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult PutKey(string key, [FromBody]Models.DbSinDarEla.Key newItem)
+    public IActionResult PutModule(int key, [FromBody]Models.DbSinDarEla.Module newItem)
     {
         try
         {
@@ -111,17 +112,17 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.Id != Uri.UnescapeDataString(key)))
+            if (newItem == null || (newItem.ModulID != key))
             {
                 return BadRequest();
             }
 
-            this.OnKeyUpdated(newItem);
-            this.context.Keys.Update(newItem);
+            this.OnModuleUpdated(newItem);
+            this.context.Modules.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.Keys.Where(i => i.Id == Uri.UnescapeDataString(key));
-            this.OnAfterKeyUpdated(newItem);
+            var itemToReturn = this.context.Modules.Where(i => i.ModulID == key);
+            this.OnAfterModuleUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -131,9 +132,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("/odata/dbSinDarEla/Keys(Id={Id})")]
+    [HttpPatch("/odata/dbSinDarEla/Modules(ModulID={ModulID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult PatchKey(string key, [FromBody]Delta<Models.DbSinDarEla.Key> patch)
+    public IActionResult PatchModule(int key, [FromBody]Delta<Models.DbSinDarEla.Module> patch)
     {
         try
         {
@@ -142,7 +143,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var item = this.context.Keys.Where(i => i.Id == Uri.UnescapeDataString(key)).FirstOrDefault();
+            var item = this.context.Modules.Where(i => i.ModulID == key).FirstOrDefault();
 
             if (item == null)
             {
@@ -151,11 +152,11 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             patch.Patch(item);
 
-            this.OnKeyUpdated(item);
-            this.context.Keys.Update(item);
+            this.OnModuleUpdated(item);
+            this.context.Modules.Update(item);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.Keys.Where(i => i.Id == Uri.UnescapeDataString(key));
+            var itemToReturn = this.context.Modules.Where(i => i.ModulID == key);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -165,12 +166,12 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    partial void OnKeyCreated(Models.DbSinDarEla.Key item);
-    partial void OnAfterKeyCreated(Models.DbSinDarEla.Key item);
+    partial void OnModuleCreated(Models.DbSinDarEla.Module item);
+    partial void OnAfterModuleCreated(Models.DbSinDarEla.Module item);
 
     [HttpPost]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult Post([FromBody] Models.DbSinDarEla.Key item)
+    public IActionResult Post([FromBody] Models.DbSinDarEla.Module item)
     {
         try
         {
@@ -184,11 +185,11 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest();
             }
 
-            this.OnKeyCreated(item);
-            this.context.Keys.Add(item);
+            this.OnModuleCreated(item);
+            this.context.Modules.Add(item);
             this.context.SaveChanges();
 
-            return Created($"odata/DbSinDarEla/Keys/{item.Id}", item);
+            return Created($"odata/DbSinDarEla/Modules/{item.ModulID}", item);
         }
         catch(Exception ex)
         {

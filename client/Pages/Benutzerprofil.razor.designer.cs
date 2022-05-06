@@ -55,25 +55,6 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
-        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwRollen> _rstRollen;
-        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwRollen> rstRollen
-        {
-            get
-            {
-                return _rstRollen;
-            }
-            set
-            {
-                if (!object.Equals(_rstRollen, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "rstRollen", NewValue = value, OldValue = _rstRollen };
-                    _rstRollen = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
         IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer> _rstBenutzer;
         protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer> rstBenutzer
         {
@@ -138,9 +119,6 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            var dbSinDarElaGetVwRollensResult = await DbSinDarEla.GetVwRollens();
-            rstRollen = dbSinDarElaGetVwRollensResult.Value.AsODataEnumerable();
-
             var dbSinDarElaGetBenutzersResult = await DbSinDarEla.GetBenutzers(filter:$"BenutzerName eq 'xxx'", expand:$"Base");
             rstBenutzer = dbSinDarElaGetBenutzersResult.Value.AsODataEnumerable();
 

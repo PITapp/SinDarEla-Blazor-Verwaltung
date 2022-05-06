@@ -7,24 +7,24 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaVerwaltung.Models.DbSinDarEla
 {
-  [Table("MitarbeiterStatus")]
-  public partial class MitarbeiterStatus
+  [Table("Module")]
+  public partial class Module
   {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int MitarbeiterStatusID
+    public int ModulID
     {
       get;
       set;
     }
 
-    public IEnumerable<MitarbeiterFirmen> MitarbeiterFirmens { get; set; }
-    public string Status
+    public IEnumerable<BenutzerModule> BenutzerModules { get; set; }
+    public string ModulName
     {
       get;
       set;
     }
-    public int? Sortierung
+    public string Notiz
     {
       get;
       set;

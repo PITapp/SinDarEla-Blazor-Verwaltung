@@ -17,6 +17,7 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       set;
     }
 
+    public IEnumerable<FirmenMitarbeiterTaetigkeiten> FirmenMitarbeiterTaetigkeitens { get; set; }
     public IEnumerable<MitarbeiterTaetigkeiten> MitarbeiterTaetigkeitens { get; set; }
     public string TaetigkeitArt
     {

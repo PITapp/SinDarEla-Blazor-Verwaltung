@@ -76,7 +76,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             var item = this.context.MitarbeiterStatuses
                 .Where(i => i.MitarbeiterStatusID == key)
-                .Include(i => i.Mitarbeiters)
+                .Include(i => i.MitarbeiterFirmens)
                 .FirstOrDefault();
 
             if (item == null)

@@ -6,46 +6,44 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaVerwaltung.Models.DbSinDarEla
 {
-  [Table("Keys")]
-  public partial class Key
+  [Table("BenutzerModule")]
+  public partial class BenutzerModule
   {
     [Key]
-    public string Id
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int BenutzerModuleID
     {
       get;
       set;
     }
-    public int Version
+    public int BenutzerID
     {
       get;
       set;
     }
-    public DateTime Created
+    public Benutzer Benutzer { get; set; }
+    public int ModulID
     {
       get;
       set;
     }
-    public string Use
+    public Module Module { get; set; }
+    public bool? ErlaubtNeu
     {
       get;
       set;
     }
-    public string Algorithm
+    public bool? ErlaubtAendern
     {
       get;
       set;
     }
-    public bool IsX509Certificate
+    public bool? ErlaubtLoeschen
     {
       get;
       set;
     }
-    public bool DataProtected
-    {
-      get;
-      set;
-    }
-    public string Data
+    public string Info
     {
       get;
       set;

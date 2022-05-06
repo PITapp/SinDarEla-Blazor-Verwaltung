@@ -76,15 +76,10 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             var item = this.context.Mitarbeiters
                 .Where(i => i.MitarbeiterID == key)
+                .Include(i => i.MitarbeiterFirmens)
                 .Include(i => i.MitarbeiterFortbildungens)
                 .Include(i => i.MitarbeiterKundenbudgets)
                 .Include(i => i.MitarbeiterTaetigkeitens)
-                .Include(i => i.MitarbeiterUrlaubs)
-                .Include(i => i.MitarbeiterUrlaubKumuliertAnspruches)
-                .Include(i => i.MitarbeiterUrlaubKumuliertDienstzeitens)
-                .Include(i => i.MitarbeiterVerlaufDienstzeitens)
-                .Include(i => i.MitarbeiterVerlaufGehalts)
-                .Include(i => i.MitarbeiterVerlaufNormalarbeitszeits)
                 .FirstOrDefault();
 
             if (item == null)
@@ -130,7 +125,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.SaveChanges();
 
             var itemToReturn = this.context.Mitarbeiters.Where(i => i.MitarbeiterID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Base,MitarbeiterArten,MitarbeiterStatus");
+            Request.QueryString = Request.QueryString.Add("$expand", "Base,MitarbeiterArten");
             this.OnAfterMitarbeiterUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
@@ -166,7 +161,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.SaveChanges();
 
             var itemToReturn = this.context.Mitarbeiters.Where(i => i.MitarbeiterID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Base,MitarbeiterArten,MitarbeiterStatus");
+            Request.QueryString = Request.QueryString.Add("$expand", "Base,MitarbeiterArten");
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -203,7 +198,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             var itemToReturn = this.context.Mitarbeiters.Where(i => i.MitarbeiterID == key);
 
-            Request.QueryString = Request.QueryString.Add("$expand", "Base,MitarbeiterArten,MitarbeiterStatus");
+            Request.QueryString = Request.QueryString.Add("$expand", "Base,MitarbeiterArten");
 
             this.OnAfterMitarbeiterCreated(item);
 

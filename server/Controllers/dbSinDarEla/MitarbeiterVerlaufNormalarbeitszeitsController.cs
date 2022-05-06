@@ -121,7 +121,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.SaveChanges();
 
             var itemToReturn = this.context.MitarbeiterVerlaufNormalarbeitszeits.Where(i => i.MitarbeiterVerlaufNormalarbeitszeitID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter");
+            Request.QueryString = Request.QueryString.Add("$expand", "MitarbeiterFirmen");
             this.OnAfterMitarbeiterVerlaufNormalarbeitszeitUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
@@ -157,7 +157,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.SaveChanges();
 
             var itemToReturn = this.context.MitarbeiterVerlaufNormalarbeitszeits.Where(i => i.MitarbeiterVerlaufNormalarbeitszeitID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter");
+            Request.QueryString = Request.QueryString.Add("$expand", "MitarbeiterFirmen");
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -194,7 +194,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             var itemToReturn = this.context.MitarbeiterVerlaufNormalarbeitszeits.Where(i => i.MitarbeiterVerlaufNormalarbeitszeitID == key);
 
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter");
+            Request.QueryString = Request.QueryString.Add("$expand", "MitarbeiterFirmen");
 
             this.OnAfterMitarbeiterVerlaufNormalarbeitszeitCreated(item);
 

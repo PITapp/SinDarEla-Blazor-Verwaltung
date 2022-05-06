@@ -25,46 +25,46 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   using Data;
   using Models.DbSinDarEla;
 
-  [Route("odata/dbSinDarEla/PersistedGrants")]
-  public partial class PersistedGrantsController : ODataController
+  [Route("odata/dbSinDarEla/Firmens")]
+  public partial class FirmensController : ODataController
   {
     private Data.DbSinDarElaContext context;
 
-    public PersistedGrantsController(Data.DbSinDarElaContext context)
+    public FirmensController(Data.DbSinDarElaContext context)
     {
       this.context = context;
     }
-    // GET /odata/DbSinDarEla/PersistedGrants
+    // GET /odata/DbSinDarEla/Firmens
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     [HttpGet]
-    public IEnumerable<Models.DbSinDarEla.PersistedGrant> GetPersistedGrants()
+    public IEnumerable<Models.DbSinDarEla.Firmen> GetFirmens()
     {
-      var items = this.context.PersistedGrants.AsQueryable<Models.DbSinDarEla.PersistedGrant>();
-      this.OnPersistedGrantsRead(ref items);
+      var items = this.context.Firmens.AsQueryable<Models.DbSinDarEla.Firmen>();
+      this.OnFirmensRead(ref items);
 
       return items;
     }
 
-    partial void OnPersistedGrantsRead(ref IQueryable<Models.DbSinDarEla.PersistedGrant> items);
+    partial void OnFirmensRead(ref IQueryable<Models.DbSinDarEla.Firmen> items);
 
-    partial void OnPersistedGrantGet(ref SingleResult<Models.DbSinDarEla.PersistedGrant> item);
+    partial void OnFirmenGet(ref SingleResult<Models.DbSinDarEla.Firmen> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("/odata/dbSinDarEla/PersistedGrants(Key={Key})")]
-    public SingleResult<PersistedGrant> GetPersistedGrant(string key)
+    [HttpGet("/odata/dbSinDarEla/Firmens(FirmaID={FirmaID})")]
+    public SingleResult<Firmen> GetFirmen(int key)
     {
-        var items = this.context.PersistedGrants.Where(i=>i.Key == Uri.UnescapeDataString(key));
+        var items = this.context.Firmens.Where(i=>i.FirmaID == key);
         var result = SingleResult.Create(items);
 
-        OnPersistedGrantGet(ref result);
+        OnFirmenGet(ref result);
 
         return result;
     }
-    partial void OnPersistedGrantDeleted(Models.DbSinDarEla.PersistedGrant item);
-    partial void OnAfterPersistedGrantDeleted(Models.DbSinDarEla.PersistedGrant item);
+    partial void OnFirmenDeleted(Models.DbSinDarEla.Firmen item);
+    partial void OnAfterFirmenDeleted(Models.DbSinDarEla.Firmen item);
 
-    [HttpDelete("/odata/dbSinDarEla/PersistedGrants(Key={Key})")]
-    public IActionResult DeletePersistedGrant(string key)
+    [HttpDelete("/odata/dbSinDarEla/Firmens(FirmaID={FirmaID})")]
+    public IActionResult DeleteFirmen(int key)
     {
         try
         {
@@ -74,8 +74,10 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             }
 
 
-            var item = this.context.PersistedGrants
-                .Where(i => i.Key == Uri.UnescapeDataString(key))
+            var item = this.context.Firmens
+                .Where(i => i.FirmaID == key)
+                .Include(i => i.FirmenMitarbeiterTaetigkeitens)
+                .Include(i => i.MitarbeiterFirmens)
                 .FirstOrDefault();
 
             if (item == null)
@@ -83,10 +85,10 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest();
             }
 
-            this.OnPersistedGrantDeleted(item);
-            this.context.PersistedGrants.Remove(item);
+            this.OnFirmenDeleted(item);
+            this.context.Firmens.Remove(item);
             this.context.SaveChanges();
-            this.OnAfterPersistedGrantDeleted(item);
+            this.OnAfterFirmenDeleted(item);
 
             return new NoContentResult();
         }
@@ -97,12 +99,12 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    partial void OnPersistedGrantUpdated(Models.DbSinDarEla.PersistedGrant item);
-    partial void OnAfterPersistedGrantUpdated(Models.DbSinDarEla.PersistedGrant item);
+    partial void OnFirmenUpdated(Models.DbSinDarEla.Firmen item);
+    partial void OnAfterFirmenUpdated(Models.DbSinDarEla.Firmen item);
 
-    [HttpPut("/odata/dbSinDarEla/PersistedGrants(Key={Key})")]
+    [HttpPut("/odata/dbSinDarEla/Firmens(FirmaID={FirmaID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult PutPersistedGrant(string key, [FromBody]Models.DbSinDarEla.PersistedGrant newItem)
+    public IActionResult PutFirmen(int key, [FromBody]Models.DbSinDarEla.Firmen newItem)
     {
         try
         {
@@ -111,17 +113,17 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.Key != Uri.UnescapeDataString(key)))
+            if (newItem == null || (newItem.FirmaID != key))
             {
                 return BadRequest();
             }
 
-            this.OnPersistedGrantUpdated(newItem);
-            this.context.PersistedGrants.Update(newItem);
+            this.OnFirmenUpdated(newItem);
+            this.context.Firmens.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.PersistedGrants.Where(i => i.Key == Uri.UnescapeDataString(key));
-            this.OnAfterPersistedGrantUpdated(newItem);
+            var itemToReturn = this.context.Firmens.Where(i => i.FirmaID == key);
+            this.OnAfterFirmenUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -131,9 +133,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("/odata/dbSinDarEla/PersistedGrants(Key={Key})")]
+    [HttpPatch("/odata/dbSinDarEla/Firmens(FirmaID={FirmaID})")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult PatchPersistedGrant(string key, [FromBody]Delta<Models.DbSinDarEla.PersistedGrant> patch)
+    public IActionResult PatchFirmen(int key, [FromBody]Delta<Models.DbSinDarEla.Firmen> patch)
     {
         try
         {
@@ -142,7 +144,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var item = this.context.PersistedGrants.Where(i => i.Key == Uri.UnescapeDataString(key)).FirstOrDefault();
+            var item = this.context.Firmens.Where(i => i.FirmaID == key).FirstOrDefault();
 
             if (item == null)
             {
@@ -151,11 +153,11 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             patch.Patch(item);
 
-            this.OnPersistedGrantUpdated(item);
-            this.context.PersistedGrants.Update(item);
+            this.OnFirmenUpdated(item);
+            this.context.Firmens.Update(item);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.PersistedGrants.Where(i => i.Key == Uri.UnescapeDataString(key));
+            var itemToReturn = this.context.Firmens.Where(i => i.FirmaID == key);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -165,12 +167,12 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
         }
     }
 
-    partial void OnPersistedGrantCreated(Models.DbSinDarEla.PersistedGrant item);
-    partial void OnAfterPersistedGrantCreated(Models.DbSinDarEla.PersistedGrant item);
+    partial void OnFirmenCreated(Models.DbSinDarEla.Firmen item);
+    partial void OnAfterFirmenCreated(Models.DbSinDarEla.Firmen item);
 
     [HttpPost]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult Post([FromBody] Models.DbSinDarEla.PersistedGrant item)
+    public IActionResult Post([FromBody] Models.DbSinDarEla.Firmen item)
     {
         try
         {
@@ -184,11 +186,11 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
                 return BadRequest();
             }
 
-            this.OnPersistedGrantCreated(item);
-            this.context.PersistedGrants.Add(item);
+            this.OnFirmenCreated(item);
+            this.context.Firmens.Add(item);
             this.context.SaveChanges();
 
-            return Created($"odata/DbSinDarEla/PersistedGrants/{item.Key}", item);
+            return Created($"odata/DbSinDarEla/Firmens/{item.FirmaID}", item);
         }
         catch(Exception ex)
         {

@@ -331,7 +331,7 @@
                                       "class": "col-md-9",
                                       "components": [
                                         {
-                                          "data": "${rstRollen}",
+                                          "data": "",
                                           "multiple": false,
                                           "name": "listbox0",
                                           "readOnly": true,
@@ -339,6 +339,7 @@
                                             "height": "250px",
                                             "width": "100%"
                                           },
+                                          "template": "",
                                           "textProperty": "Titel",
                                           "type": "listbox",
                                           "value": "",
@@ -764,18 +765,6 @@
   ],
   "events": {
     "load": [
-      {
-        "name": "dbSinDarEla.getVwRollens",
-        "then": [
-          {
-            "name": "rstRollen",
-            "type": "set",
-            "value": "${result.Value.AsODataEnumerable()}",
-            "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwRollen>"
-          }
-        ],
-        "type": "invoke"
-      },
       {
         "name": "dbSinDarEla.getBenutzers",
         "parameters": [

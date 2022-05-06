@@ -16,12 +16,12 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       get;
       set;
     }
-    public int MitarbeiterID
+    public int MitarbeiterFirmaID
     {
       get;
       set;
     }
-    public Mitarbeiter Mitarbeiter { get; set; }
+    public MitarbeiterFirmen MitarbeiterFirmen { get; set; }
     public int Sortierung
     {
       get;

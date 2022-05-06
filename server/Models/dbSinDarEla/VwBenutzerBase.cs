@@ -15,11 +15,6 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       set;
     }
     [Key]
-    public string AspNetUsers_Id
-    {
-      get;
-      set;
-    }
     public int BaseID
     {
       get;
@@ -30,17 +25,82 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       get;
       set;
     }
+    public string Kennwort
+    {
+      get;
+      set;
+    }
     public string Initialen
     {
       get;
       set;
     }
-    public string BenutzerEMail
+    public bool? Sperren
+    {
+      get;
+      set;
+    }
+    public DateTime? Angemeldet
+    {
+      get;
+      set;
+    }
+    public DateTime? Abgemeldet
     {
       get;
       set;
     }
     public string Notiz
+    {
+      get;
+      set;
+    }
+    public int? LetzteKundenID
+    {
+      get;
+      set;
+    }
+    public int? LetzteMitarbeiterID
+    {
+      get;
+      set;
+    }
+    public int? LetzteBaseID
+    {
+      get;
+      set;
+    }
+    public int? LetzteBenutzerID
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteName
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteStrasse
+    {
+      get;
+      set;
+    }
+    public string FilterKontaktePlz
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteOrt
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteNotiz
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteVerlinkt
     {
       get;
       set;

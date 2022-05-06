@@ -121,7 +121,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.SaveChanges();
 
             var itemToReturn = this.context.MitarbeiterVerlaufDienstzeitens.Where(i => i.MitarbeiterVerlaufDienstzeitenID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter,MitarbeiterVerlaufDienstzeitenArten");
+            Request.QueryString = Request.QueryString.Add("$expand", "MitarbeiterFirmen,MitarbeiterVerlaufDienstzeitenArten");
             this.OnAfterMitarbeiterVerlaufDienstzeitenUpdated(newItem);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
@@ -157,7 +157,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.SaveChanges();
 
             var itemToReturn = this.context.MitarbeiterVerlaufDienstzeitens.Where(i => i.MitarbeiterVerlaufDienstzeitenID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter,MitarbeiterVerlaufDienstzeitenArten");
+            Request.QueryString = Request.QueryString.Add("$expand", "MitarbeiterFirmen,MitarbeiterVerlaufDienstzeitenArten");
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -194,7 +194,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             var itemToReturn = this.context.MitarbeiterVerlaufDienstzeitens.Where(i => i.MitarbeiterVerlaufDienstzeitenID == key);
 
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter,MitarbeiterVerlaufDienstzeitenArten");
+            Request.QueryString = Request.QueryString.Add("$expand", "MitarbeiterFirmen,MitarbeiterVerlaufDienstzeitenArten");
 
             this.OnAfterMitarbeiterVerlaufDienstzeitenCreated(item);
 

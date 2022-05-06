@@ -76,6 +76,8 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             var item = this.context.Benutzers
                 .Where(i => i.BenutzerID == key)
+                .Include(i => i.BenutzerModules)
+                .Include(i => i.BenutzerProtokolls)
                 .FirstOrDefault();
 
             if (item == null)

@@ -1,6 +1,7 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,18 +17,21 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       get;
       set;
     }
+
+    public IEnumerable<BenutzerModule> BenutzerModules { get; set; }
+    public IEnumerable<BenutzerProtokoll> BenutzerProtokolls { get; set; }
     public int BaseID
     {
       get;
       set;
     }
     public Base Base { get; set; }
-    public string AspNetUsers_Id
+    public string Benutzername
     {
       get;
       set;
     }
-    public string Benutzername
+    public string Kennwort
     {
       get;
       set;
@@ -37,7 +41,17 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       get;
       set;
     }
-    public string BenutzerEMail
+    public bool? Sperren
+    {
+      get;
+      set;
+    }
+    public DateTime? Angemeldet
+    {
+      get;
+      set;
+    }
+    public DateTime? Abgemeldet
     {
       get;
       set;

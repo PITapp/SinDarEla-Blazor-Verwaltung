@@ -131,6 +131,32 @@ namespace SinDarElaVerwaltung
         {
             return ToExcel(ApplyQuery(context.Benutzers, Request.Query), fileName);
         }
+        [HttpGet("/export/DbSinDarEla/benutzermodules/csv")]
+        [HttpGet("/export/DbSinDarEla/benutzermodules/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportBenutzerModulesToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.BenutzerModules, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/benutzermodules/excel")]
+        [HttpGet("/export/DbSinDarEla/benutzermodules/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportBenutzerModulesToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.BenutzerModules, Request.Query), fileName);
+        }
+        [HttpGet("/export/DbSinDarEla/benutzerprotokolls/csv")]
+        [HttpGet("/export/DbSinDarEla/benutzerprotokolls/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportBenutzerProtokollsToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.BenutzerProtokolls, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/benutzerprotokolls/excel")]
+        [HttpGet("/export/DbSinDarEla/benutzerprotokolls/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportBenutzerProtokollsToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.BenutzerProtokolls, Request.Query), fileName);
+        }
         [HttpGet("/export/DbSinDarEla/debuggs/csv")]
         [HttpGet("/export/DbSinDarEla/debuggs/csv(fileName='{fileName}')")]
         public FileStreamResult ExportDebuggsToCSV(string fileName = null)
@@ -261,6 +287,32 @@ namespace SinDarElaVerwaltung
         {
             return ToExcel(ApplyQuery(context.Feedbacks, Request.Query), fileName);
         }
+        [HttpGet("/export/DbSinDarEla/firmens/csv")]
+        [HttpGet("/export/DbSinDarEla/firmens/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportFirmensToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.Firmens, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/firmens/excel")]
+        [HttpGet("/export/DbSinDarEla/firmens/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportFirmensToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.Firmens, Request.Query), fileName);
+        }
+        [HttpGet("/export/DbSinDarEla/firmenmitarbeitertaetigkeitens/csv")]
+        [HttpGet("/export/DbSinDarEla/firmenmitarbeitertaetigkeitens/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportFirmenMitarbeiterTaetigkeitensToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.FirmenMitarbeiterTaetigkeitens, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/firmenmitarbeitertaetigkeitens/excel")]
+        [HttpGet("/export/DbSinDarEla/firmenmitarbeitertaetigkeitens/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportFirmenMitarbeiterTaetigkeitensToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.FirmenMitarbeiterTaetigkeitens, Request.Query), fileName);
+        }
         [HttpGet("/export/DbSinDarEla/infotextehtmls/csv")]
         [HttpGet("/export/DbSinDarEla/infotextehtmls/csv(fileName='{fileName}')")]
         public FileStreamResult ExportInfotexteHtmlsToCSV(string fileName = null)
@@ -273,19 +325,6 @@ namespace SinDarElaVerwaltung
         public FileStreamResult ExportInfotexteHtmlsToExcel(string fileName = null)
         {
             return ToExcel(ApplyQuery(context.InfotexteHtmls, Request.Query), fileName);
-        }
-        [HttpGet("/export/DbSinDarEla/keys/csv")]
-        [HttpGet("/export/DbSinDarEla/keys/csv(fileName='{fileName}')")]
-        public FileStreamResult ExportKeysToCSV(string fileName = null)
-        {
-            return ToCSV(ApplyQuery(context.Keys, Request.Query), fileName);
-        }
-
-        [HttpGet("/export/DbSinDarEla/keys/excel")]
-        [HttpGet("/export/DbSinDarEla/keys/excel(fileName='{fileName}')")]
-        public FileStreamResult ExportKeysToExcel(string fileName = null)
-        {
-            return ToExcel(ApplyQuery(context.Keys, Request.Query), fileName);
         }
         [HttpGet("/export/DbSinDarEla/kundens/csv")]
         [HttpGet("/export/DbSinDarEla/kundens/csv(fileName='{fileName}')")]
@@ -455,6 +494,19 @@ namespace SinDarElaVerwaltung
         public FileStreamResult ExportMitarbeiterArtensToExcel(string fileName = null)
         {
             return ToExcel(ApplyQuery(context.MitarbeiterArtens, Request.Query), fileName);
+        }
+        [HttpGet("/export/DbSinDarEla/mitarbeiterfirmens/csv")]
+        [HttpGet("/export/DbSinDarEla/mitarbeiterfirmens/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportMitarbeiterFirmensToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.MitarbeiterFirmens, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/mitarbeiterfirmens/excel")]
+        [HttpGet("/export/DbSinDarEla/mitarbeiterfirmens/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportMitarbeiterFirmensToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.MitarbeiterFirmens, Request.Query), fileName);
         }
         [HttpGet("/export/DbSinDarEla/mitarbeiterfortbildungens/csv")]
         [HttpGet("/export/DbSinDarEla/mitarbeiterfortbildungens/csv(fileName='{fileName}')")]
@@ -677,6 +729,19 @@ namespace SinDarElaVerwaltung
         {
             return ToExcel(ApplyQuery(context.MitteilungenVerteilers, Request.Query), fileName);
         }
+        [HttpGet("/export/DbSinDarEla/modules/csv")]
+        [HttpGet("/export/DbSinDarEla/modules/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportModulesToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.Modules, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/modules/excel")]
+        [HttpGet("/export/DbSinDarEla/modules/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportModulesToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.Modules, Request.Query), fileName);
+        }
         [HttpGet("/export/DbSinDarEla/notizens/csv")]
         [HttpGet("/export/DbSinDarEla/notizens/csv(fileName='{fileName}')")]
         public FileStreamResult ExportNotizensToCSV(string fileName = null)
@@ -689,19 +754,6 @@ namespace SinDarElaVerwaltung
         public FileStreamResult ExportNotizensToExcel(string fileName = null)
         {
             return ToExcel(ApplyQuery(context.Notizens, Request.Query), fileName);
-        }
-        [HttpGet("/export/DbSinDarEla/persistedgrants/csv")]
-        [HttpGet("/export/DbSinDarEla/persistedgrants/csv(fileName='{fileName}')")]
-        public FileStreamResult ExportPersistedGrantsToCSV(string fileName = null)
-        {
-            return ToCSV(ApplyQuery(context.PersistedGrants, Request.Query), fileName);
-        }
-
-        [HttpGet("/export/DbSinDarEla/persistedgrants/excel")]
-        [HttpGet("/export/DbSinDarEla/persistedgrants/excel(fileName='{fileName}')")]
-        public FileStreamResult ExportPersistedGrantsToExcel(string fileName = null)
-        {
-            return ToExcel(ApplyQuery(context.PersistedGrants, Request.Query), fileName);
         }
         [HttpGet("/export/DbSinDarEla/protokolls/csv")]
         [HttpGet("/export/DbSinDarEla/protokolls/csv(fileName='{fileName}')")]
@@ -794,19 +846,6 @@ namespace SinDarElaVerwaltung
         {
             return ToExcel(ApplyQuery(context.VwBenutzerBases, Request.Query), fileName);
         }
-        [HttpGet("/export/DbSinDarEla/vwbenutzerrollens/csv")]
-        [HttpGet("/export/DbSinDarEla/vwbenutzerrollens/csv(fileName='{fileName}')")]
-        public FileStreamResult ExportVwBenutzerRollensToCSV(string fileName = null)
-        {
-            return ToCSV(ApplyQuery(context.VwBenutzerRollens, Request.Query), fileName);
-        }
-
-        [HttpGet("/export/DbSinDarEla/vwbenutzerrollens/excel")]
-        [HttpGet("/export/DbSinDarEla/vwbenutzerrollens/excel(fileName='{fileName}')")]
-        public FileStreamResult ExportVwBenutzerRollensToExcel(string fileName = null)
-        {
-            return ToExcel(ApplyQuery(context.VwBenutzerRollens, Request.Query), fileName);
-        }
         [HttpGet("/export/DbSinDarEla/vwkundenbetreuers/csv")]
         [HttpGet("/export/DbSinDarEla/vwkundenbetreuers/csv(fileName='{fileName}')")]
         public FileStreamResult ExportVwKundenBetreuersToCSV(string fileName = null)
@@ -832,19 +871,6 @@ namespace SinDarElaVerwaltung
         public FileStreamResult ExportVwKundenUndBetreuerAuswahlsToExcel(string fileName = null)
         {
             return ToExcel(ApplyQuery(context.VwKundenUndBetreuerAuswahls, Request.Query), fileName);
-        }
-        [HttpGet("/export/DbSinDarEla/vwrollens/csv")]
-        [HttpGet("/export/DbSinDarEla/vwrollens/csv(fileName='{fileName}')")]
-        public FileStreamResult ExportVwRollensToCSV(string fileName = null)
-        {
-            return ToCSV(ApplyQuery(context.VwRollens, Request.Query), fileName);
-        }
-
-        [HttpGet("/export/DbSinDarEla/vwrollens/excel")]
-        [HttpGet("/export/DbSinDarEla/vwrollens/excel(fileName='{fileName}')")]
-        public FileStreamResult ExportVwRollensToExcel(string fileName = null)
-        {
-            return ToExcel(ApplyQuery(context.VwRollens, Request.Query), fileName);
         }
     }
 }

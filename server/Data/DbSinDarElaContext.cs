@@ -31,10 +31,8 @@ namespace SinDarElaVerwaltung.Data
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBaseOrte>().HasNoKey();
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBasePlz>().HasNoKey();
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>().HasNoKey();
-        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerRollen>().HasNoKey();
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenBetreuer>().HasNoKey();
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>().HasNoKey();
-        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwRollen>().HasNoKey();
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.AbrechnungKundenReststunden>()
               .HasOne(i => i.Kunden)
               .WithMany(i => i.AbrechnungKundenReststundens)
@@ -70,6 +68,21 @@ namespace SinDarElaVerwaltung.Data
               .WithMany(i => i.Benutzers)
               .HasForeignKey(i => i.BaseID)
               .HasPrincipalKey(i => i.BaseID);
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>()
+              .HasOne(i => i.Benutzer)
+              .WithMany(i => i.BenutzerModules)
+              .HasForeignKey(i => i.BenutzerID)
+              .HasPrincipalKey(i => i.BenutzerID);
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>()
+              .HasOne(i => i.Module)
+              .WithMany(i => i.BenutzerModules)
+              .HasForeignKey(i => i.ModulID)
+              .HasPrincipalKey(i => i.ModulID);
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll>()
+              .HasOne(i => i.Benutzer)
+              .WithMany(i => i.BenutzerProtokolls)
+              .HasForeignKey(i => i.BenutzerID)
+              .HasPrincipalKey(i => i.BenutzerID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Dokumente>()
               .HasOne(i => i.DokumenteKategorien)
               .WithMany(i => i.Dokumentes)
@@ -120,6 +133,16 @@ namespace SinDarElaVerwaltung.Data
               .WithMany(i => i.Feedbacks)
               .HasForeignKey(i => i.BaseID)
               .HasPrincipalKey(i => i.BaseID);
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten>()
+              .HasOne(i => i.Firmen)
+              .WithMany(i => i.FirmenMitarbeiterTaetigkeitens)
+              .HasForeignKey(i => i.FirmaID)
+              .HasPrincipalKey(i => i.FirmaID);
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten>()
+              .HasOne(i => i.MitarbeiterTaetigkeitenArten)
+              .WithMany(i => i.FirmenMitarbeiterTaetigkeitens)
+              .HasForeignKey(i => i.MitarbeiterTaetigkeitenArtID)
+              .HasPrincipalKey(i => i.MitarbeiterTaetigkeitenArtID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Kunden>()
               .HasOne(i => i.Base)
               .WithMany(i => i.Kundens)
@@ -195,9 +218,19 @@ namespace SinDarElaVerwaltung.Data
               .WithMany(i => i.Mitarbeiters)
               .HasForeignKey(i => i.MitarbeiterArtID)
               .HasPrincipalKey(i => i.MitarbeiterArtID);
-        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Mitarbeiter>()
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen>()
+              .HasOne(i => i.Firmen)
+              .WithMany(i => i.MitarbeiterFirmens)
+              .HasForeignKey(i => i.FirmaID)
+              .HasPrincipalKey(i => i.FirmaID);
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen>()
+              .HasOne(i => i.Mitarbeiter)
+              .WithMany(i => i.MitarbeiterFirmens)
+              .HasForeignKey(i => i.MitarbeiterID)
+              .HasPrincipalKey(i => i.MitarbeiterID);
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen>()
               .HasOne(i => i.MitarbeiterStatus)
-              .WithMany(i => i.Mitarbeiters)
+              .WithMany(i => i.MitarbeiterFirmens)
               .HasForeignKey(i => i.MitarbeiterStatusID)
               .HasPrincipalKey(i => i.MitarbeiterStatusID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFortbildungen>()
@@ -236,45 +269,45 @@ namespace SinDarElaVerwaltung.Data
               .HasForeignKey(i => i.MitarbeiterTaetigkeitenArtID)
               .HasPrincipalKey(i => i.MitarbeiterTaetigkeitenArtID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterUrlaub>()
-              .HasOne(i => i.Mitarbeiter)
+              .HasOne(i => i.MitarbeiterFirmen)
               .WithMany(i => i.MitarbeiterUrlaubs)
-              .HasForeignKey(i => i.MitarbeiterID)
-              .HasPrincipalKey(i => i.MitarbeiterID);
+              .HasForeignKey(i => i.MitarbeiterFirmaID)
+              .HasPrincipalKey(i => i.MitarbeiterFirmaID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterUrlaubDetail>()
               .HasOne(i => i.MitarbeiterUrlaub)
               .WithMany(i => i.MitarbeiterUrlaubDetails)
               .HasForeignKey(i => i.MitarbeiterUrlaubID)
               .HasPrincipalKey(i => i.MitarbeiterUrlaubID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterUrlaubKumuliertAnspruch>()
-              .HasOne(i => i.Mitarbeiter)
+              .HasOne(i => i.MitarbeiterFirmen)
               .WithMany(i => i.MitarbeiterUrlaubKumuliertAnspruches)
-              .HasForeignKey(i => i.MitarbeiterID)
-              .HasPrincipalKey(i => i.MitarbeiterID);
+              .HasForeignKey(i => i.MitarbeiterFirmaID)
+              .HasPrincipalKey(i => i.MitarbeiterFirmaID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterUrlaubKumuliertDienstzeiten>()
-              .HasOne(i => i.Mitarbeiter)
+              .HasOne(i => i.MitarbeiterFirmen)
               .WithMany(i => i.MitarbeiterUrlaubKumuliertDienstzeitens)
-              .HasForeignKey(i => i.MitarbeiterID)
-              .HasPrincipalKey(i => i.MitarbeiterID);
+              .HasForeignKey(i => i.MitarbeiterFirmaID)
+              .HasPrincipalKey(i => i.MitarbeiterFirmaID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterVerlaufDienstzeiten>()
-              .HasOne(i => i.Mitarbeiter)
+              .HasOne(i => i.MitarbeiterFirmen)
               .WithMany(i => i.MitarbeiterVerlaufDienstzeitens)
-              .HasForeignKey(i => i.MitarbeiterID)
-              .HasPrincipalKey(i => i.MitarbeiterID);
+              .HasForeignKey(i => i.MitarbeiterFirmaID)
+              .HasPrincipalKey(i => i.MitarbeiterFirmaID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterVerlaufDienstzeiten>()
               .HasOne(i => i.MitarbeiterVerlaufDienstzeitenArten)
               .WithMany(i => i.MitarbeiterVerlaufDienstzeitens)
               .HasForeignKey(i => i.MitarbeiterVerlaufDienstzeitenArtID)
               .HasPrincipalKey(i => i.MitarbeiterVerlaufDienstzeitenArtID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterVerlaufGehalt>()
-              .HasOne(i => i.Mitarbeiter)
+              .HasOne(i => i.MitarbeiterFirmen)
               .WithMany(i => i.MitarbeiterVerlaufGehalts)
-              .HasForeignKey(i => i.MitarbeiterID)
-              .HasPrincipalKey(i => i.MitarbeiterID);
+              .HasForeignKey(i => i.MitarbeiterFirmaID)
+              .HasPrincipalKey(i => i.MitarbeiterFirmaID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit>()
-              .HasOne(i => i.Mitarbeiter)
+              .HasOne(i => i.MitarbeiterFirmen)
               .WithMany(i => i.MitarbeiterVerlaufNormalarbeitszeits)
-              .HasForeignKey(i => i.MitarbeiterID)
-              .HasPrincipalKey(i => i.MitarbeiterID);
+              .HasForeignKey(i => i.MitarbeiterFirmaID)
+              .HasPrincipalKey(i => i.MitarbeiterFirmaID);
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Mitteilungen>()
               .HasOne(i => i.Base)
               .WithMany(i => i.Mitteilungens)
@@ -307,6 +340,22 @@ namespace SinDarElaVerwaltung.Data
 
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Aufgaben>()
               .Property(p => p.Erledigt)
+              .HasDefaultValueSql("0");
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer>()
+              .Property(p => p.Sperren)
+              .HasDefaultValueSql("0");
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>()
+              .Property(p => p.ErlaubtNeu)
+              .HasDefaultValueSql("0");
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>()
+              .Property(p => p.ErlaubtAendern)
+              .HasDefaultValueSql("0");
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>()
+              .Property(p => p.ErlaubtLoeschen)
               .HasDefaultValueSql("0");
 
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Ereignisse>()
@@ -433,9 +482,9 @@ namespace SinDarElaVerwaltung.Data
               .Property(p => p.BenutzerID)
               .HasDefaultValueSql("0").ValueGeneratedNever();
 
-        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerRollen>()
-              .Property(p => p.BenutzerID)
-              .HasDefaultValueSql("0").ValueGeneratedNever();
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>()
+              .Property(p => p.Sperren)
+              .HasDefaultValueSql("0");
 
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenBetreuer>()
               .Property(p => p.KundenID)
@@ -503,6 +552,18 @@ namespace SinDarElaVerwaltung.Data
       set;
     }
 
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule> BenutzerModules
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll> BenutzerProtokolls
+    {
+      get;
+      set;
+    }
+
     public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.Debugg> Debuggs
     {
       get;
@@ -563,13 +624,19 @@ namespace SinDarElaVerwaltung.Data
       set;
     }
 
-    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml> InfotexteHtmls
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.Firmen> Firmens
     {
       get;
       set;
     }
 
-    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.Key> Keys
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten> FirmenMitarbeiterTaetigkeitens
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml> InfotexteHtmls
     {
       get;
       set;
@@ -648,6 +715,12 @@ namespace SinDarElaVerwaltung.Data
     }
 
     public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterArten> MitarbeiterArtens
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen> MitarbeiterFirmens
     {
       get;
       set;
@@ -755,13 +828,13 @@ namespace SinDarElaVerwaltung.Data
       set;
     }
 
-    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.Notizen> Notizens
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.Module> Modules
     {
       get;
       set;
     }
 
-    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant> PersistedGrants
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.Notizen> Notizens
     {
       get;
       set;
@@ -809,12 +882,6 @@ namespace SinDarElaVerwaltung.Data
       set;
     }
 
-    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerRollen> VwBenutzerRollens
-    {
-      get;
-      set;
-    }
-
     public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenBetreuer> VwKundenBetreuers
     {
       get;
@@ -822,12 +889,6 @@ namespace SinDarElaVerwaltung.Data
     }
 
     public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl> VwKundenUndBetreuerAuswahls
-    {
-      get;
-      set;
-    }
-
-    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwRollen> VwRollens
     {
       get;
       set;

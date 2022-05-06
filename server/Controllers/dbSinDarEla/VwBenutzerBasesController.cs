@@ -50,10 +50,10 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
     partial void OnVwBenutzerBaseGet(ref SingleResult<Models.DbSinDarEla.VwBenutzerBase> item);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("/odata/dbSinDarEla/VwBenutzerBases(AspNetUsers_Id={AspNetUsers_Id})")]
-    public SingleResult<VwBenutzerBase> GetVwBenutzerBase(string key)
+    [HttpGet("/odata/dbSinDarEla/VwBenutzerBases(BaseID={BaseID})")]
+    public SingleResult<VwBenutzerBase> GetVwBenutzerBase(int key)
     {
-        var items = this.context.VwBenutzerBases.AsNoTracking().Where(i=>i.AspNetUsers_Id == Uri.UnescapeDataString(key));
+        var items = this.context.VwBenutzerBases.AsNoTracking().Where(i=>i.BaseID == key);
         var result = SingleResult.Create(items);
 
         OnVwBenutzerBaseGet(ref result);

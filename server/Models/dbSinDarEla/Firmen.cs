@@ -7,70 +7,75 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaVerwaltung.Models.DbSinDarEla
 {
-  [Table("MitarbeiterUrlaub")]
-  public partial class MitarbeiterUrlaub
+  [Table("Firmen")]
+  public partial class Firmen
   {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int MitarbeiterUrlaubID
+    public int FirmaID
     {
       get;
       set;
     }
 
-    public IEnumerable<MitarbeiterUrlaubDetail> MitarbeiterUrlaubDetails { get; set; }
-    public int MitarbeiterFirmaID
+    public IEnumerable<FirmenMitarbeiterTaetigkeiten> FirmenMitarbeiterTaetigkeitens { get; set; }
+    public IEnumerable<MitarbeiterFirmen> MitarbeiterFirmens { get; set; }
+    public string Name
     {
       get;
       set;
     }
-    public MitarbeiterFirmen MitarbeiterFirmen { get; set; }
-    public int Jahr
+    public string Strasse
     {
       get;
       set;
     }
-    public int AnspruchJahrTage
+    public string PLZ
     {
       get;
       set;
     }
-    public double AnspruchJahrWochen
+    public string Ort
     {
       get;
       set;
     }
-    public double RestVorjahr
+    public string Telefon
     {
       get;
       set;
     }
-    public double AnspruchJahr
+    public string EMail
     {
       get;
       set;
     }
-    public double AnspruchGesamt
+    public string UID
     {
       get;
       set;
     }
-    public double Verbraucht
+    public string FirmenbuchNummer
     {
       get;
       set;
     }
-    public double Geplant
+    public string Gerichtsstand
     {
       get;
       set;
     }
-    public double RestJahr
+    public string KontoName
     {
       get;
       set;
     }
-    public string Info
+    public string KontoNummer
+    {
+      get;
+      set;
+    }
+    public string Notiz
     {
       get;
       set;

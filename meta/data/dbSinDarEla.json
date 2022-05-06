@@ -639,8 +639,8 @@
       "resource": "Benutzers",
       "required": [
         "BaseID",
-        "AspNetUsers_Id",
         "Benutzername",
+        "Kennwort",
         "Initialen"
       ],
       "properties": {
@@ -648,7 +648,19 @@
           "x-key": true,
           "x-identity": true,
           "x-nullable": false,
-          "type": "integer"
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Benutzer",
+              "name": "BenutzerModules",
+              "type": "BenutzerModule"
+            },
+            {
+              "inversePropertyName": "Benutzer",
+              "name": "BenutzerProtokolls",
+              "type": "BenutzerProtokoll"
+            }
+          ]
         },
         "Base": {
           "type": "object",
@@ -667,28 +679,36 @@
             "navigationProperty": "Benutzers"
           }
         },
-        "AspNetUsers_Id": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 255
-        },
         "Benutzername": {
           "x-nullable": false,
           "type": "string",
           "length": 130
         },
+        "Kennwort": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 255
+        },
         "Initialen": {
           "x-nullable": false,
           "type": "string",
-          "length": 2
+          "length": 4
         },
-        "BenutzerEMail": {
+        "Sperren": {
+          "x-default-sql": "0",
+          "type": "boolean"
+        },
+        "Angemeldet": {
           "type": "string",
-          "length": 200
+          "format": "date-time"
+        },
+        "Abgemeldet": {
+          "type": "string",
+          "format": "date-time"
         },
         "Notiz": {
           "type": "string",
-          "length": 65535
+          "length": 16777215
         },
         "LetzteKundenID": {
           "type": "integer"
@@ -725,6 +745,128 @@
         "FilterKontakteVerlinkt": {
           "type": "string",
           "length": 20
+        },
+        "BenutzerModules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BenutzerModule"
+          }
+        },
+        "BenutzerProtokolls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BenutzerProtokoll"
+          }
+        }
+      }
+    },
+    "BenutzerModule": {
+      "x-table": "def.BenutzerModule",
+      "resource": "BenutzerModules",
+      "required": [
+        "BenutzerID",
+        "ModulID"
+      ],
+      "properties": {
+        "BenutzerModuleID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "Benutzer": {
+          "type": "object",
+          "$ref": "#/definitions/Benutzer"
+        },
+        "BenutzerID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Benutzer",
+            "parentEntityType": "Benutzer",
+            "type": "Benutzer",
+            "principalKey": "BenutzerID",
+            "name": "Benutzer",
+            "textProperty": "Benutzername",
+            "navigationProperty": "BenutzerModules"
+          }
+        },
+        "Module": {
+          "type": "object",
+          "$ref": "#/definitions/Module"
+        },
+        "ModulID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Module",
+            "parentEntityType": "Module",
+            "type": "Module",
+            "principalKey": "ModulID",
+            "name": "Module",
+            "textProperty": "ModulName",
+            "navigationProperty": "BenutzerModules"
+          }
+        },
+        "ErlaubtNeu": {
+          "x-default-sql": "0",
+          "type": "boolean"
+        },
+        "ErlaubtAendern": {
+          "x-default-sql": "0",
+          "type": "boolean"
+        },
+        "ErlaubtLoeschen": {
+          "x-default-sql": "0",
+          "type": "boolean"
+        },
+        "Info": {
+          "type": "string",
+          "length": 16777215
+        }
+      }
+    },
+    "BenutzerProtokoll": {
+      "x-table": "def.BenutzerProtokoll",
+      "resource": "BenutzerProtokolls",
+      "required": [
+        "BenutzerID",
+        "Art",
+        "TimeStamp"
+      ],
+      "properties": {
+        "BenutzerProtokollID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "Benutzer": {
+          "type": "object",
+          "$ref": "#/definitions/Benutzer"
+        },
+        "BenutzerID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Benutzer",
+            "parentEntityType": "Benutzer",
+            "type": "Benutzer",
+            "principalKey": "BenutzerID",
+            "name": "Benutzer",
+            "textProperty": "Benutzername",
+            "navigationProperty": "BenutzerProtokolls"
+          }
+        },
+        "Art": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10
+        },
+        "TimeStamp": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
         }
       }
     },
@@ -1518,6 +1660,144 @@
         }
       }
     },
+    "Firmen": {
+      "x-table": "def.Firmen",
+      "resource": "Firmens",
+      "required": [
+        "Name"
+      ],
+      "properties": {
+        "FirmaID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Firmen",
+              "name": "FirmenMitarbeiterTaetigkeitens",
+              "type": "FirmenMitarbeiterTaetigkeiten"
+            },
+            {
+              "inversePropertyName": "Firmen",
+              "name": "MitarbeiterFirmens",
+              "type": "MitarbeiterFirmen"
+            }
+          ]
+        },
+        "Name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Strasse": {
+          "type": "string",
+          "length": 70
+        },
+        "PLZ": {
+          "type": "string",
+          "length": 10
+        },
+        "Ort": {
+          "type": "string",
+          "length": 100
+        },
+        "Telefon": {
+          "type": "string",
+          "length": 50
+        },
+        "EMail": {
+          "type": "string",
+          "length": 100
+        },
+        "UID": {
+          "type": "string",
+          "length": 20
+        },
+        "FirmenbuchNummer": {
+          "type": "string",
+          "length": 20
+        },
+        "Gerichtsstand": {
+          "type": "string",
+          "length": 50
+        },
+        "KontoName": {
+          "type": "string",
+          "length": 100
+        },
+        "KontoNummer": {
+          "type": "string",
+          "length": 30
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 16777215
+        },
+        "FirmenMitarbeiterTaetigkeitens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FirmenMitarbeiterTaetigkeiten"
+          }
+        },
+        "MitarbeiterFirmens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MitarbeiterFirmen"
+          }
+        }
+      }
+    },
+    "FirmenMitarbeiterTaetigkeiten": {
+      "x-table": "def.FirmenMitarbeiterTaetigkeiten",
+      "resource": "FirmenMitarbeiterTaetigkeitens",
+      "required": [
+        "FirmaID",
+        "MitarbeiterTaetigkeitenArtID"
+      ],
+      "properties": {
+        "FirmenMitarbeiterTaetigkeitenID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "Firmen": {
+          "type": "object",
+          "$ref": "#/definitions/Firmen"
+        },
+        "FirmaID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Firmen",
+            "parentEntityType": "Firmen",
+            "type": "Firmen",
+            "principalKey": "FirmaID",
+            "name": "Firmen",
+            "textProperty": "Name",
+            "navigationProperty": "FirmenMitarbeiterTaetigkeitens"
+          }
+        },
+        "MitarbeiterTaetigkeitenArten": {
+          "type": "object",
+          "$ref": "#/definitions/MitarbeiterTaetigkeitenArten"
+        },
+        "MitarbeiterTaetigkeitenArtID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "MitarbeiterTaetigkeitenArten",
+            "parentEntityType": "MitarbeiterTaetigkeitenArten",
+            "type": "MitarbeiterTaetigkeitenArten",
+            "principalKey": "MitarbeiterTaetigkeitenArtID",
+            "name": "MitarbeiterTaetigkeitenArten",
+            "textProperty": "TaetigkeitArt",
+            "navigationProperty": "FirmenMitarbeiterTaetigkeitens"
+          }
+        }
+      }
+    },
     "InfotexteHtml": {
       "x-table": "def.InfotexteHTML",
       "resource": "InfotexteHtmls",
@@ -1548,56 +1828,6 @@
         },
         "Sortierung": {
           "type": "integer"
-        }
-      }
-    },
-    "Key": {
-      "x-table": "def.Keys",
-      "resource": "Keys",
-      "required": [
-        "Id",
-        "Version",
-        "Created",
-        "Algorithm",
-        "Data"
-      ],
-      "properties": {
-        "Id": {
-          "x-key": true,
-          "x-nullable": false,
-          "type": "string",
-          "length": 450
-        },
-        "Version": {
-          "x-nullable": false,
-          "type": "integer"
-        },
-        "Created": {
-          "x-nullable": false,
-          "type": "string",
-          "format": "date-time"
-        },
-        "Use": {
-          "type": "string",
-          "length": 450
-        },
-        "Algorithm": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 100
-        },
-        "IsX509Certificate": {
-          "x-nullable": false,
-          "type": "boolean"
-        },
-        "DataProtected": {
-          "x-nullable": false,
-          "type": "boolean"
-        },
-        "Data": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 65535
         }
       }
     },
@@ -2338,8 +2568,7 @@
       "resource": "Mitarbeiters",
       "required": [
         "BaseID",
-        "MitarbeiterArtID",
-        "MitarbeiterStatusID"
+        "MitarbeiterArtID"
       ],
       "properties": {
         "MitarbeiterID": {
@@ -2348,6 +2577,11 @@
           "x-nullable": false,
           "type": "integer",
           "x-navigation": [
+            {
+              "inversePropertyName": "Mitarbeiter",
+              "name": "MitarbeiterFirmens",
+              "type": "MitarbeiterFirmen"
+            },
             {
               "inversePropertyName": "Mitarbeiter",
               "name": "MitarbeiterFortbildungens",
@@ -2362,36 +2596,6 @@
               "inversePropertyName": "Mitarbeiter",
               "name": "MitarbeiterTaetigkeitens",
               "type": "MitarbeiterTaetigkeiten"
-            },
-            {
-              "inversePropertyName": "Mitarbeiter",
-              "name": "MitarbeiterUrlaubs",
-              "type": "MitarbeiterUrlaub"
-            },
-            {
-              "inversePropertyName": "Mitarbeiter",
-              "name": "MitarbeiterUrlaubKumuliertAnspruches",
-              "type": "MitarbeiterUrlaubKumuliertAnspruch"
-            },
-            {
-              "inversePropertyName": "Mitarbeiter",
-              "name": "MitarbeiterUrlaubKumuliertDienstzeitens",
-              "type": "MitarbeiterUrlaubKumuliertDienstzeiten"
-            },
-            {
-              "inversePropertyName": "Mitarbeiter",
-              "name": "MitarbeiterVerlaufDienstzeitens",
-              "type": "MitarbeiterVerlaufDienstzeiten"
-            },
-            {
-              "inversePropertyName": "Mitarbeiter",
-              "name": "MitarbeiterVerlaufGehalts",
-              "type": "MitarbeiterVerlaufGehalt"
-            },
-            {
-              "inversePropertyName": "Mitarbeiter",
-              "name": "MitarbeiterVerlaufNormalarbeitszeits",
-              "type": "MitarbeiterVerlaufNormalarbeitszeit"
             }
           ]
         },
@@ -2429,39 +2633,6 @@
             "navigationProperty": "Mitarbeiters"
           }
         },
-        "MitarbeiterStatus": {
-          "type": "object",
-          "$ref": "#/definitions/MitarbeiterStatus"
-        },
-        "MitarbeiterStatusID": {
-          "x-nullable": false,
-          "type": "integer",
-          "x-foreignKey": {
-            "parentTable": "MitarbeiterStatus",
-            "parentEntityType": "MitarbeiterStatus",
-            "type": "MitarbeiterStatus",
-            "principalKey": "MitarbeiterStatusID",
-            "name": "MitarbeiterStatus",
-            "textProperty": "Status",
-            "navigationProperty": "Mitarbeiters"
-          }
-        },
-        "ArbeitsrechtEintritt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "ArbeitsrechtAustritt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "LetzterEintritt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "LetzterAustritt": {
-          "type": "string",
-          "format": "date-time"
-        },
         "Notfallkontakt": {
           "type": "string",
           "length": 50
@@ -2472,11 +2643,17 @@
         },
         "Info": {
           "type": "string",
-          "length": 4294967295
+          "length": 16777215
         },
         "InfoGF": {
           "type": "string",
-          "length": 4294967295
+          "length": 16777215
+        },
+        "MitarbeiterFirmens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MitarbeiterFirmen"
+          }
         },
         "MitarbeiterFortbildungens": {
           "type": "array",
@@ -2494,42 +2671,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/MitarbeiterTaetigkeiten"
-          }
-        },
-        "MitarbeiterUrlaubs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MitarbeiterUrlaub"
-          }
-        },
-        "MitarbeiterUrlaubKumuliertAnspruches": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MitarbeiterUrlaubKumuliertAnspruch"
-          }
-        },
-        "MitarbeiterUrlaubKumuliertDienstzeitens": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MitarbeiterUrlaubKumuliertDienstzeiten"
-          }
-        },
-        "MitarbeiterVerlaufDienstzeitens": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MitarbeiterVerlaufDienstzeiten"
-          }
-        },
-        "MitarbeiterVerlaufGehalts": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MitarbeiterVerlaufGehalt"
-          }
-        },
-        "MitarbeiterVerlaufNormalarbeitszeits": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MitarbeiterVerlaufNormalarbeitszeit"
           }
         }
       }
@@ -2566,6 +2707,162 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Mitarbeiter"
+          }
+        }
+      }
+    },
+    "MitarbeiterFirmen": {
+      "x-table": "def.MitarbeiterFirmen",
+      "resource": "MitarbeiterFirmens",
+      "required": [
+        "FirmaID",
+        "MitarbeiterID",
+        "MitarbeiterStatusID"
+      ],
+      "properties": {
+        "MitarbeiterFirmaID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "MitarbeiterFirmen",
+              "name": "MitarbeiterUrlaubs",
+              "type": "MitarbeiterUrlaub"
+            },
+            {
+              "inversePropertyName": "MitarbeiterFirmen",
+              "name": "MitarbeiterUrlaubKumuliertAnspruches",
+              "type": "MitarbeiterUrlaubKumuliertAnspruch"
+            },
+            {
+              "inversePropertyName": "MitarbeiterFirmen",
+              "name": "MitarbeiterUrlaubKumuliertDienstzeitens",
+              "type": "MitarbeiterUrlaubKumuliertDienstzeiten"
+            },
+            {
+              "inversePropertyName": "MitarbeiterFirmen",
+              "name": "MitarbeiterVerlaufDienstzeitens",
+              "type": "MitarbeiterVerlaufDienstzeiten"
+            },
+            {
+              "inversePropertyName": "MitarbeiterFirmen",
+              "name": "MitarbeiterVerlaufGehalts",
+              "type": "MitarbeiterVerlaufGehalt"
+            },
+            {
+              "inversePropertyName": "MitarbeiterFirmen",
+              "name": "MitarbeiterVerlaufNormalarbeitszeits",
+              "type": "MitarbeiterVerlaufNormalarbeitszeit"
+            }
+          ]
+        },
+        "Firmen": {
+          "type": "object",
+          "$ref": "#/definitions/Firmen"
+        },
+        "FirmaID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Firmen",
+            "parentEntityType": "Firmen",
+            "type": "Firmen",
+            "principalKey": "FirmaID",
+            "name": "Firmen",
+            "textProperty": "Name",
+            "navigationProperty": "MitarbeiterFirmens"
+          }
+        },
+        "Mitarbeiter": {
+          "type": "object",
+          "$ref": "#/definitions/Mitarbeiter"
+        },
+        "MitarbeiterID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Mitarbeiter",
+            "parentEntityType": "Mitarbeiter",
+            "type": "Mitarbeiter",
+            "principalKey": "MitarbeiterID",
+            "name": "Mitarbeiter",
+            "textProperty": "Notfallkontakt",
+            "navigationProperty": "MitarbeiterFirmens"
+          }
+        },
+        "MitarbeiterStatus": {
+          "type": "object",
+          "$ref": "#/definitions/MitarbeiterStatus"
+        },
+        "MitarbeiterStatusID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "MitarbeiterStatus",
+            "parentEntityType": "MitarbeiterStatus",
+            "type": "MitarbeiterStatus",
+            "principalKey": "MitarbeiterStatusID",
+            "name": "MitarbeiterStatus",
+            "textProperty": "Status",
+            "navigationProperty": "MitarbeiterFirmens"
+          }
+        },
+        "ArbeitsrechtEintritt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ArbeitsrechtAustritt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "LetzterEintritt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "LetzterAustritt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 16777215
+        },
+        "MitarbeiterUrlaubs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MitarbeiterUrlaub"
+          }
+        },
+        "MitarbeiterUrlaubKumuliertAnspruches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MitarbeiterUrlaubKumuliertAnspruch"
+          }
+        },
+        "MitarbeiterUrlaubKumuliertDienstzeitens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MitarbeiterUrlaubKumuliertDienstzeiten"
+          }
+        },
+        "MitarbeiterVerlaufDienstzeitens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MitarbeiterVerlaufDienstzeiten"
+          }
+        },
+        "MitarbeiterVerlaufGehalts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MitarbeiterVerlaufGehalt"
+          }
+        },
+        "MitarbeiterVerlaufNormalarbeitszeits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MitarbeiterVerlaufNormalarbeitszeit"
           }
         }
       }
@@ -2817,8 +3114,8 @@
           "x-navigation": [
             {
               "inversePropertyName": "MitarbeiterStatus",
-              "name": "Mitarbeiters",
-              "type": "Mitarbeiter"
+              "name": "MitarbeiterFirmens",
+              "type": "MitarbeiterFirmen"
             }
           ]
         },
@@ -2830,10 +3127,10 @@
         "Sortierung": {
           "type": "integer"
         },
-        "Mitarbeiters": {
+        "MitarbeiterFirmens": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Mitarbeiter"
+            "$ref": "#/definitions/MitarbeiterFirmen"
           }
         }
       }
@@ -2903,6 +3200,11 @@
           "x-navigation": [
             {
               "inversePropertyName": "MitarbeiterTaetigkeitenArten",
+              "name": "FirmenMitarbeiterTaetigkeitens",
+              "type": "FirmenMitarbeiterTaetigkeiten"
+            },
+            {
+              "inversePropertyName": "MitarbeiterTaetigkeitenArten",
               "name": "MitarbeiterTaetigkeitens",
               "type": "MitarbeiterTaetigkeiten"
             }
@@ -2920,6 +3222,12 @@
         "Sortierung": {
           "type": "integer"
         },
+        "FirmenMitarbeiterTaetigkeitens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FirmenMitarbeiterTaetigkeiten"
+          }
+        },
         "MitarbeiterTaetigkeitens": {
           "type": "array",
           "items": {
@@ -2932,7 +3240,7 @@
       "x-table": "def.MitarbeiterUrlaub",
       "resource": "MitarbeiterUrlaubs",
       "required": [
-        "MitarbeiterID",
+        "MitarbeiterFirmaID",
         "Jahr",
         "AnspruchJahrTage",
         "AnspruchJahrWochen",
@@ -2957,20 +3265,20 @@
             }
           ]
         },
-        "Mitarbeiter": {
+        "MitarbeiterFirmen": {
           "type": "object",
-          "$ref": "#/definitions/Mitarbeiter"
+          "$ref": "#/definitions/MitarbeiterFirmen"
         },
-        "MitarbeiterID": {
+        "MitarbeiterFirmaID": {
           "x-nullable": false,
           "type": "integer",
           "x-foreignKey": {
-            "parentTable": "Mitarbeiter",
-            "parentEntityType": "Mitarbeiter",
-            "type": "Mitarbeiter",
-            "principalKey": "MitarbeiterID",
-            "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "parentTable": "MitarbeiterFirmen",
+            "parentEntityType": "MitarbeiterFirmen",
+            "type": "MitarbeiterFirmen",
+            "principalKey": "MitarbeiterFirmaID",
+            "name": "MitarbeiterFirmen",
+            "textProperty": "Notiz",
             "navigationProperty": "MitarbeiterUrlaubs"
           }
         },
@@ -3109,7 +3417,7 @@
       "x-table": "def.MitarbeiterUrlaubKumuliertAnspruch",
       "resource": "MitarbeiterUrlaubKumuliertAnspruches",
       "required": [
-        "MitarbeiterID",
+        "MitarbeiterFirmaID",
         "Jahre",
         "Art",
         "AnspruchTage",
@@ -3122,20 +3430,20 @@
           "x-nullable": false,
           "type": "integer"
         },
-        "Mitarbeiter": {
+        "MitarbeiterFirmen": {
           "type": "object",
-          "$ref": "#/definitions/Mitarbeiter"
+          "$ref": "#/definitions/MitarbeiterFirmen"
         },
-        "MitarbeiterID": {
+        "MitarbeiterFirmaID": {
           "x-nullable": false,
           "type": "integer",
           "x-foreignKey": {
-            "parentTable": "Mitarbeiter",
-            "parentEntityType": "Mitarbeiter",
-            "type": "Mitarbeiter",
-            "principalKey": "MitarbeiterID",
-            "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "parentTable": "MitarbeiterFirmen",
+            "parentEntityType": "MitarbeiterFirmen",
+            "type": "MitarbeiterFirmen",
+            "principalKey": "MitarbeiterFirmaID",
+            "name": "MitarbeiterFirmen",
+            "textProperty": "Notiz",
             "navigationProperty": "MitarbeiterUrlaubKumuliertAnspruches"
           }
         },
@@ -3177,7 +3485,7 @@
       "x-table": "def.MitarbeiterUrlaubKumuliertDienstzeiten",
       "resource": "MitarbeiterUrlaubKumuliertDienstzeitens",
       "required": [
-        "MitarbeiterID",
+        "MitarbeiterFirmaID",
         "Sortierung",
         "Art",
         "DienstzeitCode"
@@ -3189,20 +3497,20 @@
           "x-nullable": false,
           "type": "integer"
         },
-        "Mitarbeiter": {
+        "MitarbeiterFirmen": {
           "type": "object",
-          "$ref": "#/definitions/Mitarbeiter"
+          "$ref": "#/definitions/MitarbeiterFirmen"
         },
-        "MitarbeiterID": {
+        "MitarbeiterFirmaID": {
           "x-nullable": false,
           "type": "integer",
           "x-foreignKey": {
-            "parentTable": "Mitarbeiter",
-            "parentEntityType": "Mitarbeiter",
-            "type": "Mitarbeiter",
-            "principalKey": "MitarbeiterID",
-            "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "parentTable": "MitarbeiterFirmen",
+            "parentEntityType": "MitarbeiterFirmen",
+            "type": "MitarbeiterFirmen",
+            "principalKey": "MitarbeiterFirmaID",
+            "name": "MitarbeiterFirmen",
+            "textProperty": "Notiz",
             "navigationProperty": "MitarbeiterUrlaubKumuliertDienstzeitens"
           }
         },
@@ -3238,7 +3546,7 @@
       "x-table": "def.MitarbeiterVerlaufDienstzeiten",
       "resource": "MitarbeiterVerlaufDienstzeitens",
       "required": [
-        "MitarbeiterID",
+        "MitarbeiterFirmaID",
         "MitarbeiterVerlaufDienstzeitenArtID",
         "Von"
       ],
@@ -3249,20 +3557,20 @@
           "x-nullable": false,
           "type": "integer"
         },
-        "Mitarbeiter": {
+        "MitarbeiterFirmen": {
           "type": "object",
-          "$ref": "#/definitions/Mitarbeiter"
+          "$ref": "#/definitions/MitarbeiterFirmen"
         },
-        "MitarbeiterID": {
+        "MitarbeiterFirmaID": {
           "x-nullable": false,
           "type": "integer",
           "x-foreignKey": {
-            "parentTable": "Mitarbeiter",
-            "parentEntityType": "Mitarbeiter",
-            "type": "Mitarbeiter",
-            "principalKey": "MitarbeiterID",
-            "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "parentTable": "MitarbeiterFirmen",
+            "parentEntityType": "MitarbeiterFirmen",
+            "type": "MitarbeiterFirmen",
+            "principalKey": "MitarbeiterFirmaID",
+            "name": "MitarbeiterFirmen",
+            "textProperty": "Notiz",
             "navigationProperty": "MitarbeiterVerlaufDienstzeitens"
           }
         },
@@ -3380,7 +3688,7 @@
       "x-table": "def.MitarbeiterVerlaufGehalt",
       "resource": "MitarbeiterVerlaufGehalts",
       "required": [
-        "MitarbeiterID",
+        "MitarbeiterFirmaID",
         "Von",
         "Verwendungsgruppe",
         "Gehaltsstufe"
@@ -3392,20 +3700,20 @@
           "x-nullable": false,
           "type": "integer"
         },
-        "Mitarbeiter": {
+        "MitarbeiterFirmen": {
           "type": "object",
-          "$ref": "#/definitions/Mitarbeiter"
+          "$ref": "#/definitions/MitarbeiterFirmen"
         },
-        "MitarbeiterID": {
+        "MitarbeiterFirmaID": {
           "x-nullable": false,
           "type": "integer",
           "x-foreignKey": {
-            "parentTable": "Mitarbeiter",
-            "parentEntityType": "Mitarbeiter",
-            "type": "Mitarbeiter",
-            "principalKey": "MitarbeiterID",
-            "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "parentTable": "MitarbeiterFirmen",
+            "parentEntityType": "MitarbeiterFirmen",
+            "type": "MitarbeiterFirmen",
+            "principalKey": "MitarbeiterFirmaID",
+            "name": "MitarbeiterFirmen",
+            "textProperty": "Notiz",
             "navigationProperty": "MitarbeiterVerlaufGehalts"
           }
         },
@@ -3436,7 +3744,7 @@
       "x-table": "def.MitarbeiterVerlaufNormalarbeitszeit",
       "resource": "MitarbeiterVerlaufNormalarbeitszeits",
       "required": [
-        "MitarbeiterID",
+        "MitarbeiterFirmaID",
         "Von",
         "Stunden",
         "Wochentage"
@@ -3448,20 +3756,20 @@
           "x-nullable": false,
           "type": "integer"
         },
-        "Mitarbeiter": {
+        "MitarbeiterFirmen": {
           "type": "object",
-          "$ref": "#/definitions/Mitarbeiter"
+          "$ref": "#/definitions/MitarbeiterFirmen"
         },
-        "MitarbeiterID": {
+        "MitarbeiterFirmaID": {
           "x-nullable": false,
           "type": "integer",
           "x-foreignKey": {
-            "parentTable": "Mitarbeiter",
-            "parentEntityType": "Mitarbeiter",
-            "type": "Mitarbeiter",
-            "principalKey": "MitarbeiterID",
-            "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "parentTable": "MitarbeiterFirmen",
+            "parentEntityType": "MitarbeiterFirmen",
+            "type": "MitarbeiterFirmen",
+            "principalKey": "MitarbeiterFirmaID",
+            "name": "MitarbeiterFirmen",
+            "textProperty": "Notiz",
             "navigationProperty": "MitarbeiterVerlaufNormalarbeitszeits"
           }
         },
@@ -3630,6 +3938,43 @@
         }
       }
     },
+    "Module": {
+      "x-table": "def.Module",
+      "resource": "Modules",
+      "required": [
+        "ModulName"
+      ],
+      "properties": {
+        "ModulID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Module",
+              "name": "BenutzerModules",
+              "type": "BenutzerModule"
+            }
+          ]
+        },
+        "ModulName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 65535
+        },
+        "BenutzerModules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BenutzerModule"
+          }
+        }
+      }
+    },
     "Notizen": {
       "x-table": "def.Notizen",
       "resource": "Notizens",
@@ -3668,65 +4013,6 @@
         "Notiz": {
           "type": "string",
           "length": 16777215
-        }
-      }
-    },
-    "PersistedGrant": {
-      "x-table": "def.PersistedGrants",
-      "resource": "PersistedGrants",
-      "required": [
-        "Key",
-        "Type",
-        "ClientId",
-        "CreationTime",
-        "Data"
-      ],
-      "properties": {
-        "Key": {
-          "x-key": true,
-          "x-nullable": false,
-          "type": "string",
-          "length": 200
-        },
-        "Type": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 50
-        },
-        "SubjectId": {
-          "type": "string",
-          "length": 200
-        },
-        "SessionId": {
-          "type": "string",
-          "length": 100
-        },
-        "ClientId": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 200
-        },
-        "Description": {
-          "type": "string",
-          "length": 200
-        },
-        "CreationTime": {
-          "x-nullable": false,
-          "type": "string",
-          "format": "date-time"
-        },
-        "Expiration": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "ConsumedTime": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "Data": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 65535
         }
       }
     },
@@ -4107,9 +4393,9 @@
       "x-table": "def.vwBenutzerBase",
       "resource": "VwBenutzerBases",
       "required": [
-        "AspNetUsers_Id",
         "BaseID",
         "Benutzername",
+        "Kennwort",
         "Initialen",
         "Name1"
       ],
@@ -4119,34 +4405,78 @@
           "x-nullable": false,
           "type": "integer"
         },
-        "AspNetUsers_Id": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 255,
-          "x-key": true,
-          "x-virtual": true
-        },
         "BaseID": {
           "x-nullable": false,
-          "type": "integer"
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
         },
         "Benutzername": {
           "x-nullable": false,
           "type": "string",
           "length": 130
         },
+        "Kennwort": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 255
+        },
         "Initialen": {
           "x-nullable": false,
           "type": "string",
-          "length": 2
+          "length": 4
         },
-        "BenutzerEMail": {
+        "Sperren": {
+          "x-default-sql": "0",
+          "type": "boolean"
+        },
+        "Angemeldet": {
           "type": "string",
-          "length": 200
+          "format": "date-time"
+        },
+        "Abgemeldet": {
+          "type": "string",
+          "format": "date-time"
         },
         "Notiz": {
           "type": "string",
-          "length": 65535
+          "length": 16777215
+        },
+        "LetzteKundenID": {
+          "type": "integer"
+        },
+        "LetzteMitarbeiterID": {
+          "type": "integer"
+        },
+        "LetzteBaseID": {
+          "type": "integer"
+        },
+        "LetzteBenutzerID": {
+          "type": "integer"
+        },
+        "FilterKontakteName": {
+          "type": "string",
+          "length": 100
+        },
+        "FilterKontakteStrasse": {
+          "type": "string",
+          "length": 50
+        },
+        "FilterKontaktePlz": {
+          "type": "string",
+          "length": 10
+        },
+        "FilterKontakteOrt": {
+          "type": "string",
+          "length": 50
+        },
+        "FilterKontakteNotiz": {
+          "type": "string",
+          "length": 255
+        },
+        "FilterKontakteVerlinkt": {
+          "type": "string",
+          "length": 20
         },
         "Name1": {
           "x-nullable": false,
@@ -4228,99 +4558,6 @@
         "BaseNotiz": {
           "type": "string",
           "length": 65535
-        }
-      }
-    },
-    "VwBenutzerRollen": {
-      "x-view": true,
-      "x-table": "def.vwBenutzerRollen",
-      "resource": "VwBenutzerRollens",
-      "required": [
-        "AspNetUsers_Id",
-        "BaseID",
-        "Benutzername",
-        "Initialen",
-        "RoleId"
-      ],
-      "properties": {
-        "BenutzerID": {
-          "x-default-sql": "0",
-          "x-nullable": false,
-          "type": "integer"
-        },
-        "AspNetUsers_Id": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 255,
-          "x-key": true,
-          "x-virtual": true
-        },
-        "BaseID": {
-          "x-nullable": false,
-          "type": "integer"
-        },
-        "Benutzername": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 130
-        },
-        "Initialen": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 2
-        },
-        "BenutzerEMail": {
-          "type": "string",
-          "length": 200
-        },
-        "Notiz": {
-          "type": "string",
-          "length": 65535
-        },
-        "LetzteKundenID": {
-          "type": "integer"
-        },
-        "LetzteMitarbeiterID": {
-          "type": "integer"
-        },
-        "LetzteBaseID": {
-          "type": "integer"
-        },
-        "LetzteBenutzerID": {
-          "type": "integer"
-        },
-        "FilterKontakteName": {
-          "type": "string",
-          "length": 100
-        },
-        "FilterKontakteStrasse": {
-          "type": "string",
-          "length": 50
-        },
-        "FilterKontaktePlz": {
-          "type": "string",
-          "length": 10
-        },
-        "FilterKontakteOrt": {
-          "type": "string",
-          "length": 50
-        },
-        "FilterKontakteNotiz": {
-          "type": "string",
-          "length": 255
-        },
-        "FilterKontakteVerlinkt": {
-          "type": "string",
-          "length": 20
-        },
-        "RoleId": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 255
-        },
-        "RolleTitel": {
-          "type": "string",
-          "length": 256
         }
       }
     },
@@ -4548,27 +4785,6 @@
         "Notiz": {
           "type": "string",
           "length": 65535
-        }
-      }
-    },
-    "VwRollen": {
-      "x-view": true,
-      "x-table": "def.vwRollen",
-      "resource": "VwRollens",
-      "required": [
-        "Id"
-      ],
-      "properties": {
-        "Id": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 255,
-          "x-key": true,
-          "x-virtual": true
-        },
-        "Titel": {
-          "type": "string",
-          "length": 256
         }
       }
     }
@@ -5383,6 +5599,188 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/Benutzer"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/BenutzerModules": {
+      "get": {
+        "operationId": "getBenutzerModules",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/BenutzerModule"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createBenutzerModule",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "BenutzerModule",
+            "schema": {
+              "$ref": "#/definitions/BenutzerModule"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/BenutzerModule"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/BenutzerProtokolls": {
+      "get": {
+        "operationId": "getBenutzerProtokolls",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/BenutzerProtokoll"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createBenutzerProtokoll",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "BenutzerProtokoll",
+            "schema": {
+              "$ref": "#/definitions/BenutzerProtokoll"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/BenutzerProtokoll"
             }
           },
           "default": {
@@ -6303,6 +6701,188 @@
         }
       }
     },
+    "/Firmens": {
+      "get": {
+        "operationId": "getFirmens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Firmen"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createFirmen",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Firmen",
+            "schema": {
+              "$ref": "#/definitions/Firmen"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Firmen"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/FirmenMitarbeiterTaetigkeitens": {
+      "get": {
+        "operationId": "getFirmenMitarbeiterTaetigkeitens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/FirmenMitarbeiterTaetigkeiten"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createFirmenMitarbeiterTaetigkeiten",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "FirmenMitarbeiterTaetigkeiten",
+            "schema": {
+              "$ref": "#/definitions/FirmenMitarbeiterTaetigkeiten"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/FirmenMitarbeiterTaetigkeiten"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/InfotexteHtmls": {
       "get": {
         "operationId": "getInfotexteHtmls",
@@ -6384,97 +6964,6 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/InfotexteHtml"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/Keys": {
-      "get": {
-        "operationId": "getKeys",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$filter",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "type": "boolean"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "properties": {
-                "value": {
-                  "items": {
-                    "$ref": "#/definitions/Key"
-                  },
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "createKey",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "Key",
-            "schema": {
-              "$ref": "#/definitions/Key"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "schema": {
-              "$ref": "#/definitions/Key"
             }
           },
           "default": {
@@ -7658,6 +8147,97 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/MitarbeiterArten"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/MitarbeiterFirmens": {
+      "get": {
+        "operationId": "getMitarbeiterFirmens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/MitarbeiterFirmen"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createMitarbeiterFirmen",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "MitarbeiterFirmen",
+            "schema": {
+              "$ref": "#/definitions/MitarbeiterFirmen"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/MitarbeiterFirmen"
             }
           },
           "default": {
@@ -9215,6 +9795,97 @@
         }
       }
     },
+    "/Modules": {
+      "get": {
+        "operationId": "getModules",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Module"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createModule",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Module",
+            "schema": {
+              "$ref": "#/definitions/Module"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Module"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Notizens": {
       "get": {
         "operationId": "getNotizens",
@@ -9296,97 +9967,6 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/Notizen"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/PersistedGrants": {
-      "get": {
-        "operationId": "getPersistedGrants",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$filter",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "type": "boolean"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "properties": {
-                "value": {
-                  "items": {
-                    "$ref": "#/definitions/PersistedGrant"
-                  },
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "createPersistedGrant",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "PersistedGrant",
-            "schema": {
-              "$ref": "#/definitions/PersistedGrant"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "schema": {
-              "$ref": "#/definitions/PersistedGrant"
             }
           },
           "default": {
@@ -9914,73 +10494,6 @@
         }
       }
     },
-    "/VwBenutzerRollens": {
-      "get": {
-        "operationId": "getVwBenutzerRollens",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$filter",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "type": "boolean"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "properties": {
-                "value": {
-                  "items": {
-                    "$ref": "#/definitions/VwBenutzerRollen"
-                  },
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
     "/VwKundenBetreuers": {
       "get": {
         "operationId": "getVwKundenBetreuers",
@@ -10100,73 +10613,6 @@
                 "value": {
                   "items": {
                     "$ref": "#/definitions/VwKundenUndBetreuerAuswahl"
-                  },
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/VwRollens": {
-      "get": {
-        "operationId": "getVwRollens",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$filter",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "type": "boolean"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "properties": {
-                "value": {
-                  "items": {
-                    "$ref": "#/definitions/VwRollen"
                   },
                   "type": "array"
                 }
@@ -10817,6 +11263,150 @@
             "name": "Benutzer",
             "schema": {
               "$ref": "#/definitions/Benutzer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/BenutzerModules({BenutzerModuleID})": {
+      "delete": {
+        "operationId": "deleteBenutzerModule",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "BenutzerModuleID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getBenutzerModuleByBenutzerModuleID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "BenutzerModuleID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BenutzerModule"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateBenutzerModule",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "BenutzerModuleID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "BenutzerModule",
+            "schema": {
+              "$ref": "#/definitions/BenutzerModule"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/BenutzerProtokolls({BenutzerProtokollID})": {
+      "delete": {
+        "operationId": "deleteBenutzerProtokoll",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "BenutzerProtokollID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getBenutzerProtokollByBenutzerProtokollID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "BenutzerProtokollID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BenutzerProtokoll"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateBenutzerProtokoll",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "BenutzerProtokollID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "BenutzerProtokoll",
+            "schema": {
+              "$ref": "#/definitions/BenutzerProtokoll"
             }
           }
         ],
@@ -11550,6 +12140,150 @@
         }
       }
     },
+    "/Firmens({FirmaID})": {
+      "delete": {
+        "operationId": "deleteFirmen",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "FirmaID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getFirmenByFirmaID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "FirmaID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Firmen"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateFirmen",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "FirmaID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Firmen",
+            "schema": {
+              "$ref": "#/definitions/Firmen"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/FirmenMitarbeiterTaetigkeitens({FirmenMitarbeiterTaetigkeitenID})": {
+      "delete": {
+        "operationId": "deleteFirmenMitarbeiterTaetigkeiten",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "FirmenMitarbeiterTaetigkeitenID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getFirmenMitarbeiterTaetigkeitenByFirmenMitarbeiterTaetigkeitenID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "FirmenMitarbeiterTaetigkeitenID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/FirmenMitarbeiterTaetigkeiten"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateFirmenMitarbeiterTaetigkeiten",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "FirmenMitarbeiterTaetigkeitenID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "FirmenMitarbeiterTaetigkeiten",
+            "schema": {
+              "$ref": "#/definitions/FirmenMitarbeiterTaetigkeiten"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/InfotexteHtmls({InfotextID})": {
       "delete": {
         "operationId": "deleteInfotexteHtml",
@@ -11609,78 +12343,6 @@
             "name": "InfotexteHtml",
             "schema": {
               "$ref": "#/definitions/InfotexteHtml"
-            }
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/Keys('{Id}')": {
-      "delete": {
-        "operationId": "deleteKey",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Id",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "get": {
-        "operationId": "getKeyById",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "Id",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": "#/definitions/Key"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "patch": {
-        "operationId": "updateKey",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Id",
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "Key",
-            "schema": {
-              "$ref": "#/definitions/Key"
             }
           }
         ],
@@ -12617,6 +13279,78 @@
             "name": "MitarbeiterArten",
             "schema": {
               "$ref": "#/definitions/MitarbeiterArten"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/MitarbeiterFirmens({MitarbeiterFirmaID})": {
+      "delete": {
+        "operationId": "deleteMitarbeiterFirmen",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "MitarbeiterFirmaID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getMitarbeiterFirmenByMitarbeiterFirmaID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "MitarbeiterFirmaID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/MitarbeiterFirmen"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateMitarbeiterFirmen",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "MitarbeiterFirmaID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "MitarbeiterFirmen",
+            "schema": {
+              "$ref": "#/definitions/MitarbeiterFirmen"
             }
           }
         ],
@@ -13854,6 +14588,78 @@
         }
       }
     },
+    "/Modules({ModulID})": {
+      "delete": {
+        "operationId": "deleteModule",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ModulID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getModuleByModulID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "ModulID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Module"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateModule",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ModulID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Module",
+            "schema": {
+              "$ref": "#/definitions/Module"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Notizens({NotizID})": {
       "delete": {
         "operationId": "deleteNotizen",
@@ -13913,78 +14719,6 @@
             "name": "Notizen",
             "schema": {
               "$ref": "#/definitions/Notizen"
-            }
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/PersistedGrants('{Key}')": {
-      "delete": {
-        "operationId": "deletePersistedGrant",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Key",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "get": {
-        "operationId": "getPersistedGrantByKey",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "Key",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": "#/definitions/PersistedGrant"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "patch": {
-        "operationId": "updatePersistedGrant",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Key",
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "PersistedGrant",
-            "schema": {
-              "$ref": "#/definitions/PersistedGrant"
             }
           }
         ],

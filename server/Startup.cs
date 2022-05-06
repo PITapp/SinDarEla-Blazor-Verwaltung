@@ -66,6 +66,8 @@ namespace SinDarElaVerwaltung
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.BaseAnreden>("BaseAnredens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.BaseKontakte>("BaseKontaktes");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer>("Benutzers");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>("BenutzerModules");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll>("BenutzerProtokolls");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Debugg>("Debuggs");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.DeviceCode>("DeviceCodes");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Dokumente>("Dokumentes");
@@ -76,8 +78,9 @@ namespace SinDarElaVerwaltung
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.EreignisseTeilnehmer>("EreignisseTeilnehmers");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.EreignisseTeilnehmerStatus>("EreignisseTeilnehmerStatuses");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Feedback>("Feedbacks");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Firmen>("Firmens");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten>("FirmenMitarbeiterTaetigkeitens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml>("InfotexteHtmls");
-            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Key>("Keys");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Kunden>("Kundens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.KundenKontakte>("KundenKontaktes");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.KundenKontakteArten>("KundenKontakteArtens");
@@ -91,6 +94,7 @@ namespace SinDarElaVerwaltung
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.KundenStatus>("KundenStatuses");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Mitarbeiter>("Mitarbeiters");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterArten>("MitarbeiterArtens");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen>("MitarbeiterFirmens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFortbildungen>("MitarbeiterFortbildungens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFortbildungenArten>("MitarbeiterFortbildungenArtens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterKundenbudget>("MitarbeiterKundenbudgets");
@@ -108,8 +112,8 @@ namespace SinDarElaVerwaltung
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterVerlaufNormalarbeitszeit>("MitarbeiterVerlaufNormalarbeitszeits");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Mitteilungen>("Mitteilungens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.MitteilungenVerteiler>("MitteilungenVerteilers");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Module>("Modules");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Notizen>("Notizens");
-            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant>("PersistedGrants");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.Protokoll>("Protokolls");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.RegelnAbwesenheiten>("RegelnAbwesenheitens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwBaseAlle>("VwBaseAlles");
@@ -117,10 +121,8 @@ namespace SinDarElaVerwaltung
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwBaseOrte>("VwBaseOrtes");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwBasePlz>("VwBasePlzs");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>("VwBenutzerBases");
-            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerRollen>("VwBenutzerRollens");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenBetreuer>("VwKundenBetreuers");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>("VwKundenUndBetreuerAuswahls");
-            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwRollen>("VwRollens");
 
             this.OnConfigureOData(oDataBuilder);
 

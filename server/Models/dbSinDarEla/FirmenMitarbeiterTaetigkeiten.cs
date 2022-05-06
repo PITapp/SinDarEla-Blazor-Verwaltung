@@ -1,33 +1,32 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaVerwaltung.Models.DbSinDarEla
 {
-  [Table("MitarbeiterStatus")]
-  public partial class MitarbeiterStatus
+  [Table("FirmenMitarbeiterTaetigkeiten")]
+  public partial class FirmenMitarbeiterTaetigkeiten
   {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int MitarbeiterStatusID
+    public int FirmenMitarbeiterTaetigkeitenID
     {
       get;
       set;
     }
-
-    public IEnumerable<MitarbeiterFirmen> MitarbeiterFirmens { get; set; }
-    public string Status
+    public int FirmaID
     {
       get;
       set;
     }
-    public int? Sortierung
+    public Firmen Firmen { get; set; }
+    public int MitarbeiterTaetigkeitenArtID
     {
       get;
       set;
     }
+    public MitarbeiterTaetigkeitenArten MitarbeiterTaetigkeitenArten { get; set; }
   }
 }

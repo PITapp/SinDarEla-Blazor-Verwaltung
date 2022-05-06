@@ -424,6 +424,94 @@ namespace SinDarElaVerwaltung
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer>(response);
         }
 
+        public async System.Threading.Tasks.Task ExportBenutzerModulesToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/benutzermodules/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/benutzermodules/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportBenutzerModulesToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/benutzermodules/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/benutzermodules/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetBenutzerModules(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>> GetBenutzerModules(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"BenutzerModules");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetBenutzerModules(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>>(response);
+        }
+        partial void OnCreateBenutzerModule(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule> CreateBenutzerModule(SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule benutzerModule = default(SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule))
+        {
+            var uri = new Uri(baseUri, $"BenutzerModules");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(benutzerModule), Encoding.UTF8, "application/json");
+
+            OnCreateBenutzerModule(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>(response);
+        }
+
+        public async System.Threading.Tasks.Task ExportBenutzerProtokollsToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/benutzerprotokolls/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/benutzerprotokolls/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportBenutzerProtokollsToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/benutzerprotokolls/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/benutzerprotokolls/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetBenutzerProtokolls(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll>> GetBenutzerProtokolls(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"BenutzerProtokolls");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetBenutzerProtokolls(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll>>(response);
+        }
+        partial void OnCreateBenutzerProtokoll(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll> CreateBenutzerProtokoll(SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll benutzerProtokoll = default(SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll))
+        {
+            var uri = new Uri(baseUri, $"BenutzerProtokolls");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(benutzerProtokoll), Encoding.UTF8, "application/json");
+
+            OnCreateBenutzerProtokoll(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll>(response);
+        }
+
         public async System.Threading.Tasks.Task ExportDebuggsToExcel(Radzen.Query query = null, string fileName = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/debuggs/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/debuggs/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
@@ -864,6 +952,94 @@ namespace SinDarElaVerwaltung
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Feedback>(response);
         }
 
+        public async System.Threading.Tasks.Task ExportFirmensToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/firmens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/firmens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportFirmensToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/firmens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/firmens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetFirmens(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.Firmen>> GetFirmens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"Firmens");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetFirmens(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.Firmen>>(response);
+        }
+        partial void OnCreateFirmen(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.Firmen> CreateFirmen(SinDarElaVerwaltung.Models.DbSinDarEla.Firmen firmen = default(SinDarElaVerwaltung.Models.DbSinDarEla.Firmen))
+        {
+            var uri = new Uri(baseUri, $"Firmens");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(firmen), Encoding.UTF8, "application/json");
+
+            OnCreateFirmen(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Firmen>(response);
+        }
+
+        public async System.Threading.Tasks.Task ExportFirmenMitarbeiterTaetigkeitensToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/firmenmitarbeitertaetigkeitens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/firmenmitarbeitertaetigkeitens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportFirmenMitarbeiterTaetigkeitensToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/firmenmitarbeitertaetigkeitens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/firmenmitarbeitertaetigkeitens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetFirmenMitarbeiterTaetigkeitens(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten>> GetFirmenMitarbeiterTaetigkeitens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"FirmenMitarbeiterTaetigkeitens");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetFirmenMitarbeiterTaetigkeitens(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten>>(response);
+        }
+        partial void OnCreateFirmenMitarbeiterTaetigkeiten(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten> CreateFirmenMitarbeiterTaetigkeiten(SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten firmenMitarbeiterTaetigkeiten = default(SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten))
+        {
+            var uri = new Uri(baseUri, $"FirmenMitarbeiterTaetigkeitens");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(firmenMitarbeiterTaetigkeiten), Encoding.UTF8, "application/json");
+
+            OnCreateFirmenMitarbeiterTaetigkeiten(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten>(response);
+        }
+
         public async System.Threading.Tasks.Task ExportInfotexteHtmlsToExcel(Radzen.Query query = null, string fileName = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/infotextehtmls/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/infotextehtmls/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
@@ -906,50 +1082,6 @@ namespace SinDarElaVerwaltung
             var response = await httpClient.SendAsync(httpRequestMessage);
 
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml>(response);
-        }
-
-        public async System.Threading.Tasks.Task ExportKeysToExcel(Radzen.Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/keys/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/keys/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        public async System.Threading.Tasks.Task ExportKeysToCSV(Radzen.Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/keys/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/keys/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-        partial void OnGetKeys(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.Key>> GetKeys(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
-        {
-            var uri = new Uri(baseUri, $"Keys");
-            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-
-            OnGetKeys(httpRequestMessage);
-
-            var response = await httpClient.SendAsync(httpRequestMessage);
-
-            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.Key>>(response);
-        }
-        partial void OnCreateKey(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.Key> CreateKey(SinDarElaVerwaltung.Models.DbSinDarEla.Key key = default(SinDarElaVerwaltung.Models.DbSinDarEla.Key))
-        {
-            var uri = new Uri(baseUri, $"Keys");
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
-
-
-            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(key), Encoding.UTF8, "application/json");
-
-            OnCreateKey(httpRequestMessage);
-
-            var response = await httpClient.SendAsync(httpRequestMessage);
-
-            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Key>(response);
         }
 
         public async System.Threading.Tasks.Task ExportKundensToExcel(Radzen.Query query = null, string fileName = null)
@@ -1522,6 +1654,50 @@ namespace SinDarElaVerwaltung
             var response = await httpClient.SendAsync(httpRequestMessage);
 
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterArten>(response);
+        }
+
+        public async System.Threading.Tasks.Task ExportMitarbeiterFirmensToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/mitarbeiterfirmens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/mitarbeiterfirmens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportMitarbeiterFirmensToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/mitarbeiterfirmens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/mitarbeiterfirmens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetMitarbeiterFirmens(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen>> GetMitarbeiterFirmens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"MitarbeiterFirmens");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetMitarbeiterFirmens(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen>>(response);
+        }
+        partial void OnCreateMitarbeiterFirmen(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen> CreateMitarbeiterFirmen(SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen mitarbeiterFirmen = default(SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen))
+        {
+            var uri = new Uri(baseUri, $"MitarbeiterFirmens");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(mitarbeiterFirmen), Encoding.UTF8, "application/json");
+
+            OnCreateMitarbeiterFirmen(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen>(response);
         }
 
         public async System.Threading.Tasks.Task ExportMitarbeiterFortbildungensToExcel(Radzen.Query query = null, string fileName = null)
@@ -2272,6 +2448,50 @@ namespace SinDarElaVerwaltung
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.MitteilungenVerteiler>(response);
         }
 
+        public async System.Threading.Tasks.Task ExportModulesToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/modules/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/modules/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportModulesToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/modules/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/modules/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetModules(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.Module>> GetModules(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"Modules");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetModules(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.Module>>(response);
+        }
+        partial void OnCreateModule(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.Module> CreateModule(SinDarElaVerwaltung.Models.DbSinDarEla.Module module = default(SinDarElaVerwaltung.Models.DbSinDarEla.Module))
+        {
+            var uri = new Uri(baseUri, $"Modules");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(module), Encoding.UTF8, "application/json");
+
+            OnCreateModule(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Module>(response);
+        }
+
         public async System.Threading.Tasks.Task ExportNotizensToExcel(Radzen.Query query = null, string fileName = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/notizens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/notizens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
@@ -2314,50 +2534,6 @@ namespace SinDarElaVerwaltung
             var response = await httpClient.SendAsync(httpRequestMessage);
 
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Notizen>(response);
-        }
-
-        public async System.Threading.Tasks.Task ExportPersistedGrantsToExcel(Radzen.Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/persistedgrants/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/persistedgrants/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        public async System.Threading.Tasks.Task ExportPersistedGrantsToCSV(Radzen.Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/persistedgrants/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/persistedgrants/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-        partial void OnGetPersistedGrants(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant>> GetPersistedGrants(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
-        {
-            var uri = new Uri(baseUri, $"PersistedGrants");
-            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-
-            OnGetPersistedGrants(httpRequestMessage);
-
-            var response = await httpClient.SendAsync(httpRequestMessage);
-
-            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant>>(response);
-        }
-        partial void OnCreatePersistedGrant(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant> CreatePersistedGrant(SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant persistedGrant = default(SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant))
-        {
-            var uri = new Uri(baseUri, $"PersistedGrants");
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, uri);
-
-
-            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(persistedGrant), Encoding.UTF8, "application/json");
-
-            OnCreatePersistedGrant(httpRequestMessage);
-
-            var response = await httpClient.SendAsync(httpRequestMessage);
-
-            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant>(response);
         }
 
         public async System.Threading.Tasks.Task ExportProtokollsToExcel(Radzen.Query query = null, string fileName = null)
@@ -2578,32 +2754,6 @@ namespace SinDarElaVerwaltung
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>>(response);
         }
 
-        public async System.Threading.Tasks.Task ExportVwBenutzerRollensToExcel(Radzen.Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwbenutzerrollens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwbenutzerrollens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        public async System.Threading.Tasks.Task ExportVwBenutzerRollensToCSV(Radzen.Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwbenutzerrollens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwbenutzerrollens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-        partial void OnGetVwBenutzerRollens(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerRollen>> GetVwBenutzerRollens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
-        {
-            var uri = new Uri(baseUri, $"VwBenutzerRollens");
-            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-
-            OnGetVwBenutzerRollens(httpRequestMessage);
-
-            var response = await httpClient.SendAsync(httpRequestMessage);
-
-            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerRollen>>(response);
-        }
-
         public async System.Threading.Tasks.Task ExportVwKundenBetreuersToExcel(Radzen.Query query = null, string fileName = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwkundenbetreuers/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwkundenbetreuers/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
@@ -2654,32 +2804,6 @@ namespace SinDarElaVerwaltung
             var response = await httpClient.SendAsync(httpRequestMessage);
 
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>>(response);
-        }
-
-        public async System.Threading.Tasks.Task ExportVwRollensToExcel(Radzen.Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwrollens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwrollens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        public async System.Threading.Tasks.Task ExportVwRollensToCSV(Radzen.Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwrollens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwrollens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-        partial void OnGetVwRollens(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwRollen>> GetVwRollens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
-        {
-            var uri = new Uri(baseUri, $"VwRollens");
-            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-
-            OnGetVwRollens(httpRequestMessage);
-
-            var response = await httpClient.SendAsync(httpRequestMessage);
-
-            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwRollen>>(response);
         }
         partial void OnDeleteAbrechnungBasis(HttpRequestMessage requestMessage);
 
@@ -3083,6 +3207,96 @@ namespace SinDarElaVerwaltung
             httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(benutzer), Encoding.UTF8, "application/json");
 
             OnUpdateBenutzer(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnDeleteBenutzerModule(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteBenutzerModule(int? benutzerModuleId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"BenutzerModules({benutzerModuleId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
+
+            OnDeleteBenutzerModule(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnGetBenutzerModuleByBenutzerModuleId(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule> GetBenutzerModuleByBenutzerModuleId(string expand = default(string), int? benutzerModuleId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"BenutzerModules({benutzerModuleId})");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetBenutzerModuleByBenutzerModuleId(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>(response);
+        }
+        partial void OnUpdateBenutzerModule(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateBenutzerModule(int? benutzerModuleId = default(int?), SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule benutzerModule = default(SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule))
+        {
+            var uri = new Uri(baseUri, $"BenutzerModules({benutzerModuleId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(benutzerModule), Encoding.UTF8, "application/json");
+
+            OnUpdateBenutzerModule(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnDeleteBenutzerProtokoll(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteBenutzerProtokoll(int? benutzerProtokollId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"BenutzerProtokolls({benutzerProtokollId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
+
+            OnDeleteBenutzerProtokoll(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnGetBenutzerProtokollByBenutzerProtokollId(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll> GetBenutzerProtokollByBenutzerProtokollId(string expand = default(string), int? benutzerProtokollId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"BenutzerProtokolls({benutzerProtokollId})");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetBenutzerProtokollByBenutzerProtokollId(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll>(response);
+        }
+        partial void OnUpdateBenutzerProtokoll(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateBenutzerProtokoll(int? benutzerProtokollId = default(int?), SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll benutzerProtokoll = default(SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll))
+        {
+            var uri = new Uri(baseUri, $"BenutzerProtokolls({benutzerProtokollId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(benutzerProtokoll), Encoding.UTF8, "application/json");
+
+            OnUpdateBenutzerProtokoll(httpRequestMessage);
 
             return await httpClient.SendAsync(httpRequestMessage);
         }
@@ -3536,6 +3750,96 @@ namespace SinDarElaVerwaltung
 
             return await httpClient.SendAsync(httpRequestMessage);
         }
+        partial void OnDeleteFirmen(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteFirmen(int? firmaId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"Firmens({firmaId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
+
+            OnDeleteFirmen(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnGetFirmenByFirmaId(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.Firmen> GetFirmenByFirmaId(string expand = default(string), int? firmaId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"Firmens({firmaId})");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetFirmenByFirmaId(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Firmen>(response);
+        }
+        partial void OnUpdateFirmen(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateFirmen(int? firmaId = default(int?), SinDarElaVerwaltung.Models.DbSinDarEla.Firmen firmen = default(SinDarElaVerwaltung.Models.DbSinDarEla.Firmen))
+        {
+            var uri = new Uri(baseUri, $"Firmens({firmaId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(firmen), Encoding.UTF8, "application/json");
+
+            OnUpdateFirmen(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnDeleteFirmenMitarbeiterTaetigkeiten(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteFirmenMitarbeiterTaetigkeiten(int? firmenMitarbeiterTaetigkeitenId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"FirmenMitarbeiterTaetigkeitens({firmenMitarbeiterTaetigkeitenId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
+
+            OnDeleteFirmenMitarbeiterTaetigkeiten(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnGetFirmenMitarbeiterTaetigkeitenByFirmenMitarbeiterTaetigkeitenId(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten> GetFirmenMitarbeiterTaetigkeitenByFirmenMitarbeiterTaetigkeitenId(string expand = default(string), int? firmenMitarbeiterTaetigkeitenId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"FirmenMitarbeiterTaetigkeitens({firmenMitarbeiterTaetigkeitenId})");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetFirmenMitarbeiterTaetigkeitenByFirmenMitarbeiterTaetigkeitenId(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten>(response);
+        }
+        partial void OnUpdateFirmenMitarbeiterTaetigkeiten(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateFirmenMitarbeiterTaetigkeiten(int? firmenMitarbeiterTaetigkeitenId = default(int?), SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten firmenMitarbeiterTaetigkeiten = default(SinDarElaVerwaltung.Models.DbSinDarEla.FirmenMitarbeiterTaetigkeiten))
+        {
+            var uri = new Uri(baseUri, $"FirmenMitarbeiterTaetigkeitens({firmenMitarbeiterTaetigkeitenId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(firmenMitarbeiterTaetigkeiten), Encoding.UTF8, "application/json");
+
+            OnUpdateFirmenMitarbeiterTaetigkeiten(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
         partial void OnDeleteInfotexteHtml(HttpRequestMessage requestMessage);
 
 
@@ -3578,51 +3882,6 @@ namespace SinDarElaVerwaltung
             httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(infotexteHtml), Encoding.UTF8, "application/json");
 
             OnUpdateInfotexteHtml(httpRequestMessage);
-
-            return await httpClient.SendAsync(httpRequestMessage);
-        }
-        partial void OnDeleteKey(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteKey(string id = default(string))
-        {
-            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim().Replace("'", "''"))}')");
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
-
-            OnDeleteKey(httpRequestMessage);
-
-            return await httpClient.SendAsync(httpRequestMessage);
-        }
-        partial void OnGetKeyById(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.Key> GetKeyById(string expand = default(string), string id = default(string))
-        {
-            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim().Replace("'", "''"))}')");
-            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-
-            OnGetKeyById(httpRequestMessage);
-
-            var response = await httpClient.SendAsync(httpRequestMessage);
-
-            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Key>(response);
-        }
-        partial void OnUpdateKey(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateKey(string id = default(string), SinDarElaVerwaltung.Models.DbSinDarEla.Key key = default(SinDarElaVerwaltung.Models.DbSinDarEla.Key))
-        {
-            var uri = new Uri(baseUri, $"Keys('{HttpUtility.UrlEncode(id.Trim().Replace("'", "''"))}')");
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
-
-
-            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(key), Encoding.UTF8, "application/json");
-
-            OnUpdateKey(httpRequestMessage);
 
             return await httpClient.SendAsync(httpRequestMessage);
         }
@@ -4208,6 +4467,51 @@ namespace SinDarElaVerwaltung
             httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(mitarbeiterArten), Encoding.UTF8, "application/json");
 
             OnUpdateMitarbeiterArten(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnDeleteMitarbeiterFirmen(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteMitarbeiterFirmen(int? mitarbeiterFirmaId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"MitarbeiterFirmens({mitarbeiterFirmaId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
+
+            OnDeleteMitarbeiterFirmen(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnGetMitarbeiterFirmenByMitarbeiterFirmaId(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen> GetMitarbeiterFirmenByMitarbeiterFirmaId(string expand = default(string), int? mitarbeiterFirmaId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"MitarbeiterFirmens({mitarbeiterFirmaId})");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetMitarbeiterFirmenByMitarbeiterFirmaId(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen>(response);
+        }
+        partial void OnUpdateMitarbeiterFirmen(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateMitarbeiterFirmen(int? mitarbeiterFirmaId = default(int?), SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen mitarbeiterFirmen = default(SinDarElaVerwaltung.Models.DbSinDarEla.MitarbeiterFirmen))
+        {
+            var uri = new Uri(baseUri, $"MitarbeiterFirmens({mitarbeiterFirmaId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(mitarbeiterFirmen), Encoding.UTF8, "application/json");
+
+            OnUpdateMitarbeiterFirmen(httpRequestMessage);
 
             return await httpClient.SendAsync(httpRequestMessage);
         }
@@ -4976,6 +5280,51 @@ namespace SinDarElaVerwaltung
 
             return await httpClient.SendAsync(httpRequestMessage);
         }
+        partial void OnDeleteModule(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> DeleteModule(int? modulId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"Modules({modulId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
+
+            OnDeleteModule(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
+        partial void OnGetModuleByModulId(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.Module> GetModuleByModulId(string expand = default(string), int? modulId = default(int?))
+        {
+            var uri = new Uri(baseUri, $"Modules({modulId})");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetModuleByModulId(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.Module>(response);
+        }
+        partial void OnUpdateModule(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<HttpResponseMessage> UpdateModule(int? modulId = default(int?), SinDarElaVerwaltung.Models.DbSinDarEla.Module module = default(SinDarElaVerwaltung.Models.DbSinDarEla.Module))
+        {
+            var uri = new Uri(baseUri, $"Modules({modulId})");
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
+
+
+            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(module), Encoding.UTF8, "application/json");
+
+            OnUpdateModule(httpRequestMessage);
+
+            return await httpClient.SendAsync(httpRequestMessage);
+        }
         partial void OnDeleteNotizen(HttpRequestMessage requestMessage);
 
 
@@ -5018,51 +5367,6 @@ namespace SinDarElaVerwaltung
             httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(notizen), Encoding.UTF8, "application/json");
 
             OnUpdateNotizen(httpRequestMessage);
-
-            return await httpClient.SendAsync(httpRequestMessage);
-        }
-        partial void OnDeletePersistedGrant(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<HttpResponseMessage> DeletePersistedGrant(string key = default(string))
-        {
-            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim().Replace("'", "''"))}')");
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, uri);
-
-            OnDeletePersistedGrant(httpRequestMessage);
-
-            return await httpClient.SendAsync(httpRequestMessage);
-        }
-        partial void OnGetPersistedGrantByKey(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant> GetPersistedGrantByKey(string expand = default(string), string key = default(string))
-        {
-            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim().Replace("'", "''"))}')");
-            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:null, top:null, skip:null, orderby:null, expand:expand, select:null, count:null);
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-
-            OnGetPersistedGrantByKey(httpRequestMessage);
-
-            var response = await httpClient.SendAsync(httpRequestMessage);
-
-            return await Radzen.HttpResponseMessageExtensions.ReadAsync<SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant>(response);
-        }
-        partial void OnUpdatePersistedGrant(HttpRequestMessage requestMessage);
-
-
-        public async System.Threading.Tasks.Task<HttpResponseMessage> UpdatePersistedGrant(string key = default(string), SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant persistedGrant = default(SinDarElaVerwaltung.Models.DbSinDarEla.PersistedGrant))
-        {
-            var uri = new Uri(baseUri, $"PersistedGrants('{HttpUtility.UrlEncode(key.Trim().Replace("'", "''"))}')");
-
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, uri);
-
-
-            httpRequestMessage.Content = new StringContent(Radzen.ODataJsonSerializer.Serialize(persistedGrant), Encoding.UTF8, "application/json");
-
-            OnUpdatePersistedGrant(httpRequestMessage);
 
             return await httpClient.SendAsync(httpRequestMessage);
         }

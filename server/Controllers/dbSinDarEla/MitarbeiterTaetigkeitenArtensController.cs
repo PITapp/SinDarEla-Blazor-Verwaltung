@@ -76,6 +76,7 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
 
             var item = this.context.MitarbeiterTaetigkeitenArtens
                 .Where(i => i.MitarbeiterTaetigkeitenArtID == key)
+                .Include(i => i.FirmenMitarbeiterTaetigkeitens)
                 .Include(i => i.MitarbeiterTaetigkeitens)
                 .FirstOrDefault();
 
