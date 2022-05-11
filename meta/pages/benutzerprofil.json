@@ -43,7 +43,7 @@
                     "fontWeight": "normal",
                     "paddingTop": "4px"
                   },
-                  "text": "",
+                  "text": "${strNameKontakt}",
                   "type": "heading"
                 }
               ],
@@ -133,54 +133,6 @@
                                       "class": "col-md-3",
                                       "components": [
                                         {
-                                          "component": "textbox0",
-                                          "name": "label4",
-                                          "style": {
-                                            "textAlign": "left",
-                                            "width": "100%"
-                                          },
-                                          "text": "Benutzer",
-                                          "type": "label"
-                                        }
-                                      ],
-                                      "name": "col8",
-                                      "style": {
-                                        "textAlign": "right"
-                                      },
-                                      "type": "col"
-                                    },
-                                    {
-                                      "class": "col-md-9",
-                                      "components": [
-                                        {
-                                          "autoComplete": false,
-                                          "disabled": true,
-                                          "name": "textbox0",
-                                          "placeholder": "",
-                                          "style": {
-                                            "display": "block",
-                                            "width": "100%"
-                                          },
-                                          "type": "textbox",
-                                          "value": "${strNameKontakt}",
-                                          "visible": true
-                                        }
-                                      ],
-                                      "name": "col9",
-                                      "style": {},
-                                      "type": "col"
-                                    }
-                                  ],
-                                  "name": "row4",
-                                  "style": {},
-                                  "type": "row"
-                                },
-                                {
-                                  "components": [
-                                    {
-                                      "class": "col-md-3",
-                                      "components": [
-                                        {
                                           "component": "Anmeldename",
                                           "name": "label2",
                                           "style": {
@@ -220,7 +172,7 @@
                                             "width": "100%"
                                           },
                                           "type": "textbox",
-                                          "value": "${dsoBenutzer.Benutzername}",
+                                          "value": "${strBenutzername}",
                                           "visible": true
                                         }
                                       ],
@@ -280,7 +232,7 @@
                                             "width": "100%"
                                           },
                                           "type": "textbox",
-                                          "value": "${dsoBenutzer.Initialen}",
+                                          "value": "${strInitialen}",
                                           "visible": true
                                         }
                                       ],
@@ -301,29 +253,17 @@
                                       "class": "col-md-3",
                                       "components": [
                                         {
-                                          "component": "RoleNames",
-                                          "name": "RoleNamesLabel",
+                                          "component": "Info",
+                                          "name": "label19",
                                           "style": {
                                             "textAlign": "left",
                                             "width": "100%"
                                           },
-                                          "text": "Rollen",
+                                          "text": "Notizen",
                                           "type": "label"
-                                        },
-                                        {
-                                          "component": "RoleNames",
-                                          "name": "requiredValidator3",
-                                          "style": {
-                                            "display": "block",
-                                            "position": "absolute",
-                                            "textAlign": "left",
-                                            "width": "100%"
-                                          },
-                                          "text": "╘ eingeben",
-                                          "type": "required-validator"
                                         }
                                       ],
-                                      "name": "col18",
+                                      "name": "col1",
                                       "style": {},
                                       "type": "col"
                                     },
@@ -331,29 +271,51 @@
                                       "class": "col-md-9",
                                       "components": [
                                         {
-                                          "data": "",
-                                          "multiple": false,
-                                          "name": "listbox0",
-                                          "readOnly": true,
+                                          "name": "Notiz",
+                                          "rows": 4,
                                           "style": {
-                                            "height": "250px",
+                                            "height": "197px",
                                             "width": "100%"
                                           },
-                                          "template": "",
-                                          "textProperty": "Titel",
-                                          "type": "listbox",
-                                          "value": "",
-                                          "valueProperty": "Titel"
+                                          "type": "textarea",
+                                          "value": "${strNotiz}"
                                         }
                                       ],
-                                      "name": "col19",
+                                      "name": "col65",
                                       "style": {},
                                       "type": "col"
                                     }
                                   ],
-                                  "name": "row6",
+                                  "name": "row31",
                                   "style": {
-                                    "marginBottom": "1rem"
+                                    "marginBottom": "14px"
+                                  },
+                                  "type": "row"
+                                },
+                                {
+                                  "components": [
+                                    {
+                                      "class": "col-md-12",
+                                      "components": [
+                                        {
+                                          "name": "label0",
+                                          "style": {
+                                            "backgroundColor": "#e6ecef",
+                                            "textAlign": "center",
+                                            "width": "100%"
+                                          },
+                                          "text": "Neues Passwort erstellen",
+                                          "type": "label"
+                                        }
+                                      ],
+                                      "name": "col8",
+                                      "style": {},
+                                      "type": "col"
+                                    }
+                                  ],
+                                  "name": "row0",
+                                  "style": {
+                                    "marginBottom": "14px"
                                   },
                                   "type": "row"
                                 },
@@ -446,58 +408,17 @@
                                     "marginBottom": "1rem"
                                   },
                                   "type": "row"
-                                },
-                                {
-                                  "components": [
-                                    {
-                                      "class": "col-md-3",
-                                      "components": [
-                                        {
-                                          "component": "Info",
-                                          "name": "label19",
-                                          "style": {
-                                            "textAlign": "left",
-                                            "width": "100%"
-                                          },
-                                          "text": "Notizen",
-                                          "type": "label"
-                                        }
-                                      ],
-                                      "name": "col1",
-                                      "style": {},
-                                      "type": "col"
-                                    },
-                                    {
-                                      "class": "col-md-9",
-                                      "components": [
-                                        {
-                                          "name": "Notiz",
-                                          "rows": 4,
-                                          "style": {
-                                            "height": "197px",
-                                            "width": "100%"
-                                          },
-                                          "type": "textarea",
-                                          "value": "${dsoBenutzer.Notiz}"
-                                        }
-                                      ],
-                                      "name": "col65",
-                                      "style": {},
-                                      "type": "col"
-                                    }
-                                  ],
-                                  "name": "row31",
-                                  "style": {
-                                    "marginBottom": "14px"
-                                  },
-                                  "type": "row"
                                 }
                               ],
+                              "data": "${dsoBenutzer}",
                               "events": {
                                 "submit": []
                               },
+                              "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer",
                               "name": "form0",
                               "style": {
+                                "marginLeft": "10px",
+                                "marginRight": "10px",
                                 "marginTop": "9px"
                               },
                               "type": "template-form"
@@ -540,7 +461,8 @@
                               "type": "row"
                             }
                           ],
-                          "name": "panel0",
+                          "icon": "",
+                          "name": "panelBenutzerdaten",
                           "style": {
                             "border": "1px solid #e6ecef",
                             "height": "740px"
@@ -556,6 +478,27 @@
                       "class": "col-md-4",
                       "components": [
                         {
+                          "components": [],
+                          "icon": "",
+                          "name": "panelModule",
+                          "style": {
+                            "border": "1px solid #e6ecef",
+                            "height": "740px"
+                          },
+                          "text": "Module",
+                          "type": "panel"
+                        }
+                      ],
+                      "name": "col4",
+                      "style": {
+                        "paddingLeft": "5px"
+                      },
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-4",
+                      "components": [
+                        {
                           "components": [
                             {
                               "components": [
@@ -564,14 +507,15 @@
                                   "components": [
                                     {
                                       "name": "BildURL",
-                                      "path": "${dsoBenutzer.Base.BildURL}",
+                                      "path": "${strBildURL}",
                                       "style": {
                                         "backgroundColor": "rgba(0, 0, 0, 0)",
                                         "border": "1px solid #dbdfe2",
                                         "borderRadius": "4px",
                                         "width": "120px"
                                       },
-                                      "type": "image"
+                                      "type": "image",
+                                      "visible": true
                                     }
                                   ],
                                   "name": "col2",
@@ -636,6 +580,7 @@
                                       "events": {
                                         "click": [
                                           {
+                                            "autoFocusFirstElement": false,
                                             "parameters": [
                                               {
                                                 "name": "strMeldung",
@@ -704,33 +649,12 @@
                               "type": "row"
                             }
                           ],
-                          "name": "Bild",
+                          "name": "panelBild",
                           "style": {
                             "border": "1px solid #e6ecef",
                             "height": "740px"
                           },
                           "text": "Profilbild",
-                          "type": "panel"
-                        }
-                      ],
-                      "name": "col4",
-                      "style": {
-                        "paddingLeft": "5px"
-                      },
-                      "type": "col"
-                    },
-                    {
-                      "class": "col-md-4",
-                      "components": [
-                        {
-                          "components": [],
-                          "icon": "",
-                          "name": "panel1",
-                          "style": {
-                            "border": "1px solid #e6ecef",
-                            "height": "740px"
-                          },
-                          "text": "Sonstiges",
                           "type": "panel"
                         }
                       ],
@@ -747,7 +671,7 @@
               ],
               "icon": "",
               "selected": true,
-              "text": "Infotexte"
+              "text": "Daten"
             }
           ],
           "name": "tabs0",
@@ -770,7 +694,7 @@
         "parameters": [
           {
             "name": "$filter",
-            "value": "BenutzerName eq 'xxx'"
+            "value": "BenutzerName eq 'Günther Painsi'"
           },
           {
             "name": "$expand",
@@ -779,21 +703,39 @@
         ],
         "then": [
           {
-            "name": "rstBenutzer",
-            "type": "set",
-            "value": "${result.Value.AsODataEnumerable()}",
-            "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer>"
-          },
-          {
             "name": "dsoBenutzer",
             "type": "set",
-            "value": "rstBenutzer.FirstOrDefault();",
+            "value": "${result.Value.AsODataEnumerable().FirstOrDefault()}",
             "valueType": "SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer"
           },
           {
             "name": "strNameKontakt",
             "type": "set",
             "value": "${dsoBenutzer.Base.Name1} + \" \" + ${dsoBenutzer.Base.Name2}",
+            "valueType": "string"
+          },
+          {
+            "name": "strBildURL",
+            "type": "set",
+            "value": "${dsoBenutzer.Base.BildURL}",
+            "valueType": "string"
+          },
+          {
+            "name": "strBenutzername",
+            "type": "set",
+            "value": "${dsoBenutzer.Benutzername}",
+            "valueType": "string"
+          },
+          {
+            "name": "strInitialen",
+            "type": "set",
+            "value": "${dsoBenutzer.Initialen}",
+            "valueType": "string"
+          },
+          {
+            "name": "strNotiz",
+            "type": "set",
+            "value": "${dsoBenutzer.Notiz}",
             "valueType": "string"
           }
         ],

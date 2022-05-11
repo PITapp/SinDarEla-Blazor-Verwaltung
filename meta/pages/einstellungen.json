@@ -203,12 +203,6 @@
                                       }
                                     ],
                                     "type": "invoke"
-                                  },
-                                  {
-                                    "name": "xy",
-                                    "type": "set",
-                                    "value": "${event}",
-                                    "valueType": "Radzen.LoadDataArgs"
                                   }
                                 ],
                                 "rowDoubleClick": [

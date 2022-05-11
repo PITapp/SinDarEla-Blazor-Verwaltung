@@ -132,25 +132,6 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        Radzen.LoadDataArgs _xy;
-        protected Radzen.LoadDataArgs xy
-        {
-            get
-            {
-                return _xy;
-            }
-            set
-            {
-                if (!object.Equals(_xy, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "xy", NewValue = value, OldValue = _xy };
-                    _xy = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
         string _strTitel;
         protected string strTitel
         {
@@ -237,8 +218,6 @@ namespace SinDarElaVerwaltung.Pages
             }
 
             await datagridInfotexte.SelectRow(findInfotext);
-
-            xy = args;
         }
 
         protected async System.Threading.Tasks.Task DatagridInfotexteRowDoubleClick(DataGridRowMouseEventArgs<SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml> args)

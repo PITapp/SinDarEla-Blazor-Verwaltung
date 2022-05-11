@@ -11968,6 +11968,10 @@ ul.rz-profile-menu .rz-navigation-menu {
   font-size: 1rem;
 }
 
+.rz-calendar .rz-inputtext {
+  font-size: 1rem;
+}
+
 /* --- Notification Position einstellen --- */
 .rz-growl {
   position: fixed !important;
@@ -11982,4 +11986,34 @@ ul.rz-profile-menu .rz-navigation-menu {
 
 .rz-paginator-page.rz-state-active {
   padding: 0.3rem;
+}
+
+/* --- Der Icon für den DataPicker wird falsch angezeigt. Mit dieser Einstellung wird er wieder in das Eingabefeld gesetzt --- */
+.rz-datepicker-trigger {
+  right: 190px;
+}
+
+/* --- Dropdown: Schriftgröße --- */
+.rz-dropdown-item, .rz-menuitem, .rz-autocomplete-list-item, .rz-multiselect-item, .rz-dropdown-items li, .rz-autocomplete-items li, .rz-multiselect-items li {
+  font-size: 1rem;
+}
+
+/* --- Zeilenumbruch verhindern und am Ende drei Punkte anzeigen --- */
+.kein-zeilenumbruch {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Label in Form einstellen --- */
+.xxsde-form-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 3px;
+}
+
+.sde-form-label {
+  padding-top: 6px;
+  padding-right: 0px;
 }

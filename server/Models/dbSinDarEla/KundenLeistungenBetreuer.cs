@@ -34,6 +34,16 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       set;
     }
     public KundenLeistungen KundenLeistungen { get; set; }
+    public DateTime? BetreuungVon
+    {
+      get;
+      set;
+    }
+    public DateTime? BetreuungBis
+    {
+      get;
+      set;
+    }
     public string Info
     {
       get;

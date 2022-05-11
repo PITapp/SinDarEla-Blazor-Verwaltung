@@ -473,6 +473,18 @@
           "type": "string",
           "length": 65535
         },
+        "Notfallkontakt": {
+          "type": "string",
+          "length": 50
+        },
+        "NotfallkontaktTelefon": {
+          "type": "string",
+          "length": 20
+        },
+        "InfoMitarbeiter": {
+          "type": "string",
+          "length": 16777215
+        },
         "Aufgabens": {
           "type": "array",
           "items": {
@@ -2488,6 +2500,14 @@
             "navigationProperty": "KundenLeistungenBetreuers"
           }
         },
+        "BetreuungVon": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "BetreuungBis": {
+          "type": "string",
+          "format": "date-time"
+        },
         "Info": {
           "type": "string",
           "length": 16777215
@@ -2633,22 +2653,6 @@
             "navigationProperty": "Mitarbeiters"
           }
         },
-        "Notfallkontakt": {
-          "type": "string",
-          "length": 50
-        },
-        "NotfallkontaktTelefon": {
-          "type": "string",
-          "length": 20
-        },
-        "Info": {
-          "type": "string",
-          "length": 16777215
-        },
-        "InfoGF": {
-          "type": "string",
-          "length": 16777215
-        },
         "MitarbeiterFirmens": {
           "type": "array",
           "items": {
@@ -2788,7 +2792,7 @@
             "type": "Mitarbeiter",
             "principalKey": "MitarbeiterID",
             "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "textProperty": "MitarbeiterID",
             "navigationProperty": "MitarbeiterFirmens"
           }
         },
@@ -2911,7 +2915,7 @@
             "type": "Mitarbeiter",
             "principalKey": "MitarbeiterID",
             "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "textProperty": "MitarbeiterID",
             "navigationProperty": "MitarbeiterFortbildungens"
           }
         },
@@ -3021,7 +3025,7 @@
             "type": "Mitarbeiter",
             "principalKey": "MitarbeiterID",
             "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "textProperty": "MitarbeiterID",
             "navigationProperty": "MitarbeiterKundenbudgets"
           }
         },
@@ -3162,7 +3166,7 @@
             "type": "Mitarbeiter",
             "principalKey": "MitarbeiterID",
             "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
+            "textProperty": "MitarbeiterID",
             "navigationProperty": "MitarbeiterTaetigkeitens"
           }
         },
@@ -3962,6 +3966,13 @@
           "x-nullable": false,
           "type": "string",
           "length": 100
+        },
+        "Sortierung": {
+          "type": "integer"
+        },
+        "Verwendung": {
+          "type": "string",
+          "length": 255
         },
         "Notiz": {
           "type": "string",

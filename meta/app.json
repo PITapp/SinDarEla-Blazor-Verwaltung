@@ -20,9 +20,13 @@
   "namespaces": [],
   "navigation": [
     "Einstellungen",
-    "Dashboard",
     "Anmeldung",
-    "Copy of Anmeldung"
+    "Dashboard",
+    "Benutzerprofil",
+    "Mitarbeiter",
+    "Copy of Mitarbeiter",
+    "xxBase",
+    "Copy of Mitarbeiter 1"
   ],
   "pages": [
     "MeldungLoeschen",
@@ -38,7 +42,14 @@
     "Anmeldung",
     "Dashboard",
     "zzTestLocalStorage",
-    "Copy of Anmeldung"
+    "Copy of Benutzerprofil",
+    "Abmeldung",
+    "Mitarbeiter",
+    "Copy of Mitarbeiter",
+    "xxBase",
+    "Add xxBase",
+    "Edit xxBase",
+    "Copy of Mitarbeiter 1"
   ],
   "port": 8000,
   "pwa": true,

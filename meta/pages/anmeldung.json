@@ -10,15 +10,16 @@
                 {
                   "allowRegister": false,
                   "allowResetPassword": false,
+                  "autoComplete": true,
                   "events": {
                     "login": [
                       {
-                        "path": "dashboard",
-                        "type": "navigate"
+                        "code": "Globals.globalBenutzerName = \"Günther Painsi\";\nGlobals.globalBenutzerID = \"156\";\nGlobals.globalBenutzerBaseID = \"279\";\nawait WriteLocalStorage(\"storageBenutzerName\", \"Günther Painsi\");\nawait WriteLocalStorage(\"storageBenutzerID\", \"156\");\nawait WriteLocalStorage(\"storageBenutzerBaseID\", \"279\");",
+                        "type": "execute"
                       },
                       {
-                        "code": "Globals.globalBenutzerName = await ReadLocalStorage(\"storageBenutzerName\");",
-                        "type": "execute"
+                        "path": "dashboard",
+                        "type": "navigate"
                       }
                     ],
                     "register": []
@@ -58,14 +59,26 @@
         "valueType": "string"
       },
       {
-        "global": false,
-        "name": "bolBenutzerAngemeldet",
+        "global": true,
+        "name": "globalBenutzerID",
         "type": "set",
-        "value": "false",
-        "valueType": "bool"
+        "value": "\"\"",
+        "valueType": "string"
       },
       {
-        "condition": "bolBenutzerAngemeldet == true",
+        "global": true,
+        "name": "globalBenutzerBaseID",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "code": "Globals.globalBenutzerName = await ReadLocalStorage(\"storageBenutzerName\");",
+        "then": [],
+        "type": "execute"
+      },
+      {
+        "condition": "Globals.globalBenutzerName != null",
         "path": "dashboard",
         "type": "navigate"
       }

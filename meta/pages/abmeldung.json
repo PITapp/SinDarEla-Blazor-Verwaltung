@@ -1,0 +1,98 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "name": "label0",
+                  "style": {
+                    "backgroundColor": "rgba(0, 0, 0, 0)",
+                    "color": "#5d717b",
+                    "textAlign": "center",
+                    "width": "100%"
+                  },
+                  "text": "Du wurdest abgemelder!",
+                  "type": "label"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "name": "label1",
+                  "style": {
+                    "backgroundColor": "rgba(0, 0, 0, 0)",
+                    "color": "#5d717b",
+                    "textAlign": "center",
+                    "width": "100%"
+                  },
+                  "text": "Klicke auf 'Anmeldung starten' um dich wieder anzumelden.",
+                  "type": "label"
+                }
+              ],
+              "name": "col2",
+              "type": "col"
+            }
+          ],
+          "name": "row2",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-12 justify-content-center d-flex",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "path": "anmeldung",
+                        "type": "navigate"
+                      }
+                    ]
+                  },
+                  "name": "button0",
+                  "text": "Anmeldung starten",
+                  "type": "button"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            }
+          ],
+          "name": "row1",
+          "style": {
+            "marginBottom": "40px",
+            "marginTop": "40px"
+          },
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "code": "await RemoveLocalStorage(\"storageBenutzerName\");\nawait RemoveLocalStorage(\"storageBenutzerID\");\nawait RemoveLocalStorage(\"storageBenutzerBaseID\");",
+        "type": "execute"
+      }
+    ]
+  },
+  "layout": "Login",
+  "name": "Abmeldung"
+}

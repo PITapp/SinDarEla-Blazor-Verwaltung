@@ -90,7 +90,7 @@
                         },
                         {
                           "icon": "power_settings_new",
-                          "path": "",
+                          "path": "abmeldung",
                           "text": "Logout"
                         }
                       ],
@@ -283,12 +283,12 @@
                 {
                   "icon": "dashboard",
                   "path": "dashboard",
-                  "selected": false,
+                  "selected": true,
                   "text": "Dashboard"
                 },
                 {
                   "icon": "assignment_turned_in",
-                  "path": "zz-test-local-storage",
+                  "path": "",
                   "selected": false,
                   "text": "Management"
                 },
@@ -299,7 +299,7 @@
                 },
                 {
                   "icon": "assignment_ind",
-                  "path": "",
+                  "path": "mitarbeiter",
                   "text": "Mitarbeiter"
                 },
                 {
@@ -364,10 +364,6 @@
   "events": {
     "load": [
       {
-        "code": "// await WriteLocalStorage(\"storageBenutzerName\",\"Günther Painsi\")",
-        "type": "execute"
-      },
-      {
         "condition": "",
         "error": [
           {
@@ -380,7 +376,7 @@
         "parameters": [
           {
             "name": "$filter",
-            "value": "Benutzername eq 'xxx'"
+            "value": "Benutzername eq 'Günther Painsi'"
           }
         ],
         "then": [

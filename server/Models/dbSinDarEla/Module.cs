@@ -24,6 +24,16 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       get;
       set;
     }
+    public int? Sortierung
+    {
+      get;
+      set;
+    }
+    public string Verwendung
+    {
+      get;
+      set;
+    }
     public string Notiz
     {
       get;

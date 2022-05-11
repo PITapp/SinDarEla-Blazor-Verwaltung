@@ -55,25 +55,6 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
-        bool _bolBenutzerAngemeldet;
-        protected bool bolBenutzerAngemeldet
-        {
-            get
-            {
-                return _bolBenutzerAngemeldet;
-            }
-            set
-            {
-                if (!object.Equals(_bolBenutzerAngemeldet, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "bolBenutzerAngemeldet", NewValue = value, OldValue = _bolBenutzerAngemeldet };
-                    _bolBenutzerAngemeldet = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -83,18 +64,27 @@ namespace SinDarElaVerwaltung.Pages
         {
             Globals.globalBenutzerName = "";
 
-            bolBenutzerAngemeldet = false;
+            Globals.globalBenutzerID = "";
 
-            if (bolBenutzerAngemeldet == true) {
+            Globals.globalBenutzerBaseID = "";
+
+            Globals.globalBenutzerName = await ReadLocalStorage("storageBenutzerName");
+
+            if (Globals.globalBenutzerName != null) {
             UriHelper.NavigateTo("dashboard");
             }
         }
 
         protected async System.Threading.Tasks.Task Login0Login(dynamic args)
         {
-            UriHelper.NavigateTo("dashboard");
+            Globals.globalBenutzerName = "Günther Painsi";
+Globals.globalBenutzerID = "156";
+Globals.globalBenutzerBaseID = "279";
+await WriteLocalStorage("storageBenutzerName", "Günther Painsi");
+await WriteLocalStorage("storageBenutzerID", "156");
+await WriteLocalStorage("storageBenutzerBaseID", "279");
 
-            Globals.globalBenutzerName = await ReadLocalStorage("storageBenutzerName");
+            UriHelper.NavigateTo("dashboard");
         }
     }
 }

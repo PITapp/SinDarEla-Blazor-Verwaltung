@@ -31,6 +31,42 @@ namespace SinDarElaVerwaltung
                 }
             }
         }
+
+        string _globalBenutzerID;
+        public string globalBenutzerID
+        {
+            get
+            {
+                return _globalBenutzerID;
+            }
+            set
+            {
+                if(!object.Equals(_globalBenutzerID, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "globalBenutzerID", NewValue = value, OldValue = _globalBenutzerID, IsGlobal = true };
+                    _globalBenutzerID = value;
+                    PropertyChanged?.Invoke(args);
+                }
+            }
+        }
+
+        string _globalBenutzerBaseID;
+        public string globalBenutzerBaseID
+        {
+            get
+            {
+                return _globalBenutzerBaseID;
+            }
+            set
+            {
+                if(!object.Equals(_globalBenutzerBaseID, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "globalBenutzerBaseID", NewValue = value, OldValue = _globalBenutzerBaseID, IsGlobal = true };
+                    _globalBenutzerBaseID = value;
+                    PropertyChanged?.Invoke(args);
+                }
+            }
+        }
     }
 
     public class PropertyChangedEventArgs

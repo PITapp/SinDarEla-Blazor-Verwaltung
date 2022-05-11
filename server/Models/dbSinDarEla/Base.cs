@@ -142,5 +142,20 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       get;
       set;
     }
+    public string Notfallkontakt
+    {
+      get;
+      set;
+    }
+    public string NotfallkontaktTelefon
+    {
+      get;
+      set;
+    }
+    public string InfoMitarbeiter
+    {
+      get;
+      set;
+    }
   }
 }

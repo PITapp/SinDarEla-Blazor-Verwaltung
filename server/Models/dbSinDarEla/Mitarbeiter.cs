@@ -34,25 +34,5 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       set;
     }
     public MitarbeiterArten MitarbeiterArten { get; set; }
-    public string Notfallkontakt
-    {
-      get;
-      set;
-    }
-    public string NotfallkontaktTelefon
-    {
-      get;
-      set;
-    }
-    public string Info
-    {
-      get;
-      set;
-    }
-    public string InfoGF
-    {
-      get;
-      set;
-    }
   }
 }

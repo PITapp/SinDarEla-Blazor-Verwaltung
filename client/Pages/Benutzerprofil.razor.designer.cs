@@ -55,25 +55,6 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
-        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer> _rstBenutzer;
-        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer> rstBenutzer
-        {
-            get
-            {
-                return _rstBenutzer;
-            }
-            set
-            {
-                if (!object.Equals(_rstBenutzer, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "rstBenutzer", NewValue = value, OldValue = _rstBenutzer };
-                    _rstBenutzer = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
         SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer _dsoBenutzer;
         protected SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer dsoBenutzer
         {
@@ -112,6 +93,82 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        string _strBildURL;
+        protected string strBildURL
+        {
+            get
+            {
+                return _strBildURL;
+            }
+            set
+            {
+                if (!object.Equals(_strBildURL, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "strBildURL", NewValue = value, OldValue = _strBildURL };
+                    _strBildURL = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        string _strBenutzername;
+        protected string strBenutzername
+        {
+            get
+            {
+                return _strBenutzername;
+            }
+            set
+            {
+                if (!object.Equals(_strBenutzername, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "strBenutzername", NewValue = value, OldValue = _strBenutzername };
+                    _strBenutzername = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        string _strInitialen;
+        protected string strInitialen
+        {
+            get
+            {
+                return _strInitialen;
+            }
+            set
+            {
+                if (!object.Equals(_strInitialen, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "strInitialen", NewValue = value, OldValue = _strInitialen };
+                    _strInitialen = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        string _strNotiz;
+        protected string strNotiz
+        {
+            get
+            {
+                return _strNotiz;
+            }
+            set
+            {
+                if (!object.Equals(_strNotiz, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "strNotiz", NewValue = value, OldValue = _strNotiz };
+                    _strNotiz = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -119,12 +176,18 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            var dbSinDarElaGetBenutzersResult = await DbSinDarEla.GetBenutzers(filter:$"BenutzerName eq 'xxx'", expand:$"Base");
-            rstBenutzer = dbSinDarElaGetBenutzersResult.Value.AsODataEnumerable();
-
-            dsoBenutzer = rstBenutzer.FirstOrDefault();;
+            var dbSinDarElaGetBenutzersResult = await DbSinDarEla.GetBenutzers(filter:$"BenutzerName eq 'Günther Painsi'", expand:$"Base");
+            dsoBenutzer = dbSinDarElaGetBenutzersResult.Value.AsODataEnumerable().FirstOrDefault();
 
             strNameKontakt = dsoBenutzer.Base.Name1 + " " + dsoBenutzer.Base.Name2;
+
+            strBildURL = dsoBenutzer.Base.BildURL;
+
+            strBenutzername = dsoBenutzer.Benutzername;
+
+            strInitialen = dsoBenutzer.Initialen;
+
+            strNotiz = dsoBenutzer.Notiz;
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
@@ -139,7 +202,7 @@ namespace SinDarElaVerwaltung.Pages
 
         protected async System.Threading.Tasks.Task ButtonBildEntfernenClick(MouseEventArgs args)
         {
-            var dialogResult = await DialogService.OpenAsync<MeldungJaNein>($"Bild entfernen", new Dictionary<string, object>() { {"strMeldung", "Soll das Bild von '" + dsoBenutzer.Base.Name1 + " " + dsoBenutzer.Base.Name2 + "' entfernt werden?"} });
+            var dialogResult = await DialogService.OpenAsync<MeldungJaNein>($"Bild entfernen", new Dictionary<string, object>() { {"strMeldung", "Soll das Bild von '" + dsoBenutzer.Base.Name1 + " " + dsoBenutzer.Base.Name2 + "' entfernt werden?"} }, new DialogOptions(){ AutoFocusFirstElement = false });
             if (dialogResult == "Ja")
             {
                 dsoBenutzer.Base.BildURL = "https://medien.sindarela.app/upload/bilder/base/KeinBildPerson.png";

@@ -14,7 +14,7 @@
         </RadzenHeading>
         <RadzenHeading Size="H3" style="color: #e5ecef; display: inline-block; margin-top: 7px; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenHeading>
-        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" >
+        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" Text="@strNameKontakt" >
         </RadzenHeading>
       </div>
       <div class="col-md-4  d-flex justify-content-end align-items-end" style="padding-right: 20px">
@@ -24,24 +24,14 @@
     </div>
     <RadzenTabs style="float: none">
       <Tabs>
-        <RadzenTabsItem Selected="true" Text="Infotexte">
+        <RadzenTabsItem Selected="true" Text="Daten">
           <ChildContent>
             <div class="row">
               <div class="col-md-4">
                 <RadzenPanel AllowCollapse="false" style="border: 1px solid #e6ecef; height: 740px" Text="Benutzerdaten">
                   <ChildContent>
-                    <RadzenTemplateForm style="margin-top: 9px" TItem="dynamic">
+                    <RadzenTemplateForm Data="@dsoBenutzer" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer" style="margin-left: 10px; margin-right: 10px; margin-top: 9px">
                       <ChildContent>
-                        <div  class="row">
-                          <div class="col-md-3" style="text-align: right">
-                            <RadzenLabel Component="textbox0" style="text-align: left; width: 100%" Text="Benutzer">
-                            </RadzenLabel>
-                          </div>
-                          <div class="col-md-9" >
-                            <RadzenTextBox AutoComplete="false" Disabled="true" style="display: block; width: 100%" @bind-Value="@strNameKontakt" Name="Textbox0">
-                            </RadzenTextBox>
-                          </div>
-                        </div>
                         <div style="margin-bottom: 10px" class="row">
                           <div class="col-md-3" style="text-align: right">
                             <RadzenLabel Component="Anmeldename" style="text-align: left; width: 100%" Text="Anmeldename">
@@ -50,7 +40,7 @@
                             </RadzenRequiredValidator>
                           </div>
                           <div class="col-md-9" >
-                            <RadzenTextBox AutoComplete="false" style="display: block; width: 100%" @bind-Value="@(dsoBenutzer.Benutzername)" Name="Anmeldename">
+                            <RadzenTextBox AutoComplete="false" style="display: block; width: 100%" @bind-Value="@strBenutzername" Name="Anmeldename">
                             </RadzenTextBox>
                           </div>
                         </div>
@@ -62,20 +52,24 @@
                             </RadzenRequiredValidator>
                           </div>
                           <div class="col-md-9" >
-                            <RadzenTextBox AutoComplete="false" style="display: block; width: 100%" @bind-Value="@(dsoBenutzer.Initialen)" Name="Initialen">
+                            <RadzenTextBox AutoComplete="false" style="display: block; width: 100%" @bind-Value="@strInitialen" Name="Initialen">
                             </RadzenTextBox>
                           </div>
                         </div>
-                        <div style="margin-bottom: 1rem" class="row">
+                        <div style="margin-bottom: 14px" class="row">
                           <div class="col-md-3" >
-                            <RadzenLabel Component="RoleNames" style="text-align: left; width: 100%" Text="Rollen">
+                            <RadzenLabel Component="Info" style="text-align: left; width: 100%" Text="Notizen">
                             </RadzenLabel>
-                            <RadzenRequiredValidator Component="RoleNames" style="display: block; position: absolute; text-align: left; width: 100%" Text="╘ eingeben">
-                            </RadzenRequiredValidator>
                           </div>
                           <div class="col-md-9" >
-                            <RadzenListBox Multiple="false" ReadOnly="true" style="height: 250px; width: 100%" TextProperty="Titel" ValueProperty="Titel" Name="Listbox0" TValue="dynamic">
-                            </RadzenListBox>
+                            <RadzenTextArea Rows="4" style="height: 197px; width: 100%" @bind-Value="@strNotiz" Name="Notiz">
+                            </RadzenTextArea>
+                          </div>
+                        </div>
+                        <div style="margin-bottom: 14px" class="row">
+                          <div class="col-md-12" >
+                            <RadzenLabel style="background-color: #e6ecef; text-align: center; width: 100%" Text="Neues Passwort erstellen">
+                            </RadzenLabel>
                           </div>
                         </div>
                         <div style="margin-bottom: 1rem" class="row">
@@ -98,16 +92,6 @@
                             </RadzenPassword>
                           </div>
                         </div>
-                        <div style="margin-bottom: 14px" class="row">
-                          <div class="col-md-3" >
-                            <RadzenLabel Component="Info" style="text-align: left; width: 100%" Text="Notizen">
-                            </RadzenLabel>
-                          </div>
-                          <div class="col-md-9" >
-                            <RadzenTextArea Rows="4" style="height: 197px; width: 100%" @bind-Value="@(dsoBenutzer.Notiz)" Name="Notiz">
-                            </RadzenTextArea>
-                          </div>
-                        </div>
                       </ChildContent>
                     </RadzenTemplateForm>
                   </ChildContent>
@@ -122,11 +106,15 @@
                 </RadzenPanel>
               </div>
               <div class="col-md-4" style="padding-left: 5px">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Module">
+                </RadzenPanel>
+              </div>
+              <div class="col-md-4" style="padding-left: 5px">
                 <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Profilbild">
                   <ChildContent>
                     <div style="margin-bottom: 15px" class="row">
                       <div class="col-md-5">
-                        <RadzenImage Path="@(dsoBenutzer.Base.BildURL)" style="background-color: rgba(0, 0, 0, 0); border: 1px solid #dbdfe2; border-radius: 4px; width: 120px">
+                        <RadzenImage Path="@strBildURL" style="background-color: rgba(0, 0, 0, 0); border: 1px solid #dbdfe2; border-radius: 4px; width: 120px">
                         </RadzenImage>
                       </div>
                       <div class="col-md-7 justify-content-end d-flex">
@@ -147,10 +135,6 @@
                       </div>
                     </div>
                   </HeaderTemplate>
-                </RadzenPanel>
-              </div>
-              <div class="col-md-4" style="padding-left: 5px">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Sonstiges">
                 </RadzenPanel>
               </div>
             </div>

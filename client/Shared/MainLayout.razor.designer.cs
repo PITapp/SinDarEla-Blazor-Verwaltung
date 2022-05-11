@@ -76,11 +76,9 @@ namespace SinDarElaVerwaltung.Layouts
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            // await WriteLocalStorage("storageBenutzerName","Günther Painsi");
-
             try
             {
-                var dbSinDarElaGetVwBenutzerBasesResult = await DbSinDarEla.GetVwBenutzerBases(filter:$"Benutzername eq 'xxx'");
+                var dbSinDarElaGetVwBenutzerBasesResult = await DbSinDarEla.GetVwBenutzerBases(filter:$"Benutzername eq 'Günther Painsi'");
                 rstBenutzer = dbSinDarElaGetVwBenutzerBasesResult.Value.AsODataEnumerable();
 
                 strBildURL = rstBenutzer.FirstOrDefault().BildURL;

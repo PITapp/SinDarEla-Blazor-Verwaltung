@@ -12,7 +12,7 @@ using SinDarElaVerwaltung.Client.Pages;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class CopyOfAnmeldungComponent : ComponentBase, IDisposable
+    public partial class AbmeldungComponent : ComponentBase, IDisposable
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
@@ -55,44 +55,6 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
-        string _strHashPasswort;
-        protected string strHashPasswort
-        {
-            get
-            {
-                return _strHashPasswort;
-            }
-            set
-            {
-                if (!object.Equals(_strHashPasswort, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "strHashPasswort", NewValue = value, OldValue = _strHashPasswort };
-                    _strHashPasswort = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
-        string _strHashPasswortErgebnis;
-        protected string strHashPasswortErgebnis
-        {
-            get
-            {
-                return _strHashPasswortErgebnis;
-            }
-            set
-            {
-                if (!object.Equals(_strHashPasswortErgebnis, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "strHashPasswortErgebnis", NewValue = value, OldValue = _strHashPasswortErgebnis };
-                    _strHashPasswortErgebnis = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -100,19 +62,14 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            strHashPasswort = "";
-
-            strHashPasswortErgebnis = "";
+            await RemoveLocalStorage("storageBenutzerName");
+await RemoveLocalStorage("storageBenutzerID");
+await RemoveLocalStorage("storageBenutzerBaseID");
         }
 
-        protected async System.Threading.Tasks.Task Button1Click(MouseEventArgs args)
+        protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
         {
-            // strHashPasswortErgebnis = HashPassword(strHashPasswort);
-        }
-
-        protected async System.Threading.Tasks.Task ButtonAnmeldenClick(MouseEventArgs args)
-        {
-            UriHelper.NavigateTo("dashboard");
+            UriHelper.NavigateTo("anmeldung");
         }
     }
 }
