@@ -62,9 +62,7 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            await RemoveLocalStorage("storageBenutzerName");
-await RemoveLocalStorage("storageBenutzerID");
-await RemoveLocalStorage("storageBenutzerBaseID");
+            await RemoveLocalStorage("storageBenutzerIDCode");
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)

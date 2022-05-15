@@ -14,12 +14,61 @@
                   "events": {
                     "login": [
                       {
-                        "code": "Globals.globalBenutzerName = \"Günther Painsi\";\nGlobals.globalBenutzerID = \"156\";\nGlobals.globalBenutzerBaseID = \"279\";\nawait WriteLocalStorage(\"storageBenutzerName\", \"Günther Painsi\");\nawait WriteLocalStorage(\"storageBenutzerID\", \"156\");\nawait WriteLocalStorage(\"storageBenutzerBaseID\", \"279\");",
-                        "type": "execute"
-                      },
-                      {
-                        "path": "dashboard",
-                        "type": "navigate"
+                        "error": [
+                          {
+                            "detail": "Laden Benutzer fehlerhaft!",
+                            "severity": "error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "dbSinDarEla.getBenutzers",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "Benutzername eq '${event.Username}'"
+                          },
+                          {
+                            "name": "$count",
+                            "value": "true"
+                          },
+                          {
+                            "name": "$expand",
+                            "value": "Base"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "name": "intBenutzerAnzahl",
+                            "type": "set",
+                            "value": "${result.Count}",
+                            "valueType": "int"
+                          },
+                          {
+                            "condition": "intBenutzerAnzahl == 1",
+                            "global": true,
+                            "name": "globalBenutzer",
+                            "type": "set",
+                            "value": "${result.Value.AsODataEnumerable().FirstOrDefault()}",
+                            "valueType": "SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer"
+                          },
+                          {
+                            "code": "await WriteLocalStorage(\"storageBenutzerIDCode\", ${Globals.globalBenutzer.BenutzerIDCode});",
+                            "condition": "intBenutzerAnzahl == 1",
+                            "type": "execute"
+                          },
+                          {
+                            "condition": "${Globals.globalBenutzer.Kennwort} != GetDeterministicHashCode(${event.Password} + ${Globals.globalBenutzer.BaseID})",
+                            "detail": "Benutzername oder Kennwort falsch!",
+                            "severity": "error",
+                            "type": "notify"
+                          },
+                          {
+                            "condition": "${Globals.globalBenutzer.Kennwort} == GetDeterministicHashCode(${event.Password} + ${Globals.globalBenutzer.BaseID})",
+                            "path": "dashboard",
+                            "type": "navigate"
+                          }
+                        ],
+                        "type": "invoke"
                       }
                     ],
                     "register": []
@@ -30,7 +79,7 @@
                   "passwordText": "Passwort",
                   "registerMessageText": "",
                   "registerText": "",
-                  "resetPasswordText": "Forgot password",
+                  "resetPasswordText": "",
                   "type": "login",
                   "userRequired": "Benutzername erforderlich",
                   "userText": "Benutzername",
@@ -50,39 +99,7 @@
     }
   ],
   "events": {
-    "load": [
-      {
-        "global": true,
-        "name": "globalBenutzerName",
-        "type": "set",
-        "value": "\"\"",
-        "valueType": "string"
-      },
-      {
-        "global": true,
-        "name": "globalBenutzerID",
-        "type": "set",
-        "value": "\"\"",
-        "valueType": "string"
-      },
-      {
-        "global": true,
-        "name": "globalBenutzerBaseID",
-        "type": "set",
-        "value": "\"\"",
-        "valueType": "string"
-      },
-      {
-        "code": "Globals.globalBenutzerName = await ReadLocalStorage(\"storageBenutzerName\");",
-        "then": [],
-        "type": "execute"
-      },
-      {
-        "condition": "Globals.globalBenutzerName != null",
-        "path": "dashboard",
-        "type": "navigate"
-      }
-    ]
+    "load": []
   },
   "layout": "Login",
   "name": "Anmeldung"

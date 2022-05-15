@@ -14,55 +14,19 @@ namespace SinDarElaVerwaltung
         public event Action<PropertyChangedEventArgs> PropertyChanged;
 
 
-        string _globalBenutzerName;
-        public string globalBenutzerName
+        SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer _globalBenutzer;
+        public SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer globalBenutzer
         {
             get
             {
-                return _globalBenutzerName;
+                return _globalBenutzer;
             }
             set
             {
-                if(!object.Equals(_globalBenutzerName, value))
+                if(!object.Equals(_globalBenutzer, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "globalBenutzerName", NewValue = value, OldValue = _globalBenutzerName, IsGlobal = true };
-                    _globalBenutzerName = value;
-                    PropertyChanged?.Invoke(args);
-                }
-            }
-        }
-
-        string _globalBenutzerID;
-        public string globalBenutzerID
-        {
-            get
-            {
-                return _globalBenutzerID;
-            }
-            set
-            {
-                if(!object.Equals(_globalBenutzerID, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "globalBenutzerID", NewValue = value, OldValue = _globalBenutzerID, IsGlobal = true };
-                    _globalBenutzerID = value;
-                    PropertyChanged?.Invoke(args);
-                }
-            }
-        }
-
-        string _globalBenutzerBaseID;
-        public string globalBenutzerBaseID
-        {
-            get
-            {
-                return _globalBenutzerBaseID;
-            }
-            set
-            {
-                if(!object.Equals(_globalBenutzerBaseID, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "globalBenutzerBaseID", NewValue = value, OldValue = _globalBenutzerBaseID, IsGlobal = true };
-                    _globalBenutzerBaseID = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "globalBenutzer", NewValue = value, OldValue = _globalBenutzer, IsGlobal = true };
+                    _globalBenutzer = value;
                     PropertyChanged?.Invoke(args);
                 }
             }

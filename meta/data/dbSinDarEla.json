@@ -696,6 +696,10 @@
           "type": "string",
           "length": 130
         },
+        "BenutzerIDCode": {
+          "type": "string",
+          "length": 70
+        },
         "Kennwort": {
           "x-nullable": false,
           "type": "string",

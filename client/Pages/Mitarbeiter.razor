@@ -32,7 +32,7 @@
           <ChildContent>
             <div class="row">
               <div class="col-md-6">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Daten">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Details">
                   <ChildContent>
                     <RadzenTemplateForm Data="@dsoBase" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Visible="@(dsoBase != null)">
                       <ChildContent>
@@ -40,16 +40,6 @@
                         </div>
                         <div style="margin-left: -5px; margin-right: 0; margin-top: 11px; padding-right: 10px" class="row">
                           <div class="col-md-6" >
-                            <div class="row" style="margin-bottom: 4px">
-                              <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
-                                <RadzenLabel Component="AnredeID" style="text-align: left; width: 100%" Text="Anrede">
-                                </RadzenLabel>
-                              </div>
-                              <div class="col-md-5" style="padding-right: 0">
-                                <RadzenDropDown Data="@rstBaseAnreden" EmptyFilterText="No results found" Placeholder="Anrede auswählen" style="width: 100%" TextProperty="Anrede" @bind-Value="@(dsoBase.AnredeID)" ValueProperty="AnredeID" Name="AnredeID">
-                                </RadzenDropDown>
-                              </div>
-                            </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
                                 <RadzenLabel Component="Name1" style="display: block; text-align: left; width: 100%" Text="Name">
@@ -74,6 +64,16 @@
                                 </RadzenTextBox>
                               </div>
                             </div>
+                            <div class="row" style="margin-bottom: 4px">
+                              <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
+                                <RadzenLabel Component="AnredeID" style="text-align: left; width: 100%" Text="Anrede">
+                                </RadzenLabel>
+                              </div>
+                              <div class="col-md-9" >
+                                <RadzenDropDown Data="@rstBaseAnreden" EmptyFilterText="No results found" style="width: 100%" TextProperty="Anrede" @bind-Value="@(dsoBase.AnredeID)" ValueProperty="AnredeID" Name="AnredeID">
+                                </RadzenDropDown>
+                              </div>
+                            </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
                                 <RadzenLabel Component="NameKuerzel" style="display: block; text-align: left; width: 100%" Text="Kürzel">
@@ -88,7 +88,7 @@
                             </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="Titel vorne">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="Titel vorne" class="kein-zeilenumbruch">
                                 </RadzenLabel>
                               </div>
                               <div class="col-md-9" style="display: block">
@@ -98,7 +98,7 @@
                             </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="Titel hinten">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="Titel hinten" class="kein-zeilenumbruch">
                                 </RadzenLabel>
                               </div>
                               <div class="col-md-9" style="display: block">
@@ -137,32 +137,56 @@
                               </div>
                             </div>
                             <div style="margin-bottom: 10px; margin-top: 15px; padding-left: 15px; padding-right: 15px" class="row">
-                              <div class="col-md-12 justify-content-center d-flex align-items-center" style="background-color: #F3F5F7; border-radius: 4px; color: #88989b; display: block; height: 30px; padding-right: 0; text-align: center">
-                                <RadzenLabel style="color: #88989b; margin-top: -6px" Text="Notizen">
+                              <div class="col-md-12 align-items-center d-flex justify-content-center" style="background-color: #F3F5F7; border-radius: 4px; color: #88989b; display: block; height: 30px; text-align: center; vertical-align: baseline">
+                                <RadzenLabel style="color: #88989b; margin-top: -6px" Text="Konto">
                                 </RadzenLabel>
                               </div>
                             </div>
+                            <div style="margin-bottom: 10px" class="row">
+                              <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="Bank">
+                                </RadzenLabel>
+                              </div>
+                              <div class="col-md-9" style="display: block">
+                                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(dsoBase.KontoName)" Name="KontoName">
+                                </RadzenTextBox>
+                              </div>
+                            </div>
+                            <div style="margin-bottom: 10px" class="row">
+                              <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="KontoNr">
+                                </RadzenLabel>
+                              </div>
+                              <div class="col-md-9" style="display: block">
+                                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(dsoBase.KontoNummer)" Name="KontoNummer">
+                                </RadzenTextBox>
+                              </div>
+                            </div>
                             <div style="margin-bottom: 4px" class="row">
-                              <div class="col-md-12" >
-                                <RadzenTextArea Rows="4" style="height: 190px; width: 100%" @bind-Value="@(dsoBase.Notiz)" Name="Notiz">
+                              <div class="col-md-3" style="padding-right: 0; padding-top: 6px">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="Info">
+                                </RadzenLabel>
+                              </div>
+                              <div class="col-md-9" style="display: block">
+                                <RadzenTextArea style="height: 98px; width: 100%" @bind-Value="@(dsoBase.KontoInfo)" Name="KontoInfo">
                                 </RadzenTextArea>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-6" style="margin-top: 45px; padding-left: 50px; padding-right: 0">
+                          <div class="col-md-6" style="padding-left: 30px; padding-right: 0">
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
                                 <RadzenLabel style="text-align: left; width: 100%" Text="Geburtsdatum">
                                 </RadzenLabel>
                               </div>
-                              <div class="col-md-6" style="display: block">
+                              <div class="col-md-9" style="display: block">
                                 <RadzenDatePicker DateFormat="dd.MM.yyyy" Locale="de" style="width: 100%" @bind-Value="@(dsoBase.Geburtsdatum)" YearRange="1930:2050" Name="Geburtsdatum">
                                 </RadzenDatePicker>
                               </div>
                             </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="VersichNr">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="VersicherNr">
                                 </RadzenLabel>
                               </div>
                               <div class="col-md-9" style="display: block">
@@ -182,7 +206,7 @@
                             </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="Telefon 1">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="Telefon 1" class="kein-zeilenumbruch">
                                 </RadzenLabel>
                               </div>
                               <div class="col-md-9" style="display: block">
@@ -192,7 +216,7 @@
                             </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="Telefon 2">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="Telefon 2" class="kein-zeilenumbruch">
                                 </RadzenLabel>
                               </div>
                               <div class="col-md-9" style="display: block">
@@ -202,7 +226,7 @@
                             </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="E-Mail 1">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="E-Mail 1" class="kein-zeilenumbruch">
                                 </RadzenLabel>
                               </div>
                               <div class="col-md-9" style="display: block">
@@ -212,7 +236,7 @@
                             </div>
                             <div style="margin-bottom: 10px" class="row">
                               <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="E-Mail 2">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="E-Mail 2" class="kein-zeilenumbruch">
                                 </RadzenLabel>
                               </div>
                               <div class="col-md-9" style="display: block">
@@ -221,48 +245,34 @@
                               </div>
                             </div>
                             <div style="margin-bottom: 10px" class="row">
-                              <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="Webseite">
+                              <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px; text-align: right">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="Notfall Kontakt" class="kein-zeilenumbruch">
                                 </RadzenLabel>
                               </div>
                               <div class="col-md-9" style="display: block">
-                                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(dsoBase.Webseite)" Name="Webseite">
+                                <RadzenTextBox MaxLength="100" style="width: 100%" @bind-Value="@(dsoBase.Notfallkontakt)" Name="Textbox0">
+                                </RadzenTextBox>
+                              </div>
+                            </div>
+                            <div style="margin-bottom: 10px" class="row">
+                              <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
+                                <RadzenLabel style="text-align: left; width: 100%" Text="Notfall Telefon" class="kein-zeilenumbruch">
+                                </RadzenLabel>
+                              </div>
+                              <div class="col-md-9" style="display: block">
+                                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(dsoBase.NotfallkontaktTelefon)" Name="Textbox1">
                                 </RadzenTextBox>
                               </div>
                             </div>
                             <div style="margin-bottom: 10px; margin-top: 15px; padding-right: 15px" class="row">
-                              <div class="col-md-12 align-items-center d-flex justify-content-center" style="background-color: #F3F5F7; border-radius: 4px; color: #88989b; display: block; height: 30px; text-align: center; vertical-align: baseline">
-                                <RadzenLabel style="color: #88989b; margin-top: -6px" Text="Bank">
+                              <div class="col-md-12 justify-content-center d-flex align-items-center" style="background-color: #F3F5F7; border-radius: 4px; color: #88989b; display: block; height: 30px; padding-right: 0; text-align: center">
+                                <RadzenLabel style="color: #88989b; margin-top: -6px" Text="Notizen">
                                 </RadzenLabel>
                               </div>
                             </div>
-                            <div style="margin-bottom: 10px" class="row">
-                              <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="Name">
-                                </RadzenLabel>
-                              </div>
-                              <div class="col-md-9" style="display: block">
-                                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(dsoBase.KontoName)" Name="KontoName">
-                                </RadzenTextBox>
-                              </div>
-                            </div>
-                            <div style="margin-bottom: 10px" class="row">
-                              <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="KontoNr">
-                                </RadzenLabel>
-                              </div>
-                              <div class="col-md-9" style="display: block">
-                                <RadzenTextBox MaxLength="70" style="width: 100%" @bind-Value="@(dsoBase.KontoNummer)" Name="KontoNummer">
-                                </RadzenTextBox>
-                              </div>
-                            </div>
-                            <div style="margin-bottom: 10px" class="row">
-                              <div class="col-md-3" style="padding-left: 0; padding-right: 0; padding-top: 6px">
-                                <RadzenLabel style="text-align: left; width: 100%" Text="Info">
-                                </RadzenLabel>
-                              </div>
-                              <div class="col-md-9" style="display: block">
-                                <RadzenTextArea style="height: 99px; width: 100%" @bind-Value="@(dsoBase.KontoInfo)" Name="KontoInfo">
+                            <div style="margin-bottom: 4px" class="row">
+                              <div class="col-md-12" style="padding-left: 0">
+                                <RadzenTextArea Rows="4" style="height: 190px; width: 100%" @bind-Value="@(dsoBase.Notiz)" Name="Notiz">
                                 </RadzenTextArea>
                               </div>
                             </div>
@@ -274,9 +284,9 @@
                   <HeaderTemplate>
                     <div  class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neuer Mitarbeiter">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neuer Mitarbeiter" Click="@ButtonNeuClick">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="done" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Speichern" Tooltip="Bearbeiten Infotext">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="done" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Speichern" Tooltip="Bearbeiten Infotext" Click="@ButtonSpeichernClick">
                         </RadzenButton>
                       </div>
                     </div>
@@ -285,10 +295,6 @@
               </div>
               <div class="col-md-6" style="padding-left: 5px">
                 <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Sonstiges">
-                  <ChildContent>
-                    <RadzenButton Text="Open Painsi" Click="@Button0Click">
-                    </RadzenButton>
-                  </ChildContent>
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">

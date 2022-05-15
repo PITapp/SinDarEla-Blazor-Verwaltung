@@ -7,7 +7,7 @@ using Radzen.Blazor;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class AddXxBaseComponent
+    public partial class MitarbeiterNeuComponent
     {
 
     }

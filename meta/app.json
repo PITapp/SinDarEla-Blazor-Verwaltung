@@ -24,9 +24,7 @@
     "Dashboard",
     "Benutzerprofil",
     "Mitarbeiter",
-    "Copy of Mitarbeiter",
-    "xxBase",
-    "Copy of Mitarbeiter 1"
+    "AnmeldungLaden"
   ],
   "pages": [
     "MeldungLoeschen",
@@ -41,15 +39,10 @@
     "Benutzerprofil",
     "Anmeldung",
     "Dashboard",
-    "zzTestLocalStorage",
-    "Copy of Benutzerprofil",
     "Abmeldung",
     "Mitarbeiter",
-    "Copy of Mitarbeiter",
-    "xxBase",
-    "Add xxBase",
-    "Edit xxBase",
-    "Copy of Mitarbeiter 1"
+    "MitarbeiterNeu",
+    "AnmeldungLaden"
   ],
   "port": 8000,
   "pwa": true,
@@ -57,7 +50,7 @@
   "serverPort": 5000,
   "serverProject": true,
   "serverVersion": "6",
-  "startPage": "Anmeldung",
+  "startPage": "AnmeldungLaden",
   "theme": "standard",
   "themeSettings": {
     "$accordion-border-radius": "4px",

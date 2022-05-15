@@ -88,7 +88,7 @@
   "events": {
     "load": [
       {
-        "code": "await RemoveLocalStorage(\"storageBenutzerName\");\nawait RemoveLocalStorage(\"storageBenutzerID\");\nawait RemoveLocalStorage(\"storageBenutzerBaseID\");",
+        "code": "await RemoveLocalStorage(\"storageBenutzerIDCode\");",
         "type": "execute"
       }
     ]

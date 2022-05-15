@@ -55,6 +55,44 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
+        dynamic _intBaseID;
+        protected dynamic intBaseID
+        {
+            get
+            {
+                return _intBaseID;
+            }
+            set
+            {
+                if (!object.Equals(_intBaseID, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "intBaseID", NewValue = value, OldValue = _intBaseID };
+                    _intBaseID = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        dynamic _intMitarbeiterID;
+        protected dynamic intMitarbeiterID
+        {
+            get
+            {
+                return _intMitarbeiterID;
+            }
+            set
+            {
+                if (!object.Equals(_intMitarbeiterID, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "intMitarbeiterID", NewValue = value, OldValue = _intMitarbeiterID };
+                    _intMitarbeiterID = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         SinDarElaVerwaltung.Models.DbSinDarEla.Base _dsoBase;
         protected SinDarElaVerwaltung.Models.DbSinDarEla.Base dsoBase
         {
@@ -119,7 +157,11 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            var dbSinDarElaGetBaseByBaseIdResult = await DbSinDarEla.GetBaseByBaseId(baseId:249);
+            intBaseID = 249;
+
+            intMitarbeiterID = 62;
+
+            var dbSinDarElaGetBaseByBaseIdResult = await DbSinDarEla.GetBaseByBaseId(baseId:intBaseID);
             dsoBase = dbSinDarElaGetBaseByBaseIdResult;
 
             strMitarbeiterName = dbSinDarElaGetBaseByBaseIdResult.Name1 + ' ' + dbSinDarElaGetBaseByBaseIdResult.Name2;
@@ -143,9 +185,25 @@ namespace SinDarElaVerwaltung.Pages
             await DialogService.OpenAsync<MeldungOk>($"Info", new Dictionary<string, object>() { {"strMeldung", "Suchen ist für dieses Modul noch nicht aktiviert!"} }, new DialogOptions(){ Width = $"{600}px" });
         }
 
-        protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
+        protected async System.Threading.Tasks.Task ButtonNeuClick(MouseEventArgs args)
         {
-            UriHelper.NavigateTo($"edit-xx-base/{279}");
+            var dialogResult = await DialogService.OpenAsync<MitarbeiterNeu>($"Neuer Mitarbeiter", null);
+            intBaseID = dialogResult.BaseID;
+
+            intMitarbeiterID = dialogResult.MitarbeiterID;
+        }
+
+        protected async System.Threading.Tasks.Task ButtonSpeichernClick(MouseEventArgs args)
+        {
+            try
+            {
+                var dbSinDarElaUpdateBaseResult = await DbSinDarEla.UpdateBase(baseId:dsoBase.BaseID, _base:dsoBase);
+                    NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Success,Detail = $"Änderungen gespeichert" });
+            }
+            catch (System.Exception dbSinDarElaUpdateBaseException)
+            {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Änderungen konnten nicht gespeichert werden!" });
+            }
         }
     }
 }

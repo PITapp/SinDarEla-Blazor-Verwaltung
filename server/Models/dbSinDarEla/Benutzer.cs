@@ -31,6 +31,11 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       get;
       set;
     }
+    public string BenutzerIDCode
+    {
+      get;
+      set;
+    }
     public string Kennwort
     {
       get;

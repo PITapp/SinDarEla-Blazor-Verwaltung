@@ -114,12 +114,12 @@
                                 "paddingTop": "7px",
                                 "verticalAlign": "bottom"
                               },
-                              "text": "${Globals.globalBenutzerName}",
+                              "text": "${Globals.globalBenutzer.Benutzername}",
                               "type": "label"
                             },
                             {
                               "name": "image1",
-                              "path": "https://medien.sindarela.app/upload/bilder/base/279.jpg",
+                              "path": "${Globals.globalBenutzer.Base.BildURL}",
                               "style": {
                                 "borderRadius": "50%",
                                 "display": "block",
@@ -288,7 +288,7 @@
                 },
                 {
                   "icon": "assignment_turned_in",
-                  "path": "",
+                  "path": "xx-benutzer",
                   "selected": false,
                   "text": "Management"
                 },
@@ -362,40 +362,7 @@
     }
   ],
   "events": {
-    "load": [
-      {
-        "condition": "",
-        "error": [
-          {
-            "detail": "Benutzer wurde nicht gefunden!",
-            "severity": "error",
-            "type": "notify"
-          }
-        ],
-        "name": "dbSinDarEla.getVwBenutzerBases",
-        "parameters": [
-          {
-            "name": "$filter",
-            "value": "Benutzername eq 'Günther Painsi'"
-          }
-        ],
-        "then": [
-          {
-            "name": "rstBenutzer",
-            "type": "set",
-            "value": "${result.Value.AsODataEnumerable()}",
-            "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>"
-          },
-          {
-            "name": "strBildURL",
-            "type": "set",
-            "value": "${rstBenutzer.FirstOrDefault().BildURL}",
-            "valueType": "string"
-          }
-        ],
-        "type": "invoke"
-      }
-    ]
+    "load": []
   },
   "name": "Main"
 }

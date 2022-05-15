@@ -12004,16 +12004,3 @@ ul.rz-profile-menu .rz-navigation-menu {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-/* --- Label in Form einstellen --- */
-.xxsde-form-label {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-top: 3px;
-}
-
-.sde-form-label {
-  padding-top: 6px;
-  padding-right: 0px;
-}

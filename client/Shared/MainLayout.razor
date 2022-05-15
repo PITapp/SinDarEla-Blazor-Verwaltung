@@ -34,9 +34,9 @@
               </ChildContent>
               <Template>
                 <div class="col-md-12  d-flex justify-content-end" style="background-color: rgba(0, 0, 0, 0)">
-                  <RadzenLabel style="color: #f5f5f5; display: inline-block; font-family: verdana,geneva,sans-serif; font-size: 12px; font-weight: normal; margin-right: 20px; padding-top: 7px; vertical-align: bottom" Text="@($"{(Globals.globalBenutzerName)}")">
+                  <RadzenLabel style="color: #f5f5f5; display: inline-block; font-family: verdana,geneva,sans-serif; font-size: 12px; font-weight: normal; margin-right: 20px; padding-top: 7px; vertical-align: bottom" Text="@($"{(Globals.globalBenutzer.Benutzername)}")">
                   </RadzenLabel>
-                  <RadzenImage Path="https://medien.sindarela.app/upload/bilder/base/279.jpg" style="border-radius: 50%; display: block; float: none; height: 32px; width: 32px">
+                  <RadzenImage Path="@(Globals.globalBenutzer.Base.BildURL)" style="border-radius: 50%; display: block; float: none; height: 32px; width: 32px">
                   </RadzenImage>
                 </div>
               </Template>
@@ -82,7 +82,7 @@
           <ChildContent>
             <RadzenPanelMenuItem Icon="dashboard" Path="dashboard" Selected="true" Text="Dashboard">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Icon="assignment_turned_in" Selected="false" Text="Management">
+            <RadzenPanelMenuItem Icon="assignment_turned_in" Path="xx-benutzer" Selected="false" Text="Management">
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Icon="assignment" Text="Dienstplan">
             </RadzenPanelMenuItem>

@@ -55,6 +55,25 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
+        int _intBenutzerAnzahl;
+        protected int intBenutzerAnzahl
+        {
+            get
+            {
+                return _intBenutzerAnzahl;
+            }
+            set
+            {
+                if (!object.Equals(_intBenutzerAnzahl, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "intBenutzerAnzahl", NewValue = value, OldValue = _intBenutzerAnzahl };
+                    _intBenutzerAnzahl = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -62,29 +81,38 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            Globals.globalBenutzerName = "";
 
-            Globals.globalBenutzerID = "";
-
-            Globals.globalBenutzerBaseID = "";
-
-            Globals.globalBenutzerName = await ReadLocalStorage("storageBenutzerName");
-
-            if (Globals.globalBenutzerName != null) {
-            UriHelper.NavigateTo("dashboard");
-            }
         }
 
         protected async System.Threading.Tasks.Task Login0Login(dynamic args)
         {
-            Globals.globalBenutzerName = "Günther Painsi";
-Globals.globalBenutzerID = "156";
-Globals.globalBenutzerBaseID = "279";
-await WriteLocalStorage("storageBenutzerName", "Günther Painsi");
-await WriteLocalStorage("storageBenutzerID", "156");
-await WriteLocalStorage("storageBenutzerBaseID", "279");
+            try
+            {
+                var dbSinDarElaGetBenutzersResult = await DbSinDarEla.GetBenutzers(filter:$"Benutzername eq '{args.Username}'", expand:$"Base", count:true);
+                intBenutzerAnzahl = dbSinDarElaGetBenutzersResult.Count;
 
-            UriHelper.NavigateTo("dashboard");
+                if (intBenutzerAnzahl == 1) {
+                    Globals.globalBenutzer = dbSinDarElaGetBenutzersResult.Value.AsODataEnumerable().FirstOrDefault();
+                }
+
+                if (intBenutzerAnzahl == 1)
+                {
+                    await WriteLocalStorage("storageBenutzerIDCode", Globals.globalBenutzer.BenutzerIDCode);
+                }
+
+                if (Globals.globalBenutzer.Kennwort != GetDeterministicHashCode(args.Password + Globals.globalBenutzer.BaseID))
+                {
+                    NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Benutzername oder Kennwort falsch!" });
+                }
+
+                if (Globals.globalBenutzer.Kennwort == GetDeterministicHashCode(args.Password + Globals.globalBenutzer.BaseID)) {
+                UriHelper.NavigateTo("dashboard");
+                }
+            }
+            catch (System.Exception dbSinDarElaGetBenutzersException)
+            {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Laden Benutzer fehlerhaft!" });
+            }
         }
     }
 }
