@@ -14,11 +14,24 @@
                   "events": {
                     "login": [
                       {
+                        "name": "bolSichtbarProgressBar",
+                        "type": "set",
+                        "value": "true",
+                        "valueType": "bool"
+                      },
+                      {
                         "error": [
                           {
-                            "detail": "Laden Benutzer fehlerhaft!",
+                            "detail": "${result.error.message}",
                             "severity": "error",
+                            "summary": "Laden Benutzer fehlerhaft!",
                             "type": "notify"
+                          },
+                          {
+                            "name": "bolSichtbarProgressBar",
+                            "type": "set",
+                            "value": "false",
+                            "valueType": "bool"
                           }
                         ],
                         "name": "dbSinDarEla.getBenutzers",
@@ -52,20 +65,78 @@
                             "valueType": "SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer"
                           },
                           {
-                            "code": "await WriteLocalStorage(\"storageBenutzerIDCode\", ${Globals.globalBenutzer.BenutzerIDCode});",
-                            "condition": "intBenutzerAnzahl == 1",
+                            "global": false,
+                            "name": "bolAnmeldungOK",
+                            "type": "set",
+                            "value": "false",
+                            "valueType": "bool"
+                          },
+                          {
+                            "code": "Console.WriteLine(\"1\");",
                             "type": "execute"
                           },
                           {
-                            "condition": "${Globals.globalBenutzer.Kennwort} != GetDeterministicHashCode(${event.Password} + ${Globals.globalBenutzer.BaseID})",
+                            "condition": "intBenutzerAnzahl == 1",
+                            "global": false,
+                            "name": "bolAnmeldungOK",
+                            "type": "set",
+                            "value": "${Globals.globalBenutzer.Kennwort} == GetDeterministicHashCode(${event.Password} + ${Globals.globalBenutzer.BaseID})",
+                            "valueType": "bool"
+                          },
+                          {
+                            "code": "Console.WriteLine(\"2\");",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await WriteLocalStorage(\"storageBenutzerIDCode\", ${Globals.globalBenutzer.BenutzerIDCode});",
+                            "condition": "bolAnmeldungOK == true",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "Console.WriteLine(\"3\");",
+                            "type": "execute"
+                          },
+                          {
+                            "condition": "bolAnmeldungOK == true",
+                            "name": "dsoBenutzerProtokoll",
+                            "type": "set",
+                            "value": "new SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll(){}",
+                            "valueType": "SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll"
+                          },
+                          {
+                            "code": "dsoBenutzerProtokoll.BenutzerID = Globals.globalBenutzer.BenutzerID;\ndsoBenutzerProtokoll.Art = \"Anmeldung\";\ndsoBenutzerProtokoll.TimeStamp = DateTime.Now;",
+                            "condition": "bolAnmeldungOK == true",
+                            "type": "execute"
+                          },
+                          {
+                            "condition": "bolAnmeldungOK == true",
+                            "name": "dbSinDarEla.createBenutzerProtokoll",
+                            "parameters": [
+                              {
+                                "name": "BenutzerProtokoll",
+                                "value": "${dsoBenutzerProtokoll}"
+                              }
+                            ],
+                            "type": "invoke"
+                          },
+                          {
+                            "condition": "bolAnmeldungOK == true",
+                            "path": "dashboard",
+                            "type": "navigate"
+                          },
+                          {
+                            "condition": "bolAnmeldungOK == false",
                             "detail": "Benutzername oder Kennwort falsch!",
                             "severity": "error",
                             "type": "notify"
                           },
                           {
-                            "condition": "${Globals.globalBenutzer.Kennwort} == GetDeterministicHashCode(${event.Password} + ${Globals.globalBenutzer.BaseID})",
-                            "path": "dashboard",
-                            "type": "navigate"
+                            "condition": "bolAnmeldungOK == false",
+                            "global": false,
+                            "name": "bolSichtbarProgressBar",
+                            "type": "set",
+                            "value": "false",
+                            "valueType": "bool"
                           }
                         ],
                         "type": "invoke"
@@ -75,8 +146,8 @@
                   },
                   "loginText": "Anmelden",
                   "name": "login0",
-                  "passwordRequired": "Passwort erfoderlich",
-                  "passwordText": "Passwort",
+                  "passwordRequired": "Kennwort erfoderlich",
+                  "passwordText": "Kennwort",
                   "registerMessageText": "",
                   "registerText": "",
                   "resetPasswordText": "",
@@ -84,6 +155,19 @@
                   "userRequired": "Benutzername erforderlich",
                   "userText": "Benutzername",
                   "visible": true
+                },
+                {
+                  "mode": "indeterminate",
+                  "name": "progressbar0",
+                  "showValue": false,
+                  "style": {
+                    "marginBottom": "30px",
+                    "marginRight": "",
+                    "marginTop": "30px"
+                  },
+                  "type": "progressbar",
+                  "value": 100,
+                  "visible": "${bolSichtbarProgressBar}"
                 }
               ],
               "name": "col0",
@@ -99,7 +183,14 @@
     }
   ],
   "events": {
-    "load": []
+    "load": [
+      {
+        "name": "bolSichtbarProgressBar",
+        "type": "set",
+        "value": "false",
+        "valueType": "bool"
+      }
+    ]
   },
   "layout": "Login",
   "name": "Anmeldung"

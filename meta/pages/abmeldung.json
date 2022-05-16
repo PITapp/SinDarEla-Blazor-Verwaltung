@@ -90,6 +90,26 @@
       {
         "code": "await RemoveLocalStorage(\"storageBenutzerIDCode\");",
         "type": "execute"
+      },
+      {
+        "name": "dsoBenutzerProtokoll",
+        "type": "set",
+        "value": "new SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll(){}",
+        "valueType": "SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll"
+      },
+      {
+        "code": "dsoBenutzerProtokoll.BenutzerID = Globals.globalBenutzer.BenutzerID;\ndsoBenutzerProtokoll.Art = \"Abmeldung\";\ndsoBenutzerProtokoll.TimeStamp = DateTime.Now;",
+        "type": "execute"
+      },
+      {
+        "name": "dbSinDarEla.createBenutzerProtokoll",
+        "parameters": [
+          {
+            "name": "BenutzerProtokoll",
+            "value": "${dsoBenutzerProtokoll}"
+          }
+        ],
+        "type": "invoke"
       }
     ]
   },

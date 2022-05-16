@@ -18,7 +18,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@rstBase" style="display: block; width: 100%" TextProperty="Name1" @bind-Value="@(dsoMitarbeiter.BaseID)" ValueProperty="BaseID" Name="BaseID">
+                <RadzenDropDown AllowFiltering="true" Data="@rstBase" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" style="display: block; width: 100%" TextProperty="Name1" @bind-Value="@(dsoMitarbeiter.BaseID)" ValueProperty="BaseID" Name="BaseID">
                 </RadzenDropDown>
                 <RadzenRequiredValidator Component="BaseID" DefaultValue="0" style="position: absolute" Text="Mitarbeiter eingeben">
                 </RadzenRequiredValidator>

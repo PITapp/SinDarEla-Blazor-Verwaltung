@@ -10,8 +10,10 @@
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenLogin AllowRegister="false" AllowResetPassword="false" AutoComplete="true" LoginText="Anmelden" PasswordRequired="Passwort erfoderlich" PasswordText="Passwort" UserRequired="Benutzername erforderlich" UserText="Benutzername" Login="@Login0Login">
+        <RadzenLogin AllowRegister="false" AllowResetPassword="false" AutoComplete="true" LoginText="Anmelden" PasswordRequired="Kennwort erfoderlich" PasswordText="Kennwort" UserRequired="Benutzername erforderlich" UserText="Benutzername" Login="@Login0Login">
         </RadzenLogin>
+        <RadzenProgressBar Mode="ProgressBarMode.Indeterminate" ShowValue="false" style="margin-bottom: 30px; margin-right: ; margin-top: 30px" Value="100" Visible="@bolSichtbarProgressBar">
+        </RadzenProgressBar>
       </div>
     </div>
   </ChildContent>

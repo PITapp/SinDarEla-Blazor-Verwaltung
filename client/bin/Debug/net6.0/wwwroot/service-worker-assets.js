@@ -261,7 +261,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-Y8QWigYfH1SkbMtpR4VYQCdvbgOIhOfeVjWvY97b7TA=",
+      "hash": "sha256-551FyWOIhCeH1khkdW3w2fG2udjTS7FWOhvWiTAYuc8=",
       "url": "_framework\/Radzen.Blazor.dll"
     },
     {
@@ -965,11 +965,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-gag5O1532Mm8DfSfnyw4j4e+9JHGEhmAtzt52ywvEv0=",
+      "hash": "sha256-OlbCSKKjBEBBZEY9yad6\/yJYTuc9xOEL6LMZEPqsJvU=",
       "url": "_framework\/SinDarElaVerwaltung.Client.dll"
     },
     {
-      "hash": "sha256-aiYSkLDVyenGqx9TpuyveAoxT0uhhX76Lq+PZnTRk6s=",
+      "hash": "sha256-Exv\/7M6ptgpf8qi\/T+U70Gne4qCDGnUZfX7Cqs1Q9fc=",
       "url": "_framework\/SinDarElaVerwaltung.Client.pdb"
     },
     {
@@ -977,7 +977,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-mWsguTxXi5S6jF2xs++394S9U+4URqYoA+VSgpp2c6Q=",
+      "hash": "sha256-Z8wWGJfrqUSCdZON803IvhrZz9omvQL5N686Trd8hrg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1093,5 +1093,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "RzQr4j0b"
+  "version": "6en8\/\/ie"
 };

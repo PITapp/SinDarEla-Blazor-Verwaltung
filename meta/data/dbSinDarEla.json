@@ -877,7 +877,7 @@
         "Art": {
           "x-nullable": false,
           "type": "string",
-          "length": 10
+          "length": 30
         },
         "TimeStamp": {
           "x-nullable": false,

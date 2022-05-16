@@ -1710,6 +1710,11 @@
   "events": {
     "load": [
       {
+        "condition": "${Globals.globalBenutzer} == null",
+        "path": "anmeldung",
+        "type": "navigate"
+      },
+      {
         "name": "intBaseID",
         "type": "set",
         "value": "249",

@@ -322,10 +322,9 @@
   "events": {
     "load": [
       {
-        "name": "strLocalStorage",
-        "type": "set",
-        "value": "\"\"",
-        "valueType": "string"
+        "condition": "${Globals.globalBenutzer} == null",
+        "path": "anmeldung",
+        "type": "navigate"
       }
     ]
   },

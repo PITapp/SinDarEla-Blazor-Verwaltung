@@ -20,9 +20,12 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected GlobalsService Globals { get; set; }
 
+        partial void OnDispose();
+
         public void Dispose()
         {
             Globals.PropertyChanged -= OnPropertyChanged;
+            OnDispose();
         }
 
         public void Reload()
@@ -93,6 +96,25 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll _dsoBenutzerProtokoll;
+        protected SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll dsoBenutzerProtokoll
+        {
+            get
+            {
+                return _dsoBenutzerProtokoll;
+            }
+            set
+            {
+                if (!object.Equals(_dsoBenutzerProtokoll, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "dsoBenutzerProtokoll", NewValue = value, OldValue = _dsoBenutzerProtokoll };
+                    _dsoBenutzerProtokoll = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -107,6 +129,23 @@ namespace SinDarElaVerwaltung.Pages
 
             if (intBenutzerAnzahl == 1) {
                 Globals.globalBenutzer = dbSinDarElaGetBenutzersResult.Value.AsODataEnumerable().FirstOrDefault();
+            }
+
+            if (intBenutzerAnzahl == 1) {
+                dsoBenutzerProtokoll = new SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll(){};
+            }
+
+            if (intBenutzerAnzahl == 1)
+            {
+                dsoBenutzerProtokoll.BenutzerID = Globals.globalBenutzer.BenutzerID;
+dsoBenutzerProtokoll.Art = "AutomatischeAnmeldung";
+dsoBenutzerProtokoll.TimeStamp = DateTime.Now;
+            }
+
+            if (intBenutzerAnzahl == 1)
+            {
+                var dbSinDarElaCreateBenutzerProtokollResult = await DbSinDarEla.CreateBenutzerProtokoll(benutzerProtokoll:dsoBenutzerProtokoll);
+
             }
 
             if (intBenutzerAnzahl == 1) {

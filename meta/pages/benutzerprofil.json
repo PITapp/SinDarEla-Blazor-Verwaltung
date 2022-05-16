@@ -690,6 +690,12 @@
   "events": {
     "load": [
       {
+        "condition": "${Globals.globalBenutzer} == null",
+        "path": "anmeldung",
+        "type": "navigate"
+      },
+      {
+        "condition": "",
         "name": "dbSinDarEla.getBenutzers",
         "parameters": [
           {

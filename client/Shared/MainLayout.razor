@@ -25,7 +25,7 @@
             </RadzenLabel>
           </div>
           <div class="col-6 justify-content-end d-flex">
-            <RadzenProfileMenu style="display: block">
+            <RadzenProfileMenu style="display: block" Visible="@(Globals.globalBenutzer != null)">
               <ChildContent>
                 <RadzenProfileMenuItem Icon="account_circle" Path="benutzerprofil" Text="Benutzerprofil">
                 </RadzenProfileMenuItem>

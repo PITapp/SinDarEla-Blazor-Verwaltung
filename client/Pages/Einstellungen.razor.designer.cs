@@ -20,9 +20,12 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected GlobalsService Globals { get; set; }
 
+        partial void OnDispose();
+
         public void Dispose()
         {
             Globals.PropertyChanged -= OnPropertyChanged;
+            OnDispose();
         }
 
         public void Reload()
@@ -196,6 +199,10 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
+            if (Globals.globalBenutzer == null) {
+            UriHelper.NavigateTo("anmeldung");
+            }
+
             intLetzteInfotextID = 0;
         }
 

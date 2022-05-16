@@ -619,6 +619,11 @@
   "events": {
     "load": [
       {
+        "condition": "${Globals.globalBenutzer} == null",
+        "path": "anmeldung",
+        "type": "navigate"
+      },
+      {
         "name": "intLetzteInfotextID",
         "type": "set",
         "value": "0",

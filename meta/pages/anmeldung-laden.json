@@ -86,6 +86,29 @@
           },
           {
             "condition": "intBenutzerAnzahl == 1",
+            "name": "dsoBenutzerProtokoll",
+            "type": "set",
+            "value": "new SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll(){}",
+            "valueType": "SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll"
+          },
+          {
+            "code": "dsoBenutzerProtokoll.BenutzerID = Globals.globalBenutzer.BenutzerID;\ndsoBenutzerProtokoll.Art = \"AutomatischeAnmeldung\";\ndsoBenutzerProtokoll.TimeStamp = DateTime.Now;",
+            "condition": "intBenutzerAnzahl == 1",
+            "type": "execute"
+          },
+          {
+            "condition": "intBenutzerAnzahl == 1",
+            "name": "dbSinDarEla.createBenutzerProtokoll",
+            "parameters": [
+              {
+                "name": "BenutzerProtokoll",
+                "value": "${dsoBenutzerProtokoll}"
+              }
+            ],
+            "type": "invoke"
+          },
+          {
+            "condition": "intBenutzerAnzahl == 1",
             "path": "dashboard",
             "type": "navigate"
           },

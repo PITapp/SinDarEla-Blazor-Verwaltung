@@ -20,9 +20,12 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected GlobalsService Globals { get; set; }
 
+        partial void OnDispose();
+
         public void Dispose()
         {
             Globals.PropertyChanged -= OnPropertyChanged;
+            OnDispose();
         }
 
         public void Reload()
@@ -55,25 +58,6 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
-        string _strLocalStorage;
-        protected string strLocalStorage
-        {
-            get
-            {
-                return _strLocalStorage;
-            }
-            set
-            {
-                if (!object.Equals(_strLocalStorage, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "strLocalStorage", NewValue = value, OldValue = _strLocalStorage };
-                    _strLocalStorage = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -81,7 +65,9 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            strLocalStorage = "";
+            if (Globals.globalBenutzer == null) {
+            UriHelper.NavigateTo("anmeldung");
+            }
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)

@@ -20,9 +20,12 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected GlobalsService Globals { get; set; }
 
+        partial void OnDispose();
+
         public void Dispose()
         {
             Globals.PropertyChanged -= OnPropertyChanged;
+            OnDispose();
         }
 
         public void Reload()
@@ -55,6 +58,25 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
+        bool _bolSichtbarProgressBar;
+        protected bool bolSichtbarProgressBar
+        {
+            get
+            {
+                return _bolSichtbarProgressBar;
+            }
+            set
+            {
+                if (!object.Equals(_bolSichtbarProgressBar, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "bolSichtbarProgressBar", NewValue = value, OldValue = _bolSichtbarProgressBar };
+                    _bolSichtbarProgressBar = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         int _intBenutzerAnzahl;
         protected int intBenutzerAnzahl
         {
@@ -74,6 +96,44 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        bool _bolAnmeldungOK;
+        protected bool bolAnmeldungOK
+        {
+            get
+            {
+                return _bolAnmeldungOK;
+            }
+            set
+            {
+                if (!object.Equals(_bolAnmeldungOK, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "bolAnmeldungOK", NewValue = value, OldValue = _bolAnmeldungOK };
+                    _bolAnmeldungOK = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll _dsoBenutzerProtokoll;
+        protected SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll dsoBenutzerProtokoll
+        {
+            get
+            {
+                return _dsoBenutzerProtokoll;
+            }
+            set
+            {
+                if (!object.Equals(_dsoBenutzerProtokoll, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "dsoBenutzerProtokoll", NewValue = value, OldValue = _dsoBenutzerProtokoll };
+                    _dsoBenutzerProtokoll = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -81,11 +141,13 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-
+            bolSichtbarProgressBar = false;
         }
 
         protected async System.Threading.Tasks.Task Login0Login(dynamic args)
         {
+            bolSichtbarProgressBar = true;
+
             try
             {
                 var dbSinDarElaGetBenutzersResult = await DbSinDarEla.GetBenutzers(filter:$"Benutzername eq '{args.Username}'", expand:$"Base", count:true);
@@ -95,23 +157,58 @@ namespace SinDarElaVerwaltung.Pages
                     Globals.globalBenutzer = dbSinDarElaGetBenutzersResult.Value.AsODataEnumerable().FirstOrDefault();
                 }
 
-                if (intBenutzerAnzahl == 1)
+                bolAnmeldungOK = false;
+
+                Console.WriteLine("1");
+
+                if (intBenutzerAnzahl == 1) {
+                    bolAnmeldungOK = Globals.globalBenutzer.Kennwort == GetDeterministicHashCode(args.Password + Globals.globalBenutzer.BaseID);
+                }
+
+                Console.WriteLine("2");
+
+                if (bolAnmeldungOK == true)
                 {
                     await WriteLocalStorage("storageBenutzerIDCode", Globals.globalBenutzer.BenutzerIDCode);
                 }
 
-                if (Globals.globalBenutzer.Kennwort != GetDeterministicHashCode(args.Password + Globals.globalBenutzer.BaseID))
+                Console.WriteLine("3");
+
+                if (bolAnmeldungOK == true) {
+                    dsoBenutzerProtokoll = new SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll(){};
+                }
+
+                if (bolAnmeldungOK == true)
+                {
+                    dsoBenutzerProtokoll.BenutzerID = Globals.globalBenutzer.BenutzerID;
+dsoBenutzerProtokoll.Art = "Anmeldung";
+dsoBenutzerProtokoll.TimeStamp = DateTime.Now;
+                }
+
+                if (bolAnmeldungOK == true)
+                {
+                    var dbSinDarElaCreateBenutzerProtokollResult = await DbSinDarEla.CreateBenutzerProtokoll(benutzerProtokoll:dsoBenutzerProtokoll);
+
+                }
+
+                if (bolAnmeldungOK == true) {
+                UriHelper.NavigateTo("dashboard");
+                }
+
+                if (bolAnmeldungOK == false)
                 {
                     NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Benutzername oder Kennwort falsch!" });
                 }
 
-                if (Globals.globalBenutzer.Kennwort == GetDeterministicHashCode(args.Password + Globals.globalBenutzer.BaseID)) {
-                UriHelper.NavigateTo("dashboard");
+                if (bolAnmeldungOK == false) {
+                    bolSichtbarProgressBar = false;
                 }
             }
             catch (System.Exception dbSinDarElaGetBenutzersException)
             {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Laden Benutzer fehlerhaft!" });
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Laden Benutzer fehlerhaft!",Detail = $"{dbSinDarElaGetBenutzersException.Message}" });
+
+            bolSichtbarProgressBar = false;
             }
         }
     }

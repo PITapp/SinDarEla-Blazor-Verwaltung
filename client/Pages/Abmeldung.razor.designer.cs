@@ -20,9 +20,12 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected GlobalsService Globals { get; set; }
 
+        partial void OnDispose();
+
         public void Dispose()
         {
             Globals.PropertyChanged -= OnPropertyChanged;
+            OnDispose();
         }
 
         public void Reload()
@@ -55,6 +58,25 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
+        SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll _dsoBenutzerProtokoll;
+        protected SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll dsoBenutzerProtokoll
+        {
+            get
+            {
+                return _dsoBenutzerProtokoll;
+            }
+            set
+            {
+                if (!object.Equals(_dsoBenutzerProtokoll, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "dsoBenutzerProtokoll", NewValue = value, OldValue = _dsoBenutzerProtokoll };
+                    _dsoBenutzerProtokoll = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -63,6 +85,14 @@ namespace SinDarElaVerwaltung.Pages
         protected async System.Threading.Tasks.Task Load()
         {
             await RemoveLocalStorage("storageBenutzerIDCode");
+
+            dsoBenutzerProtokoll = new SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerProtokoll(){};
+
+            dsoBenutzerProtokoll.BenutzerID = Globals.globalBenutzer.BenutzerID;
+dsoBenutzerProtokoll.Art = "Abmeldung";
+dsoBenutzerProtokoll.TimeStamp = DateTime.Now;
+
+            var dbSinDarElaCreateBenutzerProtokollResult = await DbSinDarEla.CreateBenutzerProtokoll(benutzerProtokoll:dsoBenutzerProtokoll);
         }
 
         protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)

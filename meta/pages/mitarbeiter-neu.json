@@ -30,7 +30,9 @@
                           "class": "col-md-9",
                           "components": [
                             {
+                              "allowFiltering": true,
                               "data": "${rstBase}",
+                              "filterCaseSensitivity": "caseInsensitive",
                               "name": "BaseID",
                               "placeholder": "",
                               "style": {
