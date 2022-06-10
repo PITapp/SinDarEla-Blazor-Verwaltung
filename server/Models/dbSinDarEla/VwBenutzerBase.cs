@@ -55,22 +55,22 @@ namespace SinDarElaVerwaltung.Models.DbSinDarEla
       get;
       set;
     }
-    public int? LetzteKundenID
+    public int LetzteKundenID
     {
       get;
       set;
     }
-    public int? LetzteMitarbeiterID
+    public int LetzteMitarbeiterID
     {
       get;
       set;
     }
-    public int? LetzteBaseID
+    public int LetzteBaseID
     {
       get;
       set;
     }
-    public int? LetzteBenutzerID
+    public int LetzteBenutzerID
     {
       get;
       set;

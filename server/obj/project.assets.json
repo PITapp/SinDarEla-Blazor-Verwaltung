@@ -1062,7 +1062,7 @@
           "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {}
         }
       },
-      "Radzen.Blazor/3.18.9": {
+      "Radzen.Blazor/3.18.14": {
         "type": "package",
         "dependencies": {
           "LibSassBuilder": "2.0.1",
@@ -1419,7 +1419,7 @@
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "6.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.Extensions.Http": "6.0.0",
-          "Radzen.Blazor": "3.18.9",
+          "Radzen.Blazor": "3.18.14",
           "System.Net.Http.Json": "6.0.0"
         },
         "compile": {
@@ -3160,10 +3160,10 @@
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
-    "Radzen.Blazor/3.18.9": {
-      "sha512": "kuQyyr67WBg8vdda6sM05p6ppSAv/ZIwMB1XFZYD3uyXofTY8Phl9GMgBiaHoY1thdVCw9OHDvBxfyu1N681ug==",
+    "Radzen.Blazor/3.18.14": {
+      "sha512": "pfs/frFDIG2+Q/bJfWCcLf2eXeWfA7H1Fxwab2m/FBgUy7KFD0p3WfU6UD6BsOFkXv/FT7NRFzZh6+zuIcrdzQ==",
       "type": "package",
-      "path": "radzen.blazor/3.18.9",
+      "path": "radzen.blazor/3.18.14",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3177,7 +3177,7 @@
         "lib/net5.0/Radzen.Blazor.xml",
         "lib/netstandard2.1/Radzen.Blazor.dll",
         "lib/netstandard2.1/Radzen.Blazor.xml",
-        "radzen.blazor.3.18.9.nupkg.sha512",
+        "radzen.blazor.3.18.14.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",

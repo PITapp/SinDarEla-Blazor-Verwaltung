@@ -28,7 +28,7 @@
     </div>
     <RadzenTabs style="float: none">
       <Tabs>
-        <RadzenTabsItem Selected="true" Text="Daten">
+        <RadzenTabsItem Selected="true" Text="Allgemein">
           <ChildContent>
             <div class="row">
               <div class="col-md-6">
@@ -294,7 +294,77 @@
                 </RadzenPanel>
               </div>
               <div class="col-md-6" style="padding-left: 5px">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Sonstiges">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 205px" Text="Firmen">
+                  <ChildContent>
+                    <RadzenDataGrid @ref="grid0" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterFirmensResult" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" style="border: 1px solid rgba(0, 0, 0, 0); height: 150px; margin-top: 9px" LoadData="@Grid0LoadData">
+                      <Columns>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" Property="FirmaName" Title="Name" Width="300px">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" Property="Position" Title="Position">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" Property="Status" Title="Status">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" FormatString="{0:d}" Property="ArbeitsrechtEintritt" Title="Arbeitsrecht Eintritt">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" FormatString="{0:d}" Property="LetzterEintritt" Title="Letzter Eintritt">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" FormatString="{0:d}" Property="ArbeitsrechtAustritt" Title="Arbeitsrecht Austritt">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" FormatString="{0:d}" Property="LetzterAustritt" Title="Letzter Austritt">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" Property="Notiz" Title="Notiz">
+                        </RadzenDataGridColumn>
+                      </Columns>
+                    </RadzenDataGrid>
+                  </ChildContent>
+                  <HeaderTemplate>
+                    <div class="row">
+                      <div class="col-md-12 align-items-start d-flex">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add_task" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Hinzufügen">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px" Text="Bearbeiten">
+                        </RadzenButton>
+                      </div>
+                    </div>
+                  </HeaderTemplate>
+                </RadzenPanel>
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 205px; margin-top: 20px" Text="Tätigkeiten">
+                  <ChildContent>
+                    <RadzenDataGrid @ref="datagrid0" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterTaetigkeitensResult" FilterMode="Radzen.FilterMode.Simple" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten" style="border: 1px solid rgba(0, 0, 0, 0); height: 200px; margin-top: 9px" LoadData="@Datagrid0LoadData">
+                      <Columns>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten" Property="TaetigkeitArt" Title="Art">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten" Property="LeistungSchluessel" Title="Schlüssel">
+                        </RadzenDataGridColumn>
+                      </Columns>
+                    </RadzenDataGrid>
+                  </ChildContent>
+                  <HeaderTemplate>
+                    <div class="row">
+                      <div class="col-md-12 align-items-start d-flex">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add_task" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Hinzufügen">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px" Text="Bearbeiten">
+                        </RadzenButton>
+                      </div>
+                    </div>
+                  </HeaderTemplate>
+                </RadzenPanel>
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 290px; margin-top: 20px" Text="Kunden">
+                  <ChildContent>
+                    <RadzenDataGrid @ref="datagrid1" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterKundensResult" FilterMode="Radzen.FilterMode.Simple" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden" style="border: 1px solid rgba(0, 0, 0, 0); height: 222px; margin-top: 9px" LoadData="@Datagrid1LoadData">
+                      <Columns>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden" Property="KundeName" Title="Name">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden" Property="LeistungArt" Title="Leistung Art">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden" Property="LeistungSchluessel" Title="Leistung Schlüssel">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden" Property="Betreuungsart" Title="Betreuungsart">
+                        </RadzenDataGridColumn>
+                      </Columns>
+                    </RadzenDataGrid>
+                  </ChildContent>
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">
@@ -309,6 +379,58 @@
               </div>
             </div>
           </ChildContent>
+        </RadzenTabsItem>
+        <RadzenTabsItem Selected="false" Text="Anstellung">
+          <ChildContent>
+            <div class="row">
+              <div class="col-md-6">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Details">
+                  <ChildContent>
+                    <RadzenLabel Text="Hallo">
+                    </RadzenLabel>
+                  </ChildContent>
+                  <HeaderTemplate>
+                    <div  class="row">
+                      <div class="col-md-12 align-items-start d-flex">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neue">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="done" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Speichern" Tooltip="Bearbeiten Infotext">
+                        </RadzenButton>
+                      </div>
+                    </div>
+                  </HeaderTemplate>
+                </RadzenPanel>
+              </div>
+              <div class="col-md-6" style="padding-left: 5px">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Sonstiges">
+                  <ChildContent>
+                    <RadzenLabel Text="Hallo">
+                    </RadzenLabel>
+                  </ChildContent>
+                  <HeaderTemplate>
+                    <div class="row">
+                      <div class="col-md-12 align-items-start d-flex">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Kopieren">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px" Text="Bearbeiten">
+                        </RadzenButton>
+                      </div>
+                    </div>
+                  </HeaderTemplate>
+                </RadzenPanel>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Urlaub">
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Termine">
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Fortbildungen">
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Kundenbudget">
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Dokumente">
         </RadzenTabsItem>
       </Tabs>
     </RadzenTabs>

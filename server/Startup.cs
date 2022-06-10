@@ -123,6 +123,12 @@ namespace SinDarElaVerwaltung
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>("VwBenutzerBases");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenBetreuer>("VwKundenBetreuers");
             oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>("VwKundenUndBetreuerAuswahls");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter>("VwMitarbeiters");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen>("VwMitarbeiterFirmens");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden>("VwMitarbeiterKundens");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu>("VwMitarbeiterNeus");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterSuchen>("VwMitarbeiterSuchens");
+            oDataBuilder.EntitySet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten>("VwMitarbeiterTaetigkeitens");
 
             this.OnConfigureOData(oDataBuilder);
 

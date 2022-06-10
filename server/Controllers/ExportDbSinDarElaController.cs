@@ -872,5 +872,83 @@ namespace SinDarElaVerwaltung
         {
             return ToExcel(ApplyQuery(context.VwKundenUndBetreuerAuswahls, Request.Query), fileName);
         }
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiters/csv")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiters/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeitersToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.VwMitarbeiters, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiters/excel")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiters/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeitersToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.VwMitarbeiters, Request.Query), fileName);
+        }
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterfirmens/csv")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterfirmens/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterFirmensToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.VwMitarbeiterFirmens, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterfirmens/excel")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterfirmens/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterFirmensToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.VwMitarbeiterFirmens, Request.Query), fileName);
+        }
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterkundens/csv")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterkundens/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterKundensToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.VwMitarbeiterKundens, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterkundens/excel")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterkundens/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterKundensToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.VwMitarbeiterKundens, Request.Query), fileName);
+        }
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterneus/csv")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterneus/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterNeusToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.VwMitarbeiterNeus, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterneus/excel")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeiterneus/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterNeusToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.VwMitarbeiterNeus, Request.Query), fileName);
+        }
+        [HttpGet("/export/DbSinDarEla/vwmitarbeitersuchens/csv")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeitersuchens/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterSuchensToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.VwMitarbeiterSuchens, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/vwmitarbeitersuchens/excel")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeitersuchens/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterSuchensToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.VwMitarbeiterSuchens, Request.Query), fileName);
+        }
+        [HttpGet("/export/DbSinDarEla/vwmitarbeitertaetigkeitens/csv")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeitertaetigkeitens/csv(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterTaetigkeitensToCSV(string fileName = null)
+        {
+            return ToCSV(ApplyQuery(context.VwMitarbeiterTaetigkeitens, Request.Query), fileName);
+        }
+
+        [HttpGet("/export/DbSinDarEla/vwmitarbeitertaetigkeitens/excel")]
+        [HttpGet("/export/DbSinDarEla/vwmitarbeitertaetigkeitens/excel(fileName='{fileName}')")]
+        public FileStreamResult ExportVwMitarbeiterTaetigkeitensToExcel(string fileName = null)
+        {
+            return ToExcel(ApplyQuery(context.VwMitarbeiterTaetigkeitens, Request.Query), fileName);
+        }
     }
 }

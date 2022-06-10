@@ -31,15 +31,22 @@
                           "components": [
                             {
                               "allowFiltering": true,
-                              "data": "${rstBase}",
+                              "attributes": [
+                                {
+                                  "name": "style",
+                                  "value": "max-height: 400px;"
+                                }
+                              ],
+                              "data": "${rstMitarbeiterNeu}",
                               "filterCaseSensitivity": "caseInsensitive",
+                              "maxSelectedLabels": 10,
                               "name": "BaseID",
                               "placeholder": "",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "textProperty": "Name1",
+                              "textProperty": "NameGesamt",
                               "type": "dropdown",
                               "value": "${dsoMitarbeiter.BaseID}",
                               "valueProperty": "BaseID",
@@ -112,9 +119,7 @@
                           "type": "col"
                         }
                       ],
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
+                      "style": {},
                       "type": "row"
                     },
                     {
@@ -135,6 +140,7 @@
                               "events": {
                                 "click": [
                                   {
+                                    "result": "null",
                                     "type": "close-popup"
                                   }
                                 ]
@@ -152,6 +158,9 @@
                         }
                       ],
                       "name": "row0",
+                      "style": {
+                        "marginTop": "20px"
+                      },
                       "type": "row"
                     }
                   ],
@@ -204,19 +213,14 @@
   "events": {
     "load": [
       {
-        "name": "dbSinDarEla.getBases",
-        "parameters": [
-          {
-            "name": "$orderby",
-            "value": "Name1, Name2"
-          }
-        ],
+        "name": "dbSinDarEla.getVwMitarbeiterNeus",
+        "parameters": [],
         "then": [
           {
-            "name": "rstBase",
+            "name": "rstMitarbeiterNeu",
             "type": "set",
             "value": "${result.Value.AsODataEnumerable()}",
-            "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base>"
+            "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu>"
           }
         ],
         "type": "invoke"

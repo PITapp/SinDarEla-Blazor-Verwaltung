@@ -180,7 +180,7 @@ namespace SinDarElaVerwaltung.Pages
         protected async System.Threading.Tasks.Task Load()
         {
             if (Globals.globalBenutzer == null) {
-            UriHelper.NavigateTo("anmeldung");
+            UriHelper.NavigateTo("anmeldung-laden");
             }
 
             var dbSinDarElaGetBenutzersResult = await DbSinDarEla.GetBenutzers(filter:$"BenutzerName eq 'Günther Painsi'", expand:$"Base");

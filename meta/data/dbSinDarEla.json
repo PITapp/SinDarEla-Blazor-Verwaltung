@@ -727,15 +727,23 @@
           "length": 16777215
         },
         "LetzteKundenID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
           "type": "integer"
         },
         "LetzteMitarbeiterID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
           "type": "integer"
         },
         "LetzteBaseID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
           "type": "integer"
         },
         "LetzteBenutzerID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
           "type": "integer"
         },
         "FilterKontakteName": {
@@ -4458,15 +4466,23 @@
           "length": 16777215
         },
         "LetzteKundenID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
           "type": "integer"
         },
         "LetzteMitarbeiterID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
           "type": "integer"
         },
         "LetzteBaseID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
           "type": "integer"
         },
         "LetzteBenutzerID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
           "type": "integer"
         },
         "FilterKontakteName": {
@@ -4800,6 +4816,352 @@
         "Notiz": {
           "type": "string",
           "length": 65535
+        }
+      }
+    },
+    "VwMitarbeiter": {
+      "x-view": true,
+      "x-table": "def.vwMitarbeiter",
+      "resource": "VwMitarbeiters",
+      "required": [
+        "BaseID",
+        "MitarbeiterArtID",
+        "MitarbeiterArt",
+        "Anrede"
+      ],
+      "properties": {
+        "MitarbeiterID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "BaseID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "MitarbeiterArtID": {
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "NameGesamt": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "MitarbeiterArt": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Anrede": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 45
+        },
+        "NameKuerzel": {
+          "type": "string",
+          "length": 5
+        },
+        "TitelVorne": {
+          "type": "string",
+          "length": 20
+        },
+        "TitelHinten": {
+          "type": "string",
+          "length": 20
+        },
+        "Strasse": {
+          "type": "string",
+          "length": 70
+        },
+        "PLZ": {
+          "type": "string",
+          "length": 10
+        },
+        "Ort": {
+          "type": "string",
+          "length": 100
+        },
+        "Geburtsdatum": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Versicherungsnummer": {
+          "type": "string",
+          "length": 15
+        },
+        "Staatsangehoerigkeit": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon1": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon2": {
+          "type": "string",
+          "length": 30
+        },
+        "EMail1": {
+          "type": "string",
+          "length": 70
+        },
+        "EMail2": {
+          "type": "string",
+          "length": 70
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 65535
+        },
+        "KontoName": {
+          "type": "string",
+          "length": 50
+        },
+        "KontoNummer": {
+          "type": "string",
+          "length": 30
+        },
+        "KontoInfo": {
+          "type": "string",
+          "length": 65535
+        },
+        "Notfallkontakt": {
+          "type": "string",
+          "length": 50
+        },
+        "NotfallkontaktTelefon": {
+          "type": "string",
+          "length": 20
+        }
+      }
+    },
+    "VwMitarbeiterFirmen": {
+      "x-view": true,
+      "x-table": "def.vwMitarbeiterFirmen",
+      "resource": "VwMitarbeiterFirmens",
+      "required": [
+        "BaseID",
+        "FirmaID",
+        "FirmaName",
+        "Position",
+        "Status"
+      ],
+      "properties": {
+        "MitarbeiterID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "BaseID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "FirmaID": {
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "FirmaName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "MitarbeiterName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "Position": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "Status": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 45
+        },
+        "ArbeitsrechtEintritt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ArbeitsrechtAustritt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "LetzterEintritt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "LetzterAustritt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 16777215
+        }
+      }
+    },
+    "VwMitarbeiterKunden": {
+      "x-view": true,
+      "x-table": "def.vwMitarbeiterKunden",
+      "resource": "VwMitarbeiterKundens",
+      "required": [
+        "MitarbeiterBaseID",
+        "KundenBaseID",
+        "LeistungArt",
+        "Betreuungsart"
+      ],
+      "properties": {
+        "MitarbeiterID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "MitarbeiterBaseID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "KundenID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "KundenBaseID": {
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "MitarbeiterName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "KundeName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "LeistungArt": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 70
+        },
+        "LeistungSchluessel": {
+          "type": "string",
+          "length": 10
+        },
+        "Betreuungsart": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 45
+        }
+      }
+    },
+    "VwMitarbeiterNeu": {
+      "x-view": true,
+      "x-table": "def.vwMitarbeiterNeu",
+      "resource": "VwMitarbeiterNeus",
+      "required": [],
+      "properties": {
+        "BaseID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "NameGesamt": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        }
+      }
+    },
+    "VwMitarbeiterSuchen": {
+      "x-view": true,
+      "x-table": "def.vwMitarbeiterSuchen",
+      "resource": "VwMitarbeiterSuchens",
+      "required": [
+        "BaseID",
+        "MitarbeiterArt"
+      ],
+      "properties": {
+        "MitarbeiterID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "BaseID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "NameGesamt": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "MitarbeiterArt": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        }
+      }
+    },
+    "VwMitarbeiterTaetigkeiten": {
+      "x-view": true,
+      "x-table": "def.vwMitarbeiterTaetigkeiten",
+      "resource": "VwMitarbeiterTaetigkeitens",
+      "required": [
+        "BaseID",
+        "MitarbeiterArtID",
+        "TaetigkeitArt"
+      ],
+      "properties": {
+        "MitarbeiterID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "BaseID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "MitarbeiterArtID": {
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "MitarbeiterTaetigkeitenID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "MitarbeiterName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "TaetigkeitArt": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 70
+        },
+        "LeistungSchluessel": {
+          "type": "string",
+          "length": 10
+        },
+        "Sortierung": {
+          "type": "integer"
         }
       }
     }
@@ -10628,6 +10990,408 @@
                 "value": {
                   "items": {
                     "$ref": "#/definitions/VwKundenUndBetreuerAuswahl"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwMitarbeiters": {
+      "get": {
+        "operationId": "getVwMitarbeiters",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwMitarbeiter"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwMitarbeiterFirmens": {
+      "get": {
+        "operationId": "getVwMitarbeiterFirmens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwMitarbeiterFirmen"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwMitarbeiterKundens": {
+      "get": {
+        "operationId": "getVwMitarbeiterKundens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwMitarbeiterKunden"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwMitarbeiterNeus": {
+      "get": {
+        "operationId": "getVwMitarbeiterNeus",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwMitarbeiterNeu"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwMitarbeiterSuchens": {
+      "get": {
+        "operationId": "getVwMitarbeiterSuchens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwMitarbeiterSuchen"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwMitarbeiterTaetigkeitens": {
+      "get": {
+        "operationId": "getVwMitarbeiterTaetigkeitens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwMitarbeiterTaetigkeiten"
                   },
                   "type": "array"
                 }

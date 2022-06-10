@@ -2805,6 +2805,162 @@ namespace SinDarElaVerwaltung
 
             return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>>(response);
         }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeitersToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeiters/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeiters/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeitersToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeiters/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeiters/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetVwMitarbeiters(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter>> GetVwMitarbeiters(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"VwMitarbeiters");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetVwMitarbeiters(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter>>(response);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterFirmensToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeiterfirmens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeiterfirmens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterFirmensToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeiterfirmens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeiterfirmens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetVwMitarbeiterFirmens(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen>> GetVwMitarbeiterFirmens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"VwMitarbeiterFirmens");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetVwMitarbeiterFirmens(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen>>(response);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterKundensToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeiterkundens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeiterkundens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterKundensToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeiterkundens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeiterkundens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetVwMitarbeiterKundens(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden>> GetVwMitarbeiterKundens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"VwMitarbeiterKundens");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetVwMitarbeiterKundens(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden>>(response);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterNeusToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeiterneus/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeiterneus/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterNeusToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeiterneus/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeiterneus/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetVwMitarbeiterNeus(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu>> GetVwMitarbeiterNeus(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"VwMitarbeiterNeus");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetVwMitarbeiterNeus(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu>>(response);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterSuchensToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeitersuchens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeitersuchens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterSuchensToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeitersuchens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeitersuchens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetVwMitarbeiterSuchens(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterSuchen>> GetVwMitarbeiterSuchens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"VwMitarbeiterSuchens");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetVwMitarbeiterSuchens(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterSuchen>>(response);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterTaetigkeitensToExcel(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeitertaetigkeitens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeitertaetigkeitens/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+
+        public async System.Threading.Tasks.Task ExportVwMitarbeiterTaetigkeitensToCSV(Radzen.Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/dbsindarela/vwmitarbeitertaetigkeitens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/dbsindarela/vwmitarbeitertaetigkeitens/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        partial void OnGetVwMitarbeiterTaetigkeitens(HttpRequestMessage requestMessage);
+
+
+        public async System.Threading.Tasks.Task<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten>> GetVwMitarbeiterTaetigkeitens(string filter = default(string), string orderby = default(string), string expand = default(string), int? top = default(int?), int? skip = default(int?), bool? count = default(bool?), string format = default(string), string select = default(string))
+        {
+            var uri = new Uri(baseUri, $"VwMitarbeiterTaetigkeitens");
+            uri = Radzen.ODataExtensions.GetODataUri(uri: uri, filter:filter, top:top, skip:skip, orderby:orderby, expand:expand, select:select, count:count);
+
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+
+            OnGetVwMitarbeiterTaetigkeitens(httpRequestMessage);
+
+            var response = await httpClient.SendAsync(httpRequestMessage);
+
+            return await Radzen.HttpResponseMessageExtensions.ReadAsync<Radzen.ODataServiceResult<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten>>(response);
+        }
         partial void OnDeleteAbrechnungBasis(HttpRequestMessage requestMessage);
 
 

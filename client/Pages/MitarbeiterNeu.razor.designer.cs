@@ -58,19 +58,19 @@ namespace SinDarElaVerwaltung.Pages
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
 
-        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> _rstBase;
-        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> rstBase
+        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu> _rstMitarbeiterNeu;
+        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu> rstMitarbeiterNeu
         {
             get
             {
-                return _rstBase;
+                return _rstMitarbeiterNeu;
             }
             set
             {
-                if (!object.Equals(_rstBase, value))
+                if (!object.Equals(_rstMitarbeiterNeu, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "rstBase", NewValue = value, OldValue = _rstBase };
-                    _rstBase = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "rstMitarbeiterNeu", NewValue = value, OldValue = _rstMitarbeiterNeu };
+                    _rstMitarbeiterNeu = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
@@ -122,8 +122,8 @@ namespace SinDarElaVerwaltung.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            var dbSinDarElaGetBasesResult = await DbSinDarEla.GetBases(orderby:$"Name1, Name2");
-            rstBase = dbSinDarElaGetBasesResult.Value.AsODataEnumerable();
+            var dbSinDarElaGetVwMitarbeiterNeusResult = await DbSinDarEla.GetVwMitarbeiterNeus();
+            rstMitarbeiterNeu = dbSinDarElaGetVwMitarbeiterNeusResult.Value.AsODataEnumerable();
 
             var dbSinDarElaGetMitarbeiterArtensResult = await DbSinDarEla.GetMitarbeiterArtens(orderby:$"Sortierung");
             rstMitarbeiterArten = dbSinDarElaGetMitarbeiterArtensResult.Value.AsODataEnumerable();

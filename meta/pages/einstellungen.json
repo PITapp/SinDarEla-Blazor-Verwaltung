@@ -620,7 +620,7 @@
     "load": [
       {
         "condition": "${Globals.globalBenutzer} == null",
-        "path": "anmeldung",
+        "path": "anmeldung-laden",
         "type": "navigate"
       },
       {

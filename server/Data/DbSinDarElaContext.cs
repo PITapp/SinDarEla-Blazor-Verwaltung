@@ -33,6 +33,12 @@ namespace SinDarElaVerwaltung.Data
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>().HasNoKey();
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenBetreuer>().HasNoKey();
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>().HasNoKey();
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter>().HasNoKey();
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen>().HasNoKey();
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden>().HasNoKey();
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu>().HasNoKey();
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterSuchen>().HasNoKey();
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten>().HasNoKey();
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.AbrechnungKundenReststunden>()
               .HasOne(i => i.Kunden)
               .WithMany(i => i.AbrechnungKundenReststundens)
@@ -346,6 +352,22 @@ namespace SinDarElaVerwaltung.Data
               .Property(p => p.Sperren)
               .HasDefaultValueSql("0");
 
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer>()
+              .Property(p => p.LetzteKundenID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer>()
+              .Property(p => p.LetzteMitarbeiterID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer>()
+              .Property(p => p.LetzteBaseID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.Benutzer>()
+              .Property(p => p.LetzteBenutzerID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.BenutzerModule>()
               .Property(p => p.ErlaubtNeu)
               .HasDefaultValueSql("0");
@@ -486,12 +508,60 @@ namespace SinDarElaVerwaltung.Data
               .Property(p => p.Sperren)
               .HasDefaultValueSql("0");
 
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>()
+              .Property(p => p.LetzteKundenID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>()
+              .Property(p => p.LetzteMitarbeiterID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>()
+              .Property(p => p.LetzteBaseID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwBenutzerBase>()
+              .Property(p => p.LetzteBenutzerID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenBetreuer>()
               .Property(p => p.KundenID)
               .HasDefaultValueSql("0").ValueGeneratedNever();
 
         builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>()
               .Property(p => p.KundenID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter>()
+              .Property(p => p.MitarbeiterID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen>()
+              .Property(p => p.MitarbeiterID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden>()
+              .Property(p => p.MitarbeiterID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden>()
+              .Property(p => p.KundenID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu>()
+              .Property(p => p.BaseID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterSuchen>()
+              .Property(p => p.MitarbeiterID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten>()
+              .Property(p => p.MitarbeiterID)
+              .HasDefaultValueSql("0").ValueGeneratedNever();
+
+        builder.Entity<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten>()
+              .Property(p => p.MitarbeiterTaetigkeitenID)
               .HasDefaultValueSql("0").ValueGeneratedNever();
 
         this.OnModelBuilding(builder);
@@ -889,6 +959,42 @@ namespace SinDarElaVerwaltung.Data
     }
 
     public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl> VwKundenUndBetreuerAuswahls
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter> VwMitarbeiters
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> VwMitarbeiterFirmens
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden> VwMitarbeiterKundens
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterNeu> VwMitarbeiterNeus
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterSuchen> VwMitarbeiterSuchens
+    {
+      get;
+      set;
+    }
+
+    public DbSet<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten> VwMitarbeiterTaetigkeitens
     {
       get;
       set;
