@@ -62,7 +62,7 @@
             },
             "Radzen.Blazor": {
               "target": "Package",
-              "version": "[3.18.14, )"
+              "version": "[3.19.3, )"
             },
             "System.Net.Http.Json": {
               "target": "Package",
