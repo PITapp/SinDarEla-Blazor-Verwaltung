@@ -28,9 +28,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   [Route("odata/dbSinDarEla/InfotexteHtmls")]
   public partial class InfotexteHtmlsController : ODataController
   {
-    private Data.DbSinDarElaContext context;
+    private SinDarElaVerwaltung.Data.DbSinDarElaContext context;
 
-    public InfotexteHtmlsController(Data.DbSinDarElaContext context)
+    public InfotexteHtmlsController(SinDarElaVerwaltung.Data.DbSinDarElaContext context)
     {
       this.context = context;
     }

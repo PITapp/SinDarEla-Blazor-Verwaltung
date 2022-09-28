@@ -28,9 +28,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   [Route("odata/dbSinDarEla/AbrechnungKundenReststundens")]
   public partial class AbrechnungKundenReststundensController : ODataController
   {
-    private Data.DbSinDarElaContext context;
+    private SinDarElaVerwaltung.Data.DbSinDarElaContext context;
 
-    public AbrechnungKundenReststundensController(Data.DbSinDarElaContext context)
+    public AbrechnungKundenReststundensController(SinDarElaVerwaltung.Data.DbSinDarElaContext context)
     {
       this.context = context;
     }

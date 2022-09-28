@@ -28,9 +28,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   [Route("odata/dbSinDarEla/Bases")]
   public partial class BasesController : ODataController
   {
-    private Data.DbSinDarElaContext context;
+    private SinDarElaVerwaltung.Data.DbSinDarElaContext context;
 
-    public BasesController(Data.DbSinDarElaContext context)
+    public BasesController(SinDarElaVerwaltung.Data.DbSinDarElaContext context)
     {
       this.context = context;
     }

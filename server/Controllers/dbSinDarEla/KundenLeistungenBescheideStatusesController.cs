@@ -28,9 +28,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   [Route("odata/dbSinDarEla/KundenLeistungenBescheideStatuses")]
   public partial class KundenLeistungenBescheideStatusesController : ODataController
   {
-    private Data.DbSinDarElaContext context;
+    private SinDarElaVerwaltung.Data.DbSinDarElaContext context;
 
-    public KundenLeistungenBescheideStatusesController(Data.DbSinDarElaContext context)
+    public KundenLeistungenBescheideStatusesController(SinDarElaVerwaltung.Data.DbSinDarElaContext context)
     {
       this.context = context;
     }

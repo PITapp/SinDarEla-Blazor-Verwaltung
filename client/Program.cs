@@ -32,7 +32,9 @@ namespace SinDarElaVerwaltung
 
             OnConfigureBuilder(builder);
 
-            await builder.Build().RunAsync();
+            var host = builder.Build();
+
+            await host.RunAsync();
         }
     }
 }

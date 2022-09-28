@@ -1,7 +1,5 @@
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\SinDarElaVerwaltung.Client.staticwebassets.runtime.json
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\web.config
-C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\appsettings.Development.json
-C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\appsettings.json
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\appsettings.Production.json
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.dll
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.runtimeconfig.json
@@ -10,6 +8,8 @@ C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.dll
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\BlazorDebugProxy\Newtonsoft.Json.dll
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\SinDarElaVerwaltung.Server.staticwebassets.runtime.json
+C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\appsettings.Development.json
+C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\appsettings.json
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\SinDarElaVerwaltung.Server.exe
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\SinDarElaVerwaltung.Server.deps.json
 C:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\bin\Debug\net6.0\SinDarElaVerwaltung.Server.runtimeconfig.json

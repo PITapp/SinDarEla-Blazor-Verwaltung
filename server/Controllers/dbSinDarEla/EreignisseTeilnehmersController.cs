@@ -28,9 +28,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   [Route("odata/dbSinDarEla/EreignisseTeilnehmers")]
   public partial class EreignisseTeilnehmersController : ODataController
   {
-    private Data.DbSinDarElaContext context;
+    private SinDarElaVerwaltung.Data.DbSinDarElaContext context;
 
-    public EreignisseTeilnehmersController(Data.DbSinDarElaContext context)
+    public EreignisseTeilnehmersController(SinDarElaVerwaltung.Data.DbSinDarElaContext context)
     {
       this.context = context;
     }

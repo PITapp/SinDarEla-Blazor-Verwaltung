@@ -1633,6 +1633,7 @@
                               "columnWidth": "150px",
                               "columns": [
                                 {
+                                  "frozen": true,
                                   "property": "FirmaName",
                                   "title": "Name",
                                   "width": "300px"

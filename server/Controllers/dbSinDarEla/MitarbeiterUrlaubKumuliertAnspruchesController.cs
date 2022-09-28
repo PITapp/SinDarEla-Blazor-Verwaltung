@@ -28,9 +28,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   [Route("odata/dbSinDarEla/MitarbeiterUrlaubKumuliertAnspruches")]
   public partial class MitarbeiterUrlaubKumuliertAnspruchesController : ODataController
   {
-    private Data.DbSinDarElaContext context;
+    private SinDarElaVerwaltung.Data.DbSinDarElaContext context;
 
-    public MitarbeiterUrlaubKumuliertAnspruchesController(Data.DbSinDarElaContext context)
+    public MitarbeiterUrlaubKumuliertAnspruchesController(SinDarElaVerwaltung.Data.DbSinDarElaContext context)
     {
       this.context = context;
     }

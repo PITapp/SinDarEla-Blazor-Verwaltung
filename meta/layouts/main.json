@@ -41,7 +41,8 @@
                       "path": "/assets/images/LogoMitSchriftzug4.png",
                       "style": {
                         "float": "left",
-                        "height": "34px"
+                        "height": "34px",
+                        "marginLeft": "50px"
                       },
                       "type": "image"
                     },
@@ -288,7 +289,7 @@
                 },
                 {
                   "icon": "assignment_turned_in",
-                  "path": "mitarbeiter-taetigkeiten",
+                  "path": "management",
                   "selected": false,
                   "text": "Management"
                 },

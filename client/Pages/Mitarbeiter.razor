@@ -298,7 +298,7 @@
                   <ChildContent>
                     <RadzenDataGrid @ref="grid0" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterFirmensResult" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" style="border: 1px solid rgba(0, 0, 0, 0); height: 150px; margin-top: 9px" LoadData="@Grid0LoadData">
                       <Columns>
-                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" Property="FirmaName" Title="Name" Width="300px">
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" Frozen="true" Property="FirmaName" Title="Name" Width="300px">
                         </RadzenDataGridColumn>
                         <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" Property="Position" Title="Position">
                         </RadzenDataGridColumn>

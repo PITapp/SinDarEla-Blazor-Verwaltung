@@ -28,9 +28,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
   [Route("odata/dbSinDarEla/FirmenMitarbeiterTaetigkeitens")]
   public partial class FirmenMitarbeiterTaetigkeitensController : ODataController
   {
-    private Data.DbSinDarElaContext context;
+    private SinDarElaVerwaltung.Data.DbSinDarElaContext context;
 
-    public FirmenMitarbeiterTaetigkeitensController(Data.DbSinDarElaContext context)
+    public FirmenMitarbeiterTaetigkeitensController(SinDarElaVerwaltung.Data.DbSinDarElaContext context)
     {
       this.context = context;
     }

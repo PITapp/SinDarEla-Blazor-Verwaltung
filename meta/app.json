@@ -22,10 +22,10 @@
   "navigation": [
     "Einstellungen",
     "Anmeldung",
-    "Dashboard",
     "Benutzerprofil",
     "Mitarbeiter",
-    "AnmeldungLaden"
+    "AnmeldungLaden",
+    "Base"
   ],
   "pages": [
     "MeldungLoeschen",
@@ -46,7 +46,10 @@
     "AnmeldungLaden",
     "MitarbeiterSuchen",
     "MitarbeiterListen",
-    "Copy of MitarbeiterListe"
+    "Copy of MitarbeiterListe",
+    "Base",
+    "Management",
+    "Dienstplan"
   ],
   "port": 8000,
   "pwa": true,
@@ -55,7 +58,7 @@
   "serverProject": true,
   "serverVersion": "6",
   "startPage": "AnmeldungLaden",
-  "theme": "standard",
+  "theme": "default",
   "themeSettings": null,
   "title": "SinDarElaVerwaltung",
   "wasm": true
