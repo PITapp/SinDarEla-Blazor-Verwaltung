@@ -25,7 +25,9 @@
     "Benutzerprofil",
     "Mitarbeiter",
     "AnmeldungLaden",
-    "Base"
+    "Base",
+    "Base2",
+    "Copy of Mitarbeiter"
   ],
   "pages": [
     "MeldungLoeschen",
@@ -49,7 +51,12 @@
     "Copy of MitarbeiterListe",
     "Base",
     "Management",
-    "Dienstplan"
+    "Dienstplan",
+    "Kunden",
+    "Base2",
+    "Add Base2",
+    "Edit Base2",
+    "Copy of Mitarbeiter"
   ],
   "port": 8000,
   "pwa": true,

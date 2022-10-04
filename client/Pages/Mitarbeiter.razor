@@ -28,7 +28,59 @@
     </div>
     <RadzenTabs style="float: none">
       <Tabs>
-        <RadzenTabsItem Selected="true" Text="Allgemein">
+        <RadzenTabsItem Selected="true" Text="Liste">
+          <ChildContent>
+            <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Daten">
+              <ChildContent>
+                <div class="row">
+                  <div class="col-md-12">
+                    <RadzenDataGrid @ref="datagrid2" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getBasesCount" Data="@getBasesResult" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" PageSize="500" Responsive="false"  LoadData="@Datagrid2LoadData" RowSelect="@Datagrid2RowSelect">
+                      <Columns>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name1" Title="Name 1">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name2" Title="Name 2">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="NameKuerzel" Title="Name Kuerzel">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="TitelVorne" Title="Titel Vorne">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="TitelHinten" Title="Titel Hinten">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Strasse" Title="Strasse">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="PLZ" Title="PLZ">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Ort" Title="Ort">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" FormatString="{0:d}" Property="Geburtsdatum" Title="Geburtsdatum">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Versicherungsnummer" Title="Versicherungsnummer">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Staatsangehoerigkeit" Title="Staatsangehoerigkeit">
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Telefon1" Title="Telefon 1">
+                        </RadzenDataGridColumn>
+                      </Columns>
+                    </RadzenDataGrid>
+                  </div>
+                </div>
+              </ChildContent>
+              <HeaderTemplate>
+                <div class="row">
+                  <div class="col-md-12 align-items-start d-flex">
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neu">
+                    </RadzenButton>
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext">
+                    </RadzenButton>
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Disabled="false" Icon="cancel" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-style: normal; font-weight: normal; margin-left: 10px" Text="Löschen" Tooltip="Löschen Infotext">
+                    </RadzenButton>
+                  </div>
+                </div>
+              </HeaderTemplate>
+            </RadzenPanel>
+          </ChildContent>
+        </RadzenTabsItem>
+        <RadzenTabsItem Selected="false" Text="Allgemein">
           <ChildContent>
             <div class="row">
               <div class="col-md-6">

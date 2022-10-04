@@ -1,0 +1,100 @@
+﻿@page "/kunden"
+@layout MainLayout
+@inherits SinDarElaVerwaltung.Pages.KundenComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SinDarElaVerwaltung.Models.DbSinDarEla
+<PageTitle>Kunden</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div style="height: ; margin-top: -7px; padding-bottom: 0; padding-left: 5px; padding-right: 3px; padding-top: 0; width: " class="row">
+      <div class="justify-content-start       d-flex align-items-center          col-md-8" style="height: 52px; padding-bottom: 1px">
+        <RadzenHeading Size="H1" style="color: #5d717b; display: inline-block" Text="Kunden">
+        </RadzenHeading>
+        <RadzenHeading Size="H3" style="color: #e5ecef; display: inline-block; margin-top: 7px; padding-left: 10px; padding-right: 10px" Text="|">
+        </RadzenHeading>
+        <RadzenHeading Size="H3" style="color: #6A80AA; display: inline; font-size: 21px; font-weight: normal; padding-top: 4px" Text="Daten zeigen..." >
+        </RadzenHeading>
+      </div>
+      <div class="col-md-4  d-flex justify-content-end align-items-end" style="padding-right: 20px">
+        <RadzenButton ButtonStyle="ButtonStyle.Info" ButtonType="ButtonType.Button" Icon="print" Size="ButtonSize.Small" style="background-color: rgb(230, 236, 239); border-bottom: 2px solid #d86e13; color: #6A80AA; display: block; font-weight: normal; width: 150px" Text="Drucken" Click="@Button0Click">
+        </RadzenButton>
+      </div>
+    </div>
+    <RadzenTabs style="float: none">
+      <Tabs>
+        <RadzenTabsItem Selected="true" Text="Allgemein">
+          <ChildContent>
+            <div class="row">
+              <div class="col-md-9">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Daten">
+                  <ChildContent>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getBasesCount" Data="@getBasesResult" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" PageSize="500" Responsive="false" style="height: 1000px" LoadData="@Grid0LoadData" RowSelect="@Grid0RowSelect">
+                          <Columns>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name1" Title="Name 1">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name2" Title="Name 2">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="NameKuerzel" Title="Name Kuerzel">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="TitelVorne" Title="Titel Vorne">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="TitelHinten" Title="Titel Hinten">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Strasse" Title="Strasse">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="PLZ" Title="PLZ">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Ort" Title="Ort">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" FormatString="{0:d}" Property="Geburtsdatum" Title="Geburtsdatum">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Versicherungsnummer" Title="Versicherungsnummer">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Staatsangehoerigkeit" Title="Staatsangehoerigkeit">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Telefon1" Title="Telefon 1">
+                            </RadzenDataGridColumn>
+                          </Columns>
+                        </RadzenDataGrid>
+                      </div>
+                    </div>
+                  </ChildContent>
+                  <HeaderTemplate>
+                    <div class="row">
+                      <div class="col-md-12 align-items-start d-flex">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neu">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Disabled="false" Icon="cancel" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-style: normal; font-weight: normal; margin-left: 10px" Text="Löschen" Tooltip="Löschen Infotext">
+                        </RadzenButton>
+                      </div>
+                    </div>
+                  </HeaderTemplate>
+                </RadzenPanel>
+              </div>
+              <div class="col-md-3" style="padding-left: 5px">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Sonstiges">
+                  <HeaderTemplate>
+                    <div class="row">
+                      <div class="col-md-12 align-items-start d-flex">
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Kopieren">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px" Text="Bearbeiten">
+                        </RadzenButton>
+                      </div>
+                    </div>
+                  </HeaderTemplate>
+                </RadzenPanel>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTabsItem>
+      </Tabs>
+    </RadzenTabs>
+  </ChildContent>
+</RadzenContent>

@@ -206,6 +206,238 @@
                 {
                   "components": [
                     {
+                      "components": [
+                        {
+                          "class": "col-md-12",
+                          "components": [
+                            {
+                              "allowFiltering": true,
+                              "allowPaging": true,
+                              "allowSorting": true,
+                              "columns": [
+                                {
+                                  "property": "Name1",
+                                  "title": "Name 1"
+                                },
+                                {
+                                  "property": "Name2",
+                                  "title": "Name 2"
+                                },
+                                {
+                                  "property": "NameKuerzel",
+                                  "title": "Name Kuerzel"
+                                },
+                                {
+                                  "property": "TitelVorne",
+                                  "title": "Titel Vorne"
+                                },
+                                {
+                                  "property": "TitelHinten",
+                                  "title": "Titel Hinten"
+                                },
+                                {
+                                  "property": "Strasse",
+                                  "title": "Strasse"
+                                },
+                                {
+                                  "property": "PLZ",
+                                  "title": "PLZ"
+                                },
+                                {
+                                  "property": "Ort",
+                                  "title": "Ort"
+                                },
+                                {
+                                  "formatString": "{0:d}",
+                                  "property": "Geburtsdatum",
+                                  "title": "Geburtsdatum"
+                                },
+                                {
+                                  "property": "Versicherungsnummer",
+                                  "title": "Versicherungsnummer"
+                                },
+                                {
+                                  "property": "Staatsangehoerigkeit",
+                                  "title": "Staatsangehoerigkeit"
+                                },
+                                {
+                                  "property": "Telefon1",
+                                  "title": "Telefon 1"
+                                }
+                              ],
+                              "count": "${getBasesCount}",
+                              "data": "${getBasesResult}",
+                              "events": {
+                                "loadData": [
+                                  {
+                                    "error": [
+                                      {
+                                        "detail": "Unable to load Bases",
+                                        "severity": "error",
+                                        "summary": "Error",
+                                        "type": "notify"
+                                      }
+                                    ],
+                                    "name": "dbSinDarEla.getBases",
+                                    "parameters": [
+                                      {
+                                        "name": "$top",
+                                        "value": "event.top"
+                                      },
+                                      {
+                                        "name": "$skip",
+                                        "value": "event.skip"
+                                      },
+                                      {
+                                        "name": "$count",
+                                        "value": "event.top != null && event.skip != null"
+                                      },
+                                      {
+                                        "name": "$filter",
+                                        "value": "${event.filter}"
+                                      },
+                                      {
+                                        "name": "$orderby",
+                                        "value": "${event.orderby}"
+                                      }
+                                    ],
+                                    "then": [
+                                      {
+                                        "name": "getBasesResult",
+                                        "type": "set",
+                                        "value": "${result.Value.AsODataEnumerable()}",
+                                        "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base>"
+                                      },
+                                      {
+                                        "name": "getBasesCount",
+                                        "type": "set",
+                                        "value": "${result.Count}",
+                                        "valueType": "int"
+                                      }
+                                    ],
+                                    "type": "invoke"
+                                  }
+                                ],
+                                "rowSelect": [
+                                  {
+                                    "detail": "Hallo...",
+                                    "severity": "info",
+                                    "type": "notify"
+                                  }
+                                ]
+                              },
+                              "filterMode": "advanced",
+                              "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.Base",
+                              "name": "datagrid2",
+                              "pageSize": 500,
+                              "responsive": false,
+                              "style": {},
+                              "title": "",
+                              "type": "datagrid",
+                              "value": ""
+                            }
+                          ],
+                          "name": "col9",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row5",
+                      "type": "row"
+                    }
+                  ],
+                  "headerTemplate": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-12 align-items-start d-flex",
+                          "components": [
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": []
+                              },
+                              "icon": "add",
+                              "name": "buttonNeu",
+                              "size": "sm",
+                              "style": {
+                                "color": "#D86E13",
+                                "display": "block"
+                              },
+                              "template": "",
+                              "text": "Neu",
+                              "tooltip": "",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": []
+                              },
+                              "icon": "create",
+                              "isBusy": false,
+                              "name": "buttonBearbeitenInfotext",
+                              "size": "sm",
+                              "style": {
+                                "color": "#6A80AA",
+                                "display": "block",
+                                "fontWeight": "400",
+                                "marginLeft": "10px",
+                                "paddingLeft": ""
+                              },
+                              "template": "",
+                              "text": "Bearbeiten",
+                              "tooltip": "Bearbeiten Infotext",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "disabled": false,
+                              "events": {
+                                "click": []
+                              },
+                              "icon": "cancel",
+                              "name": "buttonLoeschenInfotext",
+                              "size": "sm",
+                              "style": {
+                                "color": "#6A80AA",
+                                "display": "block",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                                "marginLeft": "10px"
+                              },
+                              "template": "",
+                              "text": "Löschen",
+                              "tooltip": "Löschen Infotext",
+                              "type": "button"
+                            }
+                          ],
+                          "name": "col1",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row0",
+                      "type": "row"
+                    }
+                  ],
+                  "icon": "",
+                  "name": "panel5",
+                  "style": {
+                    "border": "1px solid #e6ecef",
+                    "height": "740px"
+                  },
+                  "text": "Daten",
+                  "type": "panel"
+                }
+              ],
+              "icon": "",
+              "selected": true,
+              "text": "Liste"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
                       "class": "col-md-6",
                       "components": [
                         {
@@ -2039,7 +2271,7 @@
                 }
               ],
               "icon": "",
-              "selected": true,
+              "selected": false,
               "text": "Allgemein"
             },
             {

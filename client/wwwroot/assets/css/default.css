@@ -7039,10 +7039,10 @@ input {
   --rz-menu-item-transition: none;
   --rz-menu-top-item-padding: 0.5rem;
   --rz-menu-top-item-border-radius: 0;
+  --rz-menu-top-item-color: var(--rz-text-color);
+  --rz-menu-top-item-background-color: var(--rz-base-background-color);
   --rz-menu-top-item-hover-color: var(--rz-secondary);
   --rz-menu-top-item-hover-background-color: transparent;
-  --rz-menu-top-item-background-color: var(--rz-base-background-color);
-  --rz-menu-top-item-color: var(--rz-text-color);
   --rz-context-menu-padding: 0;
   --rz-context-menu-box-shadow: 0 10px 8px 0 rgba(58, 71, 77, 0.06); }
 
@@ -7059,6 +7059,7 @@ input {
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
   background-color: var(--rz-menu-top-item-background-color); }
   .rz-context-menu .rz-menu:not(.rz-profile-menu) {
     padding: var(--rz-context-menu-padding); }
@@ -7448,7 +7449,8 @@ ul.rz-profile-menu {
   flex-direction: column; }
   .rz-steps .rz-widget-content {
     flex: 1;
-    overflow: auto; }
+    overflow-x: hidden;
+    overflow-y: auto; }
   .rz-steps ul {
     list-style: none;
     padding: 0; }
@@ -9100,10 +9102,10 @@ ul.rz-profile-menu {
     .rz-sortable-column .rzi-sort-desc:before {
       content: 'arrow_drop_down'; }
 
-.rz-grid-table-striped tr:nth-child(odd) > td {
+.rz-grid-table-striped tr:not(.rz-expanded-row-content):nth-child(odd) > td {
   background-color: var(--rz-grid-stripe-background-color); }
 
-.rz-grid-table-striped tr:nth-child(even) > td {
+.rz-grid-table-striped tr:not(.rz-expanded-row-content):nth-child(even) > td {
   background-color: var(--rz-grid-background-color); }
 
 .rz-datatable-data .rz-cell-data .rz-button-sm, .rz-datatable-data .rz-cell-data .rz-fileupload .rz-button, .rz-fileupload .rz-datatable-data .rz-cell-data .rz-button, .rz-datatable-data .rz-cell-data .rz-fileupload .rz-paginator-element, .rz-fileupload .rz-datatable-data .rz-cell-data .rz-paginator-element, .rz-grid-table .rz-cell-data .rz-button-sm, .rz-grid-table .rz-cell-data .rz-fileupload .rz-button, .rz-fileupload .rz-grid-table .rz-cell-data .rz-button, .rz-grid-table .rz-cell-data .rz-fileupload .rz-paginator-element, .rz-fileupload .rz-grid-table .rz-cell-data .rz-paginator-element {
@@ -9214,59 +9216,27 @@ ul.rz-profile-menu {
     .rz-cell-filter .rz-cell-filter-label .rz-current-filter {
       margin-left: 0.5rem; }
 
-.rz-selectable tr:nth-child(even) td,
-.rz-selectable tr:nth-child(even) .rz-cell-data,
-.rz-selectable tr:nth-child(odd) td,
-.rz-selectable tr:nth-child(odd) .rz-cell-data {
+.rz-selectable tr.rz-data-row td,
+.rz-selectable tr.rz-data-row .rz-cell-data {
   transition: background-color var(--rz-transition), color var(--rz-transition); }
 
-.rz-selectable tr:nth-child(even).rz-state-highlight > td,
-.rz-selectable tr:nth-child(odd).rz-state-highlight > td {
+.rz-selectable tr.rz-data-row.rz-state-highlight > td {
   background-color: var(--rz-grid-selected-background-color); }
 
-.rz-selectable tr:nth-child(even).rz-state-highlight .rz-cell-data,
-.rz-selectable tr:nth-child(odd).rz-state-highlight .rz-cell-data {
+.rz-selectable tr.rz-data-row.rz-state-highlight .rz-cell-data {
   color: var(--rz-grid-selected-color); }
 
-.rz-selectable tr:nth-child(even).rz-state-highlight > .rzi, .rz-selectable .rz-menuitem tr:nth-child(even).rz-state-highlight > .rz-menuitem-icon, .rz-menuitem .rz-selectable tr:nth-child(even).rz-state-highlight > .rz-menuitem-icon, .rz-selectable .rz-fileupload-row .rz-button tr:nth-child(even).rz-state-highlight > .rzi-close, .rz-fileupload-row .rz-button .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-close, .rz-selectable .rz-fileupload-row .rz-paginator-element tr:nth-child(even).rz-state-highlight > .rzi-close, .rz-fileupload-row .rz-paginator-element .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-close,
-.rz-selectable .rz-fileupload-row .rz-button tr:nth-child(even).rz-state-highlight > .rzi-times, .rz-fileupload-row .rz-button .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-times,
-.rz-selectable .rz-fileupload-row .rz-paginator-element tr:nth-child(even).rz-state-highlight > .rzi-times, .rz-fileupload-row .rz-paginator-element .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-times,
-.rz-selectable .rz-fileupload-row .rz-button tr:nth-child(even).rz-state-highlight > .rz-icon-trash, .rz-fileupload-row .rz-button .rz-selectable tr:nth-child(even).rz-state-highlight > .rz-icon-trash,
-.rz-selectable .rz-fileupload-row .rz-paginator-element tr:nth-child(even).rz-state-highlight > .rz-icon-trash, .rz-fileupload-row .rz-paginator-element .rz-selectable tr:nth-child(even).rz-state-highlight > .rz-icon-trash, .rz-selectable .rz-datatable tr:nth-child(even).rz-state-highlight > .rzi-chevron-circle-right, .rz-datatable .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-chevron-circle-right, .rz-selectable .rz-datatable tr:nth-child(even).rz-state-highlight > .rzi-chevron-circle-down, .rz-datatable .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-chevron-circle-down, .rz-selectable .rz-sortable-column tr:nth-child(even).rz-state-highlight > .rzi-grid-sort, .rz-sortable-column .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-grid-sort, .rz-selectable .rz-datatable-header tr:nth-child(even).rz-state-highlight > .rzi-plus, .rz-datatable-header .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-plus, .rz-selectable .rz-datatable-loading-content tr:nth-child(even).rz-state-highlight > .rzi-circle-o-notch, .rz-datatable-loading-content .rz-selectable tr:nth-child(even).rz-state-highlight > .rzi-circle-o-notch, .rz-selectable tr:nth-child(even).rz-state-highlight > .rz-column-drag,
-.rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi,
-.rz-selectable .rz-menuitem tr:nth-child(odd).rz-state-highlight > .rz-menuitem-icon,
-.rz-menuitem .rz-selectable tr:nth-child(odd).rz-state-highlight > .rz-menuitem-icon,
-.rz-selectable .rz-fileupload-row .rz-button tr:nth-child(odd).rz-state-highlight > .rzi-close,
-.rz-fileupload-row .rz-button .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-close,
-.rz-selectable .rz-fileupload-row .rz-paginator-element tr:nth-child(odd).rz-state-highlight > .rzi-close,
-.rz-fileupload-row .rz-paginator-element .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-close,
-.rz-selectable .rz-fileupload-row .rz-button tr:nth-child(odd).rz-state-highlight > .rzi-times,
-.rz-fileupload-row .rz-button .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-times,
-.rz-selectable .rz-fileupload-row .rz-paginator-element tr:nth-child(odd).rz-state-highlight > .rzi-times,
-.rz-fileupload-row .rz-paginator-element .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-times,
-.rz-selectable .rz-fileupload-row .rz-button tr:nth-child(odd).rz-state-highlight > .rz-icon-trash,
-.rz-fileupload-row .rz-button .rz-selectable tr:nth-child(odd).rz-state-highlight > .rz-icon-trash,
-.rz-selectable .rz-fileupload-row .rz-paginator-element tr:nth-child(odd).rz-state-highlight > .rz-icon-trash,
-.rz-fileupload-row .rz-paginator-element .rz-selectable tr:nth-child(odd).rz-state-highlight > .rz-icon-trash,
-.rz-selectable .rz-datatable tr:nth-child(odd).rz-state-highlight > .rzi-chevron-circle-right,
-.rz-datatable .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-chevron-circle-right,
-.rz-selectable .rz-datatable tr:nth-child(odd).rz-state-highlight > .rzi-chevron-circle-down,
-.rz-datatable .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-chevron-circle-down,
-.rz-selectable .rz-sortable-column tr:nth-child(odd).rz-state-highlight > .rzi-grid-sort,
-.rz-sortable-column .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-grid-sort,
-.rz-selectable .rz-datatable-header tr:nth-child(odd).rz-state-highlight > .rzi-plus,
-.rz-datatable-header .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-plus,
-.rz-selectable .rz-datatable-loading-content tr:nth-child(odd).rz-state-highlight > .rzi-circle-o-notch,
-.rz-datatable-loading-content .rz-selectable tr:nth-child(odd).rz-state-highlight > .rzi-circle-o-notch,
-.rz-selectable tr:nth-child(odd).rz-state-highlight > .rz-column-drag {
+.rz-selectable tr.rz-data-row.rz-state-highlight > .rzi, .rz-selectable .rz-menuitem tr.rz-data-row.rz-state-highlight > .rz-menuitem-icon, .rz-menuitem .rz-selectable tr.rz-data-row.rz-state-highlight > .rz-menuitem-icon, .rz-selectable .rz-fileupload-row .rz-button tr.rz-data-row.rz-state-highlight > .rzi-close, .rz-fileupload-row .rz-button .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-close, .rz-selectable .rz-fileupload-row .rz-paginator-element tr.rz-data-row.rz-state-highlight > .rzi-close, .rz-fileupload-row .rz-paginator-element .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-close,
+.rz-selectable .rz-fileupload-row .rz-button tr.rz-data-row.rz-state-highlight > .rzi-times, .rz-fileupload-row .rz-button .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-times,
+.rz-selectable .rz-fileupload-row .rz-paginator-element tr.rz-data-row.rz-state-highlight > .rzi-times, .rz-fileupload-row .rz-paginator-element .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-times,
+.rz-selectable .rz-fileupload-row .rz-button tr.rz-data-row.rz-state-highlight > .rz-icon-trash, .rz-fileupload-row .rz-button .rz-selectable tr.rz-data-row.rz-state-highlight > .rz-icon-trash,
+.rz-selectable .rz-fileupload-row .rz-paginator-element tr.rz-data-row.rz-state-highlight > .rz-icon-trash, .rz-fileupload-row .rz-paginator-element .rz-selectable tr.rz-data-row.rz-state-highlight > .rz-icon-trash, .rz-selectable .rz-datatable tr.rz-data-row.rz-state-highlight > .rzi-chevron-circle-right, .rz-datatable .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-chevron-circle-right, .rz-selectable .rz-datatable tr.rz-data-row.rz-state-highlight > .rzi-chevron-circle-down, .rz-datatable .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-chevron-circle-down, .rz-selectable .rz-sortable-column tr.rz-data-row.rz-state-highlight > .rzi-grid-sort, .rz-sortable-column .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-grid-sort, .rz-selectable .rz-datatable-header tr.rz-data-row.rz-state-highlight > .rzi-plus, .rz-datatable-header .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-plus, .rz-selectable .rz-datatable-loading-content tr.rz-data-row.rz-state-highlight > .rzi-circle-o-notch, .rz-datatable-loading-content .rz-selectable tr.rz-data-row.rz-state-highlight > .rzi-circle-o-notch, .rz-selectable tr.rz-data-row.rz-state-highlight > .rz-column-drag {
   color: var(--rz-grid-selected-color); }
 
-.rz-selectable tr:nth-child(even):hover:not(.rz-state-highlight) > td:not(.rz-frozen-cell),
-.rz-selectable tr:nth-child(odd):hover:not(.rz-state-highlight) > td:not(.rz-frozen-cell) {
+.rz-selectable tr.rz-data-row:hover:not(.rz-state-highlight) > td:not(.rz-frozen-cell) {
   background-color: var(--rz-grid-hover-background-color); }
 
-.rz-selectable tr:nth-child(even):hover:not(.rz-state-highlight) .rz-cell-data,
-.rz-selectable tr:nth-child(odd):hover:not(.rz-state-highlight) .rz-cell-data {
+.rz-selectable tr.rz-data-row:hover:not(.rz-state-highlight) .rz-cell-data {
   color: var(--rz-grid-hover-color); }
 
 .rz-cell-filter-content {
