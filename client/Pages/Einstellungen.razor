@@ -30,7 +30,7 @@
               <div class="col-md-7">
                 <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="@(rstInfotexteCount.ToString() + " Infotexte")">
                   <ChildContent>
-                    <RadzenDataGrid @ref="datagridInfotexte" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@rstInfotexteCount" Data="@rstInfotexte" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" IsLoading="false" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" PageSize="20" style="border: 1px solid rgba(0, 0, 0, 0); height: 690px; margin-top: 9px" LoadData="@DatagridInfotexteLoadData" RowDoubleClick="@DatagridInfotexteRowDoubleClick" RowSelect="@DatagridInfotexteRowSelect">
+                    <RadzenDataGrid @ref="datagridInfotexte" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@rstInfotexteCount" Data="@rstInfotexte" Density="Density.Compact" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" IsLoading="false" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" PageSize="20" style="border: 1px solid rgba(0, 0, 0, 0); height: 690px; margin-top: 9px" LoadData="@DatagridInfotexteLoadData" RowDoubleClick="@DatagridInfotexteRowDoubleClick" RowSelect="@DatagridInfotexteRowSelect">
                       <Columns>
                         <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.InfotexteHtml" Property="Titel" Title="Titel">
                         </RadzenDataGridColumn>

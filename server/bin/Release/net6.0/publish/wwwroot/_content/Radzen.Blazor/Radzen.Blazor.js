@@ -20,6 +20,19 @@ var resolveCallbacks = [];
 var rejectCallbacks = [];
 
 window.Radzen = {
+    throttle: function (callback, delay) {
+        var timeout = null;
+        return function () {
+            var args = arguments;
+            var ctx = this;
+            if (!timeout) {
+                timeout = setTimeout(function () {
+                    callback.apply(ctx, args);
+                    timeout = null;
+                }, delay);
+            }
+        };
+    },
     mask: function (id, mask, pattern, characterPattern) {
       var el = document.getElementById(id);
       if (el) {
@@ -185,7 +198,7 @@ window.Radzen = {
 
     document.body.appendChild(script);
   },
-  createMap: function (wrapper, ref, id, apiKey, zoom, center, markers) {
+  createMap: function (wrapper, ref, id, apiKey, zoom, center, markers, options) {
     var api = function () {
       var defaultView = document.defaultView;
 
@@ -213,42 +226,52 @@ window.Radzen = {
         });
       });
 
-      Radzen.updateMap(id, zoom, center, markers);
+      Radzen.updateMap(id, zoom, center, markers, options);
     });
   },
-  updateMap: function (id, zoom, center, markers) {
+  updateMap: function (id, zoom, center, markers, options) {
     if (Radzen[id] && Radzen[id].instance) {
-      if (Radzen[id].instance.markers && Radzen[id].instance.markers.length) {
-        for (var i = 0; i < Radzen[id].instance.markers.length; i++) {
-          Radzen[id].instance.markers[i].setMap(null);
+        if (Radzen[id].instance.markers && Radzen[id].instance.markers.length) {
+            for (var i = 0; i < Radzen[id].instance.markers.length; i++) {
+                Radzen[id].instance.markers[i].setMap(null);
+            }
         }
-      }
 
-      Radzen[id].instance.markers = [];
+        if (markers) {
+            Radzen[id].instance.markers = [];
 
-      markers.forEach(function (m) {
-        var marker = new this.google.maps.Marker({
-          position: m.position,
-          title: m.title,
-          label: m.label
-        });
+            markers.forEach(function (m) {
+                var marker = new this.google.maps.Marker({
+                    position: m.position,
+                    title: m.title,
+                    label: m.label
+                });
 
-        marker.addListener('click', function (e) {
-          Radzen[id].invokeMethodAsync('RadzenGoogleMap.OnMarkerClick', {
-            Title: marker.title,
-            Label: marker.label,
-            Position: marker.position
-          });
-        });
+                marker.addListener('click', function (e) {
+                    Radzen[id].invokeMethodAsync('RadzenGoogleMap.OnMarkerClick', {
+                        Title: marker.title,
+                        Label: marker.label,
+                        Position: marker.position
+                    });
+                });
 
-        marker.setMap(Radzen[id].instance);
+                marker.setMap(Radzen[id].instance);
 
-        Radzen[id].instance.markers.push(marker);
-      });
+                Radzen[id].instance.markers.push(marker);
+            });
+        }
 
-      Radzen[id].instance.setZoom(zoom);
+        if (zoom) {
+            Radzen[id].instance.setZoom(zoom);
+            }
 
-      Radzen[id].instance.setCenter(center);
+        if (center) {
+            Radzen[id].instance.setCenter(center);
+        }
+
+        if (options) {
+            Radzen[id].instance.setOptions(options);
+        }
     }
   },
   destroyMap: function (id) {
@@ -390,17 +413,11 @@ window.Radzen = {
       ul.nextSelectedIndex <= childNodes.length - 1
     ) {
       childNodes[ul.nextSelectedIndex].classList.add('rz-state-highlight');
-      if (ul.parentNode.classList.contains('rz-autocomplete-panel')) {
-        ul.parentNode.scrollTop = childNodes[ul.nextSelectedIndex].offsetTop;
-      } else {
-        ul.parentNode.scrollTop =
-          childNodes[ul.nextSelectedIndex].offsetTop - ul.parentNode.offsetTop;
-      }
+      childNodes[ul.nextSelectedIndex].scrollIntoView({block:'nearest'});
     }
   },
   focusListItem: function (input, ul, isDown, startIndex) {
     if (!input || !ul) return;
-
     var childNodes = ul.getElementsByTagName('LI');
 
     if (!childNodes || childNodes.length == 0) return;
@@ -410,15 +427,18 @@ window.Radzen = {
     }
 
     ul.nextSelectedIndex = startIndex;
-
     if (isDown) {
-      if (ul.nextSelectedIndex < childNodes.length - 1) {
-        ul.nextSelectedIndex++;
-      }
+        while (ul.nextSelectedIndex < childNodes.length - 1) {
+            ul.nextSelectedIndex++;
+            if (!childNodes[ul.nextSelectedIndex].classList.contains('rz-state-disabled'))
+                break;
+        }
     } else {
-      if (ul.nextSelectedIndex > 0) {
-        ul.nextSelectedIndex--;
-      }
+        while (ul.nextSelectedIndex > 0) {
+            ul.nextSelectedIndex--;
+            if (!childNodes[ul.nextSelectedIndex].classList.contains('rz-state-disabled'))
+                break;
+        }
     }
 
     var highlighted = ul.querySelectorAll('.rz-state-highlight');
@@ -443,9 +463,9 @@ window.Radzen = {
 
     return ul.nextSelectedIndex;
   },
-  uploadInputChange: function (e, url, auto, multiple) {
+  uploadInputChange: function (e, url, auto, multiple, clear, parameterName) {
       if (auto) {
-          Radzen.upload(e.target, url, multiple, true);
+          Radzen.upload(e.target, url, multiple, clear, parameterName);
           e.target.value = '';
       } else {
           Radzen.uploadChange(e.target);
@@ -508,7 +528,10 @@ window.Radzen = {
     }
     fileInput.value = '';
   },
-  upload: function (fileInput, url, multiple, clear) {
+  removeFileFromFileInput: function (fileInput) {
+    fileInput.value = '';
+  },
+  upload: function (fileInput, url, multiple, clear, parameterName) {
     var uploadComponent = Radzen.uploadComponents && Radzen.uploadComponents[fileInput.id];
     if (!uploadComponent) { return; }
     if (!uploadComponent.files || clear) {
@@ -516,9 +539,10 @@ window.Radzen = {
     }
     var data = new FormData();
     var files = [];
+    var cancelled = false;
     for (var i = 0; i < uploadComponent.files.length; i++) {
       var file = uploadComponent.files[i];
-      data.append(multiple ? 'files' : 'file', file, file.name);
+      data.append(parameterName || (multiple ? 'files' : 'file'), file, file.name);
       files.push({Name: file.name, Size: file.size});
     }
     var xhr = new XMLHttpRequest();
@@ -533,8 +557,14 @@ window.Radzen = {
             progress,
             e.loaded,
             e.total,
-            files
-          );
+            files,
+            cancelled
+          ).then(function (cancel) {
+              if (cancel) {
+                  cancelled = true;
+                  xhr.abort();
+              }
+          });
         }
       }
     };
@@ -547,7 +577,8 @@ window.Radzen = {
           if (status === 0 || (status >= 200 && status < 400)) {
             uploadComponent.invokeMethodAsync(
               'RadzenUpload.OnComplete',
-              xhr.responseText
+                xhr.responseText,
+                cancelled
             );
           } else {
             uploadComponent.invokeMethodAsync(
@@ -578,16 +609,35 @@ window.Radzen = {
       : null;
     return uiCulture || 'en-US';
   },
-  numericOnPaste: function (e) {
+  numericOnPaste: function (e, min, max) {
     if (e.clipboardData) {
       var value = e.clipboardData.getData('text');
 
       if (value && !isNaN(+value)) {
-        return;
+        var numericValue = +value;
+        if (min != null && numericValue >= min) {
+            return;
+        }
+        if (max != null && numericValue <= max) {
+            return;
+        }
       }
 
       e.preventDefault();
     }
+  },
+  numericOnInput: function (e, min, max) {
+      var value = e.target.value;
+
+      if (value && !isNaN(+value)) {
+        var numericValue = +value;
+        if (min != null && !isNaN(+min) && numericValue < min) {
+            e.target.value = min;
+        }
+        if (max != null && !isNaN(+max) && numericValue > max) {
+            e.target.value = max;
+        }
+      }
   },
   numericKeyPress: function (e, isInteger) {
     if (
@@ -613,14 +663,14 @@ window.Radzen = {
 
     Radzen.openPopup(null, id, false, null, x, y);
   },
-  openTooltip: function (target, id, duration, position) {
+  openTooltip: function (target, id, duration, position, closeTooltipOnDocumentClick) {
     Radzen.closePopup(id);
 
     if (Radzen[id + 'duration']) {
       clearTimeout(Radzen[id + 'duration']);
     }
 
-    Radzen.openPopup(target, id, false, position);
+    Radzen.openPopup(target, id, false, position, null, null, null, null, closeTooltipOnDocumentClick);
 
     if (duration) {
       Radzen[id + 'duration'] = setTimeout(Radzen.closePopup, duration, id);
@@ -656,7 +706,7 @@ window.Radzen = {
 
       popup.style.top = top + 'px';
   },
-  openPopup: function (parent, id, syncWidth, position, x, y, instance, callback) {
+  openPopup: function (parent, id, syncWidth, position, x, y, instance, callback, closeOnDocumentClick = true) {
     var popup = document.getElementById(id);
     if (!popup) return;
 
@@ -681,7 +731,15 @@ window.Radzen = {
             popup.minWidth = true;
             popup.style.minWidth = parentRect.width + 'px';
         }
-    } 
+    }
+
+    if (window.chrome) {
+        var closestFrozenCell = popup.closest('.rz-frozen-cell');
+        if (closestFrozenCell) {
+            Radzen[id + 'FZL'] = { cell: closestFrozenCell, left: closestFrozenCell.style.left };
+            closestFrozenCell.style.left = '';
+        }
+    }
 
     popup.style.display = 'block';
 
@@ -748,8 +806,9 @@ window.Radzen = {
     }
 
     Radzen[id] = function (e) {
-        if(e.type == 'contextmenu' || !e.target) return;
-        if (!/Android/i.test(navigator.userAgent) && e.type == 'resize') {
+        if(e.type == 'contextmenu' || !e.target || !closeOnDocumentClick) return;
+        if (!/Android/i.test(navigator.userAgent) &&
+            !['input', 'textarea'].includes(document.activeElement ? document.activeElement.tagName.toLowerCase() : '') && e.type == 'resize') {
             Radzen.closePopup(id, instance, callback);
             return;
         }
@@ -810,6 +869,12 @@ window.Radzen = {
       if (popup.minWidth) {
           popup.style.minWidth = '';
       }
+
+      if (window.chrome && Radzen[id + 'FZL']) {
+        Radzen[id + 'FZL'].cell.style.left = Radzen[id + 'FZL'].left;
+        Radzen[id + 'FZL'] = null;
+      }
+
       popup.style.display = 'none';
     }
     document.removeEventListener('mousedown', Radzen[id]);
@@ -1028,15 +1093,14 @@ window.Radzen = {
     document.addEventListener('click', target.clickHandler);
   },
   destroyChart: function (ref) {
-    if (ref.mouseMoveHandler) {
-      ref.removeEventListener('mousemove', ref.mouseMoveHandler);
-      delete ref.mouseMoveHandler;
-    }
-    if (ref.clickHandler) {
-      ref.removeEventListener('click', ref.clickHandler);
-      delete ref.clickHandler;
-    }
-
+    ref.removeEventListener('mouseleave', ref.mouseLeaveHandler);
+    delete ref.mouseLeaveHandler;
+    ref.removeEventListener('mouseenter', ref.mouseEnterHandler);
+    delete ref.mouseEnterHandler;
+    ref.removeEventListener('mousemove', ref.mouseMoveHandler);
+    delete ref.mouseMoveHandler;
+    ref.removeEventListener('click', ref.clickHandler);
+    delete ref.clickHandler;
     this.destroyResizable(ref);
   },
   destroyGauge: function (ref) {
@@ -1071,11 +1135,24 @@ window.Radzen = {
     return {width: rect.width, height: rect.height};
   },
   createChart: function (ref, instance) {
-    ref.mouseMoveHandler = function (e) {
-      var rect = ref.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      instance.invokeMethodAsync('MouseMove', x, y);
+    var inside = false;
+    ref.mouseMoveHandler = this.throttle(function (e) {
+      if (inside) {
+        if (e.target.matches('.rz-chart-tooltip') || e.target.closest('.rz-chart-tooltip')) {
+            return
+        }
+        var rect = ref.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        instance.invokeMethodAsync('MouseMove', x, y);
+     }
+    }, 100);
+    ref.mouseEnterHandler = function () {
+        inside = true;
+    };
+    ref.mouseLeaveHandler = function () {
+        inside = false;
+        instance.invokeMethodAsync('MouseMove', -1, -1);
     };
     ref.clickHandler = function (e) {
       var rect = ref.getBoundingClientRect();
@@ -1084,6 +1161,8 @@ window.Radzen = {
       instance.invokeMethodAsync('Click', x, y);
     };
 
+    ref.addEventListener('mouseenter', ref.mouseEnterHandler);
+    ref.addEventListener('mouseleave', ref.mouseLeaveHandler);
     ref.addEventListener('mousemove', ref.mouseMoveHandler);
     ref.addEventListener('click', ref.clickHandler);
 
@@ -1530,5 +1609,36 @@ window.Radzen = {
         document.addEventListener('mouseup', Radzen[el].mouseUpHandler);
         document.addEventListener('touchmove', Radzen[el].touchMoveHandler, { passive: true });
         document.addEventListener('touchend', Radzen[el].mouseUpHandler, { passive: true });
+    },
+    openWaiting: function() {
+        if (document.documentElement.scrollHeight > document.documentElement.clientHeight) {
+            document.body.classList.add('no-scroll');
+        }
+        if (Radzen.WaitingIntervalId != null) {
+            clearInterval(Radzen.WaitingIntervalId);
+        }
+
+        setTimeout(function() {
+                var timerObj = document.getElementsByClassName('rz-waiting-timer');
+                if (timerObj.length == 0) return;
+                var timerStart = new Date().getTime();
+                Radzen.WaitingIntervalId = setInterval(function() {
+                        if (timerObj == null || timerObj[0] == null) {
+                            clearInterval(Radzen.WaitingIntervalId);
+                        } else {
+                            var time = new Date(new Date().getTime() - timerStart);
+                            timerObj[0].innerHTML = Math.floor(time / 1000) + "." + Math.floor((time % 1000) / 100);
+                        }
+                    },
+                    100);
+            },
+            100);
+    },
+    closeWaiting: function() {
+        document.body.classList.remove('no-scroll');
+        if (Radzen.WaitingIntervalId != null) {
+            clearInterval(Radzen.WaitingIntervalId);
+            Radzen.WaitingIntervalId = null;
+        }
     }
 };

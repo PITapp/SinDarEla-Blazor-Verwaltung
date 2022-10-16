@@ -12,7 +12,7 @@ using SinDarElaVerwaltung.Client.Pages;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class DienstplanComponent : ComponentBase, IDisposable
+    public partial class KontakteComponent : ComponentBase, IDisposable
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }

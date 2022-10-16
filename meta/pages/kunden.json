@@ -186,6 +186,7 @@
                                       ],
                                       "count": "${getBasesCount}",
                                       "data": "${getBasesResult}",
+                                      "density": "Density.Compact",
                                       "events": {
                                         "loadData": [
                                           {
@@ -439,6 +440,19 @@
               "icon": "",
               "selected": true,
               "text": "Allgemein"
+            },
+            {
+              "text": "Leistungen"
+            },
+            {
+              "text": "Kalender"
+            },
+            {
+              "text": "Dokumente"
+            },
+            {
+              "icon": "",
+              "text": "Notizen"
             }
           ],
           "name": "tabs0",

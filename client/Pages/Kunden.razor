@@ -32,7 +32,7 @@
                   <ChildContent>
                     <div class="row">
                       <div class="col-md-12">
-                        <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getBasesCount" Data="@getBasesResult" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" PageSize="500" Responsive="false" style="height: 1000px" LoadData="@Grid0LoadData" RowSelect="@Grid0RowSelect">
+                        <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getBasesCount" Data="@getBasesResult" Density="Density.Compact" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" PageSize="500" Responsive="false" style="height: 1000px" LoadData="@Grid0LoadData" RowSelect="@Grid0RowSelect">
                           <Columns>
                             <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name1" Title="Name 1">
                             </RadzenDataGridColumn>
@@ -93,6 +93,14 @@
               </div>
             </div>
           </ChildContent>
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Leistungen">
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Kalender">
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Dokumente">
+        </RadzenTabsItem>
+        <RadzenTabsItem Text="Notizen">
         </RadzenTabsItem>
       </Tabs>
     </RadzenTabs>

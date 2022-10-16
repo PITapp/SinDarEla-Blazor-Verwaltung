@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jlmEdiZkgRD7UHUDL5uGvO9ib3QayKWb0PftpFi4oQw=",
+  "Hash": "66eUkkNUWcjWGwyE+9HYNgm4bbddFkYB4vjyuzk1CDg=",
   "Source": "SinDarElaVerwaltung.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -898,7 +898,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\lib\\net6.0\\Radzen.Blazor.dll"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\lib\\net6.0\\Radzen.Blazor.dll"
     },
     {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\SinDarElaVerwaltung.Client.dll",
@@ -5440,6 +5440,23 @@
       "OriginalItemSpec": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Xml.XmlSerializer.dll"
     },
     {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\obj\\Debug\\net6.0\\build-gz\\IOdgNhVO.gz",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Radzen.Blazor.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Radzen.Blazor.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Radzen.Blazor.dll"
+    },
+    {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\obj\\Debug\\net6.0\\build-gz\\iW8cpyZk.gz",
       "SourceId": "SinDarElaVerwaltung.Client",
       "SourceType": "Computed",
@@ -6050,23 +6067,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet.wasm"
-    },
-    {
-      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\obj\\Debug\\net6.0\\build-gz\\NfKjbgnk.gz",
-      "SourceId": "SinDarElaVerwaltung.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Radzen.Blazor.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Radzen.Blazor.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Radzen.Blazor.dll"
     },
     {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\obj\\Debug\\net6.0\\build-gz\\nhtiubc7.gz",
@@ -7395,6 +7395,57 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\default.css"
     },
     {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\fluent copy 2.css",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/css/fluent copy 2.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\fluent copy 2.css"
+    },
+    {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\fluent copy.css",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/css/fluent copy.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\fluent copy.css"
+    },
+    {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\fluent.css",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/css/fluent.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\fluent.css"
+    },
+    {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\humanistic.css",
       "SourceId": "SinDarElaVerwaltung.Client",
       "SourceType": "Discovered",
@@ -7412,12 +7463,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\humanistic.css"
     },
     {
-      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\standard copy 3.css",
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\material.css",
       "SourceId": "SinDarElaVerwaltung.Client",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "assets/css/standard copy 3.css",
+      "RelativePath": "assets/css/material.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7426,15 +7477,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\css\\standard copy 3.css"
+      "OriginalItemSpec": "wwwroot\\assets\\css\\material.css"
     },
     {
-      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\standard copy.css",
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\material-dark.css",
       "SourceId": "SinDarElaVerwaltung.Client",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "assets/css/standard copy.css",
+      "RelativePath": "assets/css/material-dark.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7443,7 +7494,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\css\\standard copy.css"
+      "OriginalItemSpec": "wwwroot\\assets\\css\\material-dark.css"
+    },
+    {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\software.css",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/css/software.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\software.css"
     },
     {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\standard.css",
@@ -7463,6 +7531,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\standard.css"
     },
     {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\standard_save.css",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/css/standard_save.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\standard_save.css"
+    },
+    {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\styles.css",
       "SourceId": "SinDarElaVerwaltung.Client",
       "SourceType": "Discovered",
@@ -7480,6 +7565,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\styles.css"
     },
     {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\styles-custom-standard.css",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/css/styles-custom-standard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\styles-custom-standard.css"
+    },
+    {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\styles-generated.css",
       "SourceId": "SinDarElaVerwaltung.Client",
       "SourceType": "Discovered",
@@ -7495,6 +7597,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\styles-generated.css"
+    },
+    {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\css\\styles-generated_save.css",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/css/styles-generated_save.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\styles-generated_save.css"
     },
     {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\assets\\fonts\\MaterialIcons-Regular.woff",
@@ -7990,6 +8109,23 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
+      "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\index_save.html",
+      "SourceId": "SinDarElaVerwaltung.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "index_save.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index_save.html"
+    },
+    {
       "Identity": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\wwwroot\\manifest.json",
       "SourceId": "SinDarElaVerwaltung.Client",
       "SourceType": "Discovered",
@@ -8024,10 +8160,10 @@
       "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\6.0.0\\staticwebassets\\AuthenticationService.js"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\dark.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark.css",
       "AssetKind": "All",
@@ -8038,13 +8174,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\dark.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\dark.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\dark-base.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-base.css",
       "AssetKind": "All",
@@ -8055,13 +8191,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\default.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\default.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default.css",
       "AssetKind": "All",
@@ -8072,13 +8208,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\default.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\default.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\default-base.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\default-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-base.css",
       "AssetKind": "All",
@@ -8089,13 +8225,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\default-base.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\default-base.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\humanistic.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\humanistic.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic.css",
       "AssetKind": "All",
@@ -8106,13 +8242,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\humanistic.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\humanistic.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\humanistic-base.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\humanistic-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-base.css",
       "AssetKind": "All",
@@ -8123,13 +8259,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\humanistic-base.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\humanistic-base.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\material.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\material.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material.css",
       "AssetKind": "All",
@@ -8140,13 +8276,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\material.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\material.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\material-base.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\material-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-base.css",
       "AssetKind": "All",
@@ -8157,13 +8293,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\material-base.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\material-base.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\software.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\software.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software.css",
       "AssetKind": "All",
@@ -8174,13 +8310,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\software.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\software.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\software-base.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\software-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-base.css",
       "AssetKind": "All",
@@ -8191,13 +8327,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\software-base.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\software-base.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\standard.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\standard.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard.css",
       "AssetKind": "All",
@@ -8208,13 +8344,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\standard.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\standard.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\standard-base.css",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\standard-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-base.css",
       "AssetKind": "All",
@@ -8225,13 +8361,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\css\\standard-base.css"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\css\\standard-base.css"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/MaterialIcons-Regular.woff",
       "AssetKind": "All",
@@ -8242,13 +8378,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-300.woff",
       "AssetKind": "All",
@@ -8259,13 +8395,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-700.woff",
       "AssetKind": "All",
@@ -8276,13 +8412,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-regular.woff",
       "AssetKind": "All",
@@ -8293,13 +8429,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-300.woff",
       "AssetKind": "All",
@@ -8310,13 +8446,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-500.woff",
       "AssetKind": "All",
@@ -8327,13 +8463,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-700.woff",
       "AssetKind": "All",
@@ -8344,13 +8480,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-regular.woff",
       "AssetKind": "All",
@@ -8361,13 +8497,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Black.woff",
       "AssetKind": "All",
@@ -8378,13 +8514,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BlackIt.woff",
       "AssetKind": "All",
@@ -8395,13 +8531,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Bold.woff",
       "AssetKind": "All",
@@ -8412,13 +8548,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BoldIt.woff",
       "AssetKind": "All",
@@ -8429,13 +8565,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLight.woff",
       "AssetKind": "All",
@@ -8446,13 +8582,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLightIt.woff",
       "AssetKind": "All",
@@ -8463,13 +8599,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-It.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-It.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-It.woff",
       "AssetKind": "All",
@@ -8480,13 +8616,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-It.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-It.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Light.woff",
       "AssetKind": "All",
@@ -8497,13 +8633,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-LightIt.woff",
       "AssetKind": "All",
@@ -8514,13 +8650,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Regular.woff",
       "AssetKind": "All",
@@ -8531,13 +8667,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Semibold.woff",
       "AssetKind": "All",
@@ -8548,13 +8684,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-SemiboldIt.woff",
       "AssetKind": "All",
@@ -8565,13 +8701,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\Radzen.Blazor.js",
+      "Identity": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\Radzen.Blazor.js",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "Radzen.Blazor.js",
       "AssetKind": "All",
@@ -8582,7 +8718,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.4\\staticwebassets\\Radzen.Blazor.js"
+      "OriginalItemSpec": "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\staticwebassets\\Radzen.Blazor.js"
     }
   ]
 }

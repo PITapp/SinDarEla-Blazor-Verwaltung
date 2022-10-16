@@ -14,7 +14,7 @@
                     "color": "#5d717b",
                     "display": "inline-block"
                   },
-                  "text": "Dienstplan",
+                  "text": "Kalender",
                   "type": "heading"
                 },
                 {
@@ -128,7 +128,27 @@
                               "components": [
                                 {
                                   "class": "col-md-12",
-                                  "components": [],
+                                  "components": [
+                                    {
+                                      "items": [
+                                        {
+                                          "text": "Alle"
+                                        },
+                                        {
+                                          "text": "Verwaltung"
+                                        },
+                                        {
+                                          "text": "Betreuung"
+                                        },
+                                        {
+                                          "text": "Kunden"
+                                        }
+                                      ],
+                                      "name": "tabs1",
+                                      "tabPosition": "TabPosition.Left",
+                                      "type": "tabs"
+                                    }
+                                  ],
                                   "name": "col6",
                                   "type": "col"
                                 }
@@ -307,7 +327,7 @@
             },
             {
               "icon": "",
-              "text": "Kunden"
+              "text": "Liste"
             }
           ],
           "name": "tabs0",
@@ -333,5 +353,5 @@
     ]
   },
   "layout": "Main",
-  "name": "Dienstplan"
+  "name": "Kalender"
 }

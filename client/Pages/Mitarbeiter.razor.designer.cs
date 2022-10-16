@@ -57,10 +57,10 @@ namespace SinDarElaVerwaltung.Pages
 
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
-        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.Base> datagrid2;
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> grid0;
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten> datagrid0;
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden> datagrid1;
+        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.Base> datagrid2;
 
         SinDarElaVerwaltung.Models.DbSinDarEla.Mitarbeiter _dsoMitarbeiter;
         protected SinDarElaVerwaltung.Models.DbSinDarEla.Mitarbeiter dsoMitarbeiter
@@ -138,44 +138,6 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> _getBasesResult;
-        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> getBasesResult
-        {
-            get
-            {
-                return _getBasesResult;
-            }
-            set
-            {
-                if (!object.Equals(_getBasesResult, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "getBasesResult", NewValue = value, OldValue = _getBasesResult };
-                    _getBasesResult = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
-        int _getBasesCount;
-        protected int getBasesCount
-        {
-            get
-            {
-                return _getBasesCount;
-            }
-            set
-            {
-                if (!object.Equals(_getBasesCount, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "getBasesCount", NewValue = value, OldValue = _getBasesCount };
-                    _getBasesCount = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
         IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> _getVwMitarbeiterFirmensResult;
         protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> getVwMitarbeiterFirmensResult
         {
@@ -227,6 +189,63 @@ namespace SinDarElaVerwaltung.Pages
                 {
                     var args = new PropertyChangedEventArgs(){ Name = "getVwMitarbeiterKundensResult", NewValue = value, OldValue = _getVwMitarbeiterKundensResult };
                     _getVwMitarbeiterKundensResult = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        bool _bolTest;
+        protected bool bolTest
+        {
+            get
+            {
+                return _bolTest;
+            }
+            set
+            {
+                if (!object.Equals(_bolTest, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "bolTest", NewValue = value, OldValue = _bolTest };
+                    _bolTest = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> _getBasesResult;
+        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> getBasesResult
+        {
+            get
+            {
+                return _getBasesResult;
+            }
+            set
+            {
+                if (!object.Equals(_getBasesResult, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "getBasesResult", NewValue = value, OldValue = _getBasesResult };
+                    _getBasesResult = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        int _getBasesCount;
+        protected int getBasesCount
+        {
+            get
+            {
+                return _getBasesCount;
+            }
+            set
+            {
+                if (!object.Equals(_getBasesCount, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "getBasesCount", NewValue = value, OldValue = _getBasesCount };
+                    _getBasesCount = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
@@ -289,26 +308,6 @@ namespace SinDarElaVerwaltung.Pages
             {
                 await Load();
             }
-        }
-
-        protected async System.Threading.Tasks.Task Datagrid2LoadData(LoadDataArgs args)
-        {
-            try
-            {
-                var dbSinDarElaGetBasesResult = await DbSinDarEla.GetBases(filter:$"{args.Filter}", orderby:$"{args.OrderBy}", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
-                getBasesResult = dbSinDarElaGetBasesResult.Value.AsODataEnumerable();
-
-                getBasesCount = dbSinDarElaGetBasesResult.Count;
-            }
-            catch (System.Exception dbSinDarElaGetBasesException)
-            {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to load Bases" });
-            }
-        }
-
-        protected async System.Threading.Tasks.Task Datagrid2RowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.Base args)
-        {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Info,Detail = $"Hallo..." });
         }
 
         protected async System.Threading.Tasks.Task ButtonNeuClick(MouseEventArgs args)
@@ -374,6 +373,31 @@ namespace SinDarElaVerwaltung.Pages
             {
                 NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to load VwMitarbeiterKundens" });
             }
+        }
+
+        protected async System.Threading.Tasks.Task Datagrid1RowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden args)
+        {
+            bolTest = false;
+        }
+
+        protected async System.Threading.Tasks.Task Datagrid2LoadData(LoadDataArgs args)
+        {
+            try
+            {
+                var dbSinDarElaGetBasesResult = await DbSinDarEla.GetBases(filter:$"{args.Filter}", orderby:$"{args.OrderBy}", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
+                getBasesResult = dbSinDarElaGetBasesResult.Value.AsODataEnumerable();
+
+                getBasesCount = dbSinDarElaGetBasesResult.Count;
+            }
+            catch (System.Exception dbSinDarElaGetBasesException)
+            {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to load Bases" });
+            }
+        }
+
+        protected async System.Threading.Tasks.Task Datagrid2RowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.Base args)
+        {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Info,Detail = $"Hallo..." });
         }
     }
 }

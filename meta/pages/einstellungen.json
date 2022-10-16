@@ -140,6 +140,7 @@
                               ],
                               "count": "${rstInfotexteCount}",
                               "data": "${rstInfotexte}",
+                              "density": "Density.Compact",
                               "events": {
                                 "loadData": [
                                   {

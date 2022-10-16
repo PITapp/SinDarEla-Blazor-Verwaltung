@@ -1,16 +1,16 @@
-﻿@page "/dienstplan"
+﻿@page "/kontakte"
 @layout MainLayout
-@inherits SinDarElaVerwaltung.Pages.DienstplanComponent
+@inherits SinDarElaVerwaltung.Pages.KontakteComponent
 
 @using Radzen
 @using Radzen.Blazor
 @using SinDarElaVerwaltung.Models.DbSinDarEla
-<PageTitle>Dienstplan</PageTitle>
+<PageTitle>Kontakte</PageTitle>
 <RadzenContent Container="main">
   <ChildContent>
     <div style="height: ; margin-top: -7px; padding-bottom: 0; padding-left: 5px; padding-right: 3px; padding-top: 0; width: " class="row">
       <div class="justify-content-start       d-flex align-items-center          col-md-8" style="height: 52px; padding-bottom: 1px">
-        <RadzenHeading Size="H1" style="color: #5d717b; display: inline-block" Text="Dienstplan">
+        <RadzenHeading Size="H1" style="color: #5d717b; display: inline-block" Text="Kontakte">
         </RadzenHeading>
         <RadzenHeading Size="H3" style="color: #e5ecef; display: inline-block; margin-top: 7px; padding-left: 10px; padding-right: 10px" Text="|">
         </RadzenHeading>
@@ -24,7 +24,7 @@
     </div>
     <RadzenTabs style="float: none">
       <Tabs>
-        <RadzenTabsItem Selected="true" Text="Termine">
+        <RadzenTabsItem Selected="true" Text="Allgemein">
           <ChildContent>
             <div class="row">
               <div class="col-md-7">
@@ -66,7 +66,7 @@
             </div>
           </ChildContent>
         </RadzenTabsItem>
-        <RadzenTabsItem Text="Kunden">
+        <RadzenTabsItem Text="Verweise">
         </RadzenTabsItem>
       </Tabs>
     </RadzenTabs>

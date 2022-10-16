@@ -278,6 +278,7 @@
           "type": "footer"
         },
         {
+          "attributes": [],
           "components": [
             {
               "items": [
@@ -296,7 +297,7 @@
                 {
                   "icon": "assignment",
                   "path": "",
-                  "text": "Dienstplan"
+                  "text": "Kalender"
                 },
                 {
                   "icon": "assignment_ind",
@@ -314,9 +315,9 @@
                   "text": "Kontakte"
                 },
                 {
-                  "icon": "create_new_folder",
+                  "icon": "euro_symbol",
                   "path": "",
-                  "text": "Dokumente"
+                  "text": "Abrechnung"
                 },
                 {
                   "icon": "assessment",
@@ -324,19 +325,9 @@
                   "text": "Auswertungen"
                 },
                 {
-                  "icon": "euro_symbol",
-                  "path": "",
-                  "text": "Abrechnung"
-                },
-                {
                   "icon": "supervisor_account",
                   "path": "",
                   "text": "Benutzer"
-                },
-                {
-                  "icon": "face",
-                  "path": "benutzerprofil",
-                  "text": "Benutzerprofil"
                 },
                 {
                   "icon": "settings",
@@ -353,6 +344,7 @@
             }
           ],
           "name": "sidebar0",
+          "responsive": true,
           "style": {
             "width": "191px"
           },
