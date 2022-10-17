@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PPegXUBDBY9gb0JnNE9Eszw4jqkGmQIPQ3mRDKjeOmT4drrgzQohzYrAtSr5pqboaD7aBJz5pkitUuDdCiKnCA==",
+  "dgSpecHash": "1rmhxiymLWaYGJvBpv84xyOqi+vO9dlN8u5EzM3uturuKM4MvJLQKGicdUESgb6HiRi8OgHHT8Gi0Y4ZpqZUyQ==",
   "success": true,
   "projectFilePath": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\server\\SinDarElaVerwaltung.Server.csproj",
   "expectedPackageFiles": [
@@ -81,7 +81,7 @@
     "C:\\Users\\gpain\\.nuget\\packages\\mysqlconnector\\2.0.0\\mysqlconnector.2.0.0.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.0\\pomelo.entityframeworkcore.mysql.6.0.0.nupkg.sha512",
-    "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.8\\radzen.blazor.4.1.8.nupkg.sha512",
+    "C:\\Users\\gpain\\.nuget\\packages\\radzen.blazor\\4.1.9\\radzen.blazor.4.1.9.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\system.componentmodel.annotations\\6.0.0-preview.4.21253.7\\system.componentmodel.annotations.6.0.0-preview.4.21253.7.nupkg.sha512",
     "C:\\Users\\gpain\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

@@ -5,6 +5,7 @@
 
 /* Import the Radzen CSS files */
 @import 'fluent.css';
+@import 'fluent_custom.css';
 /*
 @import './standard.css';
 */
@@ -26,34 +27,4 @@
   position: absolute;
   right: 0.75rem;
   top: 0.5rem;
-}
-
-
-/* ------------------------------------------------------------------------------------------------------------------- */
-/* Ab hier Einstellungen für SinDarEla                                                                                 */
-/* ------------------------------------------------------------------------------------------------------------------- */
-
-
-/* --- Der Icon für den DataPicker wird falsch angezeigt. Mit dieser Einstellung wird er wieder in das Eingabefeld gesetzt --- */
-.rz-datepicker-trigger {
-  right: 150px;
-}
-
-/* --- Kopfzeile: verlaufend dunkel --- */
-.header {
-  background-image: linear-gradient(#F1903C, #d66808);
-}
-
-.kopfzeileVerlaufend {
-  background-image: linear-gradient(#F1903C, #d66808);
-}
-
-ul.rz-profile-menu {
-  background-color: transparent;
-}
-
-.rz-panel {
-  background: transparent;
-  border-radius: 4px;
-  box-shadow: none;
 }

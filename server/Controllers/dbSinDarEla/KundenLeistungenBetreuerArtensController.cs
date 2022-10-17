@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.KundenLeistungenBetreuerArtens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterKundenLeistungenBetreuerArtenCreated(item);
+            
             return Created($"odata/DbSinDarEla/KundenLeistungenBetreuerArtens/{item.KundenLeistungenBetreuerArtID}", item);
         }
         catch(Exception ex)

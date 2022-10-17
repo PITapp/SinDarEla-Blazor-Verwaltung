@@ -12,7 +12,7 @@ using SinDarElaVerwaltung.Client.Pages;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class MitarbeiterComponent : ComponentBase, IDisposable
+    public partial class CopyOfMitarbeiter1Component : ComponentBase, IDisposable
     {
         [Parameter(CaptureUnmatchedValues = true)]
         public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
@@ -57,7 +57,6 @@ namespace SinDarElaVerwaltung.Pages
 
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
-        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.Base> datagrid3;
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> grid0;
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten> datagrid0;
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden> datagrid1;
@@ -133,44 +132,6 @@ namespace SinDarElaVerwaltung.Pages
                 {
                     var args = new PropertyChangedEventArgs(){ Name = "rstBaseAnreden", NewValue = value, OldValue = _rstBaseAnreden };
                     _rstBaseAnreden = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
-        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> _getBasesResult;
-        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> getBasesResult
-        {
-            get
-            {
-                return _getBasesResult;
-            }
-            set
-            {
-                if (!object.Equals(_getBasesResult, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "getBasesResult", NewValue = value, OldValue = _getBasesResult };
-                    _getBasesResult = value;
-                    OnPropertyChanged(args);
-                    Reload();
-                }
-            }
-        }
-
-        int _getBasesCount;
-        protected int getBasesCount
-        {
-            get
-            {
-                return _getBasesCount;
-            }
-            set
-            {
-                if (!object.Equals(_getBasesCount, value))
-                {
-                    var args = new PropertyChangedEventArgs(){ Name = "getBasesCount", NewValue = value, OldValue = _getBasesCount };
-                    _getBasesCount = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
@@ -253,6 +214,44 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> _getBasesResult;
+        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> getBasesResult
+        {
+            get
+            {
+                return _getBasesResult;
+            }
+            set
+            {
+                if (!object.Equals(_getBasesResult, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "getBasesResult", NewValue = value, OldValue = _getBasesResult };
+                    _getBasesResult = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        int _getBasesCount;
+        protected int getBasesCount
+        {
+            get
+            {
+                return _getBasesCount;
+            }
+            set
+            {
+                if (!object.Equals(_getBasesCount, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "getBasesCount", NewValue = value, OldValue = _getBasesCount };
+                    _getBasesCount = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Globals.PropertyChanged += OnPropertyChanged;
@@ -311,24 +310,30 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Datagrid3LoadData(LoadDataArgs args)
+        protected async System.Threading.Tasks.Task ButtonNeuClick(MouseEventArgs args)
         {
-            try
-            {
-                var dbSinDarElaGetBasesResult = await DbSinDarEla.GetBases(filter:$"{args.Filter}", orderby:$"{args.OrderBy}", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
-                getBasesResult = dbSinDarElaGetBasesResult.Value.AsODataEnumerable();
-
-                getBasesCount = dbSinDarElaGetBasesResult.Count;
+            var dialogResult = await DialogService.OpenAsync<MitarbeiterNeu>($"Neuer Mitarbeiter", null);
+            if (dialogResult != null) {
+                Globals.globalBenutzer.LetzteMitarbeiterID = dialogResult.MitarbeiterID;
             }
-            catch (System.Exception dbSinDarElaGetBasesException)
+
+            if (dialogResult != null)
             {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to load Bases" });
+                await Load();
             }
         }
 
-        protected async System.Threading.Tasks.Task Datagrid3RowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.Base args)
+        protected async System.Threading.Tasks.Task ButtonSpeichernClick(MouseEventArgs args)
         {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Info,Detail = $"Hallo..." });
+            try
+            {
+                var dbSinDarElaUpdateBaseResult = await DbSinDarEla.UpdateBase(baseId:dsoBase.BaseID, _base:dsoBase);
+                    NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Success,Detail = $"Änderungen gespeichert" });
+            }
+            catch (System.Exception dbSinDarElaUpdateBaseException)
+            {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Detail = $"Änderungen konnten nicht gespeichert werden!" });
+            }
         }
 
         protected async System.Threading.Tasks.Task Grid0LoadData(LoadDataArgs args)

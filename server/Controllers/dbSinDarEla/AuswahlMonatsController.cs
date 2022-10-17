@@ -188,6 +188,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.AuswahlMonats.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterAuswahlMonatCreated(item);
+            
             return Created($"odata/DbSinDarEla/AuswahlMonats/{item.AuswahlMonatID}", item);
         }
         catch(Exception ex)

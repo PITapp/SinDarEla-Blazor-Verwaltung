@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.MitarbeiterFortbildungenArtens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterMitarbeiterFortbildungenArtenCreated(item);
+            
             return Created($"odata/DbSinDarEla/MitarbeiterFortbildungenArtens/{item.FortbildungArtID}", item);
         }
         catch(Exception ex)

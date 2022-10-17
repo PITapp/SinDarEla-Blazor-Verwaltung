@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.EreignisseArtens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterEreignisseArtenCreated(item);
+            
             return Created($"odata/DbSinDarEla/EreignisseArtens/{item.EreignisArtCode}", item);
         }
         catch(Exception ex)

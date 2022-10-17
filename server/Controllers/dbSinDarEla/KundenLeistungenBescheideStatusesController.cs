@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.KundenLeistungenBescheideStatuses.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterKundenLeistungenBescheideStatusCreated(item);
+            
             return Created($"odata/DbSinDarEla/KundenLeistungenBescheideStatuses/{item.StatusCode}", item);
         }
         catch(Exception ex)

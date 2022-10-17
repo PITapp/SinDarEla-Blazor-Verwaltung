@@ -188,6 +188,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.InfotexteHtmls.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterInfotexteHtmlCreated(item);
+            
             return Created($"odata/DbSinDarEla/InfotexteHtmls/{item.InfotextID}", item);
         }
         catch(Exception ex)

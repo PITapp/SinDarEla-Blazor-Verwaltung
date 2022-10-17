@@ -188,6 +188,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.Notizens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterNotizenCreated(item);
+            
             return Created($"odata/DbSinDarEla/Notizens/{item.NotizID}", item);
         }
         catch(Exception ex)

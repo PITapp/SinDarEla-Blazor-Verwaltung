@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.DokumenteKategoriens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterDokumenteKategorienCreated(item);
+            
             return Created($"odata/DbSinDarEla/DokumenteKategoriens/{item.DokumenteKategorieID}", item);
         }
         catch(Exception ex)
