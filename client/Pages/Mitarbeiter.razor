@@ -18,11 +18,11 @@
         </RadzenHeading>
       </div>
       <div class="col-md-4  d-flex justify-content-end align-items-end" style="padding-right: 20px">
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="description" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal; width: 150px" Text="Berichte" Variant="Variant.Outlined" Click="@ButtonBerichreClick">
+        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="description" Shade="Shade.Default" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal" Text="Berichte" Variant="Variant.Text" Click="@ButtonBerichreClick">
         </RadzenButton>
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="list" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal; margin-left: 12px; width: 150px" Text="Listen" Variant="Variant.Outlined" Click="@ButtonListenClick">
+        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="list" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal" Text="Listen" Variant="Variant.Text" Click="@ButtonListenClick">
         </RadzenButton>
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="search" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal; margin-left: 12px; width: 150px" Text="Suchen" Variant="Variant.Outlined" Click="@ButtonSuchenClick">
+        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="search" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal" Text="Suchen" Variant="Variant.Text" Click="@ButtonSuchenClick">
         </RadzenButton>
       </div>
     </div>
@@ -32,7 +32,7 @@
           <ChildContent>
             <div  class="row">
               <div class="col-md-7" style="padding-left: 0">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 779px" Text="Daten">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 779px" Text="Mitarbeiter">
                   <ChildContent>
                     <div class="row">
                       <div class="col-md-12">
@@ -58,11 +58,13 @@
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenTextBox style="background-color: rgba(0, 0, 0, 0)" Name="Textbox0">
+                        <RadzenTextBox Placeholder="Suchen" style="background-color: rgba(0, 0, 0, 0); border: 1px solid rgba(0, 0, 0, 0); border-bottom: 1px dotted #ecebe9; width: 200px" Name="Textbox0">
                         </RadzenTextBox>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Medium" style="color: #D86E13; display: block" Text="Neuer Mitarbeiter" Variant="Variant.Text">
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="clear" Size="ButtonSize.Medium" style="border-bottom: 1px dotted #ecebe9; color: #A95106; display: block; margin-right: 20px" Variant="Variant.Text">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" IsBusy="false" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: 400; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext" Variant="Variant.Text">
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="add" Size="ButtonSize.Medium" style="color: #A95106; display: block" Text="Neuer Mitarbeiter" Variant="Variant.Text">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="create" IsBusy="false" Size="ButtonSize.Medium" style="color: #A95106; display: block; font-weight: 400; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext" Variant="Variant.Text">
                         </RadzenButton>
                       </div>
                     </div>
@@ -70,7 +72,7 @@
                 </RadzenPanel>
               </div>
               <div class="col-md-5" style="padding-left: 0; padding-right: 0">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 150px" Text="Firmen">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 200px" Text="Firmen">
                   <ChildContent>
                     <RadzenDataGrid @ref="grid0" AllowCompositeDataCells="true" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterFirmensResult" Density="Density.Compact" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" style="border: 1px solid rgba(0, 0, 0, 0); height: 90px; margin-top: 10px" LoadData="@Grid0LoadData">
                       <Columns>
@@ -96,9 +98,9 @@
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Medium" style="color: #D86E13; display: block; float: none" Text="Hinzufügen" Variant="Variant.Text">
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="add" Size="ButtonSize.Medium" style="color: #A95106; display: block; float: none" Text="Hinzufügen" Variant="Variant.Text">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Medium" style="color: #6A80AA; display: block" Text="Bearbeiten" Variant="Variant.Text">
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Medium" style="color: #A95106; display: block" Text="Bearbeiten" Variant="Variant.Text">
                         </RadzenButton>
                       </div>
                     </div>
@@ -118,15 +120,15 @@
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Medium" style="color: #D86E13; display: block; float: none" Text="Hinzufügen" Variant="Variant.Text">
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="add" Shade="Shade.Default" Size="ButtonSize.Medium" style="color: #A95106; display: block; float: none" Text="Hinzufügen" Variant="Variant.Text">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Medium" style="color: #6A80AA; display: block" Text="Bearbeiten" Variant="Variant.Text">
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="create" Shade="Shade.Default" Size="ButtonSize.Medium" style="color: #A95106; display: block" Text="Bearbeiten" Variant="Variant.Text">
                         </RadzenButton>
                       </div>
                     </div>
                   </HeaderTemplate>
                 </RadzenPanel>
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 392px; margin-top: 16px" Text="Kunden">
+                <RadzenPanel style="border: 1px solid #e6ecef; height: 342px; margin-top: 16px" Text="Kunden">
                   <ChildContent>
                     <RadzenDataGrid @ref="datagrid1" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterKundensResult" Density="Density.Compact" FilterMode="Radzen.FilterMode.Simple" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden" style="border: 1px solid rgba(0, 0, 0, 0); height: 337px; margin-top: 10px" LoadData="@Datagrid1LoadData" RowSelect="@Datagrid1RowSelect">
                       <Columns>
@@ -144,9 +146,9 @@
                   <HeaderTemplate>
                     <div class="row">
                       <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Medium" style="color: #D86E13; display: block; float: none" Text="Kopieren" Variant="Variant.Text">
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="content_copy" Shade="Shade.Default" Size="ButtonSize.Medium" style="color: #A95106; display: block; float: none" Text="Kopieren" Variant="Variant.Text">
                         </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Medium" style="color: #6A80AA; display: block" Text="Bearbeiten" Variant="Variant.Text">
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="create" Shade="Shade.Default" Size="ButtonSize.Medium" style="color: #A95106; display: block" Text="Bearbeiten" Variant="Variant.Text">
                         </RadzenButton>
                       </div>
                     </div>

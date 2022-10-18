@@ -109,7 +109,7 @@
           },
           {
             "condition": "intBenutzerAnzahl == 1",
-            "path": "dashboard",
+            "path": "mitarbeiter",
             "type": "navigate"
           },
           {

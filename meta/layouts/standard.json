@@ -207,7 +207,7 @@
               "name": "linkVersion",
               "path": "versionen",
               "style": {
-                "color": "#D86E13",
+                "color": "#A95106",
                 "float": "right"
               },
               "text": "Version 3.024",
@@ -229,7 +229,7 @@
               "name": "linkKontakt",
               "path": "kontakt",
               "style": {
-                "color": "#D86E13",
+                "color": "#A95106",
                 "float": "right"
               },
               "text": "Kontakt",
@@ -251,7 +251,7 @@
               "name": "linkHandbuch",
               "path": "handbuch",
               "style": {
-                "color": "#D86E13",
+                "color": "#A95106",
                 "float": "right"
               },
               "text": "Handbuch",
@@ -273,7 +273,7 @@
               "name": "linkFeedback",
               "path": "feedback",
               "style": {
-                "color": "#D86E13",
+                "color": "#A95106",
                 "float": "right"
               },
               "text": "Feedback",

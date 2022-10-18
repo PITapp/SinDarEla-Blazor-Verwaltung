@@ -83,18 +83,18 @@
                   },
                   "icon": "description",
                   "name": "buttonBerichre",
+                  "shade": "Shade.Default",
                   "size": "ButtonSize.Medium",
                   "style": {
                     "color": "#6A80AA",
                     "display": "block",
-                    "fontWeight": "normal",
-                    "width": "150px"
+                    "fontWeight": "normal"
                   },
                   "template": "",
                   "text": "Berichte",
                   "tooltip": "",
                   "type": "button",
-                  "variant": "Variant.Outlined"
+                  "variant": "Variant.Text"
                 },
                 {
                   "buttonStyle": "secondary",
@@ -121,15 +121,13 @@
                   "style": {
                     "color": "#6A80AA",
                     "display": "block",
-                    "fontWeight": "normal",
-                    "marginLeft": "12px",
-                    "width": "150px"
+                    "fontWeight": "normal"
                   },
                   "template": "",
                   "text": "Listen",
                   "tooltip": "",
                   "type": "button",
-                  "variant": "Variant.Outlined"
+                  "variant": "Variant.Text"
                 },
                 {
                   "buttonStyle": "secondary",
@@ -169,15 +167,13 @@
                   "style": {
                     "color": "#6A80AA",
                     "display": "block",
-                    "fontWeight": "normal",
-                    "marginLeft": "12px",
-                    "width": "150px"
+                    "fontWeight": "normal"
                   },
                   "template": "",
                   "text": "Suchen",
                   "tooltip": "",
                   "type": "button",
-                  "variant": "Variant.Outlined"
+                  "variant": "Variant.Text"
                 }
               ],
               "name": "col64",
@@ -342,15 +338,38 @@
                                   "components": [
                                     {
                                       "name": "textbox0",
-                                      "placeholder": "",
+                                      "placeholder": "Suchen",
                                       "style": {
-                                        "backgroundColor": "rgba(0, 0, 0, 0)"
+                                        "backgroundColor": "rgba(0, 0, 0, 0)",
+                                        "border": "1px solid rgba(0, 0, 0, 0)",
+                                        "borderBottom": "1px dotted #ecebe9",
+                                        "width": "200px"
                                       },
                                       "type": "textbox",
                                       "value": ""
                                     },
                                     {
-                                      "buttonStyle": "light",
+                                      "buttonStyle": "secondary",
+                                      "events": {
+                                        "click": []
+                                      },
+                                      "icon": "clear",
+                                      "name": "button0",
+                                      "size": "ButtonSize.Medium",
+                                      "style": {
+                                        "borderBottom": "1px dotted #ecebe9",
+                                        "color": "#A95106",
+                                        "display": "block",
+                                        "marginRight": "20px"
+                                      },
+                                      "template": "",
+                                      "text": "",
+                                      "tooltip": "",
+                                      "type": "button",
+                                      "variant": "Variant.Text"
+                                    },
+                                    {
+                                      "buttonStyle": "secondary",
                                       "events": {
                                         "click": []
                                       },
@@ -358,7 +377,7 @@
                                       "name": "buttonNeu",
                                       "size": "ButtonSize.Medium",
                                       "style": {
-                                        "color": "#D86E13",
+                                        "color": "#A95106",
                                         "display": "block"
                                       },
                                       "template": "",
@@ -368,7 +387,7 @@
                                       "variant": "Variant.Text"
                                     },
                                     {
-                                      "buttonStyle": "light",
+                                      "buttonStyle": "secondary",
                                       "events": {
                                         "click": []
                                       },
@@ -377,7 +396,7 @@
                                       "name": "buttonBearbeitenInfotext",
                                       "size": "ButtonSize.Medium",
                                       "style": {
-                                        "color": "#6A80AA",
+                                        "color": "#A95106",
                                         "display": "block",
                                         "fontWeight": "400",
                                         "paddingLeft": ""
@@ -403,7 +422,7 @@
                             "border": "1px solid #e6ecef",
                             "height": "779px"
                           },
-                          "text": "Daten",
+                          "text": "Mitarbeiter",
                           "type": "panel"
                         }
                       ],
@@ -523,7 +542,7 @@
                                   "class": "col-md-12 align-items-start d-flex",
                                   "components": [
                                     {
-                                      "buttonStyle": "light",
+                                      "buttonStyle": "secondary",
                                       "events": {
                                         "click": []
                                       },
@@ -531,7 +550,7 @@
                                       "name": "buttonHinzufuegen",
                                       "size": "ButtonSize.Medium",
                                       "style": {
-                                        "color": "#D86E13",
+                                        "color": "#A95106",
                                         "display": "block",
                                         "float": "none"
                                       },
@@ -541,7 +560,7 @@
                                       "variant": "Variant.Text"
                                     },
                                     {
-                                      "buttonStyle": "light",
+                                      "buttonStyle": "secondary",
                                       "buttonType": "button",
                                       "events": {
                                         "click": []
@@ -550,7 +569,7 @@
                                       "name": "buttonBearbeitenInfotextEditor",
                                       "size": "ButtonSize.Medium",
                                       "style": {
-                                        "color": "#6A80AA",
+                                        "color": "#A95106",
                                         "display": "block"
                                       },
                                       "text": "Bearbeiten",
@@ -570,7 +589,7 @@
                           "name": "panel0",
                           "style": {
                             "border": "1px solid #e6ecef",
-                            "height": "150px"
+                            "height": "200px"
                           },
                           "text": "Firmen",
                           "type": "panel"
@@ -646,15 +665,16 @@
                                   "class": "col-md-12 align-items-start d-flex",
                                   "components": [
                                     {
-                                      "buttonStyle": "light",
+                                      "buttonStyle": "secondary",
                                       "events": {
                                         "click": []
                                       },
                                       "icon": "add",
                                       "name": "buttonHinzufuegen",
+                                      "shade": "Shade.Default",
                                       "size": "ButtonSize.Medium",
                                       "style": {
-                                        "color": "#D86E13",
+                                        "color": "#A95106",
                                         "display": "block",
                                         "float": "none"
                                       },
@@ -664,16 +684,17 @@
                                       "variant": "Variant.Text"
                                     },
                                     {
-                                      "buttonStyle": "light",
+                                      "buttonStyle": "secondary",
                                       "buttonType": "button",
                                       "events": {
                                         "click": []
                                       },
                                       "icon": "create",
                                       "name": "buttonBearbeitenInfotextEditor",
+                                      "shade": "Shade.Default",
                                       "size": "ButtonSize.Medium",
                                       "style": {
-                                        "color": "#6A80AA",
+                                        "color": "#A95106",
                                         "display": "block"
                                       },
                                       "text": "Bearbeiten",
@@ -786,15 +807,16 @@
                                   "class": "col-md-12 align-items-start d-flex",
                                   "components": [
                                     {
-                                      "buttonStyle": "light",
+                                      "buttonStyle": "secondary",
                                       "events": {
                                         "click": []
                                       },
                                       "icon": "content_copy",
                                       "name": "buttonKopieren",
+                                      "shade": "Shade.Default",
                                       "size": "ButtonSize.Medium",
                                       "style": {
-                                        "color": "#D86E13",
+                                        "color": "#A95106",
                                         "display": "block",
                                         "float": "none"
                                       },
@@ -804,16 +826,17 @@
                                       "variant": "Variant.Text"
                                     },
                                     {
-                                      "buttonStyle": "light",
+                                      "buttonStyle": "secondary",
                                       "buttonType": "button",
                                       "events": {
                                         "click": []
                                       },
                                       "icon": "create",
                                       "name": "buttonBearbeitenInfotextEditor",
+                                      "shade": "Shade.Default",
                                       "size": "ButtonSize.Medium",
                                       "style": {
-                                        "color": "#6A80AA",
+                                        "color": "#A95106",
                                         "display": "block"
                                       },
                                       "text": "Bearbeiten",
@@ -833,7 +856,7 @@
                           "name": "panel4",
                           "style": {
                             "border": "1px solid #e6ecef",
-                            "height": "392px",
+                            "height": "342px",
                             "marginTop": "16px"
                           },
                           "text": "Kunden",

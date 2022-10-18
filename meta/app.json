@@ -180,7 +180,7 @@
     "$grid-hover-color": "#201f1e",
     "$grid-loading-indicator-background-color": "rgba(0, 0, 0, 0.25)",
     "$grid-loading-indicator-color": "currentColor",
-    "$grid-selected-background-color": "#FFAB62",
+    "$grid-selected-background-color": "#FFC18C",
     "$grid-selected-color": "#ffffff",
     "$grid-sort-icon-color": "#a19f9d",
     "$grid-stripe-background-color": "#ffffff",
