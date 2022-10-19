@@ -9737,7 +9737,7 @@ input {
 :root {
   --rz-menu-background-color: #ffffff;
   --rz-menu-border: none;
-  --rz-menu-border-radius: 8px;
+  --rz-menu-border-radius: 2px;
   --rz-menu-item-padding: 0.375rem 0.75rem 0.375rem 0.625rem;
   --rz-menu-item-border-radius: var(--rz-border-radius);
   --rz-menu-item-color: #323130;

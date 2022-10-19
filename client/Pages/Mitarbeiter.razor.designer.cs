@@ -61,7 +61,6 @@ namespace SinDarElaVerwaltung.Pages
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> grid0;
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten> datagrid0;
         protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden> datagrid1;
-        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.Base> datagrid2;
 
         SinDarElaVerwaltung.Models.DbSinDarEla.Mitarbeiter _dsoMitarbeiter;
         protected SinDarElaVerwaltung.Models.DbSinDarEla.Mitarbeiter dsoMitarbeiter
@@ -311,6 +310,11 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
+        {
+            UriHelper.NavigateTo("dashboard");
+        }
+
         protected async System.Threading.Tasks.Task Datagrid3LoadData(LoadDataArgs args)
         {
             try
@@ -373,26 +377,6 @@ namespace SinDarElaVerwaltung.Pages
         protected async System.Threading.Tasks.Task Datagrid1RowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden args)
         {
             bolTest = false;
-        }
-
-        protected async System.Threading.Tasks.Task Datagrid2LoadData(LoadDataArgs args)
-        {
-            try
-            {
-                var dbSinDarElaGetBasesResult = await DbSinDarEla.GetBases(filter:$"{args.Filter}", orderby:$"{args.OrderBy}", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
-                getBasesResult = dbSinDarElaGetBasesResult.Value.AsODataEnumerable();
-
-                getBasesCount = dbSinDarElaGetBasesResult.Count;
-            }
-            catch (System.Exception dbSinDarElaGetBasesException)
-            {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to load Bases" });
-            }
-        }
-
-        protected async System.Threading.Tasks.Task Datagrid2RowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.Base args)
-        {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Info,Detail = $"Hallo..." });
         }
     }
 }

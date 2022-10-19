@@ -16,40 +16,54 @@
                           "icon": "menu",
                           "items": [
                             {
-                              "text": "Item 0"
+                              "icon": "dashboard",
+                              "path": "dashboard",
+                              "text": "Dashboard &emsp;&emsp;&emsp;&emsp;&emsp;"
                             },
                             {
-                              "text": "Item 1"
+                              "icon": "assignment_turned_in",
+                              "path": "management",
+                              "text": "Management"
                             },
                             {
-                              "text": "Item 2"
+                              "icon": "assignment",
+                              "path": "kalender",
+                              "text": "Kalender"
                             },
                             {
-                              "text": "Item 3"
+                              "icon": "assignment_ind",
+                              "path": "mitarbeiter",
+                              "text": "Mitarbeiter"
                             },
                             {
-                              "text": "Item 4"
+                              "icon": "face",
+                              "path": "kunden",
+                              "text": "Kunden"
                             },
                             {
-                              "text": "Item 5"
+                              "icon": "contact_phone",
+                              "path": "kontakte",
+                              "text": "Kontakte"
                             },
                             {
-                              "text": "Item 6"
+                              "icon": "euro_symbol",
+                              "path": "abrechnung",
+                              "text": "Abrechnung"
                             },
                             {
-                              "text": "Item 7"
+                              "icon": "assessment",
+                              "path": "auswertungen",
+                              "text": "Auswertungen"
                             },
                             {
-                              "text": "Item 8"
+                              "icon": "supervisor_account",
+                              "path": "benutzer",
+                              "text": "Benutzer"
                             },
                             {
-                              "text": "Item 9"
-                            },
-                            {
-                              "text": "Item 10"
-                            },
-                            {
-                              "text": "Item 11"
+                              "icon": "settings",
+                              "path": "einstellungen",
+                              "text": "Einstellungen"
                             }
                           ],
                           "text": "SinDarEla"
@@ -162,7 +176,7 @@
         {
           "components": [
             {
-              "name": "standard",
+              "name": "main",
               "type": "content-container"
             }
           ],

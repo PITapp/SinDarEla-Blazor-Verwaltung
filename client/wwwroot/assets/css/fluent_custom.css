@@ -46,3 +46,17 @@ ul.rz-profile-menu {
   padding-bottom: 0px;
 }
 
+/* --- Menü: Schriftgröße --- */
+.rz-menu:not(.rz-profile-menu) .rz-navigation-menu {
+  font-size: 16px;
+}
+
+.rz-menu:not(.rz-profile-menu) .rz-navigation-item-icon {
+  font-size: 18px;
+}
+
+.rz-menu:not(.rz-profile-menu) .rz-navigation-item-text {
+  font-size: 16px;
+  padding-right: 5px;
+}
+

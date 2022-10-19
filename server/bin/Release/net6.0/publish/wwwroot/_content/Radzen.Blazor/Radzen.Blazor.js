@@ -658,22 +658,26 @@ window.Radzen = {
 
     e.preventDefault();
   },
-  openContextMenu: function (x,y,id) {
+  openContextMenu: function (x,y,id, instance, callback) {
     Radzen.closePopup(id);
 
-    Radzen.openPopup(null, id, false, null, x, y);
+    Radzen.openPopup(null, id, false, null, x, y, instance, callback);
   },
-  openTooltip: function (target, id, duration, position, closeTooltipOnDocumentClick) {
+  openTooltip: function (target, id, delay, duration, position, closeTooltipOnDocumentClick, instance, callback) {
     Radzen.closePopup(id);
 
     if (Radzen[id + 'duration']) {
       clearTimeout(Radzen[id + 'duration']);
     }
 
-    Radzen.openPopup(target, id, false, position, null, null, null, null, closeTooltipOnDocumentClick);
+    if (delay) {
+        setTimeout(Radzen.openPopup, delay, target, id, false, position, null, null, instance, callback, closeTooltipOnDocumentClick);
+    } else {
+        Radzen.openPopup(target, id, false, position, null, null, instance, callback, closeTooltipOnDocumentClick);
+    }
 
     if (duration) {
-      Radzen[id + 'duration'] = setTimeout(Radzen.closePopup, duration, id);
+      Radzen[id + 'duration'] = setTimeout(Radzen.closePopup, duration, id, instance, callback);
     }
   },
   findPopup: function (id) {

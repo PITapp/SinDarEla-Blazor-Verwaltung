@@ -4,8 +4,11 @@
 
 
 /* Import the Radzen CSS files */
-@import './styles-generated.css';
-
+@import 'fluent.css';
+@import 'fluent_custom.css';
+/*
+@import './standard.css';
+*/
  
 #blazor-error-ui {
   background: lightyellow;

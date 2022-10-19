@@ -7,7 +7,7 @@ using Radzen.Blazor;
 
 namespace SinDarElaVerwaltung.Pages
 {
-    public partial class Base2Component
+    public partial class AbrechnungComponent
     {
 
     }

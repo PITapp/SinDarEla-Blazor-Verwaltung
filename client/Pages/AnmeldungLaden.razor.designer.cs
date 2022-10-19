@@ -149,7 +149,7 @@ dsoBenutzerProtokoll.TimeStamp = DateTime.Now;
             }
 
             if (intBenutzerAnzahl == 1) {
-            UriHelper.NavigateTo("mitarbeiter");
+            UriHelper.NavigateTo("dashboard");
             }
 
             if (intBenutzerAnzahl != 1) {

@@ -12,6 +12,7 @@
                   "style": {
                     "backgroundColor": "rgba(0, 0, 0, 0)",
                     "color": "#5d717b",
+                    "fontSize": "18px",
                     "textAlign": "center",
                     "width": "100%"
                   },
@@ -109,7 +110,7 @@
           },
           {
             "condition": "intBenutzerAnzahl == 1",
-            "path": "mitarbeiter",
+            "path": "dashboard",
             "type": "navigate"
           },
           {
