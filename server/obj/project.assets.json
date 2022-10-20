@@ -1062,7 +1062,7 @@
           "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {}
         }
       },
-      "Radzen.Blazor/4.1.3": {
+      "Radzen.Blazor/4.1.8": {
         "type": "package",
         "dependencies": {
           "LibSassBuilder": "2.0.1",
@@ -1419,7 +1419,7 @@
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "6.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.Extensions.Http": "6.0.0",
-          "Radzen.Blazor": "4.1.3",
+          "Radzen.Blazor": "4.1.8",
           "System.Net.Http.Json": "6.0.0"
         },
         "compile": {
@@ -3160,10 +3160,10 @@
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
-    "Radzen.Blazor/4.1.3": {
-      "sha512": "eSRi68A6LOFuyTLc/lDw12ifSwJ01bJYwm+Fs1crMZdXSOLXDKuwGhDhcG3Tq8S6JuielWIaKV58x9WssnFm/w==",
+    "Radzen.Blazor/4.1.8": {
+      "sha512": "T+jR8njZQQhRStTDjXgQTmy4jJ/rmXhVJyHDiZMWurQgY9/rmup1k3as0VszvFSuHU5bVyYBacV6aAjVsTKPkw==",
       "type": "package",
-      "path": "radzen.blazor/4.1.3",
+      "path": "radzen.blazor/4.1.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3180,7 +3180,7 @@
         "lib/net6.0/Radzen.Blazor.xml",
         "lib/netstandard2.1/Radzen.Blazor.dll",
         "lib/netstandard2.1/Radzen.Blazor.xml",
-        "radzen.blazor.4.1.3.nupkg.sha512",
+        "radzen.blazor.4.1.8.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",
@@ -4070,33 +4070,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gpain\\.nuget\\packages\\": {}
+    "C:\\Users\\juerg\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\server\\SinDarElaVerwaltung.Server.csproj",
+      "projectUniqueName": "C:\\Users\\juerg\\Documents\\SinDarEla\\SinDarEla-Blazor-Verwaltung\\server\\SinDarElaVerwaltung.Server.csproj",
       "projectName": "SinDarElaVerwaltung.Server",
-      "projectPath": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\server\\SinDarElaVerwaltung.Server.csproj",
-      "packagesPath": "C:\\Users\\gpain\\.nuget\\packages\\",
-      "outputPath": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\server\\obj\\",
+      "projectPath": "C:\\Users\\juerg\\Documents\\SinDarEla\\SinDarEla-Blazor-Verwaltung\\server\\SinDarElaVerwaltung.Server.csproj",
+      "packagesPath": "C:\\Users\\juerg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\juerg\\Documents\\SinDarEla\\SinDarEla-Blazor-Verwaltung\\server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gpain\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\juerg\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "http://nuget.syncfusion.com/xamarin": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\SinDarElaVerwaltung.Client.csproj": {
-              "projectPath": "C:\\AA Painsi\\09 PITapp\\Radzen\\SinDarEla\\BlazorVerwaltung\\client\\SinDarElaVerwaltung.Client.csproj"
+            "C:\\Users\\juerg\\Documents\\SinDarEla\\SinDarEla-Blazor-Verwaltung\\client\\SinDarElaVerwaltung.Client.csproj": {
+              "projectPath": "C:\\Users\\juerg\\Documents\\SinDarEla\\SinDarEla-Blazor-Verwaltung\\client\\SinDarElaVerwaltung.Client.csproj"
             }
           }
         }
@@ -4182,7 +4181,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
