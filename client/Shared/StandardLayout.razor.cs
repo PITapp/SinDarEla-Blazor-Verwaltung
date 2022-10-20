@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Radzen;
 using Radzen.Blazor;
 
-namespace SinDarElaVerwaltung.Pages
+namespace SinDarElaVerwaltung.Layouts
 {
-    public partial class BaseComponent
+    public partial class StandardLayoutComponent
     {
 
     }

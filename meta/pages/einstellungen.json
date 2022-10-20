@@ -140,6 +140,7 @@
                               ],
                               "count": "${rstInfotexteCount}",
                               "data": "${rstInfotexte}",
+                              "density": "Density.Compact",
                               "events": {
                                 "loadData": [
                                   {
@@ -631,6 +632,6 @@
       }
     ]
   },
-  "layout": "Main",
+  "layout": "Standard",
   "name": "Einstellungen"
 }

@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.BaseAnredens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterBaseAnredenCreated(item);
+            
             return Created($"odata/DbSinDarEla/BaseAnredens/{item.AnredeID}", item);
         }
         catch(Exception ex)

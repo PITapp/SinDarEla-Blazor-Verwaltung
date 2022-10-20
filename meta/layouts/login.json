@@ -33,22 +33,9 @@
                           "path": "/assets/images/LogoMitSchriftzug4.png",
                           "style": {
                             "float": "left",
-                            "height": "30px"
+                            "height": "36px"
                           },
                           "type": "image"
-                        },
-                        {
-                          "name": "label5",
-                          "style": {
-                            "color": "#E8E8E8",
-                            "float": "none",
-                            "fontSize": "12px",
-                            "paddingLeft": "10px",
-                            "paddingRight": "10px"
-                          },
-                          "text": "|",
-                          "type": "label",
-                          "visible": true
                         },
                         {
                           "name": "label7",
@@ -56,21 +43,25 @@
                             "color": "#E8E8E8",
                             "float": "none",
                             "fontFamily": "verdana,geneva,sans-serif",
-                            "fontSize": "12px",
-                            "fontWeight": "normal"
+                            "fontSize": "16px",
+                            "fontWeight": "normal",
+                            "marginTop": "5px"
                           },
-                          "text": "SinDarEla",
+                          "text": "&nbsp;&nbsp;|&nbsp;&nbsp;SinDarEla",
                           "type": "label",
                           "visible": true
                         }
                       ],
                       "name": "col3",
                       "style": {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
+                        "backgroundColor": "rgba(245, 4, 4, 0)",
                         "height": "52px",
-                        "paddingLeft": "24px",
+                        "marginLeft": "-1px",
+                        "marginRight": "-1px",
+                        "marginTop": "-1px",
+                        "paddingLeft": "10px",
                         "paddingRight": "",
-                        "paddingTop": "12px"
+                        "paddingTop": "10px"
                       },
                       "type": "col"
                     },
@@ -84,7 +75,7 @@
                       ],
                       "name": "col2",
                       "style": {
-                        "paddingBottom": "1px",
+                        "paddingBottom": "16px",
                         "paddingLeft": "25px",
                         "paddingRight": "25px",
                         "paddingTop": "25px"

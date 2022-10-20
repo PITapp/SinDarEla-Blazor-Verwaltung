@@ -1,5 +1,5 @@
 ﻿@page "/management"
-@layout MainLayout
+@layout StandardLayout
 @inherits SinDarElaVerwaltung.Pages.ManagementComponent
 
 @using Radzen
@@ -24,57 +24,11 @@
     </div>
     <RadzenTabs style="float: none">
       <Tabs>
-        <RadzenTabsItem Selected="true" Text="Termine">
-          <ChildContent>
-            <div class="row">
-              <div class="col-md-7">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Daten">
-                  <ChildContent>
-                    <div class="row">
-                      <div class="col-md-12">
-                      </div>
-                    </div>
-                  </ChildContent>
-                  <HeaderTemplate>
-                    <div class="row">
-                      <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="add" Size="ButtonSize.Small" style="color: #D86E13; display: block" Text="Neu">
-                        </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="create" IsBusy="false" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-weight: 400; margin-left: 10px; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext">
-                        </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Disabled="false" Icon="cancel" Size="ButtonSize.Small" style="color: #6A80AA; display: block; font-style: normal; font-weight: normal; margin-left: 10px" Text="Löschen" Tooltip="Löschen Infotext">
-                        </RadzenButton>
-                      </div>
-                    </div>
-                  </HeaderTemplate>
-                </RadzenPanel>
-              </div>
-              <div class="col-md-5" style="padding-left: 5px">
-                <RadzenPanel style="border: 1px solid #e6ecef; height: 740px" Text="Sonstiges">
-                  <HeaderTemplate>
-                    <div class="row">
-                      <div class="col-md-12 align-items-start d-flex">
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" Icon="content_copy" Size="ButtonSize.Small" style="color: #D86E13; display: block; float: none" Text="Kopieren">
-                        </RadzenButton>
-                        <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" Icon="create" Size="ButtonSize.Small" style="color: #6A80AA; display: block; margin-left: 10px" Text="Bearbeiten">
-                        </RadzenButton>
-                      </div>
-                    </div>
-                  </HeaderTemplate>
-                </RadzenPanel>
-              </div>
-            </div>
-          </ChildContent>
-        </RadzenTabsItem>
-        <RadzenTabsItem Text="Anträge">
+        <RadzenTabsItem Text="Abwesenheiten">
         </RadzenTabsItem>
         <RadzenTabsItem Text="Aufgaben">
         </RadzenTabsItem>
         <RadzenTabsItem Text="Mitteilungen">
-        </RadzenTabsItem>
-        <RadzenTabsItem Text="Abwesenheiten">
-        </RadzenTabsItem>
-        <RadzenTabsItem Text="Bereitschaften">
         </RadzenTabsItem>
       </Tabs>
     </RadzenTabs>

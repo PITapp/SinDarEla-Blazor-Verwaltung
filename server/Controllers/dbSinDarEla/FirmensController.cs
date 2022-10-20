@@ -190,6 +190,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.Firmens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterFirmenCreated(item);
+            
             return Created($"odata/DbSinDarEla/Firmens/{item.FirmaID}", item);
         }
         catch(Exception ex)

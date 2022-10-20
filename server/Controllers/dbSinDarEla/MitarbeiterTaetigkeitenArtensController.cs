@@ -190,6 +190,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.MitarbeiterTaetigkeitenArtens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterMitarbeiterTaetigkeitenArtenCreated(item);
+            
             return Created($"odata/DbSinDarEla/MitarbeiterTaetigkeitenArtens/{item.MitarbeiterTaetigkeitenArtID}", item);
         }
         catch(Exception ex)

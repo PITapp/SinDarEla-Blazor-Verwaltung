@@ -8,6 +8,7 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SinDarElaVerwaltung.Server
 build_property.RootNamespace = SinDarElaVerwaltung.Server
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\juerg\Documents\SinDarEla\SinDarEla-Blazor-Verwaltung\server\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
@@ -24,5 +25,23 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/server/Views/Home/Index.cshtml]
+=======
+build_property.ProjectDir = c:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = c:\AA Painsi\09 PITapp\Radzen\SinDarEla\BlazorVerwaltung\server
+build_property._RazorSourceGeneratorDebug = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/server/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/server/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/server/Views/Home/Index.cshtml]
+>>>>>>> e331f5431721f71b7d2e0f7e70ebbb4ffff6988e
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -188,6 +188,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.RegelnAbwesenheitens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterRegelnAbwesenheitenCreated(item);
+            
             return Created($"odata/DbSinDarEla/RegelnAbwesenheitens/{item.RegelnAbwesenheitenID}", item);
         }
         catch(Exception ex)

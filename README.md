@@ -37,3 +37,11 @@ AspNetUserTokens
 DeviceCodes
 Keys
 PersistedGrants
+
+# Select a theme
+default
+
+# Code generation ignore list
+client\wwwroot\index.html
+client\wwwroot\assets\css\standard.css
+client\wwwroot\assets\css\styles-generated.css

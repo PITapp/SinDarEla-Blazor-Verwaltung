@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.MitarbeiterKundenbudgetKategoriens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterMitarbeiterKundenbudgetKategorienCreated(item);
+            
             return Created($"odata/DbSinDarEla/MitarbeiterKundenbudgetKategoriens/{item.KundenbudgetKategorieID}", item);
         }
         catch(Exception ex)

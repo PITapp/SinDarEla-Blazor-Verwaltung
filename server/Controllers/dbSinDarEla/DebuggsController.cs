@@ -188,6 +188,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.Debuggs.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterDebuggCreated(item);
+            
             return Created($"odata/DbSinDarEla/Debuggs/{item.DebuggID}", item);
         }
         catch(Exception ex)

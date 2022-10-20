@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.EreignisseSonderurlaubArtens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterEreignisseSonderurlaubArtenCreated(item);
+            
             return Created($"odata/DbSinDarEla/EreignisseSonderurlaubArtens/{item.EreignisSonderurlaubArtID}", item);
         }
         catch(Exception ex)

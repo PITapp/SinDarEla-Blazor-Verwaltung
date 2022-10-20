@@ -188,6 +188,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.AbrechnungBases.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterAbrechnungBasisCreated(item);
+            
             return Created($"odata/DbSinDarEla/AbrechnungBases/{item.AbrechnungBasisID}", item);
         }
         catch(Exception ex)

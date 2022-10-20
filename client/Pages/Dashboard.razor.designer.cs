@@ -70,9 +70,14 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Button0Click(MouseEventArgs args)
+        protected async System.Threading.Tasks.Task ButtonBerichreClick(MouseEventArgs args)
         {
-            await DialogService.OpenAsync<MeldungOk>($"Info", new Dictionary<string, object>() { {"strMeldung", "Drucken ist für dieses Modul noch nicht aktiviert!"} }, new DialogOptions(){ Width = $"{600}px" });
+            await DialogService.OpenAsync<MeldungOk>($"Info", new Dictionary<string, object>() { {"strMeldung", "Berichte ist für dieses Modul noch nicht aktiviert!"} }, new DialogOptions(){ Width = $"{600}px" });
+        }
+
+        protected async System.Threading.Tasks.Task ButtonListenClick(MouseEventArgs args)
+        {
+            await DialogService.OpenAsync<MitarbeiterListen>($"Listen Mitarbeiter", null, new DialogOptions(){ Width = $"{1700}px",AutoFocusFirstElement = false,Resizable = true,Draggable = true });
         }
     }
 }

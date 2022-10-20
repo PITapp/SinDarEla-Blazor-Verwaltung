@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.EreignisseTeilnehmerStatuses.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterEreignisseTeilnehmerStatusCreated(item);
+            
             return Created($"odata/DbSinDarEla/EreignisseTeilnehmerStatuses/{item.StatusCode}", item);
         }
         catch(Exception ex)

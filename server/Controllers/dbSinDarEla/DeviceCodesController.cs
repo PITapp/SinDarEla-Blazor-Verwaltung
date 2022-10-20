@@ -188,6 +188,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.DeviceCodes.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterDeviceCodeCreated(item);
+            
             return Created($"odata/DbSinDarEla/DeviceCodes/{item.UserCode}", item);
         }
         catch(Exception ex)

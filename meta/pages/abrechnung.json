@@ -14,7 +14,7 @@
                     "color": "#5d717b",
                     "display": "inline-block"
                   },
-                  "text": "Dienstplan",
+                  "text": "Abrechnung",
                   "type": "heading"
                 },
                 {
@@ -303,11 +303,7 @@
               ],
               "icon": "",
               "selected": true,
-              "text": "Termine"
-            },
-            {
-              "icon": "",
-              "text": "Kunden"
+              "text": "Allgemein"
             }
           ],
           "name": "tabs0",
@@ -332,6 +328,6 @@
       }
     ]
   },
-  "layout": "Main",
-  "name": "Dienstplan"
+  "layout": "Standard",
+  "name": "Abrechnung"
 }

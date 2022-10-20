@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.MitarbeiterVerlaufDienstzeitenArtens.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterMitarbeiterVerlaufDienstzeitenArtenCreated(item);
+            
             return Created($"odata/DbSinDarEla/MitarbeiterVerlaufDienstzeitenArtens/{item.MitarbeiterVerlaufDienstzeitenArtID}", item);
         }
         catch(Exception ex)

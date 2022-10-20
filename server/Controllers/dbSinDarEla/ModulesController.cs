@@ -189,6 +189,9 @@ namespace SinDarElaVerwaltung.Controllers.DbSinDarEla
             this.context.Modules.Add(item);
             this.context.SaveChanges();
 
+        
+            this.OnAfterModuleCreated(item);
+            
             return Created($"odata/DbSinDarEla/Modules/{item.ModulID}", item);
         }
         catch(Exception ex)

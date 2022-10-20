@@ -26,7 +26,15 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJtZWxkdW5nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/Pages/Anmeldung.razor]
+=======
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Abrechnung.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJyZWNobnVuZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Anmeldung.razor]
+>>>>>>> e331f5431721f71b7d2e0f7e70ebbb4ffff6988e
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5tZWxkdW5nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -34,15 +42,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5tZWxkdW5nTGFkZW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/Pages/Base.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmFzZS5yYXpvcg==
+=======
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Auswertungen.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVzd2VydHVuZ2VuLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Benutzer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmVudXR6ZXIucmF6b3I=
+>>>>>>> e331f5431721f71b7d2e0f7e70ebbb4ffff6988e
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/Pages/Benutzerprofil.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmVudXR6ZXJwcm9maWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/Pages/CopyOfMitarbeiterListe.razor]
+=======
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/CopyOfMitarbeiter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29weU9mTWl0YXJiZWl0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/CopyOfMitarbeiter1.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29weU9mTWl0YXJiZWl0ZXIxLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/CopyOfMitarbeiterListe.razor]
+>>>>>>> e331f5431721f71b7d2e0f7e70ebbb4ffff6988e
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29weU9mTWl0YXJiZWl0ZXJMaXN0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -50,11 +79,15 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/Pages/Dienstplan.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGllbnN0cGxhbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/Pages/Einstellungen.razor]
+=======
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Einstellungen.razor]
+>>>>>>> e331f5431721f71b7d2e0f7e70ebbb4ffff6988e
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWluc3RlbGx1bmdlbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -70,7 +103,23 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWluc3RlbGx1bmdlbkluZm90ZXh0ZU5ldS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/Pages/Management.razor]
+=======
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Kalender.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS2FsZW5kZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Kontakte.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29udGFrdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Kunden.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS3VuZGVuLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Pages/Management.razor]
+>>>>>>> e331f5431721f71b7d2e0f7e70ebbb4ffff6988e
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlbWVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -118,10 +167,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/juerg/Documents/SinDarEla/SinDarEla-Blazor-Verwaltung/client/_Imports.razor]
+=======
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/Main2Layout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW4yTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/Shared/StandardLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN0YW5kYXJkTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/AA Painsi/09 PITapp/Radzen/SinDarEla/BlazorVerwaltung/client/_Imports.razor]
+>>>>>>> e331f5431721f71b7d2e0f7e70ebbb4ffff6988e
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

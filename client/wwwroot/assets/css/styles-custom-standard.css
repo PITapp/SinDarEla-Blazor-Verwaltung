@@ -1,0 +1,213 @@
+/* --- Einstellungen für SinDarEla --- */
+/*=====================================*/
+
+/* --- Kopfzeile: verlaufend dunkel --- */
+.header {
+  background-image: linear-gradient(#F1903C, #d66808);
+}
+
+.kopfzeileVerlaufend {
+  background-image: linear-gradient(#F1903C, #d66808);
+}
+
+body {
+  background: #f4f5f7;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.footer {
+  border-top: 1px solid #eaeef0;
+}
+
+.rz-sidebar {
+  border-right: 1px solid #eaeef0;
+}
+
+/* --- Umschalter für Seitenmenü links --- */
+.sidebar-toggle .rzi {
+  font-size: 1.5rem;
+}
+
+/* --- Profilmenü rechts oben --- */
+ul.rz-profile-menu .rz-navigation-menu {
+  background-color: #ffffff;
+  top: calc(100%);
+}
+
+/* --- Einstellungen Seitenmenü links --- */
+.rz-panel-menu {
+  color: #212529;
+  background-color: #FFFFFF;
+  font-size: 1rem;
+}
+
+.rz-panel-menu .rz-navigation-item {
+  border-bottom: solid 1px #E6E5E5;
+}
+
+.rz-panel-menu .rz-navigation-item-wrapper:hover {
+  background-color: rgba(241, 144, 60, 0.16);
+  color: #f1903c;
+}
+
+.rz-panel-menu .rz-navigation-item-wrapper:hover .rz-navigation-item-icon {
+  color: #f1903c;
+}
+
+.rz-panel-menu .rz-navigation-item-icon {
+  color: #727272;
+  font-size: 1.4rem;
+  margin-right: 15px;
+}
+
+.rz-panel-menu .rz-navigation-item-wrapper-active {
+  background-color: #F4F5F7;
+  color: #D86E13;
+}
+
+.rz-panel-menu .rz-navigation-item-wrapper-active .rz-navigation-item-icon {
+  color: #D86E13;
+}
+
+.rz-panel-menu .rz-navigation-item-wrapper-active:before {
+  width: 7px;
+  background-color: #D86E13;
+}
+
+/* --- Panel: Farbe des Titels und Abstand --- */
+.rz-panel-titlebar {
+  color: #6A80AA;
+  font-weight: bold;
+  padding-left: 10px;
+  align-items: center;
+}
+
+/* --- Panel: Überlauf unsichtbar machen --- */
+.rz-panel {
+  overflow: hidden !important;
+  padding: 10px;
+}
+
+/* --- Tabview: Text einstellen --- */
+.rz-tabview-nav .rz-tabview-selected a {
+  color: #5d717b;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* --- Höhe der Zeilen in DataGrid --- */
+.rz-grid-table td {
+    padding: 4px 8px 4px 8px;
+}
+
+/* --- HTML Editor: Innerer Rand --- */
+.rz-html-editor-content {
+  padding: 15px;
+}
+
+/* --- Kopfzeile in Dialogen --- */
+.rz-dialog-titlebar {
+  background-color: #e8ecef;
+  color: #5d717b;
+  padding: 0.6875rem 1.25rem;
+  line-height: 1.875rem;
+  font-size: 1.25rem;
+}
+
+.rz-dialog-title {
+  color: #5d717b;
+  font-size: 1.25rem;
+  font-weight:normal; 
+}
+
+.rz-dialog-titlebar-close .rzi-times {
+  vertical-align: middle;
+}
+
+/* --- HTML Editor - Toolbox: bei der Farbauswahl mit dem Mauszeiger hat einen Rahmen erzeugt, dieser hat die Anzeige um 2 Punkte vergrößert; hier wird das ausgeschalten --- */
+.rz-colorpicker:not(:disabled):not(.rz-state-disabled):focus, .rz-colorpicker:not(:disabled):not(.rz-state-disabled):hover {
+  border: none;
+}
+
+/* --- Login Button auf die rechte Seite --- */
+.login .login-buttons {
+  justify-content: flex-end !important;
+}
+
+/* --- Button: Schriftgröße und Abstand --- */
+.rz-button-md {
+  padding: 0.5rem 1rem;
+  font-weight:normal; 
+  font-size: 17px;
+}
+
+/* --- Schriftgröße für Eingabefelder --- */
+.rz-inputtext, .rz-textarea, .rz-textbox {
+  font-size: 1rem;
+}
+
+.rz-calendar .rz-inputtext {
+  font-size: 1rem;
+}
+
+/* --- Notification Position einstellen --- */
+.rz-growl {
+  position: fixed !important;
+  top: 52px !important;
+  right: 16px !important;
+}
+
+/* --- Knöpfe für Pagination mit weniger Rand, damit sie kleiner sind --- */
+.rz-paginator-element {
+  padding: 0.3rem;
+}
+
+.rz-paginator-page.rz-state-active {
+  padding: 0.3rem;
+}
+
+/* --- Der Icon für den DataPicker wird falsch angezeigt. Mit dieser Einstellung wird er wieder in das Eingabefeld gesetzt --- */
+.rz-datepicker-trigger {
+  right: 190px;
+}
+
+/* --- Dropdown: Schriftgröße --- */
+.rz-dropdown-item, .rz-menuitem, .rz-autocomplete-list-item, .rz-multiselect-item, .rz-dropdown-items li, .rz-autocomplete-items li, .rz-multiselect-items li {
+  font-size: 1rem;
+}
+
+/* --- DropDown Box Höhe einstellen --- */
+.rz-dropdown-items-wrapper {
+  max-height: 400px !important;
+}
+
+/* --- DropDown Abstand in Auflistung --- */
+.rz-dropdown-item, .rz-multiselect-item {
+  padding: 0.2rem 0.5rem;
+}
+
+/* --- Zeilenumbruch verhindern und am Ende drei Punkte anzeigen --- */
+.kein-zeilenumbruch {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- TabView: Abstand in Auflistung --- */
+.rz-tabview-nav li a {
+  padding: 0.5rem 2rem;
+}
+
+.rz-tabview-nav li {
+  background-color: #f4f5f7;
+}
+
+.rz-tabview-top > .rz-tabview-nav .rz-tabview-selected {
+  margin-bottom: -1px;
+}
+
+.rz-tabview-top > .rz-tabview-nav {
+  margin-bottom: -1px;
+}
