@@ -38,9 +38,9 @@
                   <ChildContent>
                     <div class="row">
                       <div class="col-md-12">
-                        <RadzenDataGrid @ref="datagrid3" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getBasesCount" Data="@getBasesResult" Density="Density.Compact" FilterDelay="500" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" PageSize="26" Responsive="false" style="border: 1px solid rgba(0, 0, 0, 0); height: 724px; margin-top: 10px" LoadData="@Datagrid3LoadData" RowSelect="@Datagrid3RowSelect">
+                        <RadzenDataGrid @ref="datagrid3" AllowColumnReorder="true" AllowColumnResize="true" AllowCompositeDataCells="false" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getBasesCount" Data="@getBasesResult" Density="Density.Compact" FilterDelay="500" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" PageSize="26" Responsive="false" style="border: 1px solid rgba(0, 0, 0, 0); height: 724px; margin-top: 10px" LoadData="@Datagrid3LoadData" RowSelect="@Datagrid3RowSelect">
                           <Columns>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name1" Title="Name 1">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Frozen="true" Property="Name1" Title="Name 1" Width="200px">
                             </RadzenDataGridColumn>
                             <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Name2" Title="Name 2">
                             </RadzenDataGridColumn>
@@ -51,6 +51,16 @@
                             <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Ort" Title="Ort">
                             </RadzenDataGridColumn>
                             <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" FormatString="{0:d}" Property="Geburtsdatum" Title="Geburtsdatum">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Versicherungsnummer" Title="Versicherungsnummer">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Staatsangehoerigkeit" Title="Staatsangehoerigkeit">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Telefon1" Title="Telefon 1">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="EMail1" Title="E Mail 1">
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.Base" Property="Notiz" Title="Notiz" Width="300px">
                             </RadzenDataGridColumn>
                           </Columns>
                         </RadzenDataGrid>

@@ -237,14 +237,19 @@
                                   "class": "col-md-12",
                                   "components": [
                                     {
+                                      "allowColumnReorder": true,
+                                      "allowColumnResize": true,
+                                      "allowCompositeDataCells": false,
                                       "allowFiltering": true,
                                       "allowPaging": true,
                                       "allowSorting": true,
                                       "attributes": [],
                                       "columns": [
                                         {
+                                          "frozen": true,
                                           "property": "Name1",
-                                          "title": "Name 1"
+                                          "title": "Name 1",
+                                          "width": "200px"
                                         },
                                         {
                                           "property": "Name2",
@@ -266,6 +271,38 @@
                                           "formatString": "{0:d}",
                                           "property": "Geburtsdatum",
                                           "title": "Geburtsdatum"
+                                        },
+                                        {
+                                          "format": "",
+                                          "property": "Versicherungsnummer",
+                                          "title": "Versicherungsnummer",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "format": "",
+                                          "property": "Staatsangehoerigkeit",
+                                          "title": "Staatsangehoerigkeit",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "format": "",
+                                          "property": "Telefon1",
+                                          "title": "Telefon 1",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "format": "",
+                                          "property": "EMail1",
+                                          "title": "E Mail 1",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "filterTemplate": "",
+                                          "format": "",
+                                          "property": "Notiz",
+                                          "title": "Notiz",
+                                          "type": "string",
+                                          "width": "300px"
                                         }
                                       ],
                                       "count": "${getBasesCount}",
