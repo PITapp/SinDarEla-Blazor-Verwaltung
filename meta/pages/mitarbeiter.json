@@ -11,7 +11,7 @@
                   "name": "heading18",
                   "size": "H1",
                   "style": {
-                    "color": "#505C6D",
+                    "color": "#5d717b",
                     "display": "inline-block",
                     "marginBottom": "0"
                   },
@@ -39,7 +39,7 @@
                   "name": "heading21",
                   "size": "H3",
                   "style": {
-                    "color": "#505C6D",
+                    "color": "#5d717b",
                     "display": "inline",
                     "fontSize": "21px",
                     "fontWeight": "normal",
@@ -237,23 +237,33 @@
                                   "class": "col-md-12",
                                   "components": [
                                     {
-                                      "allowColumnReorder": true,
-                                      "allowColumnResize": true,
-                                      "allowCompositeDataCells": false,
                                       "allowFiltering": true,
                                       "allowPaging": true,
                                       "allowSorting": true,
-                                      "attributes": [],
                                       "columns": [
                                         {
-                                          "frozen": true,
-                                          "property": "Name1",
-                                          "title": "Name 1",
-                                          "width": "200px"
+                                          "property": "NameGesamt",
+                                          "title": "Name Gesamt"
                                         },
                                         {
-                                          "property": "Name2",
-                                          "title": "Name 2"
+                                          "property": "MitarbeiterArt",
+                                          "title": "Mitarbeiter Art"
+                                        },
+                                        {
+                                          "property": "Anrede",
+                                          "title": "Anrede"
+                                        },
+                                        {
+                                          "property": "NameKuerzel",
+                                          "title": "Name Kuerzel"
+                                        },
+                                        {
+                                          "property": "TitelVorne",
+                                          "title": "Titel Vorne"
+                                        },
+                                        {
+                                          "property": "TitelHinten",
+                                          "title": "Titel Hinten"
                                         },
                                         {
                                           "property": "Strasse",
@@ -273,53 +283,68 @@
                                           "title": "Geburtsdatum"
                                         },
                                         {
-                                          "format": "",
                                           "property": "Versicherungsnummer",
-                                          "title": "Versicherungsnummer",
-                                          "type": "string"
+                                          "title": "Versicherungsnummer"
                                         },
                                         {
-                                          "format": "",
                                           "property": "Staatsangehoerigkeit",
-                                          "title": "Staatsangehoerigkeit",
-                                          "type": "string"
+                                          "title": "Staatsangehoerigkeit"
                                         },
                                         {
-                                          "format": "",
                                           "property": "Telefon1",
-                                          "title": "Telefon 1",
-                                          "type": "string"
+                                          "title": "Telefon 1"
                                         },
                                         {
-                                          "format": "",
+                                          "property": "Telefon2",
+                                          "title": "Telefon 2"
+                                        },
+                                        {
                                           "property": "EMail1",
-                                          "title": "E Mail 1",
-                                          "type": "string"
+                                          "title": "E Mail 1"
                                         },
                                         {
-                                          "filterTemplate": "",
-                                          "format": "",
+                                          "property": "EMail2",
+                                          "title": "E Mail 2"
+                                        },
+                                        {
                                           "property": "Notiz",
-                                          "title": "Notiz",
-                                          "type": "string",
-                                          "width": "300px"
+                                          "title": "Notiz"
+                                        },
+                                        {
+                                          "property": "KontoName",
+                                          "title": "Konto Name"
+                                        },
+                                        {
+                                          "property": "KontoNummer",
+                                          "title": "Konto Nummer"
+                                        },
+                                        {
+                                          "property": "KontoInfo",
+                                          "title": "Konto Info"
+                                        },
+                                        {
+                                          "property": "Notfallkontakt",
+                                          "title": "Notfallkontakt"
+                                        },
+                                        {
+                                          "property": "NotfallkontaktTelefon",
+                                          "title": "Notfallkontakt Telefon"
                                         }
                                       ],
-                                      "count": "${getBasesCount}",
-                                      "data": "${getBasesResult}",
-                                      "density": "Density.Compact",
+                                      "count": "${rstVwMitarbeiterCount}",
+                                      "data": "${rstVwMitarbeiter}",
                                       "events": {
                                         "loadData": [
                                           {
                                             "error": [
                                               {
-                                                "detail": "Unable to load Bases",
+                                                "detail": "Unable to load VwMitarbeiters",
                                                 "severity": "error",
                                                 "summary": "Error",
                                                 "type": "notify"
                                               }
                                             ],
-                                            "name": "dbSinDarEla.getBases",
+                                            "name": "dbSinDarEla.getVwMitarbeiters",
                                             "parameters": [
                                               {
                                                 "name": "$top",
@@ -335,22 +360,60 @@
                                               },
                                               {
                                                 "name": "$filter",
-                                                "value": "${event.filter}"
+                                                "operator": "and",
+                                                "value": [
+                                                  {
+                                                    "filters": [
+                                                      {
+                                                        "operation": "contains",
+                                                        "property": "NameGesamt",
+                                                        "type": "string",
+                                                        "value": "\"${txbSuchenMitarbeiter}\""
+                                                      },
+                                                      {
+                                                        "operation": "contains",
+                                                        "property": "Strasse",
+                                                        "type": "string",
+                                                        "value": "\"${txbSuchenMitarbeiter}\""
+                                                      },
+                                                      {
+                                                        "operation": "contains",
+                                                        "property": "PLZ",
+                                                        "type": "string",
+                                                        "value": "\"${txbSuchenMitarbeiter}\""
+                                                      },
+                                                      {
+                                                        "operation": "contains",
+                                                        "property": "Ort",
+                                                        "type": "string",
+                                                        "value": "\"${txbSuchenMitarbeiter}\""
+                                                      }
+                                                    ],
+                                                    "operator": "or"
+                                                  },
+                                                  {
+                                                    "value": "${(string.IsNullOrEmpty(event.filter)? \"true\" : event.filter)}"
+                                                  }
+                                                ]
                                               },
                                               {
                                                 "name": "$orderby",
-                                                "value": "${event.orderby}"
+                                                "value": [
+                                                  {
+                                                    "value": "${event.orderby}"
+                                                  }
+                                                ]
                                               }
                                             ],
                                             "then": [
                                               {
-                                                "name": "getBasesResult",
+                                                "name": "rstVwMitarbeiter",
                                                 "type": "set",
                                                 "value": "${result.Value.AsODataEnumerable()}",
-                                                "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base>"
+                                                "valueType": "IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter>"
                                               },
                                               {
-                                                "name": "getBasesCount",
+                                                "name": "rstVwMitarbeiterCount",
                                                 "type": "set",
                                                 "value": "${result.Count}",
                                                 "valueType": "int"
@@ -358,30 +421,16 @@
                                             ],
                                             "type": "invoke"
                                           }
-                                        ],
-                                        "rowSelect": [
-                                          {
-                                            "detail": "Hallo...",
-                                            "severity": "info",
-                                            "type": "notify"
-                                          }
                                         ]
                                       },
-                                      "filterDelay": 500,
                                       "filterMode": "advanced",
-                                      "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.Base",
-                                      "name": "datagrid3",
-                                      "pageSize": 26,
-                                      "pageSizeText": "",
-                                      "responsive": false,
+                                      "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter",
+                                      "name": "gridMitarbeiter",
                                       "style": {
-                                        "border": "1px solid rgba(0, 0, 0, 0)",
-                                        "height": "724px",
-                                        "marginTop": "10px"
+                                        "height": "724px"
                                       },
                                       "title": "",
-                                      "type": "datagrid",
-                                      "value": ""
+                                      "type": "datagrid"
                                     }
                                   ],
                                   "name": "col2",
@@ -399,7 +448,13 @@
                                   "class": "col-md-12 align-items-start d-flex",
                                   "components": [
                                     {
-                                      "name": "textbox0",
+                                      "attributes": [
+                                        {
+                                          "name": "@oninput",
+                                          "value": "@(async(args) => {txbSuchenMitarbeiter = $\"{args.Value}\";await gridMitarbeiter.GoToPage(0);await gridMitarbeiter.Reload();})"
+                                        }
+                                      ],
+                                      "name": "txbSuchenMitarbeiter",
                                       "placeholder": "Suchen",
                                       "style": {
                                         "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -447,6 +502,81 @@
                                       "text": "Bearbeiten",
                                       "tooltip": "Bearbeiten Infotext",
                                       "type": "button",
+                                      "variant": "Variant.Text"
+                                    },
+                                    {
+                                      "buttonStyle": "ButtonStyle.Secondary",
+                                      "events": {
+                                        "click": [
+                                          {
+                                            "condition": "${event?.Value == \"csv\"}",
+                                            "fileName": "VwMitarbeiter",
+                                            "name": "dbSinDarEla.getVwMitarbeiters",
+                                            "parameters": [
+                                              {
+                                                "name": "$filter",
+                                                "value": "${(string.IsNullOrEmpty(gridMitarbeiter.Query.Filter)? \"true\" : gridMitarbeiter.Query.Filter)}"
+                                              },
+                                              {
+                                                "name": "$orderby",
+                                                "value": "${gridMitarbeiter.Query.OrderBy}"
+                                              },
+                                              {
+                                                "name": "$expand",
+                                                "value": ""
+                                              },
+                                              {
+                                                "name": "$select",
+                                                "value": "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon"
+                                              }
+                                            ],
+                                            "type": "export"
+                                          },
+                                          {
+                                            "condition": "${event == null || event.Value == \"xlsx\"}",
+                                            "fileName": "VwMitarbeiter",
+                                            "format": "xlsx",
+                                            "name": "dbSinDarEla.getVwMitarbeiters",
+                                            "parameters": [
+                                              {
+                                                "name": "$filter",
+                                                "value": "${(string.IsNullOrEmpty(gridMitarbeiter.Query.Filter)? \"true\" : gridMitarbeiter.Query.Filter)}"
+                                              },
+                                              {
+                                                "name": "$orderby",
+                                                "value": "${gridMitarbeiter.Query.OrderBy}"
+                                              },
+                                              {
+                                                "name": "$expand",
+                                                "value": ""
+                                              },
+                                              {
+                                                "name": "$select",
+                                                "value": "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon"
+                                              }
+                                            ],
+                                            "type": "export"
+                                          }
+                                        ]
+                                      },
+                                      "icon": "get_app",
+                                      "items": [
+                                        {
+                                          "icon": "",
+                                          "text": "Excel",
+                                          "value": "xlsx"
+                                        },
+                                        {
+                                          "icon": "",
+                                          "text": "CSV",
+                                          "value": "csv"
+                                        }
+                                      ],
+                                      "name": "splitbutton0",
+                                      "size": "ButtonSize.Medium",
+                                      "style": {},
+                                      "text": "Export",
+                                      "type": "splitbutton",
                                       "variant": "Variant.Text"
                                     }
                                   ],
@@ -566,7 +696,7 @@
                               },
                               "filterMode": "advanced",
                               "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen",
-                              "name": "grid0",
+                              "name": "gridFirmen",
                               "style": {
                                 "border": "1px solid rgba(0, 0, 0, 0)",
                                 "height": "140px",
@@ -689,7 +819,7 @@
                               },
                               "filterMode": "simple",
                               "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten",
-                              "name": "datagrid0",
+                              "name": "gridTaetigkeiten",
                               "style": {
                                 "border": "1px solid rgba(0, 0, 0, 0)",
                                 "height": "145px",
@@ -831,7 +961,7 @@
                               },
                               "filterMode": "simple",
                               "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden",
-                              "name": "datagrid1",
+                              "name": "gridKunden",
                               "style": {
                                 "border": "1px solid rgba(0, 0, 0, 0)",
                                 "height": "282px",
@@ -1043,6 +1173,13 @@
           }
         ],
         "type": "invoke"
+      },
+      {
+        "condition": "string.IsNullOrEmpty(txbSuchenMitarbeiter)",
+        "name": "txbSuchenMitarbeiter",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
       }
     ]
   },

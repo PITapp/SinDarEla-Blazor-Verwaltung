@@ -4827,7 +4827,8 @@
         "BaseID",
         "MitarbeiterArtID",
         "MitarbeiterArt",
-        "Anrede"
+        "Anrede",
+        "Name1"
       ],
       "properties": {
         "MitarbeiterID": {
@@ -4859,6 +4860,15 @@
           "x-nullable": false,
           "type": "string",
           "length": 45
+        },
+        "Name1": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Name2": {
+          "type": "string",
+          "length": 30
         },
         "NameKuerzel": {
           "type": "string",

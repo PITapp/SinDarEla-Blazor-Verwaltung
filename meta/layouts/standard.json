@@ -8,12 +8,13 @@
               "class": "justify-content-start align-items-center",
               "components": [
                 {
-                  "class": "d-flex align-items-center col-4",
+                  "class": "d-flex align-items-center col-6",
                   "components": [
                     {
                       "items": [
                         {
-                          "icon": "menu",
+                          "icon": "",
+                          "image": "/assets/images/LogoMitSchriftzug-klein.png",
                           "items": [
                             {
                               "icon": "dashboard",
@@ -66,7 +67,7 @@
                               "text": "Einstellungen"
                             }
                           ],
-                          "text": "SinDarEla"
+                          "text": "&emsp;|&emsp;SinDarEla"
                         }
                       ],
                       "name": "menu0",
@@ -80,27 +81,7 @@
                   "type": "col"
                 },
                 {
-                  "class": "d-flex align-items-center col-4 justify-content-center",
-                  "components": [
-                    {
-                      "events": {
-                        "click": []
-                      },
-                      "name": "image2",
-                      "path": "/assets/images/LogoMitSchriftzug4.png",
-                      "style": {
-                        "float": "left",
-                        "height": "36px"
-                      },
-                      "type": "image"
-                    }
-                  ],
-                  "name": "col2",
-                  "style": {},
-                  "type": "col"
-                },
-                {
-                  "class": "justify-content-end d-flex col-4",
+                  "class": "justify-content-end d-flex col-6",
                   "components": [
                     {
                       "items": [

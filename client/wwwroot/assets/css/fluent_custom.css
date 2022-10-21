@@ -60,3 +60,7 @@ ul.rz-profile-menu {
   padding-right: 5px;
 }
 
+/* --- Splitbutton: Schriftfarbe --- */
+.rz-button.rz-variant-text.rz-secondary.rz-shade-default, .rz-variant-text.rz-secondary.rz-shade-default.rz-paginator-element {
+  color: #A95106;
+}

@@ -57,10 +57,10 @@ namespace SinDarElaVerwaltung.Pages
 
         [Inject]
         protected DbSinDarElaService DbSinDarEla { get; set; }
-        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.Base> datagrid3;
-        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> grid0;
-        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten> datagrid0;
-        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden> datagrid1;
+        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter> gridMitarbeiter;
+        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> gridFirmen;
+        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten> gridTaetigkeiten;
+        protected RadzenDataGrid<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden> gridKunden;
 
         SinDarElaVerwaltung.Models.DbSinDarEla.Mitarbeiter _dsoMitarbeiter;
         protected SinDarElaVerwaltung.Models.DbSinDarEla.Mitarbeiter dsoMitarbeiter
@@ -138,38 +138,57 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> _getBasesResult;
-        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.Base> getBasesResult
+        string _txbSuchenMitarbeiter;
+        protected string txbSuchenMitarbeiter
         {
             get
             {
-                return _getBasesResult;
+                return _txbSuchenMitarbeiter;
             }
             set
             {
-                if (!object.Equals(_getBasesResult, value))
+                if (!object.Equals(_txbSuchenMitarbeiter, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "getBasesResult", NewValue = value, OldValue = _getBasesResult };
-                    _getBasesResult = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "txbSuchenMitarbeiter", NewValue = value, OldValue = _txbSuchenMitarbeiter };
+                    _txbSuchenMitarbeiter = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
             }
         }
 
-        int _getBasesCount;
-        protected int getBasesCount
+        IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter> _rstVwMitarbeiter;
+        protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter> rstVwMitarbeiter
         {
             get
             {
-                return _getBasesCount;
+                return _rstVwMitarbeiter;
             }
             set
             {
-                if (!object.Equals(_getBasesCount, value))
+                if (!object.Equals(_rstVwMitarbeiter, value))
                 {
-                    var args = new PropertyChangedEventArgs(){ Name = "getBasesCount", NewValue = value, OldValue = _getBasesCount };
-                    _getBasesCount = value;
+                    var args = new PropertyChangedEventArgs(){ Name = "rstVwMitarbeiter", NewValue = value, OldValue = _rstVwMitarbeiter };
+                    _rstVwMitarbeiter = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
+        int _rstVwMitarbeiterCount;
+        protected int rstVwMitarbeiterCount
+        {
+            get
+            {
+                return _rstVwMitarbeiterCount;
+            }
+            set
+            {
+                if (!object.Equals(_rstVwMitarbeiterCount, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "rstVwMitarbeiterCount", NewValue = value, OldValue = _rstVwMitarbeiterCount };
+                    _rstVwMitarbeiterCount = value;
                     OnPropertyChanged(args);
                     Reload();
                 }
@@ -285,6 +304,10 @@ namespace SinDarElaVerwaltung.Pages
 
             strMitarbeiterName = "Klicke auf [Suchen] um einen Mitarbeiter auszuwählen!";
             }
+
+            if (string.IsNullOrEmpty(txbSuchenMitarbeiter)) {
+                txbSuchenMitarbeiter = "";
+            }
         }
 
         protected async System.Threading.Tasks.Task ButtonBerichreClick(MouseEventArgs args)
@@ -315,27 +338,37 @@ namespace SinDarElaVerwaltung.Pages
             UriHelper.NavigateTo("dashboard");
         }
 
-        protected async System.Threading.Tasks.Task Datagrid3LoadData(LoadDataArgs args)
+        protected async System.Threading.Tasks.Task GridMitarbeiterLoadData(LoadDataArgs args)
         {
             try
             {
-                var dbSinDarElaGetBasesResult = await DbSinDarEla.GetBases(filter:$"{args.Filter}", orderby:$"{args.OrderBy}", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
-                getBasesResult = dbSinDarElaGetBasesResult.Value.AsODataEnumerable();
+                var dbSinDarElaGetVwMitarbeitersResult = await DbSinDarEla.GetVwMitarbeiters(filter:$@"(contains(NameGesamt,""{txbSuchenMitarbeiter}"") or contains(Strasse,""{txbSuchenMitarbeiter}"") or contains(PLZ,""{txbSuchenMitarbeiter}"") or contains(Ort,""{txbSuchenMitarbeiter}"")) and {(string.IsNullOrEmpty(args.Filter)? "true" : args.Filter)}", orderby:$@"{args.OrderBy}", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
+                rstVwMitarbeiter = dbSinDarElaGetVwMitarbeitersResult.Value.AsODataEnumerable();
 
-                getBasesCount = dbSinDarElaGetBasesResult.Count;
+                rstVwMitarbeiterCount = dbSinDarElaGetVwMitarbeitersResult.Count;
             }
-            catch (System.Exception dbSinDarElaGetBasesException)
+            catch (System.Exception dbSinDarElaGetVwMitarbeitersException)
             {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to load Bases" });
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to load VwMitarbeiters" });
             }
         }
 
-        protected async System.Threading.Tasks.Task Datagrid3RowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.Base args)
+        protected async System.Threading.Tasks.Task Splitbutton0Click(RadzenSplitButtonItem args)
         {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Info,Detail = $"Hallo..." });
+            if (args?.Value == "csv")
+            {
+                await DbSinDarEla.ExportVwMitarbeitersToCSV(new Query() { Filter = $@"{(string.IsNullOrEmpty(gridMitarbeiter.Query.Filter)? "true" : gridMitarbeiter.Query.Filter)}", OrderBy = $"{gridMitarbeiter.Query.OrderBy}", Expand = "", Select = "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon" }, $"VwMitarbeiter");
+
+            }
+
+            if (args == null || args.Value == "xlsx")
+            {
+                await DbSinDarEla.ExportVwMitarbeitersToExcel(new Query() { Filter = $@"{(string.IsNullOrEmpty(gridMitarbeiter.Query.Filter)? "true" : gridMitarbeiter.Query.Filter)}", OrderBy = $"{gridMitarbeiter.Query.OrderBy}", Expand = "", Select = "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon" }, $"VwMitarbeiter");
+
+            }
         }
 
-        protected async System.Threading.Tasks.Task Grid0LoadData(LoadDataArgs args)
+        protected async System.Threading.Tasks.Task GridFirmenLoadData(LoadDataArgs args)
         {
             try
             {
@@ -348,7 +381,7 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Datagrid0LoadData(LoadDataArgs args)
+        protected async System.Threading.Tasks.Task GridTaetigkeitenLoadData(LoadDataArgs args)
         {
             try
             {
@@ -361,7 +394,7 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Datagrid1LoadData(LoadDataArgs args)
+        protected async System.Threading.Tasks.Task GridKundenLoadData(LoadDataArgs args)
         {
             try
             {
@@ -374,7 +407,7 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Datagrid1RowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden args)
+        protected async System.Threading.Tasks.Task GridKundenRowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterKunden args)
         {
             bolTest = false;
         }

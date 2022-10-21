@@ -32,7 +32,8 @@
     "Mitarbeiter",
     "Benutzer",
     "Abrechnung",
-    "Auswertungen"
+    "Auswertungen",
+    "VwMitarbeiter"
   ],
   "pages": [
     "MeldungLoeschen",
@@ -62,7 +63,8 @@
     "Copy of Mitarbeiter 1",
     "Benutzer",
     "Abrechnung",
-    "Auswertungen"
+    "Auswertungen",
+    "VwMitarbeiter"
   ],
   "port": 8000,
   "pwa": true,
@@ -215,7 +217,7 @@
     "$menu-background-color": "#ffffff",
     "$menu-border": "none",
     "$menu-border-radius": "2px",
-    "$menu-item-color": "#323130",
+    "$menu-item-color": "#5d717b",
     "$menu-item-hover-background-color": "#f3f2f1",
     "$menu-item-hover-color": "#201f1e",
     "$menu-item-selected-color": "#201f1e",
