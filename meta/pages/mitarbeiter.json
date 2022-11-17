@@ -241,68 +241,80 @@
                                     {
                                       "allowAlternatingRows": false,
                                       "allowFiltering": true,
-                                      "allowPaging": true,
+                                      "allowPaging": false,
                                       "allowPickAllColumns": false,
                                       "allowSorting": true,
                                       "columns": [
                                         {
+                                          "filterable": false,
                                           "frozen": true,
                                           "property": "NameGesamt",
                                           "title": "Name Gesamt",
                                           "width": "200px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "MitarbeiterArt",
                                           "title": "Mitarbeiter Art",
                                           "width": "150px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "Anrede",
                                           "title": "Anrede",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "NameKuerzel",
                                           "title": "Name Kuerzel",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "TitelVorne",
                                           "title": "Titel Vorne",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "TitelHinten",
                                           "title": "Titel Hinten",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "Strasse",
                                           "title": "Strasse",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "PLZ",
                                           "title": "PLZ",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "Ort",
                                           "title": "Ort",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "formatString": "{0:d}",
                                           "property": "Geburtsdatum",
                                           "title": "Geburtsdatum",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "Versicherungsnummer",
                                           "title": "Versicherungsnummer",
                                           "width": "100px"
                                         },
                                         {
+                                          "filterable": false,
                                           "property": "Staatsangehoerigkeit",
                                           "title": "Staatsangehoerigkeit",
                                           "width": "100px"
@@ -462,7 +474,7 @@
                                       "filterMode": "advanced",
                                       "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter",
                                       "name": "gridMitarbeiter",
-                                      "pageSize": 25,
+                                      "pageSize": 250,
                                       "pageSizeText": "",
                                       "style": {
                                         "border": "1px solid rgba(0, 0, 0, 0)",
