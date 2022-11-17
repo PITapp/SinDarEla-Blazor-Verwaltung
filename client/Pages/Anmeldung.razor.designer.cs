@@ -159,10 +159,11 @@ namespace SinDarElaVerwaltung.Pages
 
                 bolAnmeldungOK = false;
 
-                Console.WriteLine("1");
+                Console.WriteLine("Start---123");
+Console.WriteLine("1---" + Globals.globalBenutzer.BaseID + "---" + Globals.globalBenutzer.Kennwort + "---" + args.Password + "---" + GetDeterministicHashCode(Globals.globalBenutzer.BaseID.ToString()));
 
                 if (intBenutzerAnzahl == 1) {
-                    bolAnmeldungOK = Globals.globalBenutzer.Kennwort == GetDeterministicHashCode(args.Password + Globals.globalBenutzer.BaseID);
+                    bolAnmeldungOK = Globals.globalBenutzer.Kennwort == GetDeterministicHashCode(args.Password + Globals.globalBenutzer.BaseID.ToString());
                 }
 
                 Console.WriteLine("2");

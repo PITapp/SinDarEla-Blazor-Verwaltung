@@ -195,6 +195,25 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        bool _bolZeileMarkieren;
+        protected bool bolZeileMarkieren
+        {
+            get
+            {
+                return _bolZeileMarkieren;
+            }
+            set
+            {
+                if (!object.Equals(_bolZeileMarkieren, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "bolZeileMarkieren", NewValue = value, OldValue = _bolZeileMarkieren };
+                    _bolZeileMarkieren = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> _getVwMitarbeiterFirmensResult;
         protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen> getVwMitarbeiterFirmensResult
         {
@@ -353,6 +372,11 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        protected async System.Threading.Tasks.Task GridMitarbeiterRowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter args)
+        {
+            bolZeileMarkieren = true;
+        }
+
         protected async System.Threading.Tasks.Task Splitbutton0Click(RadzenSplitButtonItem args)
         {
             if (args?.Value == "csv")
@@ -381,6 +405,11 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        protected async System.Threading.Tasks.Task GridFirmenRowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen args)
+        {
+            bolZeileMarkieren = true;
+        }
+
         protected async System.Threading.Tasks.Task GridTaetigkeitenLoadData(LoadDataArgs args)
         {
             try
@@ -392,6 +421,11 @@ namespace SinDarElaVerwaltung.Pages
             {
                 NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error,Summary = $"Error",Detail = $"Unable to load VwMitarbeiterTaetigkeitens" });
             }
+        }
+
+        protected async System.Threading.Tasks.Task GridTaetigkeitenRowSelect(SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten args)
+        {
+            bolZeileMarkieren = true;
         }
 
         protected async System.Threading.Tasks.Task GridKundenLoadData(LoadDataArgs args)

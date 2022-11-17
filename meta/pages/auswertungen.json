@@ -53,7 +53,9 @@
               "name": "col46",
               "style": {
                 "height": "52px",
-                "paddingBottom": "1px"
+                "paddingBottom": "1px",
+                "paddingLeft": "21px",
+                "paddingTop": "2px"
               },
               "type": "col"
             },
@@ -86,7 +88,7 @@
                   "shade": "Shade.Default",
                   "size": "ButtonSize.Medium",
                   "style": {
-                    "color": "#6A80AA",
+                    "color": "#5d717b",
                     "display": "block",
                     "fontWeight": "normal"
                   },
@@ -119,7 +121,7 @@
                   "name": "buttonListen",
                   "size": "ButtonSize.Medium",
                   "style": {
-                    "color": "#6A80AA",
+                    "color": "#5d717b",
                     "display": "block",
                     "fontWeight": "normal"
                   },
@@ -139,7 +141,7 @@
                   "name": "buttonSuchen",
                   "size": "ButtonSize.Medium",
                   "style": {
-                    "color": "#6A80AA",
+                    "color": "#5d717b",
                     "display": "block",
                     "fontWeight": "normal"
                   },
@@ -164,7 +166,7 @@
                   "name": "button0",
                   "size": "ButtonSize.Medium",
                   "style": {
-                    "color": "#6A80AA",
+                    "color": "#5d717b",
                     "display": "block",
                     "fontWeight": "normal"
                   },

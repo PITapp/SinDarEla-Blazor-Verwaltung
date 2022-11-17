@@ -72,7 +72,7 @@
                             "valueType": "bool"
                           },
                           {
-                            "code": "Console.WriteLine(\"1\");",
+                            "code": "Console.WriteLine(\"Start---123\");\nConsole.WriteLine(\"1---\" + Globals.globalBenutzer.BaseID + \"---\" + Globals.globalBenutzer.Kennwort + \"---\" + event.Password + \"---\" + GetDeterministicHashCode(Globals.globalBenutzer.BaseID.ToString()));",
                             "type": "execute"
                           },
                           {
@@ -80,7 +80,7 @@
                             "global": false,
                             "name": "bolAnmeldungOK",
                             "type": "set",
-                            "value": "${Globals.globalBenutzer.Kennwort} == GetDeterministicHashCode(${event.Password} + ${Globals.globalBenutzer.BaseID})",
+                            "value": "Globals.globalBenutzer.Kennwort == GetDeterministicHashCode(event.Password + Globals.globalBenutzer.BaseID.ToString())",
                             "valueType": "bool"
                           },
                           {

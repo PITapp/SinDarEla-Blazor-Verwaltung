@@ -53,7 +53,9 @@
               "name": "col46",
               "style": {
                 "height": "52px",
-                "paddingBottom": "1px"
+                "paddingBottom": "1px",
+                "paddingLeft": "21px",
+                "paddingTop": "2px"
               },
               "type": "col"
             },
@@ -86,7 +88,7 @@
                   "shade": "Shade.Default",
                   "size": "ButtonSize.Medium",
                   "style": {
-                    "color": "#6A80AA",
+                    "color": "#5d717b",
                     "display": "block",
                     "fontWeight": "normal"
                   },
@@ -119,7 +121,7 @@
                   "name": "buttonListen",
                   "size": "ButtonSize.Medium",
                   "style": {
-                    "color": "#6A80AA",
+                    "color": "#5d717b",
                     "display": "block",
                     "fontWeight": "normal"
                   },
@@ -165,7 +167,7 @@
                   "name": "buttonSuchen",
                   "size": "ButtonSize.Medium",
                   "style": {
-                    "color": "#6A80AA",
+                    "color": "#5d717b",
                     "display": "block",
                     "fontWeight": "normal"
                   },
@@ -190,7 +192,7 @@
                   "name": "button0",
                   "size": "ButtonSize.Medium",
                   "style": {
-                    "color": "#6A80AA",
+                    "color": "#5d717b",
                     "display": "block",
                     "fontWeight": "normal"
                   },
@@ -237,102 +239,128 @@
                                   "class": "col-md-12",
                                   "components": [
                                     {
+                                      "allowAlternatingRows": false,
                                       "allowFiltering": true,
                                       "allowPaging": true,
+                                      "allowPickAllColumns": false,
                                       "allowSorting": true,
                                       "columns": [
                                         {
+                                          "frozen": true,
                                           "property": "NameGesamt",
-                                          "title": "Name Gesamt"
+                                          "title": "Name Gesamt",
+                                          "width": "200px"
                                         },
                                         {
                                           "property": "MitarbeiterArt",
-                                          "title": "Mitarbeiter Art"
+                                          "title": "Mitarbeiter Art",
+                                          "width": "150px"
                                         },
                                         {
                                           "property": "Anrede",
-                                          "title": "Anrede"
+                                          "title": "Anrede",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "NameKuerzel",
-                                          "title": "Name Kuerzel"
+                                          "title": "Name Kuerzel",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "TitelVorne",
-                                          "title": "Titel Vorne"
+                                          "title": "Titel Vorne",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "TitelHinten",
-                                          "title": "Titel Hinten"
+                                          "title": "Titel Hinten",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "Strasse",
-                                          "title": "Strasse"
+                                          "title": "Strasse",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "PLZ",
-                                          "title": "PLZ"
+                                          "title": "PLZ",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "Ort",
-                                          "title": "Ort"
+                                          "title": "Ort",
+                                          "width": "100px"
                                         },
                                         {
                                           "formatString": "{0:d}",
                                           "property": "Geburtsdatum",
-                                          "title": "Geburtsdatum"
+                                          "title": "Geburtsdatum",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "Versicherungsnummer",
-                                          "title": "Versicherungsnummer"
+                                          "title": "Versicherungsnummer",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "Staatsangehoerigkeit",
-                                          "title": "Staatsangehoerigkeit"
+                                          "title": "Staatsangehoerigkeit",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "Telefon1",
-                                          "title": "Telefon 1"
+                                          "title": "Telefon 1",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "Telefon2",
-                                          "title": "Telefon 2"
+                                          "title": "Telefon 2",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "EMail1",
-                                          "title": "E Mail 1"
+                                          "title": "E Mail 1",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "EMail2",
-                                          "title": "E Mail 2"
+                                          "title": "E Mail 2",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "Notiz",
-                                          "title": "Notiz"
+                                          "title": "Notiz",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "KontoName",
-                                          "title": "Konto Name"
+                                          "title": "Konto Name",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "KontoNummer",
-                                          "title": "Konto Nummer"
+                                          "title": "Konto Nummer",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "KontoInfo",
-                                          "title": "Konto Info"
+                                          "title": "Konto Info",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "Notfallkontakt",
-                                          "title": "Notfallkontakt"
+                                          "title": "Notfallkontakt",
+                                          "width": "100px"
                                         },
                                         {
                                           "property": "NotfallkontaktTelefon",
-                                          "title": "Notfallkontakt Telefon"
+                                          "title": "Notfallkontakt Telefon",
+                                          "width": "100px"
                                         }
                                       ],
                                       "count": "${rstVwMitarbeiterCount}",
                                       "data": "${rstVwMitarbeiter}",
+                                      "density": "Density.Compact",
                                       "events": {
                                         "loadData": [
                                           {
@@ -421,13 +449,25 @@
                                             ],
                                             "type": "invoke"
                                           }
+                                        ],
+                                        "rowSelect": [
+                                          {
+                                            "name": "bolZeileMarkieren",
+                                            "type": "set",
+                                            "value": "true",
+                                            "valueType": "bool"
+                                          }
                                         ]
                                       },
                                       "filterMode": "advanced",
                                       "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter",
                                       "name": "gridMitarbeiter",
+                                      "pageSize": 25,
+                                      "pageSizeText": "",
                                       "style": {
-                                        "height": "724px"
+                                        "border": "1px solid rgba(0, 0, 0, 0)",
+                                        "height": "719px",
+                                        "marginTop": "10px"
                                       },
                                       "title": "",
                                       "type": "datagrid"
@@ -692,6 +732,14 @@
                                     ],
                                     "type": "invoke"
                                   }
+                                ],
+                                "rowSelect": [
+                                  {
+                                    "name": "bolZeileMarkieren",
+                                    "type": "set",
+                                    "value": "true",
+                                    "valueType": "bool"
+                                  }
                                 ]
                               },
                               "filterMode": "advanced",
@@ -814,6 +862,14 @@
                                       }
                                     ],
                                     "type": "invoke"
+                                  }
+                                ],
+                                "rowSelect": [
+                                  {
+                                    "name": "bolZeileMarkieren",
+                                    "type": "set",
+                                    "value": "true",
+                                    "valueType": "bool"
                                   }
                                 ]
                               },

@@ -50,7 +50,9 @@
               "name": "col46",
               "style": {
                 "height": "52px",
-                "paddingBottom": "1px"
+                "paddingBottom": "1px",
+                "paddingLeft": "21px",
+                "paddingTop": "2px"
               },
               "type": "col"
             },

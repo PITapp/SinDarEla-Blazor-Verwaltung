@@ -9,7 +9,7 @@
 <RadzenContent Container="main">
   <ChildContent>
     <div style="height: ; margin-top: -7px; padding-bottom: 0; padding-left: 5px; padding-right: 3px; padding-top: 0; width: " class="row">
-      <div class="justify-content-start       d-flex align-items-center          col-md-8" style="height: 52px; padding-bottom: 1px">
+      <div class="justify-content-start       d-flex align-items-center          col-md-8" style="height: 52px; padding-bottom: 1px; padding-left: 21px; padding-top: 2px">
         <RadzenHeading Size="H1" style="color: #5d717b; display: inline-block; margin-bottom: 0" Text="Mitarbeiter">
         </RadzenHeading>
         <RadzenHeading Size="H3" style="color: #e5ecef; display: inline-block; margin-bottom: 0; margin-top: 1px; padding-left: 15px; padding-right: 15px" Text="|">
@@ -18,13 +18,13 @@
         </RadzenHeading>
       </div>
       <div class="col-md-4  d-flex justify-content-end align-items-end" style="padding-right: 20px">
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="description" Shade="Shade.Default" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal" Text="Berichte" Variant="Variant.Text" Click="@ButtonBerichreClick">
+        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="description" Shade="Shade.Default" Size="ButtonSize.Medium" style="color: #5d717b; display: block; font-weight: normal" Text="Berichte" Variant="Variant.Text" Click="@ButtonBerichreClick">
         </RadzenButton>
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="view_list" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal" Text="Listen" Variant="Variant.Text" Click="@ButtonListenClick">
+        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="view_list" Size="ButtonSize.Medium" style="color: #5d717b; display: block; font-weight: normal" Text="Listen" Variant="Variant.Text" Click="@ButtonListenClick">
         </RadzenButton>
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="assessment" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal" Text="Analysen" Variant="Variant.Text" Click="@ButtonSuchenClick">
+        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="assessment" Size="ButtonSize.Medium" style="color: #5d717b; display: block; font-weight: normal" Text="Analysen" Variant="Variant.Text" Click="@ButtonSuchenClick">
         </RadzenButton>
-        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="dashboard" Size="ButtonSize.Medium" style="color: #6A80AA; display: block; font-weight: normal" Text="Dashboard" Variant="Variant.Text" Click="@Button0Click">
+        <RadzenButton ButtonStyle="ButtonStyle.Secondary" ButtonType="ButtonType.Button" Icon="dashboard" Size="ButtonSize.Medium" style="color: #5d717b; display: block; font-weight: normal" Text="Dashboard" Variant="Variant.Text" Click="@Button0Click">
         </RadzenButton>
       </div>
     </div>
@@ -38,51 +38,51 @@
                   <ChildContent>
                     <div class="row">
                       <div class="col-md-12">
-                        <RadzenDataGrid @ref="gridMitarbeiter" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@rstVwMitarbeiterCount" Data="@rstVwMitarbeiter" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" style="height: 724px" LoadData="@GridMitarbeiterLoadData">
+                        <RadzenDataGrid @ref="gridMitarbeiter" AllowAlternatingRows="false" AllowFiltering="true" AllowPaging="true" AllowPickAllColumns="false" AllowSorting="true" Count="@rstVwMitarbeiterCount" Data="@rstVwMitarbeiter" Density="Density.Compact" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" PageSize="25" style="border: 1px solid rgba(0, 0, 0, 0); height: 719px; margin-top: 10px" LoadData="@GridMitarbeiterLoadData" RowSelect="@GridMitarbeiterRowSelect">
                           <Columns>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="NameGesamt" Title="Name Gesamt">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Frozen="true" Property="NameGesamt" Title="Name Gesamt" Width="200px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="MitarbeiterArt" Title="Mitarbeiter Art">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="MitarbeiterArt" Title="Mitarbeiter Art" Width="150px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Anrede" Title="Anrede">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Anrede" Title="Anrede" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="NameKuerzel" Title="Name Kuerzel">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="NameKuerzel" Title="Name Kuerzel" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="TitelVorne" Title="Titel Vorne">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="TitelVorne" Title="Titel Vorne" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="TitelHinten" Title="Titel Hinten">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="TitelHinten" Title="Titel Hinten" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Strasse" Title="Strasse">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Strasse" Title="Strasse" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="PLZ" Title="PLZ">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="PLZ" Title="PLZ" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Ort" Title="Ort">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Ort" Title="Ort" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" FormatString="{0:d}" Property="Geburtsdatum" Title="Geburtsdatum">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" FormatString="{0:d}" Property="Geburtsdatum" Title="Geburtsdatum" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Versicherungsnummer" Title="Versicherungsnummer">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Versicherungsnummer" Title="Versicherungsnummer" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Staatsangehoerigkeit" Title="Staatsangehoerigkeit">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Staatsangehoerigkeit" Title="Staatsangehoerigkeit" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Telefon1" Title="Telefon 1">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Telefon1" Title="Telefon 1" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Telefon2" Title="Telefon 2">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Telefon2" Title="Telefon 2" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="EMail1" Title="E Mail 1">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="EMail1" Title="E Mail 1" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="EMail2" Title="E Mail 2">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="EMail2" Title="E Mail 2" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Notiz" Title="Notiz">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Notiz" Title="Notiz" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="KontoName" Title="Konto Name">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="KontoName" Title="Konto Name" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="KontoNummer" Title="Konto Nummer">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="KontoNummer" Title="Konto Nummer" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="KontoInfo" Title="Konto Info">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="KontoInfo" Title="Konto Info" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Notfallkontakt" Title="Notfallkontakt">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="Notfallkontakt" Title="Notfallkontakt" Width="100px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="NotfallkontaktTelefon" Title="Notfallkontakt Telefon">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Property="NotfallkontaktTelefon" Title="Notfallkontakt Telefon" Width="100px">
                             </RadzenDataGridColumn>
                           </Columns>
                         </RadzenDataGrid>
@@ -114,7 +114,7 @@
               <div class="col-md-5" style="padding-left: 0; padding-right: 0">
                 <RadzenPanel style="border: 1px solid #e6ecef; height: 200px" Text="Firmen">
                   <ChildContent>
-                    <RadzenDataGrid @ref="gridFirmen" AllowCompositeDataCells="true" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterFirmensResult" Density="Density.Compact" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" style="border: 1px solid rgba(0, 0, 0, 0); height: 140px; margin-top: 10px" LoadData="@GridFirmenLoadData">
+                    <RadzenDataGrid @ref="gridFirmen" AllowCompositeDataCells="true" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterFirmensResult" Density="Density.Compact" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" style="border: 1px solid rgba(0, 0, 0, 0); height: 140px; margin-top: 10px" LoadData="@GridFirmenLoadData" RowSelect="@GridFirmenRowSelect">
                       <Columns>
                         <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterFirmen" Frozen="true" Property="FirmaName" Title="Name" Width="300px">
                         </RadzenDataGridColumn>
@@ -148,7 +148,7 @@
                 </RadzenPanel>
                 <RadzenPanel style="border: 1px solid #e6ecef; height: 205px; margin-top: 16px" Text="Tätigkeiten">
                   <ChildContent>
-                    <RadzenDataGrid @ref="gridTaetigkeiten" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterTaetigkeitensResult" Density="Density.Compact" FilterMode="Radzen.FilterMode.Simple" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten" style="border: 1px solid rgba(0, 0, 0, 0); height: 145px; margin-top: 10px" LoadData="@GridTaetigkeitenLoadData">
+                    <RadzenDataGrid @ref="gridTaetigkeiten" AllowFiltering="false" AllowPaging="false" AllowSorting="false" ColumnWidth="150px" Data="@getVwMitarbeiterTaetigkeitensResult" Density="Density.Compact" FilterMode="Radzen.FilterMode.Simple" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten" style="border: 1px solid rgba(0, 0, 0, 0); height: 145px; margin-top: 10px" LoadData="@GridTaetigkeitenLoadData" RowSelect="@GridTaetigkeitenRowSelect">
                       <Columns>
                         <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiterTaetigkeiten" Property="TaetigkeitArt" Title="Art">
                         </RadzenDataGridColumn>
