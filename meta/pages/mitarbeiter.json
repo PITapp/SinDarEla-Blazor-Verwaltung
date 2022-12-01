@@ -246,20 +246,20 @@
                                       "allowSorting": true,
                                       "columns": [
                                         {
-                                          "filterable": false,
+                                          "filterable": true,
                                           "frozen": true,
                                           "property": "NameGesamt",
                                           "title": "Name Gesamt",
                                           "width": "200px"
                                         },
                                         {
-                                          "filterable": false,
+                                          "filterable": true,
                                           "property": "MitarbeiterArt",
                                           "title": "Mitarbeiter Art",
                                           "width": "150px"
                                         },
                                         {
-                                          "filterable": false,
+                                          "filterable": true,
                                           "property": "Anrede",
                                           "title": "Anrede",
                                           "width": "100px"
@@ -376,6 +376,12 @@
                                       "events": {
                                         "loadData": [
                                           {
+                                            "name": "bolLadenMitarbeiter",
+                                            "type": "set",
+                                            "value": "true",
+                                            "valueType": "bool"
+                                          },
+                                          {
                                             "error": [
                                               {
                                                 "detail": "Unable to load VwMitarbeiters",
@@ -457,9 +463,17 @@
                                                 "type": "set",
                                                 "value": "${result.Count}",
                                                 "valueType": "int"
+                                              },
+                                              {
+                                                "name": "bolLadenMitarbeiter",
+                                                "type": "set",
+                                                "value": "false",
+                                                "valueType": "bool"
                                               }
                                             ],
-                                            "type": "invoke"
+                                            "type": "invoke",
+                                            "value": "true",
+                                            "valueType": "bool"
                                           }
                                         ],
                                         "rowSelect": [
@@ -472,6 +486,7 @@
                                         ]
                                       },
                                       "filterMode": "advanced",
+                                      "isLoading": "${bolLadenMitarbeiter}",
                                       "itemType": "SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter",
                                       "name": "gridMitarbeiter",
                                       "pageSize": 250,
@@ -523,7 +538,7 @@
                                         "click": []
                                       },
                                       "icon": "add",
-                                      "name": "buttonNeu",
+                                      "name": "buttonNeuMitarbeiter",
                                       "size": "ButtonSize.Medium",
                                       "style": {
                                         "color": "#A95106",
@@ -542,7 +557,7 @@
                                       },
                                       "icon": "create",
                                       "isBusy": false,
-                                      "name": "buttonBearbeitenInfotext",
+                                      "name": "buttonBearbeitenMitarbeiter",
                                       "size": "ButtonSize.Medium",
                                       "style": {
                                         "color": "#A95106",
@@ -557,36 +572,12 @@
                                       "variant": "Variant.Text"
                                     },
                                     {
-                                      "buttonStyle": "ButtonStyle.Secondary",
+                                      "buttonStyle": "secondary",
                                       "events": {
                                         "click": [
                                           {
-                                            "condition": "${event?.Value == \"csv\"}",
-                                            "fileName": "VwMitarbeiter",
-                                            "name": "dbSinDarEla.getVwMitarbeiters",
-                                            "parameters": [
-                                              {
-                                                "name": "$filter",
-                                                "value": "${(string.IsNullOrEmpty(gridMitarbeiter.Query.Filter)? \"true\" : gridMitarbeiter.Query.Filter)}"
-                                              },
-                                              {
-                                                "name": "$orderby",
-                                                "value": "${gridMitarbeiter.Query.OrderBy}"
-                                              },
-                                              {
-                                                "name": "$expand",
-                                                "value": ""
-                                              },
-                                              {
-                                                "name": "$select",
-                                                "value": "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon"
-                                              }
-                                            ],
-                                            "type": "export"
-                                          },
-                                          {
-                                            "condition": "${event == null || event.Value == \"xlsx\"}",
-                                            "fileName": "VwMitarbeiter",
+                                            "condition": "",
+                                            "fileName": "Mitarbeiter",
                                             "format": "xlsx",
                                             "name": "dbSinDarEla.getVwMitarbeiters",
                                             "parameters": [
@@ -607,28 +598,56 @@
                                                 "value": "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon"
                                               }
                                             ],
+                                            "then": [
+                                              {
+                                                "detail": "Export der Daten 'Mitarbeiter' nach Excel erfolgreich!",
+                                                "severity": "success",
+                                                "type": "notify"
+                                              }
+                                            ],
                                             "type": "export"
                                           }
                                         ]
                                       },
                                       "icon": "get_app",
-                                      "items": [
-                                        {
-                                          "icon": "",
-                                          "text": "Excel",
-                                          "value": "xlsx"
-                                        },
-                                        {
-                                          "icon": "",
-                                          "text": "CSV",
-                                          "value": "csv"
-                                        }
-                                      ],
-                                      "name": "splitbutton0",
+                                      "isBusy": false,
+                                      "name": "buttonExportMitarbeiter",
                                       "size": "ButtonSize.Medium",
-                                      "style": {},
+                                      "style": {
+                                        "color": "#A95106",
+                                        "display": "block",
+                                        "fontWeight": "400",
+                                        "paddingLeft": ""
+                                      },
+                                      "template": "",
                                       "text": "Export",
-                                      "type": "splitbutton",
+                                      "tooltip": "Bearbeiten Infotext",
+                                      "type": "button",
+                                      "variant": "Variant.Text"
+                                    },
+                                    {
+                                      "buttonStyle": "secondary",
+                                      "disabled": false,
+                                      "events": {
+                                        "click": []
+                                      },
+                                      "icon": "",
+                                      "image": "/assets/images/Favicon-32x32.png",
+                                      "isBusy": false,
+                                      "name": "buttonFilter",
+                                      "shade": "Shade.Default",
+                                      "size": "ButtonSize.Medium",
+                                      "style": {
+                                        "backgroundColor": "rgba(0, 0, 0, 0)",
+                                        "color": "#A95106",
+                                        "display": "block",
+                                        "fontWeight": "400",
+                                        "paddingLeft": ""
+                                      },
+                                      "template": "",
+                                      "text": "Filter (aktiv!)",
+                                      "tooltip": "Bearbeiten Infotext",
+                                      "type": "button",
                                       "variant": "Variant.Text"
                                     }
                                   ],

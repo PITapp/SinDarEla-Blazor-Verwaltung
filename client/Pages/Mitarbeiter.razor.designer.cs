@@ -157,6 +157,25 @@ namespace SinDarElaVerwaltung.Pages
             }
         }
 
+        bool _bolLadenMitarbeiter;
+        protected bool bolLadenMitarbeiter
+        {
+            get
+            {
+                return _bolLadenMitarbeiter;
+            }
+            set
+            {
+                if (!object.Equals(_bolLadenMitarbeiter, value))
+                {
+                    var args = new PropertyChangedEventArgs(){ Name = "bolLadenMitarbeiter", NewValue = value, OldValue = _bolLadenMitarbeiter };
+                    _bolLadenMitarbeiter = value;
+                    OnPropertyChanged(args);
+                    Reload();
+                }
+            }
+        }
+
         IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter> _rstVwMitarbeiter;
         protected IEnumerable<SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter> rstVwMitarbeiter
         {
@@ -359,12 +378,16 @@ namespace SinDarElaVerwaltung.Pages
 
         protected async System.Threading.Tasks.Task GridMitarbeiterLoadData(LoadDataArgs args)
         {
+            bolLadenMitarbeiter = true;
+
             try
             {
                 var dbSinDarElaGetVwMitarbeitersResult = await DbSinDarEla.GetVwMitarbeiters(filter:$@"(contains(NameGesamt,""{txbSuchenMitarbeiter}"") or contains(Strasse,""{txbSuchenMitarbeiter}"") or contains(PLZ,""{txbSuchenMitarbeiter}"") or contains(Ort,""{txbSuchenMitarbeiter}"")) and {(string.IsNullOrEmpty(args.Filter)? "true" : args.Filter)}", orderby:$@"{args.OrderBy}", top:args.Top, skip:args.Skip, count:args.Top != null && args.Skip != null);
                 rstVwMitarbeiter = dbSinDarElaGetVwMitarbeitersResult.Value.AsODataEnumerable();
 
                 rstVwMitarbeiterCount = dbSinDarElaGetVwMitarbeitersResult.Count;
+
+                bolLadenMitarbeiter = false;
             }
             catch (System.Exception dbSinDarElaGetVwMitarbeitersException)
             {
@@ -377,19 +400,10 @@ namespace SinDarElaVerwaltung.Pages
             bolZeileMarkieren = true;
         }
 
-        protected async System.Threading.Tasks.Task Splitbutton0Click(RadzenSplitButtonItem args)
+        protected async System.Threading.Tasks.Task ButtonExportMitarbeiterClick(MouseEventArgs args)
         {
-            if (args?.Value == "csv")
-            {
-                await DbSinDarEla.ExportVwMitarbeitersToCSV(new Query() { Filter = $@"{(string.IsNullOrEmpty(gridMitarbeiter.Query.Filter)? "true" : gridMitarbeiter.Query.Filter)}", OrderBy = $"{gridMitarbeiter.Query.OrderBy}", Expand = "", Select = "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon" }, $"VwMitarbeiter");
-
-            }
-
-            if (args == null || args.Value == "xlsx")
-            {
-                await DbSinDarEla.ExportVwMitarbeitersToExcel(new Query() { Filter = $@"{(string.IsNullOrEmpty(gridMitarbeiter.Query.Filter)? "true" : gridMitarbeiter.Query.Filter)}", OrderBy = $"{gridMitarbeiter.Query.OrderBy}", Expand = "", Select = "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon" }, $"VwMitarbeiter");
-
-            }
+            await DbSinDarEla.ExportVwMitarbeitersToExcel(new Query() { Filter = $@"{(string.IsNullOrEmpty(gridMitarbeiter.Query.Filter)? "true" : gridMitarbeiter.Query.Filter)}", OrderBy = $"{gridMitarbeiter.Query.OrderBy}", Expand = "", Select = "NameGesamt,MitarbeiterArt,Anrede,NameKuerzel,TitelVorne,TitelHinten,Strasse,PLZ,Ort,Geburtsdatum,Versicherungsnummer,Staatsangehoerigkeit,Telefon1,Telefon2,EMail1,EMail2,Notiz,KontoName,KontoNummer,KontoInfo,Notfallkontakt,NotfallkontaktTelefon" }, $"Mitarbeiter");
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Success,Detail = $"Export der Daten 'Mitarbeiter' nach Excel erfolgreich!" });
         }
 
         protected async System.Threading.Tasks.Task GridFirmenLoadData(LoadDataArgs args)

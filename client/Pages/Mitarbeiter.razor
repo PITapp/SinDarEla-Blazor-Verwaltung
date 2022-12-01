@@ -38,13 +38,13 @@
                   <ChildContent>
                     <div class="row">
                       <div class="col-md-12">
-                        <RadzenDataGrid @ref="gridMitarbeiter" AllowAlternatingRows="false" AllowFiltering="true" AllowPaging="false" AllowPickAllColumns="false" AllowSorting="true" Count="@rstVwMitarbeiterCount" Data="@rstVwMitarbeiter" Density="Density.Compact" FilterMode="Radzen.FilterMode.Advanced" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" PageSize="250" style="border: 1px solid rgba(0, 0, 0, 0); height: 719px; margin-top: 10px" LoadData="@GridMitarbeiterLoadData" RowSelect="@GridMitarbeiterRowSelect">
+                        <RadzenDataGrid @ref="gridMitarbeiter" AllowAlternatingRows="false" AllowFiltering="true" AllowPaging="false" AllowPickAllColumns="false" AllowSorting="true" Count="@rstVwMitarbeiterCount" Data="@rstVwMitarbeiter" Density="Density.Compact" FilterMode="Radzen.FilterMode.Advanced" IsLoading="@bolLadenMitarbeiter" TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" PageSize="250" style="border: 1px solid rgba(0, 0, 0, 0); height: 719px; margin-top: 10px" LoadData="@GridMitarbeiterLoadData" RowSelect="@GridMitarbeiterRowSelect">
                           <Columns>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Filterable="false" Frozen="true" Property="NameGesamt" Title="Name Gesamt" Width="200px">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Filterable="true" Frozen="true" Property="NameGesamt" Title="Name Gesamt" Width="200px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Filterable="false" Property="MitarbeiterArt" Title="Mitarbeiter Art" Width="150px">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Filterable="true" Property="MitarbeiterArt" Title="Mitarbeiter Art" Width="150px">
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Filterable="false" Property="Anrede" Title="Anrede" Width="100px">
+                            <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Filterable="true" Property="Anrede" Title="Anrede" Width="100px">
                             </RadzenDataGridColumn>
                             <RadzenDataGridColumn TItem="SinDarElaVerwaltung.Models.DbSinDarEla.VwMitarbeiter" Filterable="false" Property="NameKuerzel" Title="Name Kuerzel" Width="100px">
                             </RadzenDataGridColumn>
@@ -98,14 +98,10 @@
                         </RadzenButton>
                         <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="create" IsBusy="false" Size="ButtonSize.Medium" style="color: #A95106; display: block; font-weight: 400; padding-left: " Text="Bearbeiten" Tooltip="Bearbeiten Infotext" Variant="Variant.Text">
                         </RadzenButton>
-                        <RadzenSplitButton ButtonStyle="ButtonStyle.Secondary" Icon="get_app" Size="ButtonSize.Medium"  Text="Export" Variant="Variant.Text" Click="@Splitbutton0Click">
-                          <ChildContent>
-                            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
-                            </RadzenSplitButtonItem>
-                            <RadzenSplitButtonItem Text="CSV" Value="csv">
-                            </RadzenSplitButtonItem>
-                          </ChildContent>
-                        </RadzenSplitButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="get_app" IsBusy="false" Size="ButtonSize.Medium" style="color: #A95106; display: block; font-weight: 400; padding-left: " Text="Export" Tooltip="Bearbeiten Infotext" Variant="Variant.Text" Click="@ButtonExportMitarbeiterClick">
+                        </RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Secondary" Disabled="false" Image="assets/images/Favicon-32x32.png" IsBusy="false" Shade="Shade.Default" Size="ButtonSize.Medium" style="background-color: rgba(0, 0, 0, 0); color: #A95106; display: block; font-weight: 400; padding-left: " Text="Filter (aktiv!)" Tooltip="Bearbeiten Infotext" Variant="Variant.Text">
+                        </RadzenButton>
                       </div>
                     </div>
                   </HeaderTemplate>
